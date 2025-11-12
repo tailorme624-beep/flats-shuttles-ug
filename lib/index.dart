@@ -1,0 +1,146 @@
+// Export pages
+export '/pages/users/services/services_widget.dart' show ServicesWidget;
+export '/pages/users/notification/notification_widget.dart'
+    show NotificationWidget;
+export '/pages/users/servicepending/servicepending_widget.dart'
+    show ServicependingWidget;
+export '/pages/users/ridecomfirmation/ridecomfirmation_widget.dart'
+    show RidecomfirmationWidget;
+export '/pages/users/ridetracking/ridetracking_widget.dart'
+    show RidetrackingWidget;
+export '/pages/users/a_i_travelassistant/a_i_travelassistant_widget.dart'
+    show AITravelassistantWidget;
+export '/pages/users/privacypolicyandtermsandconditions/privacypolicyandtermsandconditions_widget.dart'
+    show PrivacypolicyandtermsandconditionsWidget;
+export '/pages/users/termsandconditions/termsandconditions_widget.dart'
+    show TermsandconditionsWidget;
+export '/pages/users/sign_in/sign_in_widget.dart' show SignInWidget;
+export '/pages/users/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/pages/users/home/home_widget.dart' show HomeWidget;
+export '/pages/drivers/driver_earnings/driver_earnings_widget.dart'
+    show DriverEarningsWidget;
+export '/pages/drivers/driver_profile/driver_profile_widget.dart'
+    show DriverProfileWidget;
+export '/pages/drivers/driversignup/driversignup_widget.dart'
+    show DriversignupWidget;
+export '/pages/drivers/driversignin/driversignin_widget.dart'
+    show DriversigninWidget;
+export '/pages/drivers/driverprivacypolicy/driverprivacypolicy_widget.dart'
+    show DriverprivacypolicyWidget;
+export '/pages/drivers/drivertermsandconditions/drivertermsandconditions_widget.dart'
+    show DrivertermsandconditionsWidget;
+export '/pages/drivers/incomingriderequest/incomingriderequest_widget.dart'
+    show IncomingriderequestWidget;
+export '/pages/drivers/activeride/activeride_widget.dart' show ActiverideWidget;
+export '/pages/users/quotespage/quotespage_widget.dart' show QuotespageWidget;
+export '/pages/drivers/drivererrorpage/drivererrorpage_widget.dart'
+    show DrivererrorpageWidget;
+export '/pages/users/errorpage/errorpage_widget.dart' show ErrorpageWidget;
+export '/pages/users/courierservicespage/courierservicespage_widget.dart'
+    show CourierservicespageWidget;
+export '/pages/users/hotelbookingpage/hotelbookingpage_widget.dart'
+    show HotelbookingpageWidget;
+export '/pages/users/schooltripbookingpage/schooltripbookingpage_widget.dart'
+    show SchooltripbookingpageWidget;
+export '/pages/users/individualtourspage/individualtourspage_widget.dart'
+    show IndividualtourspageWidget;
+export '/pages/users/carhiringpage/carhiringpage_widget.dart'
+    show CarhiringpageWidget;
+export '/pages/admin/admin_dashboard/admin_dashboard_widget.dart'
+    show AdminDashboardWidget;
+export '/pages/admin/liveridetracker/liveridetracker_widget.dart'
+    show LiveridetrackerWidget;
+export '/pages/admin/adminsettingspage/adminsettingspage_widget.dart'
+    show AdminsettingspageWidget;
+export '/pages/admin/adminprofilepage/adminprofilepage_widget.dart'
+    show AdminprofilepageWidget;
+export '/pages/admin/adminnotificationpage/adminnotificationpage_widget.dart'
+    show AdminnotificationpageWidget;
+export '/pages/admin/adminloginpage/adminloginpage_widget.dart'
+    show AdminloginpageWidget;
+export '/pages/admin/userreportspage/userreportspage_widget.dart'
+    show UserreportspageWidget;
+export '/pages/admin/reportdetailspage/reportdetailspage_widget.dart'
+    show ReportdetailspageWidget;
+export '/pages/users/userprofilepage/userprofilepage_widget.dart'
+    show UserprofilepageWidget;
+export '/pages/admin/drivermanagepage/drivermanagepage_widget.dart'
+    show DrivermanagepageWidget;
+export '/pages/drivers/drivereditpage/drivereditpage_widget.dart'
+    show DrivereditpageWidget;
+export '/pages/drivers/driveractiveridepage/driveractiveridepage_widget.dart'
+    show DriveractiveridepageWidget;
+export '/pages/drivers/home_page/home_page_widget.dart' show HomePageWidget;
+export '/pages/users/ride_booking_page/ride_booking_page_widget.dart'
+    show RideBookingPageWidget;
+export '/pages/users/flight_booking_page/flight_booking_page_widget.dart'
+    show FlightBookingPageWidget;
+export '/pages/admin/adminflightmanagementpage/adminflightmanagementpage_widget.dart'
+    show AdminflightmanagementpageWidget;
+export '/pages/admin/processrequestpage/processrequestpage_widget.dart'
+    show ProcessrequestpageWidget;
+export '/pages/users/usersettingsandsupportpage/usersettingsandsupportpage_widget.dart'
+    show UsersettingsandsupportpageWidget;
+export '/pages/users/user_privacyandsecuritypage/user_privacyandsecuritypage_widget.dart'
+    show UserPrivacyandsecuritypageWidget;
+export '/pages/users/userlanguagepreferencepage/userlanguagepreferencepage_widget.dart'
+    show UserlanguagepreferencepageWidget;
+export '/pages/users/userstorageanddatapage/userstorageanddatapage_widget.dart'
+    show UserstorageanddatapageWidget;
+export '/pages/users/userhelpcenterpage/userhelpcenterpage_widget.dart'
+    show UserhelpcenterpageWidget;
+export '/pages/users/usercontactsupportpage/usercontactsupportpage_widget.dart'
+    show UsercontactsupportpageWidget;
+export '/pages/users/user_f_a_qs_page/user_f_a_qs_page_widget.dart'
+    show UserFAQsPageWidget;
+export '/pages/users/rateourapppage/rateourapppage_widget.dart'
+    show RateourapppageWidget;
+export '/pages/users/usertermsofservice/usertermsofservice_widget.dart'
+    show UsertermsofserviceWidget;
+export '/pages/users/userdatapolicy/userdatapolicy_widget.dart'
+    show UserdatapolicyWidget;
+export '/pages/users/userchangepasswordpage/userchangepasswordpage_widget.dart'
+    show UserchangepasswordpageWidget;
+export '/pages/drivers/driveradminloginpage/driveradminloginpage_widget.dart'
+    show DriveradminloginpageWidget;
+export '/pages/admin/editdriverpage/editdriverpage_widget.dart'
+    show EditdriverpageWidget;
+export '/pages/admin/adddriverpage/adddriverpage_widget.dart'
+    show AdddriverpageWidget;
+export '/pages/drivers/driver_notification_page/driver_notification_page_widget.dart'
+    show DriverNotificationPageWidget;
+export '/pages/drivers/drivernotificationsettingspage/drivernotificationsettingspage_widget.dart'
+    show DrivernotificationsettingspageWidget;
+export '/pages/main/mainpage/mainpage_widget.dart' show MainpageWidget;
+export '/pages/main/mainsettingspage/mainsettingspage_widget.dart'
+    show MainsettingspageWidget;
+export '/pages/main/mainhelppage/mainhelppage_widget.dart'
+    show MainhelppageWidget;
+export '/pages/main/mainprivacypolicypage/mainprivacypolicypage_widget.dart'
+    show MainprivacypolicypageWidget;
+export '/pages/admin/adminflightbookingpage/adminflightbookingpage_widget.dart'
+    show AdminflightbookingpageWidget;
+export '/pages/admin/addflightpage/addflightpage_widget.dart'
+    show AddflightpageWidget;
+export '/pages/admin/admincourierbookingpage/admincourierbookingpage_widget.dart'
+    show AdmincourierbookingpageWidget;
+export '/pages/admin/adminhotelbookingpage/adminhotelbookingpage_widget.dart'
+    show AdminhotelbookingpageWidget;
+export '/pages/admin/admintourbookingpage/admintourbookingpage_widget.dart'
+    show AdmintourbookingpageWidget;
+export '/pages/admin/adminaddhotelpage/adminaddhotelpage_widget.dart'
+    show AdminaddhotelpageWidget;
+export '/pages/admin/adminaddtourplacepage/adminaddtourplacepage_widget.dart'
+    show AdminaddtourplacepageWidget;
+export '/pages/admin/adminaddhirecarpage/adminaddhirecarpage_widget.dart'
+    show AdminaddhirecarpageWidget;
+export '/pages/users/userfindyourcarpage/userfindyourcarpage_widget.dart'
+    show UserfindyourcarpageWidget;
+export '/pages/users/useravailablefightspage/useravailablefightspage_widget.dart'
+    show UseravailablefightspageWidget;
+export '/pages/users/availablehotelpage/availablehotelpage_widget.dart'
+    show AvailablehotelpageWidget;
+export '/pages/users/useravailabletourplacespage/useravailabletourplacespage_widget.dart'
+    show UseravailabletourplacespageWidget;
+export '/pages/admin/adminservicerequestpage/adminservicerequestpage_widget.dart'
+    show AdminservicerequestpageWidget;
