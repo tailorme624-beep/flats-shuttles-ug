@@ -5,6 +5,14 @@ import 'driversignup_widget.dart' show DriversignupWidget;
 import 'package:flutter/material.dart';
 
 class DriversignupModel extends FlutterFlowModel<DriversignupWidget> {
+  ///  Local state fields for this page.
+
+  String? vehicleImage;
+
+  String? drivingLicense;
+
+  String? personalPhoto;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
@@ -17,23 +25,23 @@ class DriversignupModel extends FlutterFlowModel<DriversignupWidget> {
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode3;
+  TextEditingController? textController4;
+  String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode5;
+  TextEditingController? textController6;
+  String? Function(BuildContext, String?)? textController6Validator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -63,16 +71,16 @@ class DriversignupModel extends FlutterFlowModel<DriversignupWidget> {
     emailTextController?.dispose();
 
     textFieldFocusNode2?.dispose();
-    textController2?.dispose();
-
-    textFieldFocusNode3?.dispose();
     textController3?.dispose();
 
-    textFieldFocusNode4?.dispose();
+    textFieldFocusNode3?.dispose();
     textController4?.dispose();
 
-    textFieldFocusNode5?.dispose();
+    textFieldFocusNode4?.dispose();
     textController5?.dispose();
+
+    textFieldFocusNode5?.dispose();
+    textController6?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

@@ -1,5 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -249,471 +247,405 @@ class _UserprofilepageWidgetState extends State<UserprofilepageWidget> {
                       ),
                       Padding(
                         padding: EdgeInsets.all(20.0),
-                        child: StreamBuilder<List<UsersRecord>>(
-                          stream: queryUsersRecord(
-                            queryBuilder: (usersRecord) => usersRecord.where(
-                              'uid',
-                              isEqualTo: currentUserReference?.id,
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16.0),
+                            border: Border.all(
+                              color: Color(0xFFE6E6E6),
+                              width: 1.0,
                             ),
-                            singleRecord: true,
                           ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
+                          child: Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    '1w95sall' /* Account Information */,
                                   ),
-                                ),
-                              );
-                            }
-                            List<UsersRecord> containerUsersRecordList =
-                                snapshot.data!;
-                            // Return an empty Container when the item does not exist.
-                            if (snapshot.data!.isEmpty) {
-                              return Container();
-                            }
-                            final containerUsersRecord =
-                                containerUsersRecordList.isNotEmpty
-                                    ? containerUsersRecordList.first
-                                    : null;
-
-                            return Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(16.0),
-                                border: Border.all(
-                                  color: Color(0xFFE6E6E6),
-                                  width: 1.0,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '1w95sall' /* Account Information */,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        font: GoogleFonts.interTight(
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF556B2F),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            font: GoogleFonts.interTight(
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF556B2F),
-                                            letterSpacing: 0.0,
+                                ),
+                                TextFormField(
+                                  controller: _model.textController1,
+                                  focusNode: _model.textFieldFocusNode1,
+                                  autofocus: false,
+                                  autofillHints: [AutofillHints.name],
+                                  textCapitalization: TextCapitalization.words,
+                                  textInputAction: TextInputAction.next,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '4cnzsmor' /* Full Name */,
+                                    ),
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF8B8B7A),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFE6E6E6),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFF556B2F),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFDC143C),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFDC143C),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    filled: true,
+                                    fillColor: Color(0xFFF5F5DC),
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 12.0, 16.0, 12.0),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF556B2F),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                  keyboardType: TextInputType.name,
+                                  cursorColor: Color(0xFF556B2F),
+                                  validator: _model.textController1Validator
+                                      .asValidator(context),
+                                  inputFormatters: [
+                                    if (!isAndroid && !isiOS)
+                                      TextInputFormatter.withFunction(
+                                          (oldValue, newValue) {
+                                        return TextEditingValue(
+                                          selection: newValue.selection,
+                                          text: newValue.text.toCapitalization(
+                                              TextCapitalization.words),
+                                        );
+                                      }),
+                                  ],
+                                ),
+                                TextFormField(
+                                  controller: _model.textController2,
+                                  focusNode: _model.textFieldFocusNode2,
+                                  autofocus: false,
+                                  autofillHints: [
+                                    AutofillHints.telephoneNumber
+                                  ],
+                                  textInputAction: TextInputAction.next,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'xxvhvitd' /* Phone Number */,
+                                    ),
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF8B8B7A),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFE6E6E6),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFF556B2F),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFDC143C),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFDC143C),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    filled: true,
+                                    fillColor: Color(0xFFF5F5DC),
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 12.0, 16.0, 12.0),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF556B2F),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                  keyboardType: TextInputType.phone,
+                                  cursorColor: Color(0xFF556B2F),
+                                  validator: _model.textController2Validator
+                                      .asValidator(context),
+                                ),
+                                TextFormField(
+                                  controller: _model.textController3,
+                                  focusNode: _model.textFieldFocusNode3,
+                                  autofocus: false,
+                                  autofillHints: [AutofillHints.email],
+                                  textCapitalization: TextCapitalization.none,
+                                  textInputAction: TextInputAction.done,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'w1rxfb3f' /* Email Address */,
+                                    ),
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF8B8B7A),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFE6E6E6),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFF556B2F),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFDC143C),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFDC143C),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    filled: true,
+                                    fillColor: Color(0xFFF5F5DC),
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 12.0, 16.0, 12.0),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF556B2F),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                  keyboardType: TextInputType.emailAddress,
+                                  cursorColor: Color(0xFF556B2F),
+                                  validator: _model.textController3Validator
+                                      .asValidator(context),
+                                  inputFormatters: [
+                                    if (!isAndroid && !isiOS)
+                                      TextInputFormatter.withFunction(
+                                          (oldValue, newValue) {
+                                        return TextEditingValue(
+                                          selection: newValue.selection,
+                                          text: newValue.text.toCapitalization(
+                                              TextCapitalization.none),
+                                        );
+                                      }),
+                                  ],
+                                ),
+                                FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'v6c1alt6' /* Save Changes */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: double.infinity,
+                                    height: 50.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Color(0xFF556B2F),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          font: GoogleFonts.interTight(
                                             fontWeight: FontWeight.w600,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .titleMedium
+                                                    .titleSmall
                                                     .fontStyle,
                                           ),
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                    elevation: 2.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
                                     ),
-                                    TextFormField(
-                                      controller: _model.textController1,
-                                      focusNode: _model.textFieldFocusNode1,
-                                      autofocus: false,
-                                      autofillHints: [AutofillHints.name],
-                                      textCapitalization:
-                                          TextCapitalization.words,
-                                      textInputAction: TextInputAction.next,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          '4cnzsmor' /* Full Name */,
-                                        ),
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0xFF8B8B7A),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFE6E6E6),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFF556B2F),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: Color(0xFFF5F5DC),
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                16.0, 12.0, 16.0, 12.0),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF556B2F),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                      keyboardType: TextInputType.name,
-                                      cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController1Validator
-                                          .asValidator(context),
-                                      inputFormatters: [
-                                        if (!isAndroid && !isiOS)
-                                          TextInputFormatter.withFunction(
-                                              (oldValue, newValue) {
-                                            return TextEditingValue(
-                                              selection: newValue.selection,
-                                              text: newValue.text
-                                                  .toCapitalization(
-                                                      TextCapitalization.words),
-                                            );
-                                          }),
-                                      ],
-                                    ),
-                                    TextFormField(
-                                      controller: _model.textController2,
-                                      focusNode: _model.textFieldFocusNode2,
-                                      autofocus: false,
-                                      autofillHints: [
-                                        AutofillHints.telephoneNumber
-                                      ],
-                                      textInputAction: TextInputAction.next,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'xxvhvitd' /* Phone Number */,
-                                        ),
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0xFF8B8B7A),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFE6E6E6),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFF556B2F),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: Color(0xFFF5F5DC),
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                16.0, 12.0, 16.0, 12.0),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF556B2F),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                      keyboardType: TextInputType.phone,
-                                      cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController2Validator
-                                          .asValidator(context),
-                                    ),
-                                    TextFormField(
-                                      controller: _model.textController3,
-                                      focusNode: _model.textFieldFocusNode3,
-                                      autofocus: false,
-                                      autofillHints: [AutofillHints.email],
-                                      textCapitalization:
-                                          TextCapitalization.none,
-                                      textInputAction: TextInputAction.done,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'w1rxfb3f' /* Email Address */,
-                                        ),
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0xFF8B8B7A),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFE6E6E6),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFF556B2F),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: Color(0xFFF5F5DC),
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                16.0, 12.0, 16.0, 12.0),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF556B2F),
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController3Validator
-                                          .asValidator(context),
-                                      inputFormatters: [
-                                        if (!isAndroid && !isiOS)
-                                          TextInputFormatter.withFunction(
-                                              (oldValue, newValue) {
-                                            return TextEditingValue(
-                                              selection: newValue.selection,
-                                              text: newValue.text
-                                                  .toCapitalization(
-                                                      TextCapitalization.none),
-                                            );
-                                          }),
-                                      ],
-                                    ),
-                                    FFButtonWidget(
-                                      onPressed: () async {
-                                        logFirebaseEvent(
-                                            'USERPROFILESAVE_CHANGES_BTN_ON_TAP');
-                                        logFirebaseEvent('Button_backend_call');
-
-                                        await containerUsersRecord!.reference
-                                            .update(createUsersRecordData());
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'v6c1alt6' /* Save Changes */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: double.infinity,
-                                        height: 50.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFF556B2F),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              font: GoogleFonts.interTight(
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
-                                        elevation: 2.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                    ),
-                                  ].divide(SizedBox(height: 16.0)),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
+                              ].divide(SizedBox(height: 16.0)),
+                            ),
+                          ),
                         ),
                       ),
                       Container(

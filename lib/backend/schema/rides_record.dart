@@ -59,11 +59,6 @@ class RidesRecord extends FirestoreRecord {
   String get dropoffAddress => _dropoffAddress ?? '';
   bool hasDropoffAddress() => _dropoffAddress != null;
 
-  // "vehicle_type" field.
-  List<String>? _vehicleType;
-  List<String> get vehicleType => _vehicleType ?? const [];
-  bool hasVehicleType() => _vehicleType != null;
-
   // "estimated_fare" field.
   double? _estimatedFare;
   double get estimatedFare => _estimatedFare ?? 0.0;
@@ -99,6 +94,11 @@ class RidesRecord extends FirestoreRecord {
   List<String> get paymentStatus => _paymentStatus ?? const [];
   bool hasPaymentStatus() => _paymentStatus != null;
 
+  // "vehicle_type" field.
+  String? _vehicleType;
+  String get vehicleType => _vehicleType ?? '';
+  bool hasVehicleType() => _vehicleType != null;
+
   void _initializeFields() {
     _rideId = snapshotData['ride_id'] as String?;
     _clientId = snapshotData['client_id'] as DocumentReference?;
@@ -108,7 +108,6 @@ class RidesRecord extends FirestoreRecord {
     _updatedAt = snapshotData['updated_at'] as DateTime?;
     _pickupLocation = snapshotData['pickup_location'] as LatLng?;
     _dropoffAddress = snapshotData['dropoff_address'] as String?;
-    _vehicleType = getDataList(snapshotData['vehicle_type']);
     _estimatedFare = castToType<double>(snapshotData['estimated_fare']);
     _finalFare = castToType<double>(snapshotData['final_fare']);
     _distanceKm = castToType<double>(snapshotData['distance_km']);
@@ -116,6 +115,7 @@ class RidesRecord extends FirestoreRecord {
     _driverEtaSeconds = castToType<int>(snapshotData['driver_eta_seconds']);
     _paymentMethod = getDataList(snapshotData['payment_method']);
     _paymentStatus = getDataList(snapshotData['payment_status']);
+    _vehicleType = snapshotData['vehicle_type'] as String?;
   }
 
   static CollectionReference get collection => FirebaseFirestore.instanceFor(
@@ -172,9 +172,6 @@ class RidesRecord extends FirestoreRecord {
             false,
           ),
           'dropoff_address': snapshot.data['dropoff_address'],
-          'vehicle_type': safeGet(
-            () => snapshot.data['vehicle_type'].toList(),
-          ),
           'estimated_fare': convertAlgoliaParam(
             snapshot.data['estimated_fare'],
             ParamType.double,
@@ -206,6 +203,7 @@ class RidesRecord extends FirestoreRecord {
           'payment_status': safeGet(
             () => snapshot.data['payment_status'].toList(),
           ),
+          'vehicle_type': snapshot.data['vehicle_type'],
         },
         RidesRecord.collection.doc(snapshot.objectID),
       );
@@ -254,6 +252,7 @@ Map<String, dynamic> createRidesRecordData({
   double? distanceKm,
   int? durationSeconds,
   int? driverEtaSeconds,
+  String? vehicleType,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -269,6 +268,7 @@ Map<String, dynamic> createRidesRecordData({
       'distance_km': distanceKm,
       'duration_seconds': durationSeconds,
       'driver_eta_seconds': driverEtaSeconds,
+      'vehicle_type': vehicleType,
     }.withoutNulls,
   );
 
@@ -289,14 +289,14 @@ class RidesRecordDocumentEquality implements Equality<RidesRecord> {
         e1?.updatedAt == e2?.updatedAt &&
         e1?.pickupLocation == e2?.pickupLocation &&
         e1?.dropoffAddress == e2?.dropoffAddress &&
-        listEquality.equals(e1?.vehicleType, e2?.vehicleType) &&
         e1?.estimatedFare == e2?.estimatedFare &&
         e1?.finalFare == e2?.finalFare &&
         e1?.distanceKm == e2?.distanceKm &&
         e1?.durationSeconds == e2?.durationSeconds &&
         e1?.driverEtaSeconds == e2?.driverEtaSeconds &&
         listEquality.equals(e1?.paymentMethod, e2?.paymentMethod) &&
-        listEquality.equals(e1?.paymentStatus, e2?.paymentStatus);
+        listEquality.equals(e1?.paymentStatus, e2?.paymentStatus) &&
+        e1?.vehicleType == e2?.vehicleType;
   }
 
   @override
@@ -309,14 +309,14 @@ class RidesRecordDocumentEquality implements Equality<RidesRecord> {
         e?.updatedAt,
         e?.pickupLocation,
         e?.dropoffAddress,
-        e?.vehicleType,
         e?.estimatedFare,
         e?.finalFare,
         e?.distanceKm,
         e?.durationSeconds,
         e?.driverEtaSeconds,
         e?.paymentMethod,
-        e?.paymentStatus
+        e?.paymentStatus,
+        e?.vehicleType
       ]);
 
   @override

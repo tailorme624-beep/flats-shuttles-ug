@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -917,17 +916,8 @@ class _UserstorageanddatapageWidgetState
                           ),
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () async {
-                                logFirebaseEvent(
-                                    'USERSTORAGEANDDATAEXPORT_DATA_BTN_ON_TAP');
-                                logFirebaseEvent('Button_download_file');
-                                await downloadFile(
-                                  filename: 'User details',
-                                  url: valueOrDefault<String>(
-                                    currentUserReference?.id,
-                                    'user details',
-                                  ),
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 '0uldi5bx' /* Export Data */,

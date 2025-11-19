@@ -128,7 +128,9 @@ final parametersBuilderMap =
   'HOME': ParameterData.none(),
   'DriverEarnings': ParameterData.none(),
   'DriverProfile': ParameterData.none(),
-  'driversignup': ParameterData.none(),
+  'driversignup': (data) async => ParameterData(
+        allParams: <String, dynamic>{},
+      ),
   'driversignin': ParameterData.none(),
   'driverprivacypolicy': ParameterData.none(),
   'drivertermsandconditions': ParameterData.none(),
@@ -160,7 +162,15 @@ final parametersBuilderMap =
   'drivereditpage': ParameterData.none(),
   'driveractiveridepage': ParameterData.none(),
   'HomePage': ParameterData.none(),
-  'RideBookingPage': ParameterData.none(),
+  'RideBookingPage': (data) async => ParameterData(
+        allParams: {
+          'standardVehicleType':
+              getParameter<String>(data, 'standardVehicleType'),
+          'premiumVehicleType':
+              getParameter<String>(data, 'premiumVehicleType'),
+          'vipVehicleType': getParameter<String>(data, 'vipVehicleType'),
+        },
+      ),
   'FlightBookingPage': ParameterData.none(),
   'adminflightmanagementpage': ParameterData.none(),
   'processrequestpage': ParameterData.none(),
@@ -178,7 +188,10 @@ final parametersBuilderMap =
   'driveradminloginpage': ParameterData.none(),
   'editdriverpage': ParameterData.none(),
   'adddriverpage': (data) async => ParameterData(
-        allParams: <String, dynamic>{},
+        allParams: {
+          'driversigninKey':
+              getParameter<DocumentReference>(data, 'driversigninKey'),
+        },
       ),
   'driverNotificationPage': (data) async => ParameterData(
         allParams: {

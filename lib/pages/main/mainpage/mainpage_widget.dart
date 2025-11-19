@@ -1,4 +1,3 @@
-import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -233,14 +232,115 @@ class _MainpageWidgetState extends State<MainpageWidget> {
                                       lineHeight: 1.4,
                                     ),
                               ),
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'MAINPAGE_PAGE_SignUpbutton_ON_TAP');
+                                      logFirebaseEvent(
+                                          'SignUpbutton_navigate_to');
+
+                                      context.pushNamed(SignUpWidget.routeName);
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'wbe63p0t' /* SignUp */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'MAINPAGE_PAGE_signInbutton_ON_TAP');
+                                      logFirebaseEvent(
+                                          'signInbutton_navigate_to');
+
+                                      context.pushNamed(SignInWidget.routeName);
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'nbugdxme' /* Sign In */,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ].divide(SizedBox(height: 12.0)),
-                          ),
-                          FlutterFlowAdBanner(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 100.0,
-                            showsTestAd: false,
-                            androidAdUnitID:
-                                'ca-app-pub-8218188758310987/1112069017',
                           ),
                         ],
                       ),
@@ -273,410 +373,6 @@ class _MainpageWidgetState extends State<MainpageWidget> {
                                     .headlineSmall
                                     .fontStyle,
                               ),
-                        ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                logFirebaseEvent(
-                                    'MAINPAGE_PAGE_Container_2efrlir8_ON_TAP');
-                                logFirebaseEvent('Container_navigate_to');
-
-                                context
-                                    .pushNamed(AdminloginpageWidget.routeName);
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFF5F5DC),
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  border: Border.all(
-                                    color: Color(0xFF556B2F),
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(20.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFF556B2F),
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Icon(
-                                          Icons.admin_panel_settings_rounded,
-                                          color: Color(0xFFF5F5DC),
-                                          size: 32.0,
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'wzu5f5lf' /* Admin Portal */,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Color(0xFF556B2F),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleLarge
-                                                            .fontStyle,
-                                                  ),
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '0hpykmfb' /* Manage fleet operations, route... */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        color:
-                                                            Color(0xFF6B8E23),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                        lineHeight: 1.3,
-                                                      ),
-                                            ),
-                                          ].divide(SizedBox(height: 8.0)),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'MAINPAGE_PAGE_Icon_s533z4oe_ON_TAP');
-                                          logFirebaseEvent('Icon_navigate_to');
-
-                                          context.pushNamed(
-                                              DriveradminloginpageWidget
-                                                  .routeName);
-                                        },
-                                        child: Icon(
-                                          Icons.arrow_forward_ios_rounded,
-                                          color: Color(0xFF556B2F),
-                                          size: 24.0,
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 16.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF5F5DC),
-                                borderRadius: BorderRadius.circular(16.0),
-                                border: Border.all(
-                                  color: Color(0xFF556B2F),
-                                  width: 2.0,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 60.0,
-                                      height: 60.0,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFF6B8E23),
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Icon(
-                                        Icons.local_shipping_rounded,
-                                        color: Color(0xFFF5F5DC),
-                                        size: 32.0,
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'g1tq4tz5' /* Driver Access */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleLarge
-                                                .override(
-                                                  font: GoogleFonts.interTight(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleLarge
-                                                            .fontStyle,
-                                                  ),
-                                                  color: Color(0xFF556B2F),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleLarge
-                                                          .fontStyle,
-                                                ),
-                                          ),
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              '0eydabnu' /* Driver dashboard for route man... */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  font: GoogleFonts.inter(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: Color(0xFF6B8E23),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                  lineHeight: 1.3,
-                                                ),
-                                          ),
-                                        ].divide(SizedBox(height: 8.0)),
-                                      ),
-                                    ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        logFirebaseEvent(
-                                            'MAINPAGE_PAGE_Icon_cgrd8y0y_ON_TAP');
-                                        logFirebaseEvent('Icon_navigate_to');
-
-                                        context.pushNamed(
-                                            DriversignupWidget.routeName);
-                                      },
-                                      child: Icon(
-                                        Icons.arrow_forward_ios_rounded,
-                                        color: Color(0xFF556B2F),
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ].divide(SizedBox(width: 16.0)),
-                                ),
-                              ),
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                logFirebaseEvent(
-                                    'MAINPAGE_PAGE_Container_4muc6jc8_ON_TAP');
-                                logFirebaseEvent('Container_navigate_to');
-
-                                context.pushNamed(SignUpWidget.routeName);
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFF5F5DC),
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  border: Border.all(
-                                    color: Color(0xFF556B2F),
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(20.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 60.0,
-                                        height: 60.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFF8FBC8F),
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Icon(
-                                          Icons.person_rounded,
-                                          color: Color(0xFF556B2F),
-                                          size: 32.0,
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ezq1aqxl' /* Sign up */,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleLarge
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleLarge
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Color(0xFF556B2F),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleLarge
-                                                            .fontStyle,
-                                                  ),
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'h5gqqass' /* Book rides, track shuttles, an... */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        font: GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        color:
-                                                            Color(0xFF6B8E23),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                        lineHeight: 1.3,
-                                                      ),
-                                            ),
-                                          ].divide(SizedBox(height: 8.0)),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'MAINPAGE_PAGE_Icon_9dzl7pda_ON_TAP');
-                                          logFirebaseEvent('Icon_navigate_to');
-
-                                          context.pushNamed(
-                                              SignUpWidget.routeName);
-                                        },
-                                        child: Icon(
-                                          Icons.arrow_forward_ios_rounded,
-                                          color: Color(0xFF556B2F),
-                                          size: 24.0,
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 16.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ].divide(SizedBox(height: 24.0)),
                     ),

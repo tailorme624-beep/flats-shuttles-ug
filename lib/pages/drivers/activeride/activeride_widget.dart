@@ -1,10 +1,8 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'activeride_model.dart';
@@ -38,7 +36,6 @@ class _ActiverideWidgetState extends State<ActiverideWidget> {
   late ActiverideModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -68,6 +65,7 @@ class _ActiverideWidgetState extends State<ActiverideWidget> {
           },
           child: Scaffold(
             key: scaffoldKey,
+            resizeToAvoidBottomInset: false,
             backgroundColor: Color(0xFF2D4A2B),
             body: Stack(
               children: [
@@ -84,78 +82,31 @@ class _ActiverideWidgetState extends State<ActiverideWidget> {
                     decoration: BoxDecoration(
                       color: Color(0x80000000),
                     ),
-                    child: Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          logFirebaseEvent(
-                              'ACTIVERIDE_PAGE_Column_ui6d4tdh_ON_TAP');
-                          currentUserLocationValue =
-                              await getCurrentUserLocation(
-                                  defaultLocation: LatLng(0.0, 0.0));
-                          logFirebaseEvent('Column_launch_map');
-                          await launchMap(
-                            mapType: $ml.MapType.google,
-                            location: currentUserLocationValue,
-                            title: currentUserLocationValue!.toString(),
-                          );
-                        },
-                        child: SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Opacity(
-                                opacity: 0.3,
-                                child: Icon(
-                                  Icons.map_outlined,
-                                  color: Color(0xFFF5F5DC),
-                                  size: 120.0,
-                                ),
-                              ),
-                              Opacity(
-                                opacity: 0.5,
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 16.0, 0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'gqf7yktn' /* Map View */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFFF5F5DC),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                    child: Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      child: FlutterFlowGoogleMap(
+                        controller: _model.googleMapsController,
+                        onCameraIdle: (latLng) =>
+                            _model.googleMapsCenter = latLng,
+                        initialLocation: _model.googleMapsCenter ??=
+                            LatLng(13.106061, -59.613158),
+                        markerColor: GoogleMarkerColor.violet,
+                        mapType: MapType.normal,
+                        style: GoogleMapStyle.standard,
+                        initialZoom: 14.0,
+                        allowInteraction: true,
+                        allowZoom: true,
+                        showZoomControls: true,
+                        showLocation: true,
+                        showCompass: false,
+                        showMapToolbar: false,
+                        showTraffic: false,
+                        centerMapOnMarkerTap: true,
+                        mapTakesGesturePreference: false,
                       ),
                     ),
                   ),
@@ -246,449 +197,400 @@ class _ActiverideWidgetState extends State<ActiverideWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.all(20.0),
-                                    child: StreamBuilder<List<RidesRecord>>(
-                                      stream: queryRidesRecord(
-                                        queryBuilder: (ridesRecord) =>
-                                            ridesRecord.where(
-                                          'client_id',
-                                          isEqualTo: currentUserReference,
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 8.0,
+                                            color: Color(0x20000000),
+                                            offset: Offset(
+                                              0.0,
+                                              2.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        border: Border.all(
+                                          color: Color(0xFF2D4A2B),
+                                          width: 1.0,
                                         ),
-                                        singleRecord: true,
                                       ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        List<RidesRecord>
-                                            containerRidesRecordList =
-                                            snapshot.data!;
-                                        // Return an empty Container when the item does not exist.
-                                        if (snapshot.data!.isEmpty) {
-                                          return Container();
-                                        }
-                                        final containerRidesRecord =
-                                            containerRidesRecordList.isNotEmpty
-                                                ? containerRidesRecordList.first
-                                                : null;
-
-                                        return Container(
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 8.0,
-                                                color: Color(0x20000000),
-                                                offset: Offset(
-                                                  0.0,
-                                                  2.0,
-                                                ),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            border: Border.all(
-                                              color: Color(0xFF2D4A2B),
-                                              width: 1.0,
-                                            ),
-                                          ),
-                                          child: Padding(
-                                            padding: EdgeInsets.all(16.0),
-                                            child: Column(
+                                      child: Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Row(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
                                               children: [
                                                 Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
                                                   children: [
-                                                    Row(
+                                                    Container(
+                                                      width: 60.0,
+                                                      height: 60.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFFF5F5DC),
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: Image.network(
+                                                            getCORSProxyUrl(
+                                                              'https://images.unsplash.com/photo-1747711474110-e9e0b137ded5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE4OTM1MjV8&ixlib=rb-4.1.0&q=80&w=1080',
+                                                            ),
+                                                          ).image,
+                                                        ),
+                                                        shape: BoxShape.circle,
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF2D4A2B),
+                                                          width: 2.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
-                                                        Container(
-                                                          width: 60.0,
-                                                          height: 60.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xFFF5F5DC),
-                                                            image:
-                                                                DecorationImage(
-                                                              fit: BoxFit.cover,
-                                                              image:
-                                                                  Image.network(
-                                                                getCORSProxyUrl(
-                                                                  'https://images.unsplash.com/photo-1747711474110-e9e0b137ded5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE4OTM1MjV8&ixlib=rb-4.1.0&q=80&w=1080',
-                                                                ),
-                                                              ).image,
-                                                            ),
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            border: Border.all(
-                                                              color: Color(
-                                                                  0xFF2D4A2B),
-                                                              width: 2.0,
-                                                            ),
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '9nh8daqk' /* Sarah Johnson */,
                                                           ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleLarge
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .interTight(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: Color(
+                                                                    0xFF2D4A2B),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .fontStyle,
+                                                              ),
                                                         ),
-                                                        Column(
+                                                        Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
                                                           children: [
-                                                            Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '9nh8daqk' /* Sarah Johnson */,
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleLarge
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .interTight(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: Color(
-                                                                        0xFF2D4A2B),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontStyle,
-                                                                  ),
+                                                            Icon(
+                                                              Icons
+                                                                  .star_rounded,
+                                                              color: Color(
+                                                                  0xFFFFD700),
+                                                              size: 20.0,
                                                             ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Icon(
-                                                                  Icons
-                                                                      .star_rounded,
-                                                                  color: Color(
-                                                                      0xFFFFD700),
-                                                                  size: 20.0,
-                                                                ),
-                                                                Icon(
-                                                                  Icons
-                                                                      .star_rounded,
-                                                                  color: Color(
-                                                                      0xFFFFD700),
-                                                                  size: 20.0,
-                                                                ),
-                                                                Icon(
-                                                                  Icons
-                                                                      .star_rounded,
-                                                                  color: Color(
-                                                                      0xFFFFD700),
-                                                                  size: 20.0,
-                                                                ),
-                                                                Icon(
-                                                                  Icons
-                                                                      .star_rounded,
-                                                                  color: Color(
-                                                                      0xFFFFD700),
-                                                                  size: 20.0,
-                                                                ),
-                                                                Icon(
-                                                                  Icons
-                                                                      .star_half_rounded,
-                                                                  color: Color(
-                                                                      0xFFFFD700),
-                                                                  size: 20.0,
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                            Icon(
+                                                              Icons
+                                                                  .star_rounded,
+                                                              color: Color(
+                                                                  0xFFFFD700),
+                                                              size: 20.0,
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .star_rounded,
+                                                              color: Color(
+                                                                  0xFFFFD700),
+                                                              size: 20.0,
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .star_rounded,
+                                                              color: Color(
+                                                                  0xFFFFD700),
+                                                              size: 20.0,
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .star_half_rounded,
+                                                              color: Color(
+                                                                  0xFFFFD700),
+                                                              size: 20.0,
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           8.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'lkzc8ylh' /* 4.8 */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          font:
-                                                                              GoogleFonts.inter(
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                          ),
-                                                                          color:
-                                                                              Color(0xFF666666),
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
-                                                                  ),
+                                                              child: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'lkzc8ylh' /* 4.8 */,
                                                                 ),
-                                                              ].divide(SizedBox(
-                                                                  width: 4.0)),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .inter(
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      color: Color(
+                                                                          0xFF666666),
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ].divide(SizedBox(
-                                                              height: 4.0)),
+                                                              width: 4.0)),
                                                         ),
                                                       ].divide(SizedBox(
-                                                          width: 16.0)),
-                                                    ),
-                                                    FlutterFlowIconButton(
-                                                      borderRadius: 25.0,
-                                                      buttonSize: 50.0,
-                                                      fillColor:
-                                                          Color(0xFF2D4A2B),
-                                                      icon: Icon(
-                                                        Icons.phone_rounded,
-                                                        color:
-                                                            Color(0xFFF5F5DC),
-                                                        size: 24.0,
-                                                      ),
-                                                      onPressed: () {
-                                                        print(
-                                                            'IconButton pressed ...');
-                                                      },
-                                                    ),
-                                                  ],
-                                                ),
-                                                Divider(
-                                                  height: 1.0,
-                                                  thickness: 1.0,
-                                                  color: Color(0xFFE0E0E0),
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.location_on_rounded,
-                                                      color: Color(0xFF2D4A2B),
-                                                      size: 20.0,
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'iu6j0se8' /* Pickup Location */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: Color(
-                                                                      0xFF666666),
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'jf30zh1m' /* 123 Main Street, Downtown */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: Color(
-                                                                      0xFF2D4A2B),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
+                                                          height: 4.0)),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      SizedBox(width: 16.0)),
                                                 ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.flag_rounded,
-                                                      color: Color(0xFFFF6B6B),
-                                                      size: 20.0,
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '5rkllkdg' /* Destination */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: Color(
-                                                                      0xFF666666),
-                                                                  fontSize:
-                                                                      12.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'uljfhupv' /* 456 Oak Avenue, Uptown */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: Color(
-                                                                      0xFF2D4A2B),
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyLarge
-                                                                      .fontStyle,
-                                                                ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                FlutterFlowIconButton(
+                                                  borderRadius: 25.0,
+                                                  buttonSize: 50.0,
+                                                  fillColor: Color(0xFF2D4A2B),
+                                                  icon: Icon(
+                                                    Icons.phone_rounded,
+                                                    color: Color(0xFFF5F5DC),
+                                                    size: 24.0,
+                                                  ),
+                                                  onPressed: () {
+                                                    print(
+                                                        'IconButton pressed ...');
+                                                  },
                                                 ),
-                                              ].divide(SizedBox(height: 16.0)),
+                                              ],
                                             ),
-                                          ),
-                                        );
-                                      },
+                                            Divider(
+                                              height: 1.0,
+                                              thickness: 1.0,
+                                              color: Color(0xFFE0E0E0),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.location_on_rounded,
+                                                  color: Color(0xFF2D4A2B),
+                                                  size: 20.0,
+                                                ),
+                                                Expanded(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'iu6j0se8' /* Pickup Location */,
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              color: Color(
+                                                                  0xFF666666),
+                                                              fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                      ),
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'jf30zh1m' /* 123 Main Street, Downtown */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  font:
+                                                                      GoogleFonts
+                                                                          .inter(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Color(
+                                                                      0xFF2D4A2B),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ].divide(SizedBox(width: 12.0)),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.flag_rounded,
+                                                  color: Color(0xFFFF6B6B),
+                                                  size: 20.0,
+                                                ),
+                                                Expanded(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '5rkllkdg' /* Destination */,
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              font: GoogleFonts
+                                                                  .inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                              color: Color(
+                                                                  0xFF666666),
+                                                              fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                            ),
+                                                      ),
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'uljfhupv' /* 456 Oak Avenue, Uptown */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  font:
+                                                                      GoogleFonts
+                                                                          .inter(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Color(
+                                                                      0xFF2D4A2B),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ].divide(SizedBox(width: 12.0)),
+                                            ),
+                                          ].divide(SizedBox(height: 16.0)),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                   Column(
@@ -740,20 +642,8 @@ class _ActiverideWidgetState extends State<ActiverideWidget> {
                                         ),
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () async {
-                                          logFirebaseEvent(
-                                              'ACTIVERIDE_NAVIGATE_WITH_GOOGLE_MAPS_BTN');
-                                          currentUserLocationValue =
-                                              await getCurrentUserLocation(
-                                                  defaultLocation:
-                                                      LatLng(0.0, 0.0));
-                                          logFirebaseEvent('Button_launch_map');
-                                          await launchMap(
-                                            mapType: $ml.MapType.google,
-                                            location: currentUserLocationValue,
-                                            title: currentUserLocationValue!
-                                                .toString(),
-                                          );
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

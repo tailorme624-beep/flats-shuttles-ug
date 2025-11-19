@@ -21,7 +21,12 @@ export 'driversignup_model.dart';
 ///
 /// with theme colors army green and light beige
 class DriversignupWidget extends StatefulWidget {
-  const DriversignupWidget({super.key});
+  const DriversignupWidget({
+    super.key,
+    this.photo,
+  });
+
+  final FFUploadedFile? photo;
 
   static String routeName = 'driversignup';
   static String routePath = '/driversignup';
@@ -48,16 +53,16 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
     _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
+    _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
+    _model.textController5 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
+    _model.textController6 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
@@ -642,7 +647,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.textController2,
+                                                  _model.textController3,
                                               focusNode:
                                                   _model.textFieldFocusNode2,
                                               autofocus: false,
@@ -757,7 +762,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                       ),
                                               keyboardType: TextInputType.phone,
                                               validator: _model
-                                                  .textController2Validator
+                                                  .textController3Validator
                                                   .asValidator(context),
                                             ),
                                           ].divide(SizedBox(height: 6.0)),
@@ -798,7 +803,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.textController3,
+                                                  _model.textController4,
                                               focusNode:
                                                   _model.textFieldFocusNode3,
                                               autofocus: false,
@@ -914,7 +919,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                               keyboardType:
                                                   TextInputType.number,
                                               validator: _model
-                                                  .textController3Validator
+                                                  .textController4Validator
                                                   .asValidator(context),
                                             ),
                                           ].divide(SizedBox(height: 6.0)),
@@ -1106,7 +1111,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.textController4,
+                                                  _model.textController5,
                                               focusNode:
                                                   _model.textFieldFocusNode4,
                                               autofocus: false,
@@ -1222,7 +1227,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController4Validator
+                                                  .textController5Validator
                                                   .asValidator(context),
                                               inputFormatters: [
                                                 if (!isAndroid && !isiOS)
@@ -1278,7 +1283,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.textController5,
+                                                  _model.textController6,
                                               focusNode:
                                                   _model.textFieldFocusNode5,
                                               autofocus: false,
@@ -1394,7 +1399,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController5Validator
+                                                  .textController6Validator
                                                   .asValidator(context),
                                               inputFormatters: [
                                                 if (!isAndroid && !isiOS)
@@ -1772,96 +1777,6 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                   width: 2.0,
                                                 ),
                                               ),
-                                              child: Padding(
-                                                padding: EdgeInsets.all(16.0),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons
-                                                          .person_add_alt_1_outlined,
-                                                      color: Color(0xFF9ACD32),
-                                                      size: 40.0,
-                                                    ),
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'rprh48iz' /* Upload Personal Photo */,
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            font: GoogleFonts
-                                                                .inter(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                            ),
-                                                            color: Color(
-                                                                0xFF6B8E23),
-                                                            fontSize: 14.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                    ),
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'gd6xvzmp' /* JPG, PNG up to 5MB */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmall
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodySmall
-                                                                      .fontStyle,
-                                                                ),
-                                                                color: Color(
-                                                                    0xFF9ACD32),
-                                                                fontSize: 12.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
-                                                  ].divide(
-                                                      SizedBox(height: 8.0)),
-                                                ),
-                                              ),
                                             ),
                                           ].divide(SizedBox(height: 8.0)),
                                         ),
@@ -1875,7 +1790,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                       decoration: InputDecoration(
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '7t5lm24g' /* Enter your NIN */,
+                                          '7t5lm24g' /* Enter your Password */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -1991,7 +1906,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                       decoration: InputDecoration(
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'o1fvpa37' /* Enter your NIN */,
+                                          'ebsc30w8' /* Comfirm your password */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -2102,42 +2017,29 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                       onPressed: () async {
                                         logFirebaseEvent(
                                             'DRIVERSIGNUP_COMPLETE_REGISTRATION_BTN_O');
-                                        logFirebaseEvent('Button_auth');
-                                        GoRouter.of(context).prepareAuthEvent();
-                                        if (_model
-                                                .passwordTextController.text !=
-                                            _model.comfirmPasswordTextController
-                                                .text) {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Passwords don\'t match!',
-                                              ),
-                                            ),
-                                          );
-                                          return;
-                                        }
+                                        logFirebaseEvent('Button_backend_call');
 
-                                        final user = await authManager
-                                            .createAccountWithEmail(
-                                          context,
-                                          _model.emailTextController.text,
-                                          _model.passwordTextController.text,
-                                        );
-                                        if (user == null) {
-                                          return;
-                                        }
+                                        await DriversRecord.createDoc(
+                                                currentUserReference!)
+                                            .set(createDriversRecordData(
+                                          email: '',
+                                          displayName: '',
+                                          uid: '',
+                                          phoneNumber: '',
+                                          nin: '',
+                                          vehicleModel: '',
+                                          licensePlate: '',
+                                          vehicleType: '',
+                                          vehicleImage: '',
+                                          drivingLicense: '',
+                                          profilePhoto: '',
+                                          password: '',
+                                          comfirmPassword: '',
+                                        ));
+                                        logFirebaseEvent('Button_navigate_to');
 
-                                        await UsersRecord.collection
-                                            .doc(user.uid)
-                                            .update(createUsersRecordData(
-                                              role: 'client',
-                                            ));
-
-                                        context.goNamedAuth(
-                                            HomeWidget.routeName,
-                                            context.mounted);
+                                        context.pushNamed(
+                                            DriversigninWidget.routeName);
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'yaq3dp4r' /* Complete Registration */,

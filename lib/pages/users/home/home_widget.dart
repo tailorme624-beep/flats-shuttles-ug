@@ -33,9 +33,6 @@ class _HomeWidgetState extends State<HomeWidget> {
     _model = createModel(context, () => HomeModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'HOME'});
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -197,168 +194,142 @@ class _HomeWidgetState extends State<HomeWidget> {
                             end: AlignmentDirectional(-1.0, -1.0),
                           ),
                         ),
+                        child: Container(
+                          width: 100.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFAF7474),
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 60.0, 24.0, 24.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                '8vwu24p8' /* FLATS SHUTTLES */,
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .displayMedium
-                                  .override(
-                                    font: GoogleFonts.interTight(
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            logFirebaseEvent(
+                                'HOME_PAGE_Column_15p07g0f_ON_TAP');
+                            logFirebaseEvent('Column_navigate_to');
+
+                            context.pushNamed(DriversignupWidget.routeName);
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '8vwu24p8' /* FLATS SHUTTLES */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .displayMedium
+                                    .override(
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .displayMedium
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFFF5F5DC),
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .displayMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFFF5F5DC),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displayMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 24.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'kmiwwdzv' /* Your Premium Travel Companion */,
-                                ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .fontStyle,
-                                      ),
-                                      color: Color(0xFFF5F5DC),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
-                                          .fontStyle,
-                                    ),
                               ),
-                            ),
-                            Container(
-                              width: double.infinity,
-                              child: TextFormField(
-                                controller: _model.textController,
-                                focusNode: _model.textFieldFocusNode,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: FFLocalizations.of(context).getText(
-                                    'e19l2dve' /* Where would you like to go? */,
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 8.0, 0.0, 24.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'kmiwwdzv' /* Your Premium Travel Companion */,
                                   ),
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
                                       .override(
                                         font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
-                                        color: Color(0xFF8B8B8B),
+                                        color: Color(0xFFF5F5DC),
                                         letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .bodyLarge
                                             .fontWeight,
                                         fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .bodyLarge
                                             .fontStyle,
                                       ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 0.0,
+                                ),
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 1.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      logFirebaseEvent(
+                                          'HOME_PAGE_JOIN_AS_A_DRIVER_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_navigate_to');
+
+                                      context.pushNamed(
+                                          DriversignupWidget.routeName);
+                                    },
+                                    text: FFLocalizations.of(context).getText(
+                                      'fxgloewo' /* Join As a Driver */,
                                     ),
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 0.0,
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding: EdgeInsets.all(0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 0.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 0.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: Color(0xFFF5F5DC),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 16.0, 20.0, 16.0),
-                                  prefixIcon: Icon(
-                                    Icons.search_rounded,
-                                    color: Color(0xFF556B2F),
-                                    size: 20.0,
-                                  ),
-                                  suffixIcon: Icon(
-                                    Icons.my_location_rounded,
-                                    color: Color(0xFF556B2F),
-                                    size: 20.0,
                                   ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                validator: _model.textControllerValidator
-                                    .asValidator(context),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -524,8 +495,26 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       'Button_navigate_to');
 
                                                   context.pushNamed(
-                                                      RideBookingPageWidget
-                                                          .routeName);
+                                                    RideBookingPageWidget
+                                                        .routeName,
+                                                    queryParameters: {
+                                                      'standardVehicleType':
+                                                          serializeParam(
+                                                        '',
+                                                        ParamType.String,
+                                                      ),
+                                                      'premiumVehicleType':
+                                                          serializeParam(
+                                                        '',
+                                                        ParamType.String,
+                                                      ),
+                                                      'vipVehicleType':
+                                                          serializeParam(
+                                                        '',
+                                                        ParamType.String,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -576,13 +565,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                getCORSProxyUrl(
-                                                  'https://picsum.photos/seed/957/600',
-                                                ),
+                                              child: Image.asset(
+                                                'assets/images/Fauget.png',
                                                 width: 291.7,
                                                 height: 315.54,
                                                 fit: BoxFit.cover,
+                                                alignment: Alignment(0.0, -1.0),
                                               ),
                                             ),
                                           ],
@@ -758,10 +746,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                getCORSProxyUrl(
-                                                  'https://picsum.photos/seed/868/600',
-                                                ),
+                                              child: Image.asset(
+                                                'assets/images/EXPRESS.png',
                                                 width: 299.9,
                                                 height: 308.8,
                                                 fit: BoxFit.cover,
@@ -944,10 +930,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                getCORSProxyUrl(
-                                                  'https://picsum.photos/seed/556/600',
-                                                ),
+                                              child: Image.asset(
+                                                'assets/images/Screenshot_2025-11-17_215616.png',
                                                 width: 311.13,
                                                 height: 314.9,
                                                 fit: BoxFit.cover,

@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -199,35 +200,84 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                             .fontStyle,
                                                   ),
                                             ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '7enfg7o2' /* Downtown Plaza Mall */,
+                                            StreamBuilder<List<RidesRecord>>(
+                                              stream: queryRidesRecord(
+                                                queryBuilder: (ridesRecord) =>
+                                                    ridesRecord.where(
+                                                  'pickup_location',
+                                                  isEqualTo: widget
+                                                      .order?.pickupLocation
+                                                      ?.toGeoPoint(),
+                                                ),
+                                                singleRecord: true,
                                               ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleMedium
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontStyle:
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .titleMedium
-                                                              .fontStyle,
+                                                              .primary,
+                                                        ),
+                                                      ),
                                                     ),
-                                                    color: Color(0xFF1A2E19),
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium
-                                                            .fontStyle,
+                                                  );
+                                                }
+                                                List<RidesRecord>
+                                                    textRidesRecordList =
+                                                    snapshot.data!;
+                                                // Return an empty Container when the item does not exist.
+                                                if (snapshot.data!.isEmpty) {
+                                                  return Container();
+                                                }
+                                                final textRidesRecord =
+                                                    textRidesRecordList
+                                                            .isNotEmpty
+                                                        ? textRidesRecordList
+                                                            .first
+                                                        : null;
+
+                                                return Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '7enfg7o2' /* Downtown Plaza Mall */,
                                                   ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .interTight(
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            Color(0xFF1A2E19),
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                      ),
+                                                );
+                                              },
                                             ),
                                             Text(
                                               FFLocalizations.of(context)
@@ -308,32 +358,83 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                           .fontStyle,
                                                 ),
                                           ),
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'm49we8kf' /* Airport Terminal 2 */,
+                                          StreamBuilder<List<RidesRecord>>(
+                                            stream: queryRidesRecord(
+                                              queryBuilder: (ridesRecord) =>
+                                                  ridesRecord.where(
+                                                'dropoff_address',
+                                                isEqualTo: widget
+                                                    .order?.dropoffAddress,
+                                              ),
+                                              singleRecord: true,
                                             ),
-                                            textAlign: TextAlign.end,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleMedium
-                                                .override(
-                                                  font: GoogleFonts.interTight(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontStyle:
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .titleMedium
-                                                            .fontStyle,
+                                                            .primary,
+                                                      ),
+                                                    ),
                                                   ),
-                                                  color: Color(0xFF1A2E19),
-                                                  fontSize: 16.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMedium
-                                                          .fontStyle,
+                                                );
+                                              }
+                                              List<RidesRecord>
+                                                  textRidesRecordList =
+                                                  snapshot.data!;
+                                              // Return an empty Container when the item does not exist.
+                                              if (snapshot.data!.isEmpty) {
+                                                return Container();
+                                              }
+                                              final textRidesRecord =
+                                                  textRidesRecordList.isNotEmpty
+                                                      ? textRidesRecordList
+                                                          .first
+                                                      : null;
+
+                                              return Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'm49we8kf' /* Airport Terminal 2 */,
                                                 ),
+                                                textAlign: TextAlign.end,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .interTight(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMedium
+                                                                    .fontStyle,
+                                                          ),
+                                                          color:
+                                                              Color(0xFF1A2E19),
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
+                                              );
+                                            },
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
@@ -435,30 +536,75 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'yzc90k84' /* $24.50 */,
+                                      StreamBuilder<List<RidesRecord>>(
+                                        stream: queryRidesRecord(
+                                          queryBuilder: (ridesRecord) =>
+                                              ridesRecord.where(
+                                            'estimated_fare',
+                                            isEqualTo:
+                                                widget.order?.estimatedFare,
+                                          ),
+                                          singleRecord: true,
                                         ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              font: GoogleFonts.interTight(
-                                                fontWeight: FontWeight.bold,
-                                                fontStyle:
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                        .primary,
+                                                  ),
+                                                ),
                                               ),
-                                              color: Color(0xFF1A2E19),
-                                              fontSize: 20.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
+                                            );
+                                          }
+                                          List<RidesRecord>
+                                              textRidesRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final textRidesRecord =
+                                              textRidesRecordList.isNotEmpty
+                                                  ? textRidesRecordList.first
+                                                  : null;
+
+                                          return Text(
+                                            FFLocalizations.of(context).getText(
+                                              'yzc90k84' /* $24.50 */,
                                             ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.interTight(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Color(0xFF1A2E19),
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          );
+                                        },
                                       ),
                                     ].divide(SizedBox(height: 4.0)),
                                   ),
@@ -513,30 +659,75 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'geqbm52z' /* 8.2 km */,
+                                      StreamBuilder<List<RidesRecord>>(
+                                        stream: queryRidesRecord(
+                                          queryBuilder: (ridesRecord) =>
+                                              ridesRecord.where(
+                                            'distance_km',
+                                            isEqualTo:
+                                                widget.order?.distanceKm,
+                                          ),
+                                          singleRecord: true,
                                         ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              font: GoogleFonts.interTight(
-                                                fontWeight: FontWeight.bold,
-                                                fontStyle:
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                        .primary,
+                                                  ),
+                                                ),
                                               ),
-                                              color: Color(0xFF1A2E19),
-                                              fontSize: 20.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
+                                            );
+                                          }
+                                          List<RidesRecord>
+                                              textRidesRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final textRidesRecord =
+                                              textRidesRecordList.isNotEmpty
+                                                  ? textRidesRecordList.first
+                                                  : null;
+
+                                          return Text(
+                                            FFLocalizations.of(context).getText(
+                                              'geqbm52z' /* 8.2 km */,
                                             ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.interTight(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Color(0xFF1A2E19),
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          );
+                                        },
                                       ),
                                     ].divide(SizedBox(height: 4.0)),
                                   ),
@@ -591,30 +782,75 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'fq4xz5pf' /* 18 min */,
+                                      StreamBuilder<List<RidesRecord>>(
+                                        stream: queryRidesRecord(
+                                          queryBuilder: (ridesRecord) =>
+                                              ridesRecord.where(
+                                            'duration_seconds',
+                                            isEqualTo:
+                                                widget.order?.durationSeconds,
+                                          ),
+                                          singleRecord: true,
                                         ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              font: GoogleFonts.interTight(
-                                                fontWeight: FontWeight.bold,
-                                                fontStyle:
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .fontStyle,
+                                                        .primary,
+                                                  ),
+                                                ),
                                               ),
-                                              color: Color(0xFF1A2E19),
-                                              fontSize: 20.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .fontStyle,
+                                            );
+                                          }
+                                          List<RidesRecord>
+                                              textRidesRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final textRidesRecord =
+                                              textRidesRecordList.isNotEmpty
+                                                  ? textRidesRecordList.first
+                                                  : null;
+
+                                          return Text(
+                                            FFLocalizations.of(context).getText(
+                                              'fq4xz5pf' /* 18 min */,
                                             ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  font: GoogleFonts.interTight(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Color(0xFF1A2E19),
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .fontStyle,
+                                                ),
+                                          );
+                                        },
                                       ),
                                     ].divide(SizedBox(height: 4.0)),
                                   ),
@@ -648,18 +884,61 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Container(
-                                  width: 60.0,
-                                  height: 60.0,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Image.network(
-                                    getCORSProxyUrl(
-                                      'https://images.unsplash.com/photo-1607027918684-2445e634caf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE4OTI5NTV8&ixlib=rb-4.1.0&q=80&w=1080',
+                                AuthUserStreamWidget(
+                                  builder: (context) =>
+                                      StreamBuilder<List<UsersRecord>>(
+                                    stream: queryUsersRecord(
+                                      queryBuilder: (usersRecord) =>
+                                          usersRecord.where(
+                                        'photo_url',
+                                        isEqualTo: currentUserPhoto,
+                                      ),
+                                      singleRecord: true,
                                     ),
-                                    fit: BoxFit.cover,
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<UsersRecord>
+                                          circleImageUsersRecordList =
+                                          snapshot.data!;
+                                      // Return an empty Container when the item does not exist.
+                                      if (snapshot.data!.isEmpty) {
+                                        return Container();
+                                      }
+                                      final circleImageUsersRecord =
+                                          circleImageUsersRecordList.isNotEmpty
+                                              ? circleImageUsersRecordList.first
+                                              : null;
+
+                                      return Container(
+                                        width: 60.0,
+                                        height: 60.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          getCORSProxyUrl(
+                                            'https://images.unsplash.com/photo-1607027918684-2445e634caf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjE4OTI5NTV8&ixlib=rb-4.1.0&q=80&w=1080',
+                                          ),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                                 Expanded(
@@ -668,59 +947,156 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'sit15hn8' /* Sarah Johnson */,
+                                      StreamBuilder<List<RidesRecord>>(
+                                        stream: queryRidesRecord(
+                                          queryBuilder: (ridesRecord) =>
+                                              ridesRecord.where(
+                                            'client_id',
+                                            isEqualTo: widget.order?.clientId,
+                                          ),
+                                          singleRecord: true,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              font: GoogleFonts.interTight(
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
                                                     FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .fontStyle,
+                                                        .primary,
+                                                  ),
+                                                ),
                                               ),
-                                              color: Color(0xFF1A2E19),
-                                              fontSize: 18.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleLarge
-                                                      .fontStyle,
+                                            );
+                                          }
+                                          List<RidesRecord>
+                                              textRidesRecordList =
+                                              snapshot.data!;
+                                          // Return an empty Container when the item does not exist.
+                                          if (snapshot.data!.isEmpty) {
+                                            return Container();
+                                          }
+                                          final textRidesRecord =
+                                              textRidesRecordList.isNotEmpty
+                                                  ? textRidesRecordList.first
+                                                  : null;
+
+                                          return Text(
+                                            FFLocalizations.of(context).getText(
+                                              'sit15hn8' /* Sarah Johnson */,
                                             ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleLarge
+                                                .override(
+                                                  font: GoogleFonts.interTight(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Color(0xFF1A2E19),
+                                                  fontSize: 18.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleLarge
+                                                          .fontStyle,
+                                                ),
+                                          );
+                                        },
                                       ),
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          '7m6lp0tl' /* +1 (555) 123-4567 */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0xFF4A5D47),
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
+                                      AuthUserStreamWidget(
+                                        builder: (context) =>
+                                            StreamBuilder<List<UsersRecord>>(
+                                          stream: queryUsersRecord(
+                                            queryBuilder: (usersRecord) =>
+                                                usersRecord.where(
+                                              'phone_number',
+                                              isEqualTo: currentPhoneNumber,
                                             ),
+                                            singleRecord: true,
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<UsersRecord>
+                                                textUsersRecordList =
+                                                snapshot.data!;
+                                            // Return an empty Container when the item does not exist.
+                                            if (snapshot.data!.isEmpty) {
+                                              return Container();
+                                            }
+                                            final textUsersRecord =
+                                                textUsersRecordList.isNotEmpty
+                                                    ? textUsersRecordList.first
+                                                    : null;
+
+                                            return Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '7m6lp0tl' /* +1 (555) 123-4567 */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            Color(0xFF4A5D47),
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                            );
+                                          },
+                                        ),
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -839,28 +1215,69 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'bq477gmp' /* 25 */,
+                              StreamBuilder<List<RidesRecord>>(
+                                stream: queryRidesRecord(
+                                  queryBuilder: (ridesRecord) =>
+                                      ridesRecord.where(
+                                    'driver_eta_seconds',
+                                    isEqualTo: widget.order?.driverEtaSeconds,
+                                  ),
+                                  singleRecord: true,
                                 ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      font: GoogleFonts.interTight(
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .displayLarge
-                                            .fontStyle,
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
                                       ),
-                                      color: Color(0xFF2D4A2B),
-                                      fontSize: 48.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .displayLarge
-                                          .fontStyle,
+                                    );
+                                  }
+                                  List<RidesRecord> textRidesRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final textRidesRecord =
+                                      textRidesRecordList.isNotEmpty
+                                          ? textRidesRecordList.first
+                                          : null;
+
+                                  return Text(
+                                    FFLocalizations.of(context).getText(
+                                      'bq477gmp' /* 25 */,
                                     ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .displayLarge
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .displayLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF2D4A2B),
+                                          fontSize: 48.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .displayLarge
+                                                  .fontStyle,
+                                        ),
+                                  );
+                                },
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(

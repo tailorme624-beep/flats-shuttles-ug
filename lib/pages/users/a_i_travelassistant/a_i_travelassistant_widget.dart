@@ -934,7 +934,7 @@ class _AITravelassistantWidgetState extends State<AITravelassistantWidget> {
                                         logFirebaseEvent('Icon_gemini');
                                         await geminiGenerateText(
                                           context,
-                                          currentUserReference!.id,
+                                          currentUserUid,
                                         ).then((generatedText) {
                                           safeSetState(() => {});
                                         });

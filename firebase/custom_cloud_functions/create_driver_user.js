@@ -1,12 +1,13 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 
-// NOTE: If you haven't initialized the Admin SDK elsewhere, uncomment the line below.
+// Ensure the Firebase Admin SDK is initialized once.
+// In a typical FF setup, this is often done in the main index.js, but
+// including it here as a comment ensures the function works if deployed alone.
 // admin.initializeApp();
 
 exports.createDriverUser = functions.https.onCall(async (data, context) => {
-  // 1. **Authentication Check:** Ensure only an authenticated user calls this.
-  // OPTIONAL: You should add a check here to ensure the caller has an 'admin' role.
+  // 1. **Authentication Check:** (Ensure an Admin is logged in, if this is an Admin action)
   if (!context.auth) {
     throw new functions.https.HttpsError(
       "unauthenticated",
@@ -14,44 +15,60 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
     );
   }
 
-  const { email, password } = data;
+  const { email, password, fullName, licenseNumber, vehicleReg, phoneNumber } =
+    data;
 
-  if (!email || !password) {
+  // 2. **Input Validation:** Check required fields
+  if (!email || !password || !fullName || !licenseNumber || !phoneNumber) {
     throw new functions.https.HttpsError(
       "invalid-argument",
-      "Email and password are required.",
+      "Missing required driver information.",
     );
   }
 
   try {
-    // 2. **Create User in Firebase Auth:** This securely creates the login credentials.
+    // 3. **Create User in Firebase Auth (Authentication Credentials)**
     const userRecord = await admin.auth().createUser({
       email: email,
       password: password,
-      emailVerified: true, // Assuming you want to auto-verify admin-created accounts
+      displayName: fullName,
+      emailVerified: true,
     });
 
     const newUid = userRecord.uid;
 
-    // 3. **Optional: Create basic Firestore Document (Alternative method)**
-    // While FlutterFlow's second action is better for complex data,
-    // you can create a simple base document here for safety.
-    // await admin.firestore().collection('drivers').doc(newUid).set({
-    //     uid: newUid,
-    //     emailAddress: email,
-    //     dateJoined: admin.firestore.FieldValue.serverTimestamp(),
-    //     isActive: true,
-    //     // You would fill the rest using FlutterFlow's 'Create Document' action.
-    // });
+    // 4. **Create Profile in Firestore (Profile Data & Role)**
+    await admin.firestore().collection("users").doc(newUid).set({
+      uid: newUid,
+      email: email,
+      display_name: fullName,
+      phone_number: phoneNumber,
+      role: "drivers", // *** CRITICAL FOR ROLE ENFORCEMENT ***
+      is_verified: false, // Must be verified by Admin later
+      availability_status: "offline", // Default status
+      license_number: licenseNumber,
+      vehicle_registration: vehicleReg,
+      created_time: admin.firestore.FieldValue.serverTimestamp(),
+      // Add other essential fields here if needed
+    });
 
-    // 4. **Return the UID:** This is the critical piece of data needed by FlutterFlow.
+    // 5. **Return the UID:** Used by FlutterFlow to navigate/confirm.
     return { uid: newUid };
   } catch (error) {
-    // Handle common Firebase Auth errors (e.g., email already exists)
+    // Log error for debugging
     console.error("Error creating new driver user:", error);
+
+    // Handle specific Firebase Auth errors
+    if (error.code === "auth/email-already-in-use") {
+      throw new functions.https.HttpsError(
+        "already-exists",
+        "The email address is already in use by another user.",
+      );
+    }
+
     throw new functions.https.HttpsError(
       "internal",
-      error.message || "Failed to create user.",
+      error.message || "Failed to create user account.",
     );
   }
 });

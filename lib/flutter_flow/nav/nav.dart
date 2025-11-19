@@ -80,14 +80,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? entryPage ?? HomeWidget()
-          : MainpageWidget(),
+          : HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? entryPage ?? HomeWidget()
-              : MainpageWidget(),
+              : HomePageWidget(),
         ),
         FFRoute(
           name: ServicesWidget.routeName,
@@ -173,7 +173,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: DriversignupWidget.routeName,
           path: DriversignupWidget.routePath,
-          builder: (context, params) => DriversignupWidget(),
+          builder: (context, params) => DriversignupWidget(
+            photo: params.getParam(
+              'photo',
+              ParamType.FFUploadedFile,
+            ),
+          ),
         ),
         FFRoute(
           name: DriversigninWidget.routeName,
@@ -331,7 +336,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: RideBookingPageWidget.routeName,
           path: RideBookingPageWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RideBookingPageWidget(),
+          builder: (context, params) => RideBookingPageWidget(
+            standardVehicleType: params.getParam(
+              'standardVehicleType',
+              ParamType.String,
+            ),
+            premiumVehicleType: params.getParam(
+              'premiumVehicleType',
+              ParamType.String,
+            ),
+            vipVehicleType: params.getParam(
+              'vipVehicleType',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: FlightBookingPageWidget.routeName,
@@ -436,6 +454,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
             imageupload: params.getParam(
               'imageupload',
               ParamType.FFUploadedFile,
+            ),
+            driversigninKey: params.getParam(
+              'driversigninKey',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
             ),
           ),
         ),
@@ -722,7 +746,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/mainpage';
+            return '/homePage';
           }
           return null;
         },

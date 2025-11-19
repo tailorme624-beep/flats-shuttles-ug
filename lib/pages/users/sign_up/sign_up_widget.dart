@@ -1686,13 +1686,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                   return;
                                                 }
 
-                                                await UsersRecord.collection
-                                                    .doc(user.uid)
-                                                    .update(
-                                                        createUsersRecordData(
-                                                      role: 'client',
-                                                    ));
-
                                                 context.goNamedAuth(
                                                     HomeWidget.routeName,
                                                     context.mounted);
