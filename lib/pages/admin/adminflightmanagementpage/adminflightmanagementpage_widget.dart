@@ -464,8 +464,8 @@ class _AdminflightmanagementpageWidgetState
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Container(
-                                                  width: 60.0,
-                                                  height: 24.0,
+                                                  width: 66.62,
+                                                  height: 33.8,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -716,7 +716,7 @@ class _AdminflightmanagementpageWidgetState
                                               children: [
                                                 Container(
                                                   width: 60.0,
-                                                  height: 20.0,
+                                                  height: 31.52,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -974,8 +974,8 @@ class _AdminflightmanagementpageWidgetState
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Container(
-                                                  width: 60.0,
-                                                  height: 24.0,
+                                                  width: 69.7,
+                                                  height: 33.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)

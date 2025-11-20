@@ -7,18 +7,18 @@ class AdminaddhirecarpageModel
     extends FlutterFlowModel<AdminaddhirecarpageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for carMake widget.
+  FocusNode? carMakeFocusNode;
+  TextEditingController? carMakeTextController;
+  String? Function(BuildContext, String?)? carMakeTextControllerValidator;
+  // State field(s) for carModel widget.
+  FocusNode? carModelFocusNode;
+  TextEditingController? carModelTextController;
+  String? Function(BuildContext, String?)? carModelTextControllerValidator;
+  // State field(s) for yearMake widget.
+  FocusNode? yearMakeFocusNode;
+  TextEditingController? yearMakeTextController;
+  String? Function(BuildContext, String?)? yearMakeTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -26,29 +26,29 @@ class AdminaddhirecarpageModel
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
+  FocusNode? textFieldFocusNode4;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
   // State field(s) for SwitchListTile widget.
   bool? switchListTileValue;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
+  FocusNode? textFieldFocusNode5;
   TextEditingController? textController8;
   String? Function(BuildContext, String?)? textController8Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
+  FocusNode? textFieldFocusNode6;
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
 
@@ -57,31 +57,31 @@ class AdminaddhirecarpageModel
 
   @override
   void dispose() {
+    carMakeFocusNode?.dispose();
+    carMakeTextController?.dispose();
+
+    carModelFocusNode?.dispose();
+    carModelTextController?.dispose();
+
+    yearMakeFocusNode?.dispose();
+    yearMakeTextController?.dispose();
+
     textFieldFocusNode1?.dispose();
-    textController1?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
-
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
-
-    textFieldFocusNode4?.dispose();
     textController4?.dispose();
 
-    textFieldFocusNode5?.dispose();
+    textFieldFocusNode2?.dispose();
     textController5?.dispose();
 
-    textFieldFocusNode6?.dispose();
+    textFieldFocusNode3?.dispose();
     textController6?.dispose();
 
-    textFieldFocusNode7?.dispose();
+    textFieldFocusNode4?.dispose();
     textController7?.dispose();
 
-    textFieldFocusNode8?.dispose();
+    textFieldFocusNode5?.dispose();
     textController8?.dispose();
 
-    textFieldFocusNode9?.dispose();
+    textFieldFocusNode6?.dispose();
     textController9?.dispose();
   }
 }

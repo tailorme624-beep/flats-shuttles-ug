@@ -576,6 +576,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           path: AdminservicerequestpageWidget.routePath,
           requireAuth: true,
           builder: (context, params) => AdminservicerequestpageWidget(),
+        ),
+        FFRoute(
+          name: AdmineditflightpageWidget.routeName,
+          path: AdmineditflightpageWidget.routePath,
+          builder: (context, params) => AdmineditflightpageWidget(),
+        ),
+        FFRoute(
+          name: AdminmanagetourspageWidget.routeName,
+          path: AdminmanagetourspageWidget.routePath,
+          builder: (context, params) => AdminmanagetourspageWidget(),
+        ),
+        FFRoute(
+          name: ManagecarspagesWidget.routeName,
+          path: ManagecarspagesWidget.routePath,
+          builder: (context, params) => ManagecarspagesWidget(),
+        ),
+        FFRoute(
+          name: EditCarspageWidget.routeName,
+          path: EditCarspageWidget.routePath,
+          builder: (context, params) => EditCarspageWidget(),
+        ),
+        FFRoute(
+          name: EdithoteldetailspageWidget.routeName,
+          path: EdithoteldetailspageWidget.routePath,
+          builder: (context, params) => EdithoteldetailspageWidget(),
+        ),
+        FFRoute(
+          name: ManageHotelspageWidget.routeName,
+          path: ManageHotelspageWidget.routePath,
+          builder: (context, params) => ManageHotelspageWidget(),
+        ),
+        FFRoute(
+          name: EdittourplacepageWidget.routeName,
+          path: EdittourplacepageWidget.routePath,
+          builder: (context, params) => EdittourplacepageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

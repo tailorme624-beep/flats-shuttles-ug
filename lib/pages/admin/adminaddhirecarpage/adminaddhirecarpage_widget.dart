@@ -37,32 +37,32 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'Adminaddhirecarpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.carMakeTextController ??= TextEditingController();
+    _model.carMakeFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.carModelTextController ??= TextEditingController();
+    _model.carModelFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.yearMakeTextController ??= TextEditingController();
+    _model.yearMakeFocusNode ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
+    _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode9 ??= FocusNode();
+    _model.textFieldFocusNode6 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -171,45 +171,17 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                   color: Color(0x40000000),
                                   borderRadius: BorderRadius.circular(14.0),
                                 ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.add_a_photo_rounded,
-                                    color: Color(0xFFF5F5DC),
-                                    size: 48.0,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'q5qrf2ml' /* Add Car Photos */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFFF5F5DC),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    getCORSProxyUrl(
+                                      'https://picsum.photos/seed/645/600',
                                     ),
+                                    width: 200.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
                                   ),
-                                ],
+                                ),
                               ),
                             ],
                           ),
@@ -242,8 +214,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 ),
                           ),
                           TextFormField(
-                            controller: _model.textController1,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.carMakeTextController,
+                            focusNode: _model.carMakeFocusNode,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -347,12 +319,12 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                       .bodyMedium
                                       .fontStyle,
                                 ),
-                            validator: _model.textController1Validator
+                            validator: _model.carMakeTextControllerValidator
                                 .asValidator(context),
                           ),
                           TextFormField(
-                            controller: _model.textController2,
-                            focusNode: _model.textFieldFocusNode2,
+                            controller: _model.carModelTextController,
+                            focusNode: _model.carModelFocusNode,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -456,7 +428,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                       .bodyMedium
                                       .fontStyle,
                                 ),
-                            validator: _model.textController2Validator
+                            validator: _model.carModelTextControllerValidator
                                 .asValidator(context),
                           ),
                           Row(
@@ -464,8 +436,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                             children: [
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController3,
-                                  focusNode: _model.textFieldFocusNode3,
+                                  controller: _model.yearMakeTextController,
+                                  focusNode: _model.yearMakeFocusNode,
                                   autofocus: false,
                                   textInputAction: TextInputAction.next,
                                   obscureText: false,
@@ -583,7 +555,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                             .fontStyle,
                                       ),
                                   keyboardType: TextInputType.number,
-                                  validator: _model.textController3Validator
+                                  validator: _model
+                                      .yearMakeTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -591,8 +564,17 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 child: FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController1 ??=
-                                          FormFieldController<String>(null),
-                                  options: [
+                                          FormFieldController<String>(
+                                    _model.dropDownValue1 ??= 'White',
+                                  ),
+                                  options: List<String>.from([
+                                    'White',
+                                    'Black',
+                                    'Silver',
+                                    'Red',
+                                    'Blue'
+                                  ]),
+                                  optionLabels: [
                                     FFLocalizations.of(context).getText(
                                       'kvg4tmr2' /* White */,
                                     ),
@@ -684,8 +666,11 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController2 ??=
-                                FormFieldController<String>(null),
-                            options: [
+                                FormFieldController<String>(
+                              _model.dropDownValue2 ??= 'Manual',
+                            ),
+                            options: List<String>.from(['Automatic', 'Manual']),
+                            optionLabels: [
                               FFLocalizations.of(context).getText(
                                 'tif3xnly' /* Automatic */,
                               ),
@@ -761,7 +746,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           TextFormField(
                             controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode4,
+                            focusNode: _model.textFieldFocusNode1,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -871,51 +856,63 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                         ].divide(SizedBox(height: 16.0)),
                       ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'amopikhv' /* Pricing & Availability */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  font: GoogleFonts.interTight(
+                      SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'amopikhv' /* Pricing & Availability */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
+                                    ),
+                                    color: Color(0xFF556B2F),
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .fontStyle,
                                   ),
-                                  color: Color(0xFF556B2F),
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: TextFormField(
-                                  controller: _model.textController5,
-                                  focusNode: _model.textFieldFocusNode5,
-                                  autofocus: false,
-                                  textInputAction: TextInputAction.next,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      '4payiilg' /* Daily Rate ($) */,
-                                    ),
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: TextFormField(
+                                    controller: _model.textController5,
+                                    focusNode: _model.textFieldFocusNode2,
+                                    autofocus: false,
+                                    textInputAction: TextInputAction.next,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        '4payiilg' /* Daily Rate ($) */,
+                                      ),
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF556B2F),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -925,22 +922,78 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                     .labelMedium
                                                     .fontStyle,
                                           ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'm52kbgp2' /* 50.00 */,
+                                      ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0x80556B2F),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
                                           color: Color(0xFF556B2F),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
+                                          width: 1.0,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'm52kbgp2' /* 50.00 */,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0xFF556B2F),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: Color(0xFFF5F5DC),
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              16.0, 16.0, 16.0, 16.0),
+                                      prefixIcon: Icon(
+                                        Icons.attach_money_rounded,
+                                        color: Color(0xFF556B2F),
+                                        size: 20.0,
+                                      ),
                                     ),
-                                    hintStyle: FlutterFlowTheme.of(context)
+                                    style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           font: GoogleFonts.inter(
@@ -953,7 +1006,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: Color(0x80556B2F),
+                                          fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -964,88 +1017,38 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0xFF556B2F),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0xFF556B2F),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    filled: true,
-                                    fillColor: Color(0xFFF5F5DC),
-                                    contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 16.0, 16.0, 16.0),
-                                    prefixIcon: Icon(
-                                      Icons.attach_money_rounded,
-                                      color: Color(0xFF556B2F),
-                                      size: 20.0,
-                                    ),
+                                    keyboardType: TextInputType.number,
+                                    validator: _model.textController5Validator
+                                        .asValidator(context),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                  keyboardType: TextInputType.number,
-                                  validator: _model.textController5Validator
-                                      .asValidator(context),
                                 ),
-                              ),
-                              Expanded(
-                                child: TextFormField(
-                                  controller: _model.textController6,
-                                  focusNode: _model.textFieldFocusNode6,
-                                  autofocus: false,
-                                  textInputAction: TextInputAction.next,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      'un8x083l' /* Weekly Rate ($) */,
-                                    ),
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
+                                Expanded(
+                                  child: TextFormField(
+                                    controller: _model.textController6,
+                                    focusNode: _model.textFieldFocusNode3,
+                                    autofocus: false,
+                                    textInputAction: TextInputAction.next,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'un8x083l' /* Weekly Rate ($) */,
+                                      ),
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF556B2F),
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -1055,22 +1058,78 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                     .labelMedium
                                                     .fontStyle,
                                           ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '1m5vgol1' /* 300.00 */,
+                                      ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0x80556B2F),
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
                                           color: Color(0xFF556B2F),
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
+                                          width: 1.0,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '1m5vgol1' /* 300.00 */,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0xFF556B2F),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: Color(0xFFF5F5DC),
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              16.0, 16.0, 16.0, 16.0),
+                                      prefixIcon: Icon(
+                                        Icons.attach_money_rounded,
+                                        color: Color(0xFF556B2F),
+                                        size: 20.0,
+                                      ),
                                     ),
-                                    hintStyle: FlutterFlowTheme.of(context)
+                                    style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           font: GoogleFonts.inter(
@@ -1083,7 +1142,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: Color(0x80556B2F),
+                                          fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -1094,88 +1153,36 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0xFF556B2F),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0xFF556B2F),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    filled: true,
-                                    fillColor: Color(0xFFF5F5DC),
-                                    contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 16.0, 16.0, 16.0),
-                                    prefixIcon: Icon(
-                                      Icons.attach_money_rounded,
-                                      color: Color(0xFF556B2F),
-                                      size: 20.0,
-                                    ),
+                                    keyboardType: TextInputType.number,
+                                    validator: _model.textController6Validator
+                                        .asValidator(context),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
+                                ),
+                              ].divide(SizedBox(width: 12.0)),
+                            ),
+                            TextFormField(
+                              controller: _model.textController7,
+                              focusNode: _model.textFieldFocusNode4,
+                              autofocus: false,
+                              textInputAction: TextInputAction.next,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: FFLocalizations.of(context).getText(
+                                  '8d95p0as' /* Monthly Rate ($) */,
+                                ),
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .labelMedium
                                             .fontWeight,
                                         fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .labelMedium
                                             .fontStyle,
                                       ),
-                                  keyboardType: TextInputType.number,
-                                  validator: _model.textController6Validator
-                                      .asValidator(context),
-                                ),
-                              ),
-                            ].divide(SizedBox(width: 12.0)),
-                          ),
-                          TextFormField(
-                            controller: _model.textController7,
-                            focusNode: _model.textFieldFocusNode7,
-                            autofocus: false,
-                            textInputAction: TextInputAction.next,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                '8d95p0as' /* Monthly Rate ($) */,
-                              ),
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
+                                      color: Color(0xFF556B2F),
+                                      letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .fontWeight,
@@ -1183,19 +1190,68 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                           .labelMedium
                                           .fontStyle,
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'v34x2r8g' /* 1000.00 */,
+                                ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0x80556B2F),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
                                     color: Color(0xFF556B2F),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .fontStyle,
+                                    width: 1.0,
                                   ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'v34x2r8g' /* 1000.00 */,
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF556B2F),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                filled: true,
+                                fillColor: Color(0xFFF5F5DC),
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 16.0, 16.0, 16.0),
+                                prefixIcon: Icon(
+                                  Icons.attach_money_rounded,
+                                  color: Color(0xFF556B2F),
+                                  size: 20.0,
+                                ),
                               ),
-                              hintStyle: FlutterFlowTheme.of(context)
+                              style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     font: GoogleFonts.inter(
@@ -1206,7 +1262,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0x80556B2F),
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1215,108 +1271,53 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFF556B2F),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0xFF556B2F),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              filled: true,
-                              fillColor: Color(0xFFF5F5DC),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 16.0),
-                              prefixIcon: Icon(
-                                Icons.attach_money_rounded,
-                                color: Color(0xFF556B2F),
-                                size: 20.0,
-                              ),
+                              keyboardType: TextInputType.number,
+                              validator: _model.textController7Validator
+                                  .asValidator(context),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
+                            Material(
+                              color: Colors.transparent,
+                              child: SwitchListTile(
+                                value: _model.switchListTileValue ??= true,
+                                onChanged: (newValue) async {
+                                  safeSetState(() =>
+                                      _model.switchListTileValue = newValue);
+                                },
+                                title: Text(
+                                  FFLocalizations.of(context).getText(
+                                    't4fw23wa' /* Available for Hire */,
                                   ),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
+                                  style: FlutterFlowTheme.of(context)
                                       .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                            keyboardType: TextInputType.number,
-                            validator: _model.textController7Validator
-                                .asValidator(context),
-                          ),
-                          Material(
-                            color: Colors.transparent,
-                            child: SwitchListTile(
-                              value: _model.switchListTileValue ??= true,
-                              onChanged: (newValue) async {
-                                safeSetState(() =>
-                                    _model.switchListTileValue = newValue);
-                              },
-                              title: Text(
-                                FFLocalizations.of(context).getText(
-                                  't4fw23wa' /* Available for Hire */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
+                                      .override(
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFF556B2F),
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontStyle,
                                       ),
-                                      color: Color(0xFF556B2F),
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
+                                ),
+                                tileColor: Color(0xFFF5F5DC),
+                                activeColor: Color(0xFF556B2F),
+                                activeTrackColor: Color(0x80556B2F),
+                                dense: false,
+                                controlAffinity:
+                                    ListTileControlAffinity.trailing,
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 8.0, 0.0, 8.0),
                               ),
-                              tileColor: Color(0xFFF5F5DC),
-                              activeColor: Color(0xFF556B2F),
-                              activeTrackColor: Color(0x80556B2F),
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.trailing,
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
                             ),
-                          ),
-                        ].divide(SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
+                        ),
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
@@ -1346,7 +1347,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           TextFormField(
                             controller: _model.textController8,
-                            focusNode: _model.textFieldFocusNode8,
+                            focusNode: _model.textFieldFocusNode5,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -1455,7 +1456,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           TextFormField(
                             controller: _model.textController9,
-                            focusNode: _model.textFieldFocusNode9,
+                            focusNode: _model.textFieldFocusNode6,
                             autofocus: false,
                             textInputAction: TextInputAction.done,
                             obscureText: false,
