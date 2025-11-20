@@ -4567,7 +4567,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'ut2adstn': {
-      'en': 'Students',
+      'en': 'Children',
       'aa': '',
       'af': '',
       'as': '',
@@ -4585,7 +4585,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'jsrwpbxx': {
-      'en': 'Chaperones',
+      'en': 'Adults',
       'aa': '',
       'af': '',
       'as': '',
@@ -8134,7 +8134,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     '4itgnzqy': {
-      'en': 'Vehicle Type                     ',
+      'en': 'Vehicle Type                              ',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'geklobc2': {
+      'en': '',
       'aa': '',
       'af': '',
       'as': '',
@@ -8143,7 +8152,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     '5ijs3zqn': {
-      'en': 'Pickup Location                             ',
+      'en': 'Pickup Location                          ',
       'aa': '',
       'af': '',
       'as': '',
@@ -8152,7 +8161,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'qr6t1srg': {
-      'en': 'entebbe',
+      'en': '',
       'aa': '',
       'af': '',
       'as': '',
@@ -8161,7 +8170,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'wmnknf08': {
-      'en': 'Dropoff Location                          ',
+      'en': 'Dropoff Location                         ',
       'aa': '',
       'af': '',
       'as': '',

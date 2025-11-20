@@ -43,8 +43,8 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'individualtourspage'});
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.descriptionTextController ??= TextEditingController();
+    _model.descriptionFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -1132,13 +1132,16 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                                         controller:
                                             _model.dropDownValueController ??=
                                                 FormFieldController<String>(
-                                          _model.dropDownValue ??=
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                            'ncme7hdj' /* English */,
-                                          ),
+                                          _model.dropDownValue ??= 'English',
                                         ),
-                                        options: [
+                                        options: List<String>.from([
+                                          'English',
+                                          'Spanish',
+                                          'French',
+                                          'German',
+                                          'Italian'
+                                        ]),
+                                        optionLabels: [
                                           FFLocalizations.of(context).getText(
                                             'p18t9glp' /* English */,
                                           ),
@@ -1240,8 +1243,9 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                                       ),
                                     ),
                                     TextFormField(
-                                      controller: _model.textController,
-                                      focusNode: _model.textFieldFocusNode,
+                                      controller:
+                                          _model.descriptionTextController,
+                                      focusNode: _model.descriptionFocusNode,
                                       autofocus: false,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1337,7 +1341,8 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                                           ),
                                       maxLines: 4,
                                       keyboardType: TextInputType.multiline,
-                                      validator: _model.textControllerValidator
+                                      validator: _model
+                                          .descriptionTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ],

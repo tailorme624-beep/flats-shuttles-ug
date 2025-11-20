@@ -1154,8 +1154,16 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
                                     key: ValueKey(currentUserUid),
                                     controller:
                                         _model.dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: [
+                                            FormFieldController<String>(
+                                      _model.dropDownValue ??= '',
+                                    ),
+                                    options: List<String>.from([
+                                      'economy',
+                                      'premium_economy',
+                                      'business',
+                                      'first_class'
+                                    ]),
+                                    optionLabels: [
                                       FFLocalizations.of(context).getText(
                                         'd2zjhuos' /* Economy */,
                                       ),
@@ -1226,8 +1234,8 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
                         FFButtonWidget(
                           onPressed: () async {
                             logFirebaseEvent(
-                                'FLIGHT_BOOKING_SEARCH_FLIGHTS_BTN_ON_TAP');
-                            logFirebaseEvent('Button_backend_call');
+                                'FLIGHT_BOOKING_searchFlightButton_ON_TAP');
+                            logFirebaseEvent('searchFlightButton_backend_call');
 
                             var bookingsRecordReference =
                                 BookingsRecord.collection.doc();

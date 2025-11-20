@@ -1342,9 +1342,8 @@ class _RideBookingPageWidgetState extends State<RideBookingPageWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            valueOrDefault<String>(
-                                              _model.vehicleType,
-                                              '30000.0',
+                                            FFLocalizations.of(context).getText(
+                                              'geklobc2' /*  */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1425,7 +1424,7 @@ class _RideBookingPageWidgetState extends State<RideBookingPageWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'qr6t1srg' /* entebbe */,
+                                                  'qr6t1srg' /*  */,
                                                 ),
                                                 style: FlutterFlowTheme.of(
                                                         context)
@@ -1581,9 +1580,9 @@ class _RideBookingPageWidgetState extends State<RideBookingPageWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               logFirebaseEvent(
-                                                  'RIDE_BOOKING_Text_j23d33yf_ON_TAP');
+                                                  'RIDE_BOOKING_EstimatedFare_ON_TAP');
                                               logFirebaseEvent(
-                                                  'Text_update_page_state');
+                                                  'EstimatedFare_update_page_state');
                                               _model.tripdistanceKM =
                                                   _model.apidistance;
                                               safeSetState(() {});
@@ -1666,9 +1665,9 @@ class _RideBookingPageWidgetState extends State<RideBookingPageWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               logFirebaseEvent(
-                                                  'RIDE_BOOKING_Text_3042xowf_ON_TAP');
+                                                  'RIDE_BOOKING_estimatedTime_ON_TAP');
                                               logFirebaseEvent(
-                                                  'Text_update_page_state');
+                                                  'estimatedTime_update_page_state');
                                               _model.durationSecs =
                                                   _model.durationSecs;
                                               safeSetState(() {});

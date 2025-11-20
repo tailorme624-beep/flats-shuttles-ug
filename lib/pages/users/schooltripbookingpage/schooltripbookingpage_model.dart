@@ -15,19 +15,22 @@ class SchooltripbookingpageModel
       choiceChipsValueController?.value?.firstOrNull;
   set choiceChipsValue(String? val) =>
       choiceChipsValueController?.value = val != null ? [val] : [];
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for organisationName widget.
+  FocusNode? organisationNameFocusNode;
+  TextEditingController? organisationNameTextController;
+  String? Function(BuildContext, String?)?
+      organisationNameTextControllerValidator;
   DateTime? datePicked;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for numberOfchildren widget.
+  FocusNode? numberOfchildrenFocusNode;
+  TextEditingController? numberOfchildrenTextController;
+  String? Function(BuildContext, String?)?
+      numberOfchildrenTextControllerValidator;
+  // State field(s) for NumberOfAdults widget.
+  FocusNode? numberOfAdultsFocusNode;
+  TextEditingController? numberOfAdultsTextController;
+  String? Function(BuildContext, String?)?
+      numberOfAdultsTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -37,26 +40,26 @@ class SchooltripbookingpageModel
   bool? switchListTileValue2;
   // State field(s) for SwitchListTile widget.
   bool? switchListTileValue3;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for description widget.
+  FocusNode? descriptionFocusNode;
+  TextEditingController? descriptionTextController;
+  String? Function(BuildContext, String?)? descriptionTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    organisationNameFocusNode?.dispose();
+    organisationNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    numberOfchildrenFocusNode?.dispose();
+    numberOfchildrenTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    numberOfAdultsFocusNode?.dispose();
+    numberOfAdultsTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    descriptionFocusNode?.dispose();
+    descriptionTextController?.dispose();
   }
 }

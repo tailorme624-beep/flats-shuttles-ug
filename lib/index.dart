@@ -155,6 +155,7 @@ export '/pages/admin/edittourplacepage/edittourplacepage_widget.dart'
     show EdittourplacepageWidget;
 export '/pages/admin/live_rides_dashboard/live_rides_dashboard_widget.dart'
     show LiveRidesDashboardWidget;
-export '/book_hotel_page/book_hotel_page_widget.dart' show BookHotelPageWidget;
+export '/pages/users/book_hotel_page/book_hotel_page_widget.dart'
+    show BookHotelPageWidget;
 export '/admin_dash_board_overviewpage/admin_dash_board_overviewpage_widget.dart'
     show AdminDashBoardOverviewpageWidget;

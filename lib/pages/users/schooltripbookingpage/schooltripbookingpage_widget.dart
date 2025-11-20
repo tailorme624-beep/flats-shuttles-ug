@@ -43,17 +43,17 @@ class _SchooltripbookingpageWidgetState
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'schooltripbookingpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.organisationNameTextController ??= TextEditingController();
+    _model.organisationNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.numberOfchildrenTextController ??= TextEditingController();
+    _model.numberOfchildrenFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.numberOfAdultsTextController ??= TextEditingController();
+    _model.numberOfAdultsFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.descriptionTextController ??= TextEditingController();
+    _model.descriptionFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -328,8 +328,9 @@ class _SchooltripbookingpageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
                                   child: TextFormField(
-                                    controller: _model.textController1,
-                                    focusNode: _model.textFieldFocusNode1,
+                                    controller:
+                                        _model.organisationNameTextController,
+                                    focusNode: _model.organisationNameFocusNode,
                                     autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.words,
@@ -427,7 +428,8 @@ class _SchooltripbookingpageWidgetState
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                    validator: _model.textController1Validator
+                                    validator: _model
+                                        .organisationNameTextControllerValidator
                                         .asValidator(context),
                                     inputFormatters: [
                                       if (!isAndroid && !isiOS)
@@ -696,7 +698,7 @@ class _SchooltripbookingpageWidgetState
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'ut2adstn' /* Students */,
+                                                      'ut2adstn' /* Children */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -727,10 +729,10 @@ class _SchooltripbookingpageWidgetState
                                                   ),
                                                 ),
                                                 TextFormField(
-                                                  controller:
-                                                      _model.textController2,
+                                                  controller: _model
+                                                      .numberOfchildrenTextController,
                                                   focusNode: _model
-                                                      .textFieldFocusNode2,
+                                                      .numberOfchildrenFocusNode,
                                                   autofocus: false,
                                                   textInputAction:
                                                       TextInputAction.next,
@@ -880,7 +882,7 @@ class _SchooltripbookingpageWidgetState
                                                   keyboardType:
                                                       TextInputType.number,
                                                   validator: _model
-                                                      .textController2Validator
+                                                      .numberOfchildrenTextControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ],
@@ -912,7 +914,7 @@ class _SchooltripbookingpageWidgetState
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'jsrwpbxx' /* Chaperones */,
+                                                      'jsrwpbxx' /* Adults */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -943,10 +945,10 @@ class _SchooltripbookingpageWidgetState
                                                   ),
                                                 ),
                                                 TextFormField(
-                                                  controller:
-                                                      _model.textController3,
+                                                  controller: _model
+                                                      .numberOfAdultsTextController,
                                                   focusNode: _model
-                                                      .textFieldFocusNode3,
+                                                      .numberOfAdultsFocusNode,
                                                   autofocus: false,
                                                   textInputAction:
                                                       TextInputAction.next,
@@ -1096,7 +1098,7 @@ class _SchooltripbookingpageWidgetState
                                                   keyboardType:
                                                       TextInputType.number,
                                                   validator: _model
-                                                      .textController3Validator
+                                                      .numberOfAdultsTextControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ],
@@ -1141,8 +1143,19 @@ class _SchooltripbookingpageWidgetState
                                   child: FlutterFlowDropDown<String>(
                                     controller:
                                         _model.dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: [
+                                            FormFieldController<String>(
+                                      _model.dropDownValue ??= '',
+                                    ),
+                                    options: List<String>.from([
+                                      'park',
+                                      'museum',
+                                      'zoo',
+                                      'historical',
+                                      'adventure',
+                                      'beach',
+                                      'garden'
+                                    ]),
+                                    optionLabels: [
                                       FFLocalizations.of(context).getText(
                                         'ug48gagg' /* Local Park */,
                                       ),
@@ -1481,8 +1494,9 @@ class _SchooltripbookingpageWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 30.0),
                                   child: TextFormField(
-                                    controller: _model.textController4,
-                                    focusNode: _model.textFieldFocusNode4,
+                                    controller:
+                                        _model.descriptionTextController,
+                                    focusNode: _model.descriptionFocusNode,
                                     autofocus: false,
                                     textCapitalization:
                                         TextCapitalization.sentences,
@@ -1582,7 +1596,8 @@ class _SchooltripbookingpageWidgetState
                                         ),
                                     maxLines: 4,
                                     keyboardType: TextInputType.multiline,
-                                    validator: _model.textController4Validator
+                                    validator: _model
+                                        .descriptionTextControllerValidator
                                         .asValidator(context),
                                     inputFormatters: [
                                       if (!isAndroid && !isiOS)

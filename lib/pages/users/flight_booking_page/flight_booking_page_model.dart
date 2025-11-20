@@ -26,7 +26,7 @@ class FlightBookingPageModel extends FlutterFlowModel<FlightBookingPageWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  // Stores action output result for [Backend Call - Create Document] action in searchFlightButton widget.
   BookingsRecord? flightbooking;
 
   @override
