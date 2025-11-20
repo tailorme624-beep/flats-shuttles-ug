@@ -25,32 +25,34 @@ class AdminaddhirecarpageModel
   // State field(s) for DropDown widget.
   String? dropDownValue2;
   FormFieldController<String>? dropDownValueController2;
-  // State field(s) for nameOfSeat widget.
-  FocusNode? nameOfSeatFocusNode;
-  TextEditingController? nameOfSeatTextController;
-  String? Function(BuildContext, String?)? nameOfSeatTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
+  // State field(s) for numberOfSeat widget.
+  FocusNode? numberOfSeatFocusNode;
+  TextEditingController? numberOfSeatTextController;
+  String? Function(BuildContext, String?)? numberOfSeatTextControllerValidator;
+  // State field(s) for dailyRate widget.
+  FocusNode? dailyRateFocusNode;
+  TextEditingController? dailyRateTextController;
+  String? Function(BuildContext, String?)? dailyRateTextControllerValidator;
+  // State field(s) for weeklyRate widget.
+  FocusNode? weeklyRateFocusNode;
+  TextEditingController? weeklyRateTextController;
+  String? Function(BuildContext, String?)? weeklyRateTextControllerValidator;
+  // State field(s) for TextFieldmonthlyRate widget.
+  FocusNode? textFieldmonthlyRateFocusNode;
+  TextEditingController? textFieldmonthlyRateTextController;
+  String? Function(BuildContext, String?)?
+      textFieldmonthlyRateTextControllerValidator;
   // State field(s) for SwitchListTile widget.
   bool? switchListTileValue;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
+  // State field(s) for licensePlate widget.
+  FocusNode? licensePlateFocusNode;
+  TextEditingController? licensePlateTextController;
+  String? Function(BuildContext, String?)? licensePlateTextControllerValidator;
+  // State field(s) for carDescription widget.
+  FocusNode? carDescriptionFocusNode;
+  TextEditingController? carDescriptionTextController;
+  String? Function(BuildContext, String?)?
+      carDescriptionTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -66,22 +68,22 @@ class AdminaddhirecarpageModel
     yearMakeFocusNode?.dispose();
     yearMakeTextController?.dispose();
 
-    nameOfSeatFocusNode?.dispose();
-    nameOfSeatTextController?.dispose();
+    numberOfSeatFocusNode?.dispose();
+    numberOfSeatTextController?.dispose();
 
-    textFieldFocusNode1?.dispose();
-    textController5?.dispose();
+    dailyRateFocusNode?.dispose();
+    dailyRateTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController6?.dispose();
+    weeklyRateFocusNode?.dispose();
+    weeklyRateTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController7?.dispose();
+    textFieldmonthlyRateFocusNode?.dispose();
+    textFieldmonthlyRateTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController8?.dispose();
+    licensePlateFocusNode?.dispose();
+    licensePlateTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController9?.dispose();
+    carDescriptionFocusNode?.dispose();
+    carDescriptionTextController?.dispose();
   }
 }

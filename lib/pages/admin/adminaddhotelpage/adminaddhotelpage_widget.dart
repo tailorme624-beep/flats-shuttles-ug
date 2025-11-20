@@ -38,32 +38,32 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'adminaddhotelpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.hotelNameTextController ??= TextEditingController();
+    _model.hotelNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.descriptionTextController ??= TextEditingController();
+    _model.descriptionFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.starRatingTextController ??= TextEditingController();
+    _model.starRatingFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.pricePerNightTextController ??= TextEditingController();
+    _model.pricePerNightFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.totalRoomsTextController ??= TextEditingController();
+    _model.totalRoomsFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.availableRoomsTextController ??= TextEditingController();
+    _model.availableRoomsFocusNode ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
 
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.emailAddressTextController ??= TextEditingController();
+    _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode9 ??= FocusNode();
+    _model.websiteTextController ??= TextEditingController();
+    _model.websiteFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -170,53 +170,17 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                   color: Color(0x80000000),
                                   borderRadius: BorderRadius.circular(14.0),
                                 ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FlutterFlowIconButton(
-                                    borderRadius: 30.0,
-                                    buttonSize: 60.0,
-                                    fillColor: Color(0xCC556B2F),
-                                    icon: Icon(
-                                      Icons.add_a_photo_rounded,
-                                      color: Color(0xFFF5F5DC),
-                                      size: 32.0,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    getCORSProxyUrl(
+                                      'https://picsum.photos/seed/925/600',
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    width: 200.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '38gn8hxw' /* Add Hotel Photos */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFFF5F5DC),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
                             ],
                           ),
@@ -249,8 +213,8 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                 ),
                           ),
                           TextFormField(
-                            controller: _model.textController1,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.hotelNameTextController,
+                            focusNode: _model.hotelNameFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -353,12 +317,12 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                       .bodyMedium
                                       .fontStyle,
                                 ),
-                            validator: _model.textController1Validator
+                            validator: _model.hotelNameTextControllerValidator
                                 .asValidator(context),
                           ),
                           TextFormField(
-                            controller: _model.textController2,
-                            focusNode: _model.textFieldFocusNode2,
+                            controller: _model.descriptionTextController,
+                            focusNode: _model.descriptionFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -464,7 +428,7 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                             maxLines: 4,
                             minLines: 3,
                             keyboardType: TextInputType.multiline,
-                            validator: _model.textController2Validator
+                            validator: _model.descriptionTextControllerValidator
                                 .asValidator(context),
                           ),
                           FlutterFlowPlacePicker(
@@ -551,8 +515,8 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                             children: [
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController3,
-                                  focusNode: _model.textFieldFocusNode3,
+                                  controller: _model.starRatingTextController,
+                                  focusNode: _model.starRatingFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -669,14 +633,16 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                             .fontStyle,
                                       ),
                                   keyboardType: TextInputType.number,
-                                  validator: _model.textController3Validator
+                                  validator: _model
+                                      .starRatingTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController4,
-                                  focusNode: _model.textFieldFocusNode4,
+                                  controller:
+                                      _model.pricePerNightTextController,
+                                  focusNode: _model.pricePerNightFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -793,7 +759,8 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                             .fontStyle,
                                       ),
                                   keyboardType: TextInputType.number,
-                                  validator: _model.textController4Validator
+                                  validator: _model
+                                      .pricePerNightTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -804,8 +771,8 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                             children: [
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController5,
-                                  focusNode: _model.textFieldFocusNode5,
+                                  controller: _model.totalRoomsTextController,
+                                  focusNode: _model.totalRoomsFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -922,14 +889,16 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                             .fontStyle,
                                       ),
                                   keyboardType: TextInputType.number,
-                                  validator: _model.textController5Validator
+                                  validator: _model
+                                      .totalRoomsTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController6,
-                                  focusNode: _model.textFieldFocusNode6,
+                                  controller:
+                                      _model.availableRoomsTextController,
+                                  focusNode: _model.availableRoomsFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -1046,7 +1015,8 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                             .fontStyle,
                                       ),
                                   keyboardType: TextInputType.number,
-                                  validator: _model.textController6Validator
+                                  validator: _model
+                                      .availableRoomsTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -1208,8 +1178,8 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                 ),
                           ),
                           TextFormField(
-                            controller: _model.textController7,
-                            focusNode: _model.textFieldFocusNode7,
+                            controller: _model.phoneNumberTextController,
+                            focusNode: _model.phoneNumberFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1313,12 +1283,12 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                       .fontStyle,
                                 ),
                             keyboardType: TextInputType.phone,
-                            validator: _model.textController7Validator
+                            validator: _model.phoneNumberTextControllerValidator
                                 .asValidator(context),
                           ),
                           TextFormField(
-                            controller: _model.textController8,
-                            focusNode: _model.textFieldFocusNode8,
+                            controller: _model.emailAddressTextController,
+                            focusNode: _model.emailAddressFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1422,12 +1392,13 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                       .fontStyle,
                                 ),
                             keyboardType: TextInputType.emailAddress,
-                            validator: _model.textController8Validator
+                            validator: _model
+                                .emailAddressTextControllerValidator
                                 .asValidator(context),
                           ),
                           TextFormField(
-                            controller: _model.textController9,
-                            focusNode: _model.textFieldFocusNode9,
+                            controller: _model.websiteTextController,
+                            focusNode: _model.websiteFocusNode,
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1531,7 +1502,7 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                                       .fontStyle,
                                 ),
                             keyboardType: TextInputType.url,
-                            validator: _model.textController9Validator
+                            validator: _model.websiteTextControllerValidator
                                 .asValidator(context),
                           ),
                         ].divide(SizedBox(height: 16.0)),
@@ -1542,7 +1513,7 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                           Expanded(
                             child: FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                print('saveAsDraftButton pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 're0fkxlf' /* Save Draft */,
@@ -1583,7 +1554,7 @@ class _AdminaddhotelpageWidgetState extends State<AdminaddhotelpageWidget> {
                           Expanded(
                             child: FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                print('addHotelButton pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 'yc5fsv1f' /* Add Hotel */,

@@ -46,23 +46,23 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
     _model.yearMakeTextController ??= TextEditingController();
     _model.yearMakeFocusNode ??= FocusNode();
 
-    _model.nameOfSeatTextController ??= TextEditingController();
-    _model.nameOfSeatFocusNode ??= FocusNode();
+    _model.numberOfSeatTextController ??= TextEditingController();
+    _model.numberOfSeatFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.dailyRateTextController ??= TextEditingController();
+    _model.dailyRateFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.weeklyRateTextController ??= TextEditingController();
+    _model.weeklyRateFocusNode ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.textFieldmonthlyRateTextController ??= TextEditingController();
+    _model.textFieldmonthlyRateFocusNode ??= FocusNode();
 
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.licensePlateTextController ??= TextEditingController();
+    _model.licensePlateFocusNode ??= FocusNode();
 
-    _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.carDescriptionTextController ??= TextEditingController();
+    _model.carDescriptionFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -741,8 +741,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 ),
                           ),
                           TextFormField(
-                            controller: _model.nameOfSeatTextController,
-                            focusNode: _model.nameOfSeatFocusNode,
+                            controller: _model.numberOfSeatTextController,
+                            focusNode: _model.numberOfSeatFocusNode,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -847,7 +847,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                       .fontStyle,
                                 ),
                             keyboardType: TextInputType.number,
-                            validator: _model.nameOfSeatTextControllerValidator
+                            validator: _model
+                                .numberOfSeatTextControllerValidator
                                 .asValidator(context),
                           ),
                         ].divide(SizedBox(height: 16.0)),
@@ -884,8 +885,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    controller: _model.textController5,
-                                    focusNode: _model.textFieldFocusNode1,
+                                    controller: _model.dailyRateTextController,
+                                    focusNode: _model.dailyRateFocusNode,
                                     autofocus: false,
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
@@ -1014,14 +1015,15 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                   .fontStyle,
                                         ),
                                     keyboardType: TextInputType.number,
-                                    validator: _model.textController5Validator
+                                    validator: _model
+                                        .dailyRateTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
                                 Expanded(
                                   child: TextFormField(
-                                    controller: _model.textController6,
-                                    focusNode: _model.textFieldFocusNode2,
+                                    controller: _model.weeklyRateTextController,
+                                    focusNode: _model.weeklyRateFocusNode,
                                     autofocus: false,
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
@@ -1150,15 +1152,17 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                                   .fontStyle,
                                         ),
                                     keyboardType: TextInputType.number,
-                                    validator: _model.textController6Validator
+                                    validator: _model
+                                        .weeklyRateTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
                               ].divide(SizedBox(width: 12.0)),
                             ),
                             TextFormField(
-                              controller: _model.textController7,
-                              focusNode: _model.textFieldFocusNode3,
+                              controller:
+                                  _model.textFieldmonthlyRateTextController,
+                              focusNode: _model.textFieldmonthlyRateFocusNode,
                               autofocus: false,
                               textInputAction: TextInputAction.next,
                               obscureText: false,
@@ -1268,7 +1272,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                         .fontStyle,
                                   ),
                               keyboardType: TextInputType.number,
-                              validator: _model.textController7Validator
+                              validator: _model
+                                  .textFieldmonthlyRateTextControllerValidator
                                   .asValidator(context),
                             ),
                             Material(
@@ -1342,8 +1347,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 ),
                           ),
                           TextFormField(
-                            controller: _model.textController8,
-                            focusNode: _model.textFieldFocusNode4,
+                            controller: _model.licensePlateTextController,
+                            focusNode: _model.licensePlateFocusNode,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -1447,12 +1452,13 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                       .bodyMedium
                                       .fontStyle,
                                 ),
-                            validator: _model.textController8Validator
+                            validator: _model
+                                .licensePlateTextControllerValidator
                                 .asValidator(context),
                           ),
                           TextFormField(
-                            controller: _model.textController9,
-                            focusNode: _model.textFieldFocusNode5,
+                            controller: _model.carDescriptionTextController,
+                            focusNode: _model.carDescriptionFocusNode,
                             autofocus: false,
                             textInputAction: TextInputAction.done,
                             obscureText: false,
@@ -1559,7 +1565,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                             maxLines: 4,
                             minLines: 4,
                             keyboardType: TextInputType.multiline,
-                            validator: _model.textController9Validator
+                            validator: _model
+                                .carDescriptionTextControllerValidator
                                 .asValidator(context),
                           ),
                         ].divide(SizedBox(height: 16.0)),
@@ -1570,7 +1577,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           Expanded(
                             child: FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                print('cancelButton pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 '2ppg9biv' /* Cancel */,
@@ -1611,7 +1618,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           Expanded(
                             child: FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                print('addCarButton pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 '6wcmxnd1' /* Add Car */,

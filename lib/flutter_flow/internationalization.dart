@@ -15823,15 +15823,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '38gn8hxw': {
-      'en': 'Add Hotel Photos',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'g1jjgvh3': {
       'en': 'Hotel Information',
       'aa': '',

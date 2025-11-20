@@ -6,80 +6,81 @@ import 'package:flutter/material.dart';
 class AdminaddhotelpageModel extends FlutterFlowModel<AdminaddhotelpageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for hotelName widget.
+  FocusNode? hotelNameFocusNode;
+  TextEditingController? hotelNameTextController;
+  String? Function(BuildContext, String?)? hotelNameTextControllerValidator;
+  // State field(s) for description widget.
+  FocusNode? descriptionFocusNode;
+  TextEditingController? descriptionTextController;
+  String? Function(BuildContext, String?)? descriptionTextControllerValidator;
   // State field(s) for PlacePicker widget.
   FFPlace placePickerValue = FFPlace();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for starRating widget.
+  FocusNode? starRatingFocusNode;
+  TextEditingController? starRatingTextController;
+  String? Function(BuildContext, String?)? starRatingTextControllerValidator;
+  // State field(s) for pricePerNight widget.
+  FocusNode? pricePerNightFocusNode;
+  TextEditingController? pricePerNightTextController;
+  String? Function(BuildContext, String?)? pricePerNightTextControllerValidator;
+  // State field(s) for totalRooms widget.
+  FocusNode? totalRoomsFocusNode;
+  TextEditingController? totalRoomsTextController;
+  String? Function(BuildContext, String?)? totalRoomsTextControllerValidator;
+  // State field(s) for availableRooms widget.
+  FocusNode? availableRoomsFocusNode;
+  TextEditingController? availableRoomsTextController;
+  String? Function(BuildContext, String?)?
+      availableRoomsTextControllerValidator;
   // State field(s) for ChoiceChips widget.
   FormFieldController<List<String>>? choiceChipsValueController;
   List<String>? get choiceChipsValues => choiceChipsValueController?.value;
   set choiceChipsValues(List<String>? val) =>
       choiceChipsValueController?.value = val;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
+  // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  // State field(s) for emailAddress widget.
+  FocusNode? emailAddressFocusNode;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for website widget.
+  FocusNode? websiteFocusNode;
+  TextEditingController? websiteTextController;
+  String? Function(BuildContext, String?)? websiteTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    hotelNameFocusNode?.dispose();
+    hotelNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    descriptionFocusNode?.dispose();
+    descriptionTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    starRatingFocusNode?.dispose();
+    starRatingTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    pricePerNightFocusNode?.dispose();
+    pricePerNightTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    totalRoomsFocusNode?.dispose();
+    totalRoomsTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    availableRoomsFocusNode?.dispose();
+    availableRoomsTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
+    emailAddressFocusNode?.dispose();
+    emailAddressTextController?.dispose();
 
-    textFieldFocusNode9?.dispose();
-    textController9?.dispose();
+    websiteFocusNode?.dispose();
+    websiteTextController?.dispose();
   }
 }
