@@ -5,80 +5,82 @@ import 'package:flutter/material.dart';
 class AddflightpageModel extends FlutterFlowModel<AddflightpageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
+  // State field(s) for flightNumber widget.
+  FocusNode? flightNumberFocusNode;
+  TextEditingController? flightNumberTextController;
+  String? Function(BuildContext, String?)? flightNumberTextControllerValidator;
+  // State field(s) for airline widget.
+  FocusNode? airlineFocusNode;
+  TextEditingController? airlineTextController;
+  String? Function(BuildContext, String?)? airlineTextControllerValidator;
+  // State field(s) for aircraftType widget.
+  FocusNode? aircraftTypeFocusNode;
+  TextEditingController? aircraftTypeTextController;
+  String? Function(BuildContext, String?)? aircraftTypeTextControllerValidator;
+  // State field(s) for departure widget.
+  FocusNode? departureFocusNode;
+  TextEditingController? departureTextController;
+  String? Function(BuildContext, String?)? departureTextControllerValidator;
+  // State field(s) for arrival widget.
+  FocusNode? arrivalFocusNode;
+  TextEditingController? arrivalTextController;
+  String? Function(BuildContext, String?)? arrivalTextControllerValidator;
+  // State field(s) for flightDuration widget.
+  FocusNode? flightDurationFocusNode;
+  TextEditingController? flightDurationTextController;
+  String? Function(BuildContext, String?)?
+      flightDurationTextControllerValidator;
+  // State field(s) for economyPrice widget.
+  FocusNode? economyPriceFocusNode;
+  TextEditingController? economyPriceTextController;
+  String? Function(BuildContext, String?)? economyPriceTextControllerValidator;
+  // State field(s) for bussinessPrice widget.
+  FocusNode? bussinessPriceFocusNode;
+  TextEditingController? bussinessPriceTextController;
+  String? Function(BuildContext, String?)?
+      bussinessPriceTextControllerValidator;
+  // State field(s) for economySeats widget.
+  FocusNode? economySeatsFocusNode;
+  TextEditingController? economySeatsTextController;
+  String? Function(BuildContext, String?)? economySeatsTextControllerValidator;
+  // State field(s) for businessSeats widget.
+  FocusNode? businessSeatsFocusNode;
+  TextEditingController? businessSeatsTextController;
+  String? Function(BuildContext, String?)? businessSeatsTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    flightNumberFocusNode?.dispose();
+    flightNumberTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    airlineFocusNode?.dispose();
+    airlineTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    aircraftTypeFocusNode?.dispose();
+    aircraftTypeTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    departureFocusNode?.dispose();
+    departureTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    arrivalFocusNode?.dispose();
+    arrivalTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    flightDurationFocusNode?.dispose();
+    flightDurationTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
+    economyPriceFocusNode?.dispose();
+    economyPriceTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
+    bussinessPriceFocusNode?.dispose();
+    bussinessPriceTextController?.dispose();
 
-    textFieldFocusNode9?.dispose();
-    textController9?.dispose();
+    economySeatsFocusNode?.dispose();
+    economySeatsTextController?.dispose();
 
-    textFieldFocusNode10?.dispose();
-    textController10?.dispose();
+    businessSeatsFocusNode?.dispose();
+    businessSeatsTextController?.dispose();
   }
 }
