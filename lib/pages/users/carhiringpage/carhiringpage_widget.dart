@@ -41,11 +41,11 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'carhiringpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.pickupLocationTextController ??= TextEditingController();
+    _model.pickupLocationFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.dropoffLocationTextController ??= TextEditingController();
+    _model.dropoffLocationFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -286,8 +286,10 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                                               ),
                                         ),
                                         TextFormField(
-                                          controller: _model.textController1,
-                                          focusNode: _model.textFieldFocusNode1,
+                                          controller: _model
+                                              .pickupLocationTextController,
+                                          focusNode:
+                                              _model.pickupLocationFocusNode,
                                           autofocus: false,
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
@@ -399,7 +401,7 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                                                         .fontStyle,
                                               ),
                                           validator: _model
-                                              .textController1Validator
+                                              .pickupLocationTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ].divide(SizedBox(height: 12.0)),
@@ -517,8 +519,10 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                                           ],
                                         ),
                                         TextFormField(
-                                          controller: _model.textController2,
-                                          focusNode: _model.textFieldFocusNode2,
+                                          controller: _model
+                                              .dropoffLocationTextController,
+                                          focusNode:
+                                              _model.dropoffLocationFocusNode,
                                           autofocus: false,
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
@@ -630,7 +634,7 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                                                         .fontStyle,
                                               ),
                                           validator: _model
-                                              .textController2Validator
+                                              .dropoffLocationTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ].divide(SizedBox(height: 12.0)),
@@ -1156,10 +1160,18 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                                               ),
                                         ),
                                         FlutterFlowDropDown<String>(
-                                          controller: _model
-                                                  .dropDownValueController ??=
-                                              FormFieldController<String>(null),
-                                          options: [
+                                          controller:
+                                              _model.dropDownValueController ??=
+                                                  FormFieldController<String>(
+                                            _model.dropDownValue ??= '',
+                                          ),
+                                          options: List<String>.from([
+                                            '18-24',
+                                            '25-29',
+                                            '30-64',
+                                            '65+'
+                                          ]),
+                                          optionLabels: [
                                             FFLocalizations.of(context).getText(
                                               '4c0coxat' /* 18-24 years */,
                                             ),

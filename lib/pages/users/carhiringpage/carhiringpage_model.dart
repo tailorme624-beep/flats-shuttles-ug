@@ -7,16 +7,18 @@ import 'package:flutter/material.dart';
 class CarhiringpageModel extends FlutterFlowModel<CarhiringpageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for pickupLocation widget.
+  FocusNode? pickupLocationFocusNode;
+  TextEditingController? pickupLocationTextController;
+  String? Function(BuildContext, String?)?
+      pickupLocationTextControllerValidator;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for dropoffLocation widget.
+  FocusNode? dropoffLocationFocusNode;
+  TextEditingController? dropoffLocationTextController;
+  String? Function(BuildContext, String?)?
+      dropoffLocationTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -26,10 +28,10 @@ class CarhiringpageModel extends FlutterFlowModel<CarhiringpageWidget> {
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    pickupLocationFocusNode?.dispose();
+    pickupLocationTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    dropoffLocationFocusNode?.dispose();
+    dropoffLocationTextController?.dispose();
   }
 }
