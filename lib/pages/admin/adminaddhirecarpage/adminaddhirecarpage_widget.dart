@@ -46,23 +46,23 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
     _model.yearMakeTextController ??= TextEditingController();
     _model.yearMakeFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.nameOfSeatTextController ??= TextEditingController();
+    _model.nameOfSeatFocusNode ??= FocusNode();
 
     _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.textFieldFocusNode5 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -564,9 +564,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 child: FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController1 ??=
-                                          FormFieldController<String>(
-                                    _model.dropDownValue1 ??= 'White',
-                                  ),
+                                          FormFieldController<String>(null),
                                   options: List<String>.from([
                                     'White',
                                     'Black',
@@ -666,9 +664,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           FlutterFlowDropDown<String>(
                             controller: _model.dropDownValueController2 ??=
-                                FormFieldController<String>(
-                              _model.dropDownValue2 ??= 'Manual',
-                            ),
+                                FormFieldController<String>(null),
                             options: List<String>.from(['Automatic', 'Manual']),
                             optionLabels: [
                               FFLocalizations.of(context).getText(
@@ -745,8 +741,8 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 ),
                           ),
                           TextFormField(
-                            controller: _model.textController4,
-                            focusNode: _model.textFieldFocusNode1,
+                            controller: _model.nameOfSeatTextController,
+                            focusNode: _model.nameOfSeatFocusNode,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -851,7 +847,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                       .fontStyle,
                                 ),
                             keyboardType: TextInputType.number,
-                            validator: _model.textController4Validator
+                            validator: _model.nameOfSeatTextControllerValidator
                                 .asValidator(context),
                           ),
                         ].divide(SizedBox(height: 16.0)),
@@ -889,7 +885,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 Expanded(
                                   child: TextFormField(
                                     controller: _model.textController5,
-                                    focusNode: _model.textFieldFocusNode2,
+                                    focusNode: _model.textFieldFocusNode1,
                                     autofocus: false,
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
@@ -1025,7 +1021,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                                 Expanded(
                                   child: TextFormField(
                                     controller: _model.textController6,
-                                    focusNode: _model.textFieldFocusNode3,
+                                    focusNode: _model.textFieldFocusNode2,
                                     autofocus: false,
                                     textInputAction: TextInputAction.next,
                                     obscureText: false,
@@ -1162,7 +1158,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                             ),
                             TextFormField(
                               controller: _model.textController7,
-                              focusNode: _model.textFieldFocusNode4,
+                              focusNode: _model.textFieldFocusNode3,
                               autofocus: false,
                               textInputAction: TextInputAction.next,
                               obscureText: false,
@@ -1347,7 +1343,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           TextFormField(
                             controller: _model.textController8,
-                            focusNode: _model.textFieldFocusNode5,
+                            focusNode: _model.textFieldFocusNode4,
                             autofocus: false,
                             textInputAction: TextInputAction.next,
                             obscureText: false,
@@ -1456,7 +1452,7 @@ class _AdminaddhirecarpageWidgetState extends State<AdminaddhirecarpageWidget> {
                           ),
                           TextFormField(
                             controller: _model.textController9,
-                            focusNode: _model.textFieldFocusNode6,
+                            focusNode: _model.textFieldFocusNode5,
                             autofocus: false,
                             textInputAction: TextInputAction.done,
                             obscureText: false,
