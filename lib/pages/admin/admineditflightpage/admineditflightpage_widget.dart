@@ -33,87 +33,90 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'admineditflightpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.flightNumberTextController ??= TextEditingController();
+    _model.flightNumberFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.aircraftTypeTextController ??= TextEditingController();
+    _model.aircraftTypeFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.departureAirportTextController ??= TextEditingController();
+    _model.departureAirportFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.arrivalAirportTextController ??= TextEditingController();
+    _model.arrivalAirportFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.departureDateTextController ??= TextEditingController();
+    _model.departureDateFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.departureTimeTextController ??= TextEditingController();
+    _model.departureTimeFocusNode ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
+    _model.arrivalDateTextController ??= TextEditingController();
+    _model.arrivalDateFocusNode ??= FocusNode();
 
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.arrivalTimeTextController ??= TextEditingController();
+    _model.arrivalTimeFocusNode ??= FocusNode();
 
-    _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode9 ??= FocusNode();
+    _model.toatlSeatsTextController ??= TextEditingController();
+    _model.toatlSeatsFocusNode ??= FocusNode();
 
-    _model.textController10 ??= TextEditingController();
-    _model.textFieldFocusNode10 ??= FocusNode();
+    _model.availableSeatsTextController ??= TextEditingController();
+    _model.availableSeatsFocusNode ??= FocusNode();
 
-    _model.textController11 ??= TextEditingController();
-    _model.textFieldFocusNode11 ??= FocusNode();
+    _model.economyPriceTextController ??= TextEditingController();
+    _model.economyPriceFocusNode ??= FocusNode();
 
-    _model.textController12 ??= TextEditingController();
-    _model.textFieldFocusNode12 ??= FocusNode();
-
-    _model.textController13 ??= TextEditingController();
-    _model.textFieldFocusNode13 ??= FocusNode();
-
-    _model.textController14 ??= TextEditingController();
-    _model.textFieldFocusNode14 ??= FocusNode();
+    _model.businessPriceTextController ??= TextEditingController();
+    _model.businessPriceFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.textController1?.text = FFLocalizations.of(context).getText(
+          _model.flightNumberTextController?.text =
+              FFLocalizations.of(context).getText(
             'lhx7qwgj' /* AA1234 */,
           );
-          _model.textController2?.text = FFLocalizations.of(context).getText(
+          _model.aircraftTypeTextController?.text =
+              FFLocalizations.of(context).getText(
             'mf3kkwst' /* Boeing 737-800 */,
           );
-          _model.textController3?.text = FFLocalizations.of(context).getText(
+          _model.departureAirportTextController?.text =
+              FFLocalizations.of(context).getText(
             '11626z5n' /* JFK - New York */,
           );
-          _model.textController4?.text = FFLocalizations.of(context).getText(
+          _model.arrivalAirportTextController?.text =
+              FFLocalizations.of(context).getText(
             'ux7iwfpk' /* LAX - Los Angeles */,
           );
-          _model.textController5?.text = FFLocalizations.of(context).getText(
+          _model.departureDateTextController?.text =
+              FFLocalizations.of(context).getText(
             '675hykyd' /* 2024-03-15 */,
           );
-          _model.textController6?.text = FFLocalizations.of(context).getText(
+          _model.departureTimeTextController?.text =
+              FFLocalizations.of(context).getText(
             'tzvllhk1' /* 08:30 AM */,
           );
-          _model.textController7?.text = FFLocalizations.of(context).getText(
+          _model.arrivalDateTextController?.text =
+              FFLocalizations.of(context).getText(
             '7zxav108' /* 2024-03-15 */,
           );
-          _model.textController8?.text = FFLocalizations.of(context).getText(
+          _model.arrivalTimeTextController?.text =
+              FFLocalizations.of(context).getText(
             'udtvb1mz' /* 11:45 AM */,
           );
-          _model.textController9?.text = FFLocalizations.of(context).getText(
+          _model.toatlSeatsTextController?.text =
+              FFLocalizations.of(context).getText(
             '0znw873v' /* 180 */,
           );
-          _model.textController10?.text = FFLocalizations.of(context).getText(
+          _model.availableSeatsTextController?.text =
+              FFLocalizations.of(context).getText(
             'qr2vvhr9' /* 45 */,
           );
-          _model.textController11?.text = FFLocalizations.of(context).getText(
+          _model.economyPriceTextController?.text =
+              FFLocalizations.of(context).getText(
             'dgum2mno' /* $299.00 */,
           );
-          _model.textController12?.text = FFLocalizations.of(context).getText(
+          _model.businessPriceTextController?.text =
+              FFLocalizations.of(context).getText(
             '66quhg0h' /* $899.00 */,
-          );
-          _model.textController13?.text = FFLocalizations.of(context).getText(
-            'z8voeqoh' /* A12 */,
           );
         }));
   }
@@ -242,10 +245,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController1,
+                                              controller: _model
+                                                  .flightNumberTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode1,
+                                                  _model.flightNumberFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -323,7 +326,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController1Validator
+                                                  .flightNumberTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -369,10 +372,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController2,
+                                              controller: _model
+                                                  .aircraftTypeTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode2,
+                                                  _model.aircraftTypeFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -450,7 +453,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController2Validator
+                                                  .aircraftTypeTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -501,10 +504,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController3,
-                                              focusNode:
-                                                  _model.textFieldFocusNode3,
+                                              controller: _model
+                                                  .departureAirportTextController,
+                                              focusNode: _model
+                                                  .departureAirportFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -582,7 +585,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController3Validator
+                                                  .departureAirportTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -628,10 +631,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController4,
-                                              focusNode:
-                                                  _model.textFieldFocusNode4,
+                                              controller: _model
+                                                  .arrivalAirportTextController,
+                                              focusNode: _model
+                                                  .arrivalAirportFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -709,7 +712,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController4Validator
+                                                  .arrivalAirportTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -760,10 +763,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController5,
+                                              controller: _model
+                                                  .departureDateTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode5,
+                                                  _model.departureDateFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -848,7 +851,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               keyboardType:
                                                   TextInputType.datetime,
                                               validator: _model
-                                                  .textController5Validator
+                                                  .departureDateTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -894,10 +897,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController6,
+                                              controller: _model
+                                                  .departureTimeTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode6,
+                                                  _model.departureTimeFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -982,7 +985,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               keyboardType:
                                                   TextInputType.datetime,
                                               validator: _model
-                                                  .textController6Validator
+                                                  .departureTimeTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1033,10 +1036,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController7,
+                                              controller: _model
+                                                  .arrivalDateTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode7,
+                                                  _model.arrivalDateFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -1121,7 +1124,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               keyboardType:
                                                   TextInputType.datetime,
                                               validator: _model
-                                                  .textController7Validator
+                                                  .arrivalDateTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1167,10 +1170,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController8,
+                                              controller: _model
+                                                  .arrivalTimeTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode8,
+                                                  _model.arrivalTimeFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -1255,7 +1258,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               keyboardType:
                                                   TextInputType.datetime,
                                               validator: _model
-                                                  .textController8Validator
+                                                  .arrivalTimeTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1359,10 +1362,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController9,
+                                              controller: _model
+                                                  .toatlSeatsTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode9,
+                                                  _model.toatlSeatsFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -1442,7 +1445,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               keyboardType:
                                                   TextInputType.number,
                                               validator: _model
-                                                  .textController9Validator
+                                                  .toatlSeatsTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1488,10 +1491,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController10,
-                                              focusNode:
-                                                  _model.textFieldFocusNode10,
+                                              controller: _model
+                                                  .availableSeatsTextController,
+                                              focusNode: _model
+                                                  .availableSeatsFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -1571,7 +1574,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               keyboardType:
                                                   TextInputType.number,
                                               validator: _model
-                                                  .textController10Validator
+                                                  .availableSeatsTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1622,10 +1625,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController11,
+                                              controller: _model
+                                                  .economyPriceTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode11,
+                                                  _model.economyPriceFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -1706,7 +1709,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                                   .numberWithOptions(
                                                   decimal: true),
                                               validator: _model
-                                                  .textController11Validator
+                                                  .economyPriceTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1752,10 +1755,10 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                               ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController12,
+                                              controller: _model
+                                                  .businessPriceTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode12,
+                                                  _model.businessPriceFocusNode,
                                               autofocus: false,
                                               textInputAction:
                                                   TextInputAction.next,
@@ -1836,7 +1839,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                                   .numberWithOptions(
                                                   decimal: true),
                                               validator: _model
-                                                  .textController12Validator
+                                                  .businessPriceTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ],
@@ -1878,10 +1881,19 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                                         ),
                                       ),
                                       FlutterFlowDropDown<String>(
-                                        controller: _model
-                                                .dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                        options: [
+                                        controller:
+                                            _model.dropDownValueController ??=
+                                                FormFieldController<String>(
+                                          _model.dropDownValue ??= '',
+                                        ),
+                                        options: List<String>.from([
+                                          'scheduled',
+                                          'delayed',
+                                          'cancelled',
+                                          'boarding',
+                                          'departed'
+                                        ]),
+                                        optionLabels: [
                                           FFLocalizations.of(context).getText(
                                             'agws8fm4' /* Scheduled */,
                                           ),
@@ -1955,277 +1967,6 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12.0),
-                              border: Border.all(
-                                color: Color(0xFF556B2F),
-                                width: 1.0,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'd4zjybq7' /* Additional Information */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineMedium
-                                        .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF556B2F),
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineMedium
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'cmqblwm0' /* Gate Number */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                color: Color(0xFF556B2F),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
-                                      ),
-                                      TextFormField(
-                                        controller: _model.textController13,
-                                        focusNode: _model.textFieldFocusNode13,
-                                        autofocus: false,
-                                        textInputAction: TextInputAction.next,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF556B2F),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF556B2F),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          filled: true,
-                                          fillColor: Color(0xFFF5F5DC),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                        validator: _model
-                                            .textController13Validator
-                                            .asValidator(context),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'bxz0fcay' /* Flight Notes */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                color: Color(0xFF556B2F),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
-                                      ),
-                                      TextFormField(
-                                        controller: _model.textController14,
-                                        focusNode: _model.textFieldFocusNode14,
-                                        autofocus: false,
-                                        textInputAction: TextInputAction.done,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            '4bq5z7fa' /* Enter any additional notes or ... */,
-                                          ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF556B2F),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFF556B2F),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          filled: true,
-                                          fillColor: Color(0xFFF5F5DC),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                        maxLines: 4,
-                                        keyboardType: TextInputType.multiline,
-                                        validator: _model
-                                            .textController14Validator
-                                            .asValidator(context),
-                                      ),
-                                    ],
-                                  ),
-                                ].divide(SizedBox(height: 16.0)),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                         child: Row(
@@ -2235,7 +1976,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                             Expanded(
                               child: FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  print('cancelButton pressed ...');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'qaw80wfe' /* Cancel */,
@@ -2281,7 +2022,7 @@ class _AdmineditflightpageWidgetState extends State<AdmineditflightpageWidget> {
                             Expanded(
                               child: FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  print('saveButton pressed ...');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'c81dkuz9' /* Save Changes */,

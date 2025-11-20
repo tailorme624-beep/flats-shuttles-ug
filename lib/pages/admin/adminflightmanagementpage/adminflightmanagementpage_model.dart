@@ -8,17 +8,17 @@ class AdminflightmanagementpageModel
     extends FlutterFlowModel<AdminflightmanagementpageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for searchFlight widget.
+  FocusNode? searchFlightFocusNode;
+  TextEditingController? searchFlightTextController;
+  String? Function(BuildContext, String?)? searchFlightTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    searchFlightFocusNode?.dispose();
+    searchFlightTextController?.dispose();
   }
 }

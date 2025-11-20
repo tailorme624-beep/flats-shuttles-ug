@@ -1166,7 +1166,7 @@ class _EdittourplacepageWidgetState extends State<EdittourplacepageWidget> {
                                       decoration: BoxDecoration(
                                         color: Color(0xFFF5F5DC),
                                         borderRadius:
-                                            BorderRadius.circular(8.0),
+                                            BorderRadius.circular(6.0),
                                         border: Border.all(
                                           color: Color(0xFF556B2F),
                                           width: 2.0,
@@ -1191,7 +1191,7 @@ class _EdittourplacepageWidgetState extends State<EdittourplacepageWidget> {
                                       decoration: BoxDecoration(
                                         color: Color(0xFFF5F5DC),
                                         borderRadius:
-                                            BorderRadius.circular(8.0),
+                                            BorderRadius.circular(6.0),
                                         border: Border.all(
                                           color: Color(0xFF556B2F),
                                           width: 2.0,

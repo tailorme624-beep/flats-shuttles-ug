@@ -158,3 +158,5 @@ export '/pages/admin/manage_hotelspage/manage_hotelspage_widget.dart'
     show ManageHotelspageWidget;
 export '/pages/admin/edittourplacepage/edittourplacepage_widget.dart'
     show EdittourplacepageWidget;
+export '/live_rides_dashboard/live_rides_dashboard_widget.dart'
+    show LiveRidesDashboardWidget;

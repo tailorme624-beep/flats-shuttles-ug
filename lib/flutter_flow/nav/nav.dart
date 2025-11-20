@@ -611,6 +611,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: EdittourplacepageWidget.routeName,
           path: EdittourplacepageWidget.routePath,
           builder: (context, params) => EdittourplacepageWidget(),
+        ),
+        FFRoute(
+          name: LiveRidesDashboardWidget.routeName,
+          path: LiveRidesDashboardWidget.routePath,
+          builder: (context, params) => LiveRidesDashboardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

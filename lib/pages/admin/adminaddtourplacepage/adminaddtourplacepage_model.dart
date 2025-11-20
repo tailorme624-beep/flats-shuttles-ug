@@ -8,11 +8,11 @@ class AdminaddtourplacepageModel
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  String? _textController1Validator(BuildContext context, String? val) {
+  // State field(s) for placeName widget.
+  FocusNode? placeNameFocusNode;
+  TextEditingController? placeNameTextController;
+  String? Function(BuildContext, String?)? placeNameTextControllerValidator;
+  String? _placeNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'kcbfo3vx' /* Enter place name is required */,
@@ -22,11 +22,11 @@ class AdminaddtourplacepageModel
     return null;
   }
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  String? _textController2Validator(BuildContext context, String? val) {
+  // State field(s) for location widget.
+  FocusNode? locationFocusNode;
+  TextEditingController? locationTextController;
+  String? Function(BuildContext, String?)? locationTextControllerValidator;
+  String? _locationTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'aizoe2c8' /* Enter location is required */,
@@ -36,11 +36,12 @@ class AdminaddtourplacepageModel
     return null;
   }
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  String? _textController3Validator(BuildContext context, String? val) {
+  // State field(s) for description widget.
+  FocusNode? descriptionFocusNode;
+  TextEditingController? descriptionTextController;
+  String? Function(BuildContext, String?)? descriptionTextControllerValidator;
+  String? _descriptionTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'cah5nryo' /* Describe the place and attract... */,
@@ -50,11 +51,12 @@ class AdminaddtourplacepageModel
     return null;
   }
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  String? _textController4Validator(BuildContext context, String? val) {
+  // State field(s) for costPerPerson widget.
+  FocusNode? costPerPersonFocusNode;
+  TextEditingController? costPerPersonTextController;
+  String? Function(BuildContext, String?)? costPerPersonTextControllerValidator;
+  String? _costPerPersonTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'unh8rdwv' /* UGX0.00 is required */,
@@ -64,11 +66,11 @@ class AdminaddtourplacepageModel
     return null;
   }
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  String? _textController5Validator(BuildContext context, String? val) {
+  // State field(s) for duration widget.
+  FocusNode? durationFocusNode;
+  TextEditingController? durationTextController;
+  String? Function(BuildContext, String?)? durationTextControllerValidator;
+  String? _durationTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         '1dcece6d' /* 3 is required */,
@@ -86,11 +88,12 @@ class AdminaddtourplacepageModel
   List<String>? get choiceChipsValues => choiceChipsValueController?.value;
   set choiceChipsValues(List<String>? val) =>
       choiceChipsValueController?.value = val;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  String? _textController6Validator(BuildContext context, String? val) {
+  // State field(s) for specialNotes widget.
+  FocusNode? specialNotesFocusNode;
+  TextEditingController? specialNotesTextController;
+  String? Function(BuildContext, String?)? specialNotesTextControllerValidator;
+  String? _specialNotesTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'kcgixpqk' /* Any special requirements or no... */,
@@ -102,32 +105,33 @@ class AdminaddtourplacepageModel
 
   @override
   void initState(BuildContext context) {
-    textController1Validator = _textController1Validator;
-    textController2Validator = _textController2Validator;
-    textController3Validator = _textController3Validator;
-    textController4Validator = _textController4Validator;
-    textController5Validator = _textController5Validator;
-    textController6Validator = _textController6Validator;
+    placeNameTextControllerValidator = _placeNameTextControllerValidator;
+    locationTextControllerValidator = _locationTextControllerValidator;
+    descriptionTextControllerValidator = _descriptionTextControllerValidator;
+    costPerPersonTextControllerValidator =
+        _costPerPersonTextControllerValidator;
+    durationTextControllerValidator = _durationTextControllerValidator;
+    specialNotesTextControllerValidator = _specialNotesTextControllerValidator;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    placeNameFocusNode?.dispose();
+    placeNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    locationFocusNode?.dispose();
+    locationTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    descriptionFocusNode?.dispose();
+    descriptionTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    costPerPersonFocusNode?.dispose();
+    costPerPersonTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    durationFocusNode?.dispose();
+    durationTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    specialNotesFocusNode?.dispose();
+    specialNotesTextController?.dispose();
   }
 }

@@ -7,111 +7,100 @@ class AdmineditflightpageModel
     extends FlutterFlowModel<AdmineditflightpageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode11;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode12;
-  TextEditingController? textController12;
-  String? Function(BuildContext, String?)? textController12Validator;
+  // State field(s) for flightNumber widget.
+  FocusNode? flightNumberFocusNode;
+  TextEditingController? flightNumberTextController;
+  String? Function(BuildContext, String?)? flightNumberTextControllerValidator;
+  // State field(s) for aircraftType widget.
+  FocusNode? aircraftTypeFocusNode;
+  TextEditingController? aircraftTypeTextController;
+  String? Function(BuildContext, String?)? aircraftTypeTextControllerValidator;
+  // State field(s) for departureAirport widget.
+  FocusNode? departureAirportFocusNode;
+  TextEditingController? departureAirportTextController;
+  String? Function(BuildContext, String?)?
+      departureAirportTextControllerValidator;
+  // State field(s) for arrivalAirport widget.
+  FocusNode? arrivalAirportFocusNode;
+  TextEditingController? arrivalAirportTextController;
+  String? Function(BuildContext, String?)?
+      arrivalAirportTextControllerValidator;
+  // State field(s) for departureDate widget.
+  FocusNode? departureDateFocusNode;
+  TextEditingController? departureDateTextController;
+  String? Function(BuildContext, String?)? departureDateTextControllerValidator;
+  // State field(s) for departureTime widget.
+  FocusNode? departureTimeFocusNode;
+  TextEditingController? departureTimeTextController;
+  String? Function(BuildContext, String?)? departureTimeTextControllerValidator;
+  // State field(s) for arrivalDate widget.
+  FocusNode? arrivalDateFocusNode;
+  TextEditingController? arrivalDateTextController;
+  String? Function(BuildContext, String?)? arrivalDateTextControllerValidator;
+  // State field(s) for arrivalTime widget.
+  FocusNode? arrivalTimeFocusNode;
+  TextEditingController? arrivalTimeTextController;
+  String? Function(BuildContext, String?)? arrivalTimeTextControllerValidator;
+  // State field(s) for toatlSeats widget.
+  FocusNode? toatlSeatsFocusNode;
+  TextEditingController? toatlSeatsTextController;
+  String? Function(BuildContext, String?)? toatlSeatsTextControllerValidator;
+  // State field(s) for availableSeats widget.
+  FocusNode? availableSeatsFocusNode;
+  TextEditingController? availableSeatsTextController;
+  String? Function(BuildContext, String?)?
+      availableSeatsTextControllerValidator;
+  // State field(s) for economyPrice widget.
+  FocusNode? economyPriceFocusNode;
+  TextEditingController? economyPriceTextController;
+  String? Function(BuildContext, String?)? economyPriceTextControllerValidator;
+  // State field(s) for businessPrice widget.
+  FocusNode? businessPriceFocusNode;
+  TextEditingController? businessPriceTextController;
+  String? Function(BuildContext, String?)? businessPriceTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode13;
-  TextEditingController? textController13;
-  String? Function(BuildContext, String?)? textController13Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode14;
-  TextEditingController? textController14;
-  String? Function(BuildContext, String?)? textController14Validator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    flightNumberFocusNode?.dispose();
+    flightNumberTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    aircraftTypeFocusNode?.dispose();
+    aircraftTypeTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    departureAirportFocusNode?.dispose();
+    departureAirportTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    arrivalAirportFocusNode?.dispose();
+    arrivalAirportTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    departureDateFocusNode?.dispose();
+    departureDateTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    departureTimeFocusNode?.dispose();
+    departureTimeTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
+    arrivalDateFocusNode?.dispose();
+    arrivalDateTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
+    arrivalTimeFocusNode?.dispose();
+    arrivalTimeTextController?.dispose();
 
-    textFieldFocusNode9?.dispose();
-    textController9?.dispose();
+    toatlSeatsFocusNode?.dispose();
+    toatlSeatsTextController?.dispose();
 
-    textFieldFocusNode10?.dispose();
-    textController10?.dispose();
+    availableSeatsFocusNode?.dispose();
+    availableSeatsTextController?.dispose();
 
-    textFieldFocusNode11?.dispose();
-    textController11?.dispose();
+    economyPriceFocusNode?.dispose();
+    economyPriceTextController?.dispose();
 
-    textFieldFocusNode12?.dispose();
-    textController12?.dispose();
-
-    textFieldFocusNode13?.dispose();
-    textController13?.dispose();
-
-    textFieldFocusNode14?.dispose();
-    textController14?.dispose();
+    businessPriceFocusNode?.dispose();
+    businessPriceTextController?.dispose();
   }
 }

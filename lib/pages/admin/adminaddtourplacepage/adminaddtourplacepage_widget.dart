@@ -38,23 +38,23 @@ class _AdminaddtourplacepageWidgetState
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'adminaddtourplacepage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.placeNameTextController ??= TextEditingController();
+    _model.placeNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.locationTextController ??= TextEditingController();
+    _model.locationFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.descriptionTextController ??= TextEditingController();
+    _model.descriptionFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.costPerPersonTextController ??= TextEditingController();
+    _model.costPerPersonFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.durationTextController ??= TextEditingController();
+    _model.durationFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.specialNotesTextController ??= TextEditingController();
+    _model.specialNotesFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -183,8 +183,8 @@ class _AdminaddtourplacepageWidgetState
                                         ),
                                   ),
                                   TextFormField(
-                                    controller: _model.textController1,
-                                    focusNode: _model.textFieldFocusNode1,
+                                    controller: _model.placeNameTextController,
+                                    focusNode: _model.placeNameFocusNode,
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -278,7 +278,8 @@ class _AdminaddtourplacepageWidgetState
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                    validator: _model.textController1Validator
+                                    validator: _model
+                                        .placeNameTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ].divide(SizedBox(height: 8.0)),
@@ -311,8 +312,8 @@ class _AdminaddtourplacepageWidgetState
                                         ),
                                   ),
                                   TextFormField(
-                                    controller: _model.textController2,
-                                    focusNode: _model.textFieldFocusNode2,
+                                    controller: _model.locationTextController,
+                                    focusNode: _model.locationFocusNode,
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -406,7 +407,8 @@ class _AdminaddtourplacepageWidgetState
                                                   .bodyMedium
                                                   .fontStyle,
                                         ),
-                                    validator: _model.textController2Validator
+                                    validator: _model
+                                        .locationTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ].divide(SizedBox(height: 8.0)),
@@ -439,8 +441,9 @@ class _AdminaddtourplacepageWidgetState
                                         ),
                                   ),
                                   TextFormField(
-                                    controller: _model.textController3,
-                                    focusNode: _model.textFieldFocusNode3,
+                                    controller:
+                                        _model.descriptionTextController,
+                                    focusNode: _model.descriptionFocusNode,
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -537,7 +540,8 @@ class _AdminaddtourplacepageWidgetState
                                     maxLines: 4,
                                     minLines: 3,
                                     keyboardType: TextInputType.multiline,
-                                    validator: _model.textController3Validator
+                                    validator: _model
+                                        .descriptionTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ].divide(SizedBox(height: 8.0)),
@@ -578,8 +582,10 @@ class _AdminaddtourplacepageWidgetState
                                               ),
                                         ),
                                         TextFormField(
-                                          controller: _model.textController4,
-                                          focusNode: _model.textFieldFocusNode4,
+                                          controller: _model
+                                              .costPerPersonTextController,
+                                          focusNode:
+                                              _model.costPerPersonFocusNode,
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -689,7 +695,7 @@ class _AdminaddtourplacepageWidgetState
                                               ),
                                           keyboardType: TextInputType.number,
                                           validator: _model
-                                              .textController4Validator
+                                              .costPerPersonTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -726,8 +732,9 @@ class _AdminaddtourplacepageWidgetState
                                               ),
                                         ),
                                         TextFormField(
-                                          controller: _model.textController5,
-                                          focusNode: _model.textFieldFocusNode5,
+                                          controller:
+                                              _model.durationTextController,
+                                          focusNode: _model.durationFocusNode,
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -832,7 +839,7 @@ class _AdminaddtourplacepageWidgetState
                                               ),
                                           keyboardType: TextInputType.number,
                                           validator: _model
-                                              .textController5Validator
+                                              .durationTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ].divide(SizedBox(height: 8.0)),
@@ -870,8 +877,17 @@ class _AdminaddtourplacepageWidgetState
                                   FlutterFlowDropDown<String>(
                                     controller:
                                         _model.dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: [
+                                            FormFieldController<String>(
+                                      _model.dropDownValue ??= '',
+                                    ),
+                                    options: List<String>.from([
+                                      'Adventure',
+                                      'Cultural',
+                                      'Nature',
+                                      'Historical',
+                                      'Beach'
+                                    ]),
+                                    optionLabels: [
                                       FFLocalizations.of(context).getText(
                                         '73ksavgy' /* Adventure */,
                                       ),
@@ -1099,8 +1115,9 @@ class _AdminaddtourplacepageWidgetState
                                         ),
                                   ),
                                   TextFormField(
-                                    controller: _model.textController6,
-                                    focusNode: _model.textFieldFocusNode6,
+                                    controller:
+                                        _model.specialNotesTextController,
+                                    focusNode: _model.specialNotesFocusNode,
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -1197,7 +1214,8 @@ class _AdminaddtourplacepageWidgetState
                                     maxLines: 3,
                                     minLines: 2,
                                     keyboardType: TextInputType.multiline,
-                                    validator: _model.textController6Validator
+                                    validator: _model
+                                        .specialNotesTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ].divide(SizedBox(height: 8.0)),
@@ -1235,7 +1253,7 @@ class _AdminaddtourplacepageWidgetState
                             children: [
                               FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  print('saveAsDraftButton pressed ...');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'ek5nuzkh' /* Save as Draft */,
@@ -1276,7 +1294,7 @@ class _AdminaddtourplacepageWidgetState
                               ),
                               FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  print('addPlaceButton pressed ...');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   '81vnum7f' /* Add Place */,

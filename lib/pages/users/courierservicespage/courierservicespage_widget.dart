@@ -1654,8 +1654,12 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
                                 child: FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController2 ??=
-                                          FormFieldController<String>(null),
-                                  options: [
+                                          FormFieldController<String>(
+                                    _model.dropDownValue2 ??= '',
+                                  ),
+                                  options: List<String>.from(
+                                      ['standard', 'express', 'same_day']),
+                                  optionLabels: [
                                     FFLocalizations.of(context).getText(
                                       '3jqai888' /* Standard (3-5 business days) */,
                                     ),

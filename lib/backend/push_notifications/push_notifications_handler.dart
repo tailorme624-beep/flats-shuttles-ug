@@ -224,6 +224,7 @@ final parametersBuilderMap =
   'edithoteldetailspage': ParameterData.none(),
   'manageHotelspage': ParameterData.none(),
   'edittourplacepage': ParameterData.none(),
+  'liveRidesDashboard': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {
