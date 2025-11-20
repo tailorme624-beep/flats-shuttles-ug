@@ -144,3 +144,17 @@ export '/pages/users/useravailabletourplacespage/useravailabletourplacespage_wid
     show UseravailabletourplacespageWidget;
 export '/pages/admin/adminservicerequestpage/adminservicerequestpage_widget.dart'
     show AdminservicerequestpageWidget;
+export '/pages/admin/admineditflightpage/admineditflightpage_widget.dart'
+    show AdmineditflightpageWidget;
+export '/pages/admin/adminmanagetourspage/adminmanagetourspage_widget.dart'
+    show AdminmanagetourspageWidget;
+export '/pages/admin/managecarspages/managecarspages_widget.dart'
+    show ManagecarspagesWidget;
+export '/pages/admin/edit_carspage/edit_carspage_widget.dart'
+    show EditCarspageWidget;
+export '/pages/admin/edithoteldetailspage/edithoteldetailspage_widget.dart'
+    show EdithoteldetailspageWidget;
+export '/pages/admin/manage_hotelspage/manage_hotelspage_widget.dart'
+    show ManageHotelspageWidget;
+export '/pages/admin/edittourplacepage/edittourplacepage_widget.dart'
+    show EdittourplacepageWidget;

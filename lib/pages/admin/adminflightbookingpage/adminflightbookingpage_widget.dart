@@ -469,7 +469,7 @@ class _AdminflightbookingpageWidgetState
                                                     ),
                                                     Container(
                                                       width: 80.0,
-                                                      height: 24.0,
+                                                      height: 29.7,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             Color(0xFF32CD32),
