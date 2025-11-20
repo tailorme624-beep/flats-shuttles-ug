@@ -523,41 +523,7 @@ class _ManagecarspagesWidgetState extends State<ManagecarspagesWidget> {
                                           ),
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'wqf1gd6p' /* VIN: 1HGBH41JXMN109186 */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  font: GoogleFonts.inter(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: Color(0xFF8B7355),
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                          ),
-                                          Text(
-                                            FFLocalizations.of(context).getText(
-                                              'm2gy7cvk' /* $28,500 • 15,420 miles */,
+                                              'm2gy7cvk' /* $28,500 */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium

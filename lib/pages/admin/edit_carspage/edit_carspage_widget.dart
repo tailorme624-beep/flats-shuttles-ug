@@ -1,9 +1,7 @@
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'edit_carspage_model.dart';
@@ -33,57 +31,44 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'editCarspage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.carTypeTextController ??= TextEditingController();
+    _model.carTypeFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.carModalTextController ??= TextEditingController();
+    _model.carModalFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.yearMakeTextController ??= TextEditingController();
+    _model.yearMakeFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.colorTextController ??= TextEditingController();
+    _model.colorFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
-
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
-
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
-
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.licensePlateTextController ??= TextEditingController();
+    _model.licensePlateFocusNode ??= FocusNode();
 
     _model.switchValue1 = true;
     _model.switchValue2 = true;
     _model.switchValue3 = false;
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.textController1?.text = FFLocalizations.of(context).getText(
+          _model.carTypeTextController?.text =
+              FFLocalizations.of(context).getText(
             '9mmet5rc' /* Toyota */,
           );
-          _model.textController2?.text = FFLocalizations.of(context).getText(
+          _model.carModalTextController?.text =
+              FFLocalizations.of(context).getText(
             'hroi24gi' /* Camry */,
           );
-          _model.textController3?.text = FFLocalizations.of(context).getText(
+          _model.yearMakeTextController?.text =
+              FFLocalizations.of(context).getText(
             '6m0i17fb' /* 2023 */,
           );
-          _model.textController4?.text = FFLocalizations.of(context).getText(
+          _model.colorTextController?.text =
+              FFLocalizations.of(context).getText(
             '1bwp6c95' /* Silver */,
           );
-          _model.textController5?.text = FFLocalizations.of(context).getText(
+          _model.licensePlateTextController?.text =
+              FFLocalizations.of(context).getText(
             '52n9up3n' /* ABC-1234 */,
-          );
-          _model.textController6?.text = FFLocalizations.of(context).getText(
-            'ub7jsbfx' /* 45,000 */,
-          );
-          _model.textController7?.text = FFLocalizations.of(context).getText(
-            'ttbdzewz' /* 1HGBH41JXMN109186 */,
-          );
-          _model.textController8?.text = FFLocalizations.of(context).getText(
-            'kqtqwfwu' /* Regular maintenance completed.... */,
           );
         }));
   }
@@ -176,6 +161,25 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
+                        width: 351.0,
+                        height: 166.67,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            getCORSProxyUrl(
+                              'https://picsum.photos/seed/132/600',
+                            ),
+                            width: 200.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -244,8 +248,8 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                 ],
                               ),
                               TextFormField(
-                                controller: _model.textController1,
-                                focusNode: _model.textFieldFocusNode1,
+                                controller: _model.carTypeTextController,
+                                focusNode: _model.carTypeFocusNode,
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -355,12 +359,12 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                           .fontStyle,
                                     ),
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController1Validator
+                                validator: _model.carTypeTextControllerValidator
                                     .asValidator(context),
                               ),
                               TextFormField(
-                                controller: _model.textController2,
-                                focusNode: _model.textFieldFocusNode2,
+                                controller: _model.carModalTextController,
+                                focusNode: _model.carModalFocusNode,
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -470,7 +474,8 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                           .fontStyle,
                                     ),
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController2Validator
+                                validator: _model
+                                    .carModalTextControllerValidator
                                     .asValidator(context),
                               ),
                               Row(
@@ -478,8 +483,8 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                 children: [
                                   Expanded(
                                     child: TextFormField(
-                                      controller: _model.textController3,
-                                      focusNode: _model.textFieldFocusNode3,
+                                      controller: _model.yearMakeTextController,
+                                      focusNode: _model.yearMakeFocusNode,
                                       textInputAction: TextInputAction.next,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -603,14 +608,15 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                           ),
                                       keyboardType: TextInputType.number,
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController3Validator
+                                      validator: _model
+                                          .yearMakeTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
                                   Expanded(
                                     child: TextFormField(
-                                      controller: _model.textController4,
-                                      focusNode: _model.textFieldFocusNode4,
+                                      controller: _model.colorTextController,
+                                      focusNode: _model.colorFocusNode,
                                       textInputAction: TextInputAction.next,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -733,15 +739,16 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                                     .fontStyle,
                                           ),
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController4Validator
+                                      validator: _model
+                                          .colorTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
                                 ].divide(SizedBox(width: 12.0)),
                               ),
                               TextFormField(
-                                controller: _model.textController5,
-                                focusNode: _model.textFieldFocusNode5,
+                                controller: _model.licensePlateTextController,
+                                focusNode: _model.licensePlateFocusNode,
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -851,490 +858,8 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                                           .fontStyle,
                                     ),
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController5Validator
-                                    .asValidator(context),
-                              ),
-                            ].divide(SizedBox(height: 16.0)),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 8.0,
-                              color: Color(0x33556B2F),
-                              offset: Offset(
-                                0.0,
-                                4.0,
-                              ),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'wwl2j2lu' /* Vehicle Details */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .override(
-                                      font: GoogleFonts.interTight(
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .fontStyle,
-                                      ),
-                                      color: Color(0xFF556B2F),
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .fontStyle,
-                                    ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: TextFormField(
-                                      controller: _model.textController6,
-                                      focusNode: _model.textFieldFocusNode6,
-                                      textInputAction: TextInputAction.next,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'yxsxdap1' /* Mileage */,
-                                        ),
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0xFF556B2F),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontStyle,
-                                            ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'niewl32a' /* 45,000 */,
-                                        ),
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0x80556B2F),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFF556B2F),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFF556B2F),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDC143C),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: Color(0xFFF5F5DC),
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                16.0, 16.0, 16.0, 16.0),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                      keyboardType: TextInputType.number,
-                                      cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController6Validator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                  FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: [
-                                      FFLocalizations.of(context).getText(
-                                        'fam8a21m' /* Gasoline */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'aysdj0gk' /* Diesel */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'edvtus3s' /* Electric */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        'ihz20vq5' /* Hybrid */,
-                                      )
-                                    ],
-                                    onChanged: (val) => safeSetState(
-                                        () => _model.dropDownValue = val),
-                                    width: 120.0,
-                                    height: 56.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF556B2F),
-                                          fontSize: 16.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '58ncj39p' /* Fuel Type */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color: Color(0xFF556B2F),
-                                      size: 24.0,
-                                    ),
-                                    fillColor: Color(0xFFF5F5DC),
-                                    elevation: 2.0,
-                                    borderColor: Color(0xFF556B2F),
-                                    borderWidth: 2.0,
-                                    borderRadius: 12.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    hidesUnderline: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ].divide(SizedBox(width: 12.0)),
-                              ),
-                              TextFormField(
-                                controller: _model.textController7,
-                                focusNode: _model.textFieldFocusNode7,
-                                textInputAction: TextInputAction.next,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText:
-                                      FFLocalizations.of(context).getText(
-                                    '3bemx1mw' /* VIN Number */,
-                                  ),
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0xFF556B2F),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                  hintText: FFLocalizations.of(context).getText(
-                                    '8prmcxwp' /* Enter vehicle identification n... */,
-                                  ),
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0x80556B2F),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFF556B2F),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFF556B2F),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFDC143C),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFDC143C),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: Color(0xFFF5F5DC),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 16.0, 16.0),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController7Validator
-                                    .asValidator(context),
-                              ),
-                              TextFormField(
-                                controller: _model.textController8,
-                                focusNode: _model.textFieldFocusNode8,
-                                textInputAction: TextInputAction.done,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText:
-                                      FFLocalizations.of(context).getText(
-                                    '16enx0h8' /* Notes */,
-                                  ),
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0xFF556B2F),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                  hintText: FFLocalizations.of(context).getText(
-                                    'c5eatx53' /* Additional notes about the veh... */,
-                                  ),
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        font: GoogleFonts.inter(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0x80556B2F),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFF556B2F),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFF556B2F),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFDC143C),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0xFFDC143C),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: Color(0xFFF5F5DC),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 24.0, 16.0, 16.0),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .fontStyle,
-                                      ),
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                maxLines: 4,
-                                minLines: 3,
-                                keyboardType: TextInputType.multiline,
-                                cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController8Validator
+                                validator: _model
+                                    .licensePlateTextControllerValidator
                                     .asValidator(context),
                               ),
                             ].divide(SizedBox(height: 16.0)),
@@ -1520,7 +1045,7 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                           Expanded(
                             child: FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                print('deleteButton pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 'hcpxytuz' /* Delete Vehicle */,
@@ -1565,7 +1090,7 @@ class _EditCarspageWidgetState extends State<EditCarspageWidget> {
                           Expanded(
                             child: FFButtonWidget(
                               onPressed: () {
-                                print('Button pressed ...');
+                                print('saveButton pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
                                 'eew8j3sc' /* Save Changes */,
