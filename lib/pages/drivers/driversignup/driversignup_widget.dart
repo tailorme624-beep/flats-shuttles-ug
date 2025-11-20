@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -2019,23 +2018,23 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                             'DRIVERSIGNUP_COMPLETE_REGISTRATION_BTN_O');
                                         logFirebaseEvent('Button_backend_call');
 
-                                        await DriversRecord.createDoc(
-                                                currentUserReference!)
+                                        await DriversRecord.collection
+                                            .doc()
                                             .set(createDriversRecordData(
-                                          email: '',
-                                          displayName: '',
-                                          uid: '',
-                                          phoneNumber: '',
-                                          nin: '',
-                                          vehicleModel: '',
-                                          licensePlate: '',
-                                          vehicleType: '',
-                                          vehicleImage: '',
-                                          drivingLicense: '',
-                                          profilePhoto: '',
-                                          password: '',
-                                          comfirmPassword: '',
-                                        ));
+                                              email: '',
+                                              displayName: '',
+                                              uid: '',
+                                              phoneNumber: '',
+                                              nin: '',
+                                              vehicleModel: '',
+                                              licensePlate: '',
+                                              vehicleType: '',
+                                              vehicleImage: '',
+                                              drivingLicense: '',
+                                              profilePhoto: '',
+                                              password: '',
+                                              comfirmPassword: '',
+                                            ));
                                         logFirebaseEvent('Button_navigate_to');
 
                                         context.pushNamed(

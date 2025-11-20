@@ -48,29 +48,29 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'adddriverpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.fullNameTextController ??= TextEditingController();
+    _model.fullNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.emailAddressTextController ??= TextEditingController();
+    _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.licenseNumberTextController ??= TextEditingController();
+    _model.licenseNumberFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.vehicleNumebrTextController ??= TextEditingController();
+    _model.vehicleNumebrFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.createDriverUsernameTextController ??= TextEditingController();
+    _model.createDriverUsernameFocusNode ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
+    _model.createDriverPasswordTextController ??= TextEditingController();
+    _model.createDriverPasswordFocusNode ??= FocusNode();
 
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.comfirmDriverPasswordTextController ??= TextEditingController();
+    _model.comfirmDriverPasswordFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -193,8 +193,8 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             TextFormField(
-                              controller: _model.textController1,
-                              focusNode: _model.textFieldFocusNode1,
+                              controller: _model.fullNameTextController,
+                              focusNode: _model.fullNameFocusNode,
                               autofocus: true,
                               textCapitalization: TextCapitalization.words,
                               textInputAction: TextInputAction.next,
@@ -296,7 +296,7 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                         .fontStyle,
                                   ),
                               cursorColor: Color(0xFF556B2F),
-                              validator: _model.textController1Validator
+                              validator: _model.fullNameTextControllerValidator
                                   .asValidator(context),
                               inputFormatters: [
                                 if (!isAndroid && !isiOS)
@@ -311,8 +311,8 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                               ],
                             ),
                             TextFormField(
-                              controller: _model.textController2,
-                              focusNode: _model.textFieldFocusNode2,
+                              controller: _model.phoneNumberTextController,
+                              focusNode: _model.phoneNumberFocusNode,
                               textInputAction: TextInputAction.next,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -413,12 +413,13 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                   ),
                               keyboardType: TextInputType.phone,
                               cursorColor: Color(0xFF556B2F),
-                              validator: _model.textController2Validator
+                              validator: _model
+                                  .phoneNumberTextControllerValidator
                                   .asValidator(context),
                             ),
                             TextFormField(
-                              controller: _model.textController3,
-                              focusNode: _model.textFieldFocusNode3,
+                              controller: _model.emailAddressTextController,
+                              focusNode: _model.emailAddressFocusNode,
                               textInputAction: TextInputAction.next,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -519,12 +520,13 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                   ),
                               keyboardType: TextInputType.emailAddress,
                               cursorColor: Color(0xFF556B2F),
-                              validator: _model.textController3Validator
+                              validator: _model
+                                  .emailAddressTextControllerValidator
                                   .asValidator(context),
                             ),
                             TextFormField(
-                              controller: _model.textController4,
-                              focusNode: _model.textFieldFocusNode4,
+                              controller: _model.licenseNumberTextController,
+                              focusNode: _model.licenseNumberFocusNode,
                               textCapitalization: TextCapitalization.characters,
                               textInputAction: TextInputAction.next,
                               obscureText: false,
@@ -625,7 +627,8 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                         .fontStyle,
                                   ),
                               cursorColor: Color(0xFF556B2F),
-                              validator: _model.textController4Validator
+                              validator: _model
+                                  .licenseNumberTextControllerValidator
                                   .asValidator(context),
                               inputFormatters: [
                                 if (!isAndroid && !isiOS)
@@ -640,8 +643,8 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                               ],
                             ),
                             TextFormField(
-                              controller: _model.textController5,
-                              focusNode: _model.textFieldFocusNode5,
+                              controller: _model.vehicleNumebrTextController,
+                              focusNode: _model.vehicleNumebrFocusNode,
                               textCapitalization: TextCapitalization.characters,
                               textInputAction: TextInputAction.next,
                               obscureText: false,
@@ -742,7 +745,8 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                         .fontStyle,
                                   ),
                               cursorColor: Color(0xFF556B2F),
-                              validator: _model.textController5Validator
+                              validator: _model
+                                  .vehicleNumebrTextControllerValidator
                                   .asValidator(context),
                               inputFormatters: [
                                 if (!isAndroid && !isiOS)
@@ -812,8 +816,10 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                   ].divide(SizedBox(width: 8.0)),
                                 ),
                                 TextFormField(
-                                  controller: _model.textController6,
-                                  focusNode: _model.textFieldFocusNode6,
+                                  controller:
+                                      _model.createDriverUsernameTextController,
+                                  focusNode:
+                                      _model.createDriverUsernameFocusNode,
                                   textInputAction: TextInputAction.next,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -924,14 +930,18 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                             .fontStyle,
                                       ),
                                   cursorColor: Color(0xFF556B2F),
-                                  validator: _model.textController6Validator
+                                  validator: _model
+                                      .createDriverUsernameTextControllerValidator
                                       .asValidator(context),
                                 ),
                                 TextFormField(
-                                  controller: _model.textController7,
-                                  focusNode: _model.textFieldFocusNode7,
+                                  controller:
+                                      _model.createDriverPasswordTextController,
+                                  focusNode:
+                                      _model.createDriverPasswordFocusNode,
                                   textInputAction: TextInputAction.next,
-                                  obscureText: !_model.passwordVisibility1,
+                                  obscureText:
+                                      !_model.createDriverPasswordVisibility,
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
@@ -1018,12 +1028,14 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                             16.0, 16.0, 16.0, 16.0),
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.passwordVisibility1 =
-                                            !_model.passwordVisibility1,
+                                        () => _model
+                                                .createDriverPasswordVisibility =
+                                            !_model
+                                                .createDriverPasswordVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
-                                        _model.passwordVisibility1
+                                        _model.createDriverPasswordVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
                                         color: Color(0xFF556B2F),
@@ -1054,14 +1066,18 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                             .fontStyle,
                                       ),
                                   cursorColor: Color(0xFF556B2F),
-                                  validator: _model.textController7Validator
+                                  validator: _model
+                                      .createDriverPasswordTextControllerValidator
                                       .asValidator(context),
                                 ),
                                 TextFormField(
-                                  controller: _model.textController8,
-                                  focusNode: _model.textFieldFocusNode8,
+                                  controller: _model
+                                      .comfirmDriverPasswordTextController,
+                                  focusNode:
+                                      _model.comfirmDriverPasswordFocusNode,
                                   textInputAction: TextInputAction.done,
-                                  obscureText: !_model.passwordVisibility2,
+                                  obscureText:
+                                      !_model.comfirmDriverPasswordVisibility,
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
@@ -1148,12 +1164,14 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                             16.0, 16.0, 16.0, 16.0),
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.passwordVisibility2 =
-                                            !_model.passwordVisibility2,
+                                        () => _model
+                                                .comfirmDriverPasswordVisibility =
+                                            !_model
+                                                .comfirmDriverPasswordVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
-                                        _model.passwordVisibility2
+                                        _model.comfirmDriverPasswordVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
                                         color: Color(0xFF556B2F),
@@ -1184,7 +1202,8 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                             .fontStyle,
                                       ),
                                   cursorColor: Color(0xFF556B2F),
-                                  validator: _model.textController8Validator
+                                  validator: _model
+                                      .comfirmDriverPasswordTextControllerValidator
                                       .asValidator(context),
                                 ),
                                 Text(
@@ -1231,8 +1250,9 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
-                                      'ADDDRIVERPAGE_PAGE_CANCEL_BTN_ON_TAP');
-                                  logFirebaseEvent('Button_navigate_back');
+                                      'ADDDRIVERPAGE_PAGE_cancleButton_ON_TAP');
+                                  logFirebaseEvent(
+                                      'cancleButton_navigate_back');
                                   context.safePop();
                                 },
                                 text: FFLocalizations.of(context).getText(
@@ -1275,8 +1295,9 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
-                                      'ADDDRIVERCREATE_DRIVER_BTN_ON_TAP');
-                                  logFirebaseEvent('Button_cloud_function');
+                                      'ADDDRIVERcreateDriverButton_ON_TAP');
+                                  logFirebaseEvent(
+                                      'createDriverButton_cloud_function');
                                   try {
                                     final result =
                                         await FirebaseFunctions.instanceFor(
@@ -1302,13 +1323,15 @@ class _AdddriverpageWidgetState extends State<AdddriverpageWidget> {
                                   }
 
                                   if (_model.cloudFunctionwx8!.succeeded!) {
-                                    logFirebaseEvent('Button_backend_call');
+                                    logFirebaseEvent(
+                                        'createDriverButton_backend_call');
 
-                                    await AdminDriverRecord.createDoc(
-                                            widget.driversigninKey!)
-                                        .set(createAdminDriverRecordData());
+                                    await DriversRecord.collection
+                                        .doc()
+                                        .set(createDriversRecordData());
                                   } else {
-                                    logFirebaseEvent('Button_navigate_to');
+                                    logFirebaseEvent(
+                                        'createDriverButton_navigate_to');
 
                                     context.pushNamed(
                                         DriveradminloginpageWidget.routeName);

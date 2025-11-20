@@ -42,11 +42,11 @@ class _AdminloginpageWidgetState extends State<AdminloginpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'adminloginpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.adminemailTextController ??= TextEditingController();
+    _model.adminemailFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.adminPasswordTextController ??= TextEditingController();
+    _model.adminPasswordFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -166,8 +166,8 @@ class _AdminloginpageWidgetState extends State<AdminloginpageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               TextFormField(
-                                controller: _model.textController1,
-                                focusNode: _model.textFieldFocusNode1,
+                                controller: _model.adminemailTextController,
+                                focusNode: _model.adminemailFocusNode,
                                 autofocus: false,
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
@@ -285,15 +285,16 @@ class _AdminloginpageWidgetState extends State<AdminloginpageWidget> {
                                     ),
                                 keyboardType: TextInputType.emailAddress,
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController1Validator
+                                validator: _model
+                                    .adminemailTextControllerValidator
                                     .asValidator(context),
                               ),
                               TextFormField(
-                                controller: _model.textController2,
-                                focusNode: _model.textFieldFocusNode2,
+                                controller: _model.adminPasswordTextController,
+                                focusNode: _model.adminPasswordFocusNode,
                                 autofocus: false,
                                 textInputAction: TextInputAction.done,
-                                obscureText: !_model.passwordVisibility,
+                                obscureText: !_model.adminPasswordVisibility,
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
@@ -386,12 +387,12 @@ class _AdminloginpageWidgetState extends State<AdminloginpageWidget> {
                                   ),
                                   suffixIcon: InkWell(
                                     onTap: () => safeSetState(
-                                      () => _model.passwordVisibility =
-                                          !_model.passwordVisibility,
+                                      () => _model.adminPasswordVisibility =
+                                          !_model.adminPasswordVisibility,
                                     ),
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      _model.passwordVisibility
+                                      _model.adminPasswordVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
                                       color: Color(0xFF8B7355),
@@ -421,7 +422,8 @@ class _AdminloginpageWidgetState extends State<AdminloginpageWidget> {
                                           .fontStyle,
                                     ),
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController2Validator
+                                validator: _model
+                                    .adminPasswordTextControllerValidator
                                     .asValidator(context),
                               ),
                               FFButtonWidget(

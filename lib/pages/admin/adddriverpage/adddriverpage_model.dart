@@ -8,73 +8,76 @@ class AdddriverpageModel extends FlutterFlowModel<AdddriverpageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? fullNameFieldFocusNode1;
-  fullNameEditingController? fullNameController1;
-  String? Function(BuildContext, String?)? fullNameController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? phoneNumberFieldFocusNode2;
-  phoneNumberEditingController? phoneNumberController2;
-  String? Function(BuildContext, String?)? phoneNumberController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? emailAddressFieldFocusNode3;
-  emailAddressEditingController? emailAddressController3;
-  String? Function(BuildContext, String?)? emailAddressController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  late bool passwordVisibility1;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // Stores action output result for [Cloud Function - createDriverUser] action in Button widget.
+  // State field(s) for fullName widget.
+  FocusNode? fullNameFocusNode;
+  TextEditingController? fullNameTextController;
+  String? Function(BuildContext, String?)? fullNameTextControllerValidator;
+  // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  // State field(s) for emailAddress widget.
+  FocusNode? emailAddressFocusNode;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for licenseNumber widget.
+  FocusNode? licenseNumberFocusNode;
+  TextEditingController? licenseNumberTextController;
+  String? Function(BuildContext, String?)? licenseNumberTextControllerValidator;
+  // State field(s) for vehicleNumebr widget.
+  FocusNode? vehicleNumebrFocusNode;
+  TextEditingController? vehicleNumebrTextController;
+  String? Function(BuildContext, String?)? vehicleNumebrTextControllerValidator;
+  // State field(s) for createDriverUsername widget.
+  FocusNode? createDriverUsernameFocusNode;
+  TextEditingController? createDriverUsernameTextController;
+  String? Function(BuildContext, String?)?
+      createDriverUsernameTextControllerValidator;
+  // State field(s) for createDriverPassword widget.
+  FocusNode? createDriverPasswordFocusNode;
+  TextEditingController? createDriverPasswordTextController;
+  late bool createDriverPasswordVisibility;
+  String? Function(BuildContext, String?)?
+      createDriverPasswordTextControllerValidator;
+  // State field(s) for comfirmDriverPassword widget.
+  FocusNode? comfirmDriverPasswordFocusNode;
+  TextEditingController? comfirmDriverPasswordTextController;
+  late bool comfirmDriverPasswordVisibility;
+  String? Function(BuildContext, String?)?
+      comfirmDriverPasswordTextControllerValidator;
+  // Stores action output result for [Cloud Function - createDriverUser] action in createDriverButton widget.
   CreateDriverUserCloudFunctionCallResponse? cloudFunctionwx8;
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility1 = false;
-    passwordVisibility2 = false;
+    createDriverPasswordVisibility = false;
+    comfirmDriverPasswordVisibility = false;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    fullNameFocusNode?.dispose();
+    fullNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    emailAddressFocusNode?.dispose();
+    emailAddressTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    licenseNumberFocusNode?.dispose();
+    licenseNumberTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    vehicleNumebrFocusNode?.dispose();
+    vehicleNumebrTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    createDriverUsernameFocusNode?.dispose();
+    createDriverUsernameTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
+    createDriverPasswordFocusNode?.dispose();
+    createDriverPasswordTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
+    comfirmDriverPasswordFocusNode?.dispose();
+    comfirmDriverPasswordTextController?.dispose();
   }
 }

@@ -96,8 +96,6 @@ class DriversRecord extends FirestoreRecord {
   String get role => _role ?? '';
   bool hasRole() => _role != null;
 
-  DocumentReference get parentReference => reference.parent.parent!;
-
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -117,15 +115,9 @@ class DriversRecord extends FirestoreRecord {
     _role = snapshotData['role'] as String?;
   }
 
-  static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
-      parent != null
-          ? parent.collection('drivers')
-          : FirebaseFirestore.instanceFor(
-                  app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-              .collectionGroup('drivers');
-
-  static DocumentReference createDoc(DocumentReference parent, {String? id}) =>
-      parent.collection('drivers').doc(id);
+  static CollectionReference get collection => FirebaseFirestore.instanceFor(
+          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
+      .collection('drivers');
 
   static Stream<DriversRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => DriversRecord.fromSnapshot(s));

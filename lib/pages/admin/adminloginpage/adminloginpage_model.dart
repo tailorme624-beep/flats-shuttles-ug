@@ -6,27 +6,27 @@ class AdminloginpageModel extends FlutterFlowModel<AdminloginpageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for Adminemail widget.
+  FocusNode? adminemailFocusNode;
+  TextEditingController? adminemailTextController;
+  String? Function(BuildContext, String?)? adminemailTextControllerValidator;
+  // State field(s) for AdminPassword widget.
+  FocusNode? adminPasswordFocusNode;
+  TextEditingController? adminPasswordTextController;
+  late bool adminPasswordVisibility;
+  String? Function(BuildContext, String?)? adminPasswordTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility = false;
+    adminPasswordVisibility = false;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    adminemailFocusNode?.dispose();
+    adminemailTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    adminPasswordFocusNode?.dispose();
+    adminPasswordTextController?.dispose();
   }
 }
