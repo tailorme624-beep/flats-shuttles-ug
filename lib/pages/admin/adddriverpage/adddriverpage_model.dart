@@ -9,17 +9,17 @@ class AdddriverpageModel extends FlutterFlowModel<AdddriverpageWidget> {
 
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
+  FocusNode? fullNameFieldFocusNode1;
+  fullNameEditingController? fullNameController1;
+  String? Function(BuildContext, String?)? fullNameController1Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  FocusNode? phoneNumberFieldFocusNode2;
+  phoneNumberEditingController? phoneNumberController2;
+  String? Function(BuildContext, String?)? phoneNumberController2Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  FocusNode? emailAddressFieldFocusNode3;
+  emailAddressEditingController? emailAddressController3;
+  String? Function(BuildContext, String?)? emailAddressController3Validator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode4;
   TextEditingController? textController4;
