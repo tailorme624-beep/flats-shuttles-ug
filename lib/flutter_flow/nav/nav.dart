@@ -238,12 +238,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => CourierservicespageWidget(),
         ),
         FFRoute(
-          name: HotelbookingpageWidget.routeName,
-          path: HotelbookingpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => HotelbookingpageWidget(),
-        ),
-        FFRoute(
           name: SchooltripbookingpageWidget.routeName,
           path: SchooltripbookingpageWidget.routePath,
           requireAuth: true,
@@ -260,12 +254,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           path: CarhiringpageWidget.routePath,
           requireAuth: true,
           builder: (context, params) => CarhiringpageWidget(),
-        ),
-        FFRoute(
-          name: AdminDashboardWidget.routeName,
-          path: AdminDashboardWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AdminDashboardWidget(),
         ),
         FFRoute(
           name: LiveridetrackerWidget.routeName,
@@ -616,6 +604,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: LiveRidesDashboardWidget.routeName,
           path: LiveRidesDashboardWidget.routePath,
           builder: (context, params) => LiveRidesDashboardWidget(),
+        ),
+        FFRoute(
+          name: BookHotelPageWidget.routeName,
+          path: BookHotelPageWidget.routePath,
+          builder: (context, params) => BookHotelPageWidget(),
+        ),
+        FFRoute(
+          name: AdminDashBoardOverviewpageWidget.routeName,
+          path: AdminDashBoardOverviewpageWidget.routePath,
+          builder: (context, params) => AdminDashBoardOverviewpageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

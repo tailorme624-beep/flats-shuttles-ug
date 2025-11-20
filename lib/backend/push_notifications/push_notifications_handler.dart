@@ -145,11 +145,9 @@ final parametersBuilderMap =
   'drivererrorpage': ParameterData.none(),
   'errorpage': ParameterData.none(),
   'courierservicespage': ParameterData.none(),
-  'Hotelbookingpage': ParameterData.none(),
   'schooltripbookingpage': ParameterData.none(),
   'individualtourspage': ParameterData.none(),
   'carhiringpage': ParameterData.none(),
-  'AdminDashboard': ParameterData.none(),
   'liveridetracker': ParameterData.none(),
   'adminsettingspage': ParameterData.none(),
   'adminprofilepage': ParameterData.none(),
@@ -225,6 +223,8 @@ final parametersBuilderMap =
   'manageHotelspage': ParameterData.none(),
   'edittourplacepage': ParameterData.none(),
   'liveRidesDashboard': ParameterData.none(),
+  'bookHotelPage': ParameterData.none(),
+  'AdminDashBoardOverviewpage': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

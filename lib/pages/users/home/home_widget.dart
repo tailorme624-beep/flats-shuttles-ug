@@ -871,15 +871,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  logFirebaseEvent(
-                                                      'HOME_PAGE_FIND_HOTELS_BTN_ON_TAP');
-                                                  logFirebaseEvent(
-                                                      'Button_navigate_to');
-
-                                                  context.pushNamed(
-                                                      HotelbookingpageWidget
-                                                          .routeName);
+                                                onPressed: () {
+                                                  print('Button pressed ...');
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)

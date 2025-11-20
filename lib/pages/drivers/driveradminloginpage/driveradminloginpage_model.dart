@@ -8,27 +8,29 @@ class DriveradminloginpageModel
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for driverUserName widget.
+  FocusNode? driverUserNameFocusNode;
+  TextEditingController? driverUserNameTextController;
+  String? Function(BuildContext, String?)?
+      driverUserNameTextControllerValidator;
+  // State field(s) for driverPassword widget.
+  FocusNode? driverPasswordFocusNode;
+  TextEditingController? driverPasswordTextController;
+  late bool driverPasswordVisibility;
+  String? Function(BuildContext, String?)?
+      driverPasswordTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility = false;
+    driverPasswordVisibility = false;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    driverUserNameFocusNode?.dispose();
+    driverUserNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    driverPasswordFocusNode?.dispose();
+    driverPasswordTextController?.dispose();
   }
 }

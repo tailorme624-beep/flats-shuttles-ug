@@ -34,11 +34,11 @@ class _DriveradminloginpageWidgetState
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'driveradminloginpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.driverUserNameTextController ??= TextEditingController();
+    _model.driverUserNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.driverPasswordTextController ??= TextEditingController();
+    _model.driverPasswordFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -179,8 +179,8 @@ class _DriveradminloginpageWidgetState
                                     ),
                               ),
                               TextFormField(
-                                controller: _model.textController1,
-                                focusNode: _model.textFieldFocusNode1,
+                                controller: _model.driverUserNameTextController,
+                                focusNode: _model.driverUserNameFocusNode,
                                 autofocus: false,
                                 textInputAction: TextInputAction.next,
                                 obscureText: false,
@@ -271,7 +271,8 @@ class _DriveradminloginpageWidgetState
                                           .fontStyle,
                                     ),
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController1Validator
+                                validator: _model
+                                    .driverUserNameTextControllerValidator
                                     .asValidator(context),
                               ),
                             ].divide(SizedBox(height: 8.0)),
@@ -302,11 +303,11 @@ class _DriveradminloginpageWidgetState
                                     ),
                               ),
                               TextFormField(
-                                controller: _model.textController2,
-                                focusNode: _model.textFieldFocusNode2,
+                                controller: _model.driverPasswordTextController,
+                                focusNode: _model.driverPasswordFocusNode,
                                 autofocus: false,
                                 textInputAction: TextInputAction.done,
-                                obscureText: !_model.passwordVisibility,
+                                obscureText: !_model.driverPasswordVisibility,
                                 decoration: InputDecoration(
                                   hintText: FFLocalizations.of(context).getText(
                                     'h55352rn' /* Enter your password */,
@@ -373,12 +374,12 @@ class _DriveradminloginpageWidgetState
                                   ),
                                   suffixIcon: InkWell(
                                     onTap: () => safeSetState(
-                                      () => _model.passwordVisibility =
-                                          !_model.passwordVisibility,
+                                      () => _model.driverPasswordVisibility =
+                                          !_model.driverPasswordVisibility,
                                     ),
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      _model.passwordVisibility
+                                      _model.driverPasswordVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
                                       color: Color(0xFF8B7355),
@@ -408,7 +409,8 @@ class _DriveradminloginpageWidgetState
                                           .fontStyle,
                                     ),
                                 cursorColor: Color(0xFF556B2F),
-                                validator: _model.textController2Validator
+                                validator: _model
+                                    .driverPasswordTextControllerValidator
                                     .asValidator(context),
                               ),
                             ].divide(SizedBox(height: 8.0)),
@@ -504,8 +506,8 @@ class _DriveradminloginpageWidgetState
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
-                              'DRIVERADMINLOGINLOGIN_TO_DASHBOARD_BTN_O');
-                          logFirebaseEvent('Button_navigate_to');
+                              'DRIVERADMINLOGINloginButton_ON_TAP');
+                          logFirebaseEvent('loginButton_navigate_to');
 
                           context.pushNamed(HomePageWidget.routeName);
                         },

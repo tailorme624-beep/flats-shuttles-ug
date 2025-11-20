@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'availablehotelpage_model.dart';
@@ -530,15 +529,8 @@ class _AvailablehotelpageWidgetState extends State<AvailablehotelpageWidget> {
                                               ),
                                             ),
                                             FFButtonWidget(
-                                              onPressed: () async {
-                                                logFirebaseEvent(
-                                                    'AVAILABLEHOTELBOOK_NOW_BTN_ON_TAP');
-                                                logFirebaseEvent(
-                                                    'Button_navigate_to');
-
-                                                context.pushNamed(
-                                                    HotelbookingpageWidget
-                                                        .routeName);
+                                              onPressed: () {
+                                                print('Button pressed ...');
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
@@ -1030,15 +1022,8 @@ class _AvailablehotelpageWidgetState extends State<AvailablehotelpageWidget> {
                                               ),
                                             ),
                                             FFButtonWidget(
-                                              onPressed: () async {
-                                                logFirebaseEvent(
-                                                    'AVAILABLEHOTELBOOK_NOW_BTN_ON_TAP');
-                                                logFirebaseEvent(
-                                                    'Button_navigate_to');
-
-                                                context.pushNamed(
-                                                    HotelbookingpageWidget
-                                                        .routeName);
+                                              onPressed: () {
+                                                print('Button pressed ...');
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
@@ -1530,15 +1515,8 @@ class _AvailablehotelpageWidgetState extends State<AvailablehotelpageWidget> {
                                               ),
                                             ),
                                             FFButtonWidget(
-                                              onPressed: () async {
-                                                logFirebaseEvent(
-                                                    'AVAILABLEHOTELBOOK_NOW_BTN_ON_TAP');
-                                                logFirebaseEvent(
-                                                    'Button_navigate_to');
-
-                                                context.pushNamed(
-                                                    HotelbookingpageWidget
-                                                        .routeName);
+                                              onPressed: () {
+                                                print('Button pressed ...');
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
@@ -2030,15 +2008,8 @@ class _AvailablehotelpageWidgetState extends State<AvailablehotelpageWidget> {
                                               ),
                                             ),
                                             FFButtonWidget(
-                                              onPressed: () async {
-                                                logFirebaseEvent(
-                                                    'AVAILABLEHOTELBOOK_NOW_BTN_ON_TAP');
-                                                logFirebaseEvent(
-                                                    'Button_navigate_to');
-
-                                                context.pushNamed(
-                                                    HotelbookingpageWidget
-                                                        .routeName);
+                                              onPressed: () {
+                                                print('Button pressed ...');
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(

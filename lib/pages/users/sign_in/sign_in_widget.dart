@@ -528,17 +528,17 @@ class _SignInWidgetState extends State<SignInWidget> {
                                               FFButtonWidget(
                                                 onPressed: () async {
                                                   logFirebaseEvent(
-                                                      'SIGN_IN_PAGE_SIGN_IN_BTN_ON_TAP');
+                                                      'SIGN_IN_PAGE_signInButton_ON_TAP');
                                                   if (currentUserEmail ==
                                                       'password') {
                                                     logFirebaseEvent(
-                                                        'Button_navigate_to');
+                                                        'signInButton_navigate_to');
 
                                                     context.pushNamed(
                                                         HomeWidget.routeName);
                                                   } else {
                                                     logFirebaseEvent(
-                                                        'Button_navigate_to');
+                                                        'signInButton_navigate_to');
 
                                                     context.pushNamed(
                                                         ErrorpageWidget

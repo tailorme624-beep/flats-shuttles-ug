@@ -23,8 +23,7 @@ export '/pages/drivers/driver_profile/driver_profile_widget.dart'
     show DriverProfileWidget;
 export '/pages/drivers/driversignup/driversignup_widget.dart'
     show DriversignupWidget;
-export '/pages/drivers/driversignin/driversignin_widget.dart'
-    show DriversigninWidget;
+export '/driversignin/driversignin_widget.dart' show DriversigninWidget;
 export '/pages/drivers/driverprivacypolicy/driverprivacypolicy_widget.dart'
     show DriverprivacypolicyWidget;
 export '/pages/drivers/drivertermsandconditions/drivertermsandconditions_widget.dart'
@@ -38,16 +37,12 @@ export '/pages/drivers/drivererrorpage/drivererrorpage_widget.dart'
 export '/pages/users/errorpage/errorpage_widget.dart' show ErrorpageWidget;
 export '/pages/users/courierservicespage/courierservicespage_widget.dart'
     show CourierservicespageWidget;
-export '/pages/users/hotelbookingpage/hotelbookingpage_widget.dart'
-    show HotelbookingpageWidget;
 export '/pages/users/schooltripbookingpage/schooltripbookingpage_widget.dart'
     show SchooltripbookingpageWidget;
 export '/pages/users/individualtourspage/individualtourspage_widget.dart'
     show IndividualtourspageWidget;
 export '/pages/users/carhiringpage/carhiringpage_widget.dart'
     show CarhiringpageWidget;
-export '/pages/admin/admin_dashboard/admin_dashboard_widget.dart'
-    show AdminDashboardWidget;
 export '/pages/admin/liveridetracker/liveridetracker_widget.dart'
     show LiveridetrackerWidget;
 export '/pages/admin/adminsettingspage/adminsettingspage_widget.dart'
@@ -158,5 +153,8 @@ export '/pages/admin/manage_hotelspage/manage_hotelspage_widget.dart'
     show ManageHotelspageWidget;
 export '/pages/admin/edittourplacepage/edittourplacepage_widget.dart'
     show EdittourplacepageWidget;
-export '/live_rides_dashboard/live_rides_dashboard_widget.dart'
+export '/pages/admin/live_rides_dashboard/live_rides_dashboard_widget.dart'
     show LiveRidesDashboardWidget;
+export '/book_hotel_page/book_hotel_page_widget.dart' show BookHotelPageWidget;
+export '/admin_dash_board_overviewpage/admin_dash_board_overviewpage_widget.dart'
+    show AdminDashBoardOverviewpageWidget;

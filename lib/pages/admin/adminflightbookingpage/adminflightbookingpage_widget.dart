@@ -119,6 +119,7 @@ class _AdminflightbookingpageWidgetState
             body: SafeArea(
               top: true,
               child: SingleChildScrollView(
+                primary: false,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [

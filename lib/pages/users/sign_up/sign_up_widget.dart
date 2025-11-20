@@ -458,7 +458,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primaryText,
+                                                                .primary,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:

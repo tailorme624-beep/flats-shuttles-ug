@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
 import 'availablehotelpage_widget.dart' show AvailablehotelpageWidget;
 import 'package:flutter/material.dart';
 
