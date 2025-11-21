@@ -58,7 +58,7 @@ class _UseravailablefightspageWidgetState
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF228B22),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: Container(
                 child: Padding(
@@ -108,10 +108,10 @@ class _UseravailablefightspageWidgetState
               centerTitle: true,
               elevation: 0.0,
             ),
-            body: SafeArea(
-              top: true,
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+            body: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              child: SingleChildScrollView(
+                primary: false,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -314,7 +314,9 @@ class _UseravailablefightspageWidgetState
                                                         .titleLarge
                                                         .fontStyle,
                                               ),
-                                              color: Color(0xFF228B22),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               fontSize: 20.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,

@@ -90,48 +90,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               : HomeWidget(),
         ),
         FFRoute(
-          name: ServicesWidget.routeName,
-          path: ServicesWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'services')
-              : ServicesWidget(),
-        ),
+            name: ServicesWidget.routeName,
+            path: ServicesWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'services')
+                : NavBarPage(
+                    initialPage: 'services',
+                    page: ServicesWidget(),
+                  )),
         FFRoute(
-          name: NotificationWidget.routeName,
-          path: NotificationWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => NotificationWidget(),
-        ),
+            name: NotificationWidget.routeName,
+            path: NotificationWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: NotificationWidget(),
+                )),
         FFRoute(
-          name: ServicependingWidget.routeName,
-          path: ServicependingWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => ServicependingWidget(),
-        ),
+            name: ServicependingWidget.routeName,
+            path: ServicependingWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: ServicependingWidget(),
+                )),
         FFRoute(
-          name: RidecomfirmationWidget.routeName,
-          path: RidecomfirmationWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'ridecomfirmation')
-              : RidecomfirmationWidget(
-                  get: params.getParam(
-                    'get',
-                    ParamType.DocumentReference,
-                    isList: false,
-                    collectionNamePath: ['rides'],
-                  ),
-                ),
-        ),
+            name: RidecomfirmationWidget.routeName,
+            path: RidecomfirmationWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'ridecomfirmation')
+                : NavBarPage(
+                    initialPage: 'ridecomfirmation',
+                    page: RidecomfirmationWidget(
+                      get: params.getParam(
+                        'get',
+                        ParamType.DocumentReference,
+                        isList: false,
+                        collectionNamePath: ['rides'],
+                      ),
+                    ),
+                  )),
         FFRoute(
-          name: RidetrackingWidget.routeName,
-          path: RidetrackingWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'ridetracking')
-              : RidetrackingWidget(),
-        ),
+            name: RidetrackingWidget.routeName,
+            path: RidetrackingWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'ridetracking')
+                : NavBarPage(
+                    initialPage: 'ridetracking',
+                    page: RidetrackingWidget(),
+                  )),
         FFRoute(
           name: AITravelassistantWidget.routeName,
           path: AITravelassistantWidget.routePath,
@@ -141,17 +151,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               : AITravelassistantWidget(),
         ),
         FFRoute(
-          name: PrivacypolicyandtermsandconditionsWidget.routeName,
-          path: PrivacypolicyandtermsandconditionsWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) =>
-              PrivacypolicyandtermsandconditionsWidget(),
-        ),
+            name: PrivacypolicyandtermsandconditionsWidget.routeName,
+            path: PrivacypolicyandtermsandconditionsWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: PrivacypolicyandtermsandconditionsWidget(),
+                )),
         FFRoute(
-          name: TermsandconditionsWidget.routeName,
-          path: TermsandconditionsWidget.routePath,
-          builder: (context, params) => TermsandconditionsWidget(),
-        ),
+            name: TermsandconditionsWidget.routeName,
+            path: TermsandconditionsWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: TermsandconditionsWidget(),
+                )),
         FFRoute(
           name: SignInWidget.routeName,
           path: SignInWidget.routePath,
@@ -165,11 +179,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               : SignUpWidget(),
         ),
         FFRoute(
-          name: HomeWidget.routeName,
-          path: HomeWidget.routePath,
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'HOME') : HomeWidget(),
-        ),
+            name: HomeWidget.routeName,
+            path: HomeWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'HOME')
+                : NavBarPage(
+                    initialPage: 'HOME',
+                    page: HomeWidget(),
+                  )),
         FFRoute(
           name: DriverEarningsWidget.routeName,
           path: DriverEarningsWidget.routePath,
@@ -226,33 +243,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => ActiverideWidget(),
         ),
         FFRoute(
-          name: QuotespageWidget.routeName,
-          path: QuotespageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => QuotespageWidget(),
-        ),
+            name: QuotespageWidget.routeName,
+            path: QuotespageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: QuotespageWidget(),
+                )),
         FFRoute(
           name: DrivererrorpageWidget.routeName,
           path: DrivererrorpageWidget.routePath,
           builder: (context, params) => DrivererrorpageWidget(),
         ),
         FFRoute(
-          name: ErrorpageWidget.routeName,
-          path: ErrorpageWidget.routePath,
-          builder: (context, params) => ErrorpageWidget(),
-        ),
+            name: ErrorpageWidget.routeName,
+            path: ErrorpageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: ErrorpageWidget(),
+                )),
         FFRoute(
-          name: CourierservicespageWidget.routeName,
-          path: CourierservicespageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => CourierservicespageWidget(),
-        ),
+            name: CourierservicespageWidget.routeName,
+            path: CourierservicespageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: CourierservicespageWidget(),
+                )),
         FFRoute(
-          name: SchooltripbookingpageWidget.routeName,
-          path: SchooltripbookingpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => SchooltripbookingpageWidget(),
-        ),
+            name: SchooltripbookingpageWidget.routeName,
+            path: SchooltripbookingpageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: SchooltripbookingpageWidget(),
+                )),
         FFRoute(
             name: IndividualtourspageWidget.routeName,
             path: IndividualtourspageWidget.routePath,
@@ -262,11 +287,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                   page: IndividualtourspageWidget(),
                 )),
         FFRoute(
-          name: CarhiringpageWidget.routeName,
-          path: CarhiringpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => CarhiringpageWidget(),
-        ),
+            name: CarhiringpageWidget.routeName,
+            path: CarhiringpageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: CarhiringpageWidget(),
+                )),
         FFRoute(
           name: LiveridetrackerWidget.routeName,
           path: LiveridetrackerWidget.routePath,
@@ -354,11 +381,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                   ),
                 )),
         FFRoute(
-          name: FlightBookingPageWidget.routeName,
-          path: FlightBookingPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => FlightBookingPageWidget(),
-        ),
+            name: FlightBookingPageWidget.routeName,
+            path: FlightBookingPageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: FlightBookingPageWidget(),
+                )),
         FFRoute(
           name: AdminflightmanagementpageWidget.routeName,
           path: AdminflightmanagementpageWidget.routePath,
@@ -414,11 +443,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => UserFAQsPageWidget(),
         ),
         FFRoute(
-          name: RateourapppageWidget.routeName,
-          path: RateourapppageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => RateourapppageWidget(),
-        ),
+            name: RateourapppageWidget.routeName,
+            path: RateourapppageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: RateourapppageWidget(),
+                )),
         FFRoute(
           name: UsertermsofserviceWidget.routeName,
           path: UsertermsofserviceWidget.routePath,
@@ -556,23 +587,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => UserfindyourcarpageWidget(),
         ),
         FFRoute(
-          name: UseravailablefightspageWidget.routeName,
-          path: UseravailablefightspageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UseravailablefightspageWidget(),
-        ),
+            name: UseravailablefightspageWidget.routeName,
+            path: UseravailablefightspageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: UseravailablefightspageWidget(),
+                )),
         FFRoute(
-          name: AvailablehotelpageWidget.routeName,
-          path: AvailablehotelpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AvailablehotelpageWidget(),
-        ),
+            name: AvailablehotelpageWidget.routeName,
+            path: AvailablehotelpageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: AvailablehotelpageWidget(),
+                )),
         FFRoute(
-          name: UseravailabletourplacespageWidget.routeName,
-          path: UseravailabletourplacespageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UseravailabletourplacespageWidget(),
-        ),
+            name: UseravailabletourplacespageWidget.routeName,
+            path: UseravailabletourplacespageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: UseravailabletourplacespageWidget(),
+                )),
         FFRoute(
           name: AdminservicerequestpageWidget.routeName,
           path: AdminservicerequestpageWidget.routePath,

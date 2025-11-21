@@ -260,7 +260,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'l3p9plvv' /* comfirm */,
+                    'l3p9plvv' /* comfirm Ride */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -278,14 +278,14 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.track_changes,
+                  Icons.map_outlined,
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).alternate
                       : FlutterFlowTheme.of(context).secondaryText,
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'dg6q2sfm' /* Ride tracking */,
+                    'dg6q2sfm' /* Tracker */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

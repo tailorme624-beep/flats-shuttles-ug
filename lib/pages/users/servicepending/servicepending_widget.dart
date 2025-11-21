@@ -521,7 +521,8 @@ class _ServicependingWidgetState extends State<ServicependingWidget> {
                                                 ),
                                                 FFButtonWidget(
                                                   onPressed: () {
-                                                    print('Button pressed ...');
+                                                    print(
+                                                        'callDriverButton pressed ...');
                                                   },
                                                   text: FFLocalizations.of(
                                                           context)
@@ -1071,9 +1072,9 @@ class _ServicependingWidgetState extends State<ServicependingWidget> {
                                     FFButtonWidget(
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'SERVICEPENDING_CANCEL_TRIP_BTN_ON_TAP');
+                                            'SERVICEPENDING_PAGE_cancelButton_ON_TAP');
                                         logFirebaseEvent(
-                                            'Button_navigate_back');
+                                            'cancelButton_navigate_back');
                                         context.safePop();
                                       },
                                       text: FFLocalizations.of(context).getText(
