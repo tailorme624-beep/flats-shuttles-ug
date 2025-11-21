@@ -5,38 +5,39 @@ import 'package:flutter/material.dart';
 class BookHotelPageModel extends FlutterFlowModel<BookHotelPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for guestfullName widget.
+  FocusNode? guestfullNameFocusNode;
+  TextEditingController? guestfullNameTextController;
+  String? Function(BuildContext, String?)? guestfullNameTextControllerValidator;
+  // State field(s) for email widget.
+  FocusNode? emailFocusNode;
+  TextEditingController? emailTextController;
+  String? Function(BuildContext, String?)? emailTextControllerValidator;
+  // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
+  // State field(s) for specialRequests widget.
+  FocusNode? specialRequestsFocusNode;
+  TextEditingController? specialRequestsTextController;
+  String? Function(BuildContext, String?)?
+      specialRequestsTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    guestfullNameFocusNode?.dispose();
+    guestfullNameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    emailFocusNode?.dispose();
+    emailTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    specialRequestsFocusNode?.dispose();
+    specialRequestsTextController?.dispose();
   }
 }

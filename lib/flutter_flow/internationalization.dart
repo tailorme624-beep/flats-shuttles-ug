@@ -417,6 +417,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
+    'nao4wcvs': {
+      'en': 'services',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
   },
   // notification
   {
@@ -980,6 +989,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
+    'l3p9plvv': {
+      'en': 'comfirm',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
   },
   // ridetracking
   {
@@ -1172,8 +1190,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '3uaure95': {
-      'en': '© 2025 FLATS UG. All rights reserved.',
+    'rfjyonth': {
+      'en': 'Ride Tracking',
       'aa': '',
       'af': '',
       'as': '',
@@ -1181,8 +1199,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'rfjyonth': {
-      'en': 'Ride Tracking',
+    'dg6q2sfm': {
+      'en': 'Ride tracking',
       'aa': '',
       'af': '',
       'as': '',
@@ -1944,6 +1962,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
+    'i5jl9mqr': {
+      'en': 'signUp',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
   },
   // HOME
   {
@@ -2021,6 +2048,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mqrnv5tr': {
       'en': 'Find Hotels',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'fzj1jve9': {
+      'en': 'More services Offered',
       'aa': '',
       'af': '',
       'as': '',
@@ -2138,6 +2174,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4jmj73b9': {
       'en': 'Profile',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ndwc0g2q': {
+      'en': 'Home',
       'aa': '',
       'af': '',
       'as': '',
@@ -10505,7 +10550,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // Rateourapppage
   {
     'j50qe60a': {
-      'en': 'Rate Our App',
+      'en': 'Rate Our Driver',
       'aa': '',
       'af': '',
       'as': '',
@@ -10514,7 +10559,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     '8p2ol5db': {
-      'en': 'How was your experience with Flats Shuttles?',
+      'en': 'How was your experience with Flats Shuttles driver?',
       'aa': '',
       'af': '',
       'as': '',

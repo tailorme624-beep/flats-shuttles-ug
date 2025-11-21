@@ -86,7 +86,7 @@ class _RateourapppageWidgetState extends State<RateourapppageWidget> {
               title: Container(
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'j50qe60a' /* Rate Our App */,
+                    'j50qe60a' /* Rate Our Driver */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         font: GoogleFonts.interTight(

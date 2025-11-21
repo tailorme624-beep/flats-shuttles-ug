@@ -1137,29 +1137,6 @@ class _RidetrackingWidgetState extends State<RidetrackingWidget> {
                               ),
                             ),
                           ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                '3uaure95' /* © 2025 FLATS UG. All rights re... */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
                         ],
                       ),
                     ),

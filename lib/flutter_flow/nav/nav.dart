@@ -8,6 +8,7 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -78,22 +79,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? entryPage ?? RidecomfirmationWidget()
-          : HomeWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? entryPage ?? NavBarPage() : HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? RidecomfirmationWidget()
+              ? entryPage ?? NavBarPage()
               : HomeWidget(),
         ),
         FFRoute(
           name: ServicesWidget.routeName,
           path: ServicesWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ServicesWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'services')
+              : ServicesWidget(),
         ),
         FFRoute(
           name: NotificationWidget.routeName,
@@ -111,20 +113,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: RidecomfirmationWidget.routeName,
           path: RidecomfirmationWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RidecomfirmationWidget(
-            get: params.getParam(
-              'get',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['rides'],
-            ),
-          ),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'ridecomfirmation')
+              : RidecomfirmationWidget(
+                  get: params.getParam(
+                    'get',
+                    ParamType.DocumentReference,
+                    isList: false,
+                    collectionNamePath: ['rides'],
+                  ),
+                ),
         ),
         FFRoute(
           name: RidetrackingWidget.routeName,
           path: RidetrackingWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RidetrackingWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'ridetracking')
+              : RidetrackingWidget(),
         ),
         FFRoute(
           name: AITravelassistantWidget.routeName,
@@ -152,12 +158,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: SignUpWidget.routeName,
           path: SignUpWidget.routePath,
-          builder: (context, params) => SignUpWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'SignUp')
+              : SignUpWidget(),
         ),
         FFRoute(
           name: HomeWidget.routeName,
           path: HomeWidget.routePath,
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'HOME') : HomeWidget(),
         ),
         FFRoute(
           name: DriverEarningsWidget.routeName,
@@ -243,11 +252,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => SchooltripbookingpageWidget(),
         ),
         FFRoute(
-          name: IndividualtourspageWidget.routeName,
-          path: IndividualtourspageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => IndividualtourspageWidget(),
-        ),
+            name: IndividualtourspageWidget.routeName,
+            path: IndividualtourspageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: IndividualtourspageWidget(),
+                )),
         FFRoute(
           name: CarhiringpageWidget.routeName,
           path: CarhiringpageWidget.routePath,
@@ -320,24 +331,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: RideBookingPageWidget.routeName,
-          path: RideBookingPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => RideBookingPageWidget(
-            standardVehicleType: params.getParam(
-              'standardVehicleType',
-              ParamType.String,
-            ),
-            premiumVehicleType: params.getParam(
-              'premiumVehicleType',
-              ParamType.String,
-            ),
-            vipVehicleType: params.getParam(
-              'vipVehicleType',
-              ParamType.String,
-            ),
-          ),
-        ),
+            name: RideBookingPageWidget.routeName,
+            path: RideBookingPageWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: RideBookingPageWidget(
+                    standardVehicleType: params.getParam(
+                      'standardVehicleType',
+                      ParamType.String,
+                    ),
+                    premiumVehicleType: params.getParam(
+                      'premiumVehicleType',
+                      ParamType.String,
+                    ),
+                    vipVehicleType: params.getParam(
+                      'vipVehicleType',
+                      ParamType.String,
+                    ),
+                  ),
+                )),
         FFRoute(
           name: FlightBookingPageWidget.routeName,
           path: FlightBookingPageWidget.routePath,
@@ -605,10 +618,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => LiveRidesDashboardWidget(),
         ),
         FFRoute(
-          name: BookHotelPageWidget.routeName,
-          path: BookHotelPageWidget.routePath,
-          builder: (context, params) => BookHotelPageWidget(),
-        ),
+            name: BookHotelPageWidget.routeName,
+            path: BookHotelPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: BookHotelPageWidget(),
+                )),
         FFRoute(
           name: AdminDashBoardOverviewpageWidget.routeName,
           path: AdminDashBoardOverviewpageWidget.routePath,

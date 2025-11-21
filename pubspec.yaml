@@ -64,6 +64,7 @@ dependencies:
   firebase_performance_platform_interface: 0.1.5+7
   firebase_performance_web: 0.1.7+13
   firebase_vertexai: 1.0.1
+  floating_bottom_navigation_bar: 1.5.2
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
   flutter_google_places: 
