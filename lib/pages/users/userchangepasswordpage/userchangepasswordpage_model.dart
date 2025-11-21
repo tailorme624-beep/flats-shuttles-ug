@@ -7,38 +7,40 @@ class UserchangepasswordpageModel
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  late bool passwordVisibility1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  late bool passwordVisibility2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  late bool passwordVisibility3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for currentPassword widget.
+  FocusNode? currentPasswordFocusNode;
+  TextEditingController? currentPasswordTextController;
+  late bool currentPasswordVisibility;
+  String? Function(BuildContext, String?)?
+      currentPasswordTextControllerValidator;
+  // State field(s) for newPassword widget.
+  FocusNode? newPasswordFocusNode;
+  TextEditingController? newPasswordTextController;
+  late bool newPasswordVisibility;
+  String? Function(BuildContext, String?)? newPasswordTextControllerValidator;
+  // State field(s) for comfirmNewPassword widget.
+  FocusNode? comfirmNewPasswordFocusNode;
+  TextEditingController? comfirmNewPasswordTextController;
+  late bool comfirmNewPasswordVisibility;
+  String? Function(BuildContext, String?)?
+      comfirmNewPasswordTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
-    passwordVisibility1 = false;
-    passwordVisibility2 = false;
-    passwordVisibility3 = false;
+    currentPasswordVisibility = false;
+    newPasswordVisibility = false;
+    comfirmNewPasswordVisibility = false;
   }
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    currentPasswordFocusNode?.dispose();
+    currentPasswordTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    newPasswordFocusNode?.dispose();
+    newPasswordTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    comfirmNewPasswordFocusNode?.dispose();
+    comfirmNewPasswordTextController?.dispose();
   }
 }
