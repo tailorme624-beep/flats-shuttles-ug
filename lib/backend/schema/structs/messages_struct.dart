@@ -11,12 +11,10 @@ class MessagesStruct extends FFFirebaseStruct {
     String? sender,
     String? text,
     DateTime? timestamp,
-    String? imageUrl,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _sender = sender,
         _text = text,
         _timestamp = timestamp,
-        _imageUrl = imageUrl,
         super(firestoreUtilData);
 
   // "sender" field.
@@ -40,18 +38,10 @@ class MessagesStruct extends FFFirebaseStruct {
 
   bool hasTimestamp() => _timestamp != null;
 
-  // "image_url" field.
-  String? _imageUrl;
-  String get imageUrl => _imageUrl ?? '';
-  set imageUrl(String? val) => _imageUrl = val;
-
-  bool hasImageUrl() => _imageUrl != null;
-
   static MessagesStruct fromMap(Map<String, dynamic> data) => MessagesStruct(
         sender: data['sender'] as String?,
         text: data['text'] as String?,
         timestamp: data['timestamp'] as DateTime?,
-        imageUrl: data['image_url'] as String?,
       );
 
   static MessagesStruct? maybeFromMap(dynamic data) =>
@@ -61,7 +51,6 @@ class MessagesStruct extends FFFirebaseStruct {
         'sender': _sender,
         'text': _text,
         'timestamp': _timestamp,
-        'image_url': _imageUrl,
       }.withoutNulls;
 
   @override
@@ -77,10 +66,6 @@ class MessagesStruct extends FFFirebaseStruct {
         'timestamp': serializeParam(
           _timestamp,
           ParamType.DateTime,
-        ),
-        'image_url': serializeParam(
-          _imageUrl,
-          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -99,11 +84,6 @@ class MessagesStruct extends FFFirebaseStruct {
         timestamp: deserializeParam(
           data['timestamp'],
           ParamType.DateTime,
-          false,
-        ),
-        imageUrl: deserializeParam(
-          data['image_url'],
-          ParamType.String,
           false,
         ),
       );
@@ -125,11 +105,6 @@ class MessagesStruct extends FFFirebaseStruct {
           ParamType.DateTime,
           false,
         ),
-        imageUrl: convertAlgoliaParam(
-          data['image_url'],
-          ParamType.String,
-          false,
-        ),
         firestoreUtilData: FirestoreUtilData(
           clearUnsetFields: false,
           create: true,
@@ -144,20 +119,17 @@ class MessagesStruct extends FFFirebaseStruct {
     return other is MessagesStruct &&
         sender == other.sender &&
         text == other.text &&
-        timestamp == other.timestamp &&
-        imageUrl == other.imageUrl;
+        timestamp == other.timestamp;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([sender, text, timestamp, imageUrl]);
+  int get hashCode => const ListEquality().hash([sender, text, timestamp]);
 }
 
 MessagesStruct createMessagesStruct({
   String? sender,
   String? text,
   DateTime? timestamp,
-  String? imageUrl,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -167,7 +139,6 @@ MessagesStruct createMessagesStruct({
       sender: sender,
       text: text,
       timestamp: timestamp,
-      imageUrl: imageUrl,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
