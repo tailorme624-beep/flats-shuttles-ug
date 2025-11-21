@@ -73,19 +73,21 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
+    GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : HomeWidget(),
+          appStateNotifier.loggedIn ? entryPage ?? NavBarPage() : HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : HomeWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? entryPage ?? NavBarPage()
+              : HomeWidget(),
         ),
         FFRoute(
             name: ServicesWidget.routeName,

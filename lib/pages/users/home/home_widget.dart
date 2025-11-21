@@ -93,6 +93,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                         },
                       ),
                       FlutterFlowIconButton(
+                        key: ValueKey('IconButton_ceim'),
                         borderRadius: 20.0,
                         buttonSize: 40.0,
                         fillColor: FlutterFlowTheme.of(context).primary,
@@ -802,8 +803,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                               child: Padding(
                                 padding: EdgeInsets.all(2.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    logFirebaseEvent(
+                                        'HOME_MORE_SERVICES_OFFERED_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
+                                    context.pushNamed(ServicesWidget.routeName);
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'fzj1jve9' /* More services Offered */,
