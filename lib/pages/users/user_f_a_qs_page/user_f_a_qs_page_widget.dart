@@ -68,7 +68,7 @@ class _UserFAQsPageWidgetState extends State<UserFAQsPageWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: Container(
                 child: Padding(

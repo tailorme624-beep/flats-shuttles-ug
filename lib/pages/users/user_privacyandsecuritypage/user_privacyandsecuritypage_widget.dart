@@ -63,7 +63,7 @@ class _UserPrivacyandsecuritypageWidgetState
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderRadius: 20.0,
@@ -114,7 +114,7 @@ class _UserPrivacyandsecuritypageWidgetState
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xFF556B2F),
+                          color: FlutterFlowTheme.of(context).primary,
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(

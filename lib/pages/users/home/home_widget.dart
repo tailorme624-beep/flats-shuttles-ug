@@ -57,7 +57,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -78,7 +78,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       FlutterFlowIconButton(
                         borderRadius: 20.0,
                         buttonSize: 40.0,
-                        fillColor: Color(0xFF6B8E23),
+                        fillColor: FlutterFlowTheme.of(context).primary,
                         icon: Icon(
                           Icons.notifications_rounded,
                           color: Color(0xFFF5F5DC),
@@ -95,7 +95,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                       FlutterFlowIconButton(
                         borderRadius: 20.0,
                         buttonSize: 40.0,
-                        fillColor: Color(0xFF6B8E23),
+                        fillColor: FlutterFlowTheme.of(context).primary,
                         icon: Icon(
                           Icons.account_circle_rounded,
                           color: Color(0xFFF5F5DC),
@@ -185,8 +185,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ],
                                     gradient: LinearGradient(
                                       colors: [
-                                        Color(0xFF6B8E23),
-                                        Color(0xFF556B2F)
+                                        FlutterFlowTheme.of(context).primary,
+                                        FlutterFlowTheme.of(context).primary
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(1.0, -1.0),

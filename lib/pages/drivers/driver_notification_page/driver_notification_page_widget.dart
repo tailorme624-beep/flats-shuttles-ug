@@ -475,7 +475,8 @@ Destinat... */
                                               ),
                                               FFButtonWidget(
                                                 onPressed: () {
-                                                  print('Button pressed ...');
+                                                  print(
+                                                      'cancelButton pressed ...');
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'driveractiveridepage_model.dart';
@@ -313,57 +312,6 @@ class _DriveractiveridepageWidgetState
                                                     ),
                                               ),
                                             ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 6.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: 120.0,
-                                                height: 28.0,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF3F4F6),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          14.0),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(8.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'fksqimfn' /* En Route to Pickup */,
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodySmall
-                                                                    .fontStyle,
-                                                          ),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .warning,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodySmall
-                                                                  .fontStyle,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
                                           ],
                                         ),
                                       ),
@@ -379,7 +327,7 @@ class _DriveractiveridepageWidgetState
                                           size: 24.0,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          print('callIconButton pressed ...');
                                         },
                                       ),
                                     ].divide(SizedBox(width: 16.0)),
@@ -387,7 +335,7 @@ class _DriveractiveridepageWidgetState
                                   Divider(
                                     thickness: 1.0,
                                     color:
-                                        FlutterFlowTheme.of(context).alternate,
+                                        FlutterFlowTheme.of(context).secondary,
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -990,7 +938,8 @@ class _DriveractiveridepageWidgetState
                                   ),
                                   FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
+                                      print(
+                                          'pickupLocationArrivalButton pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'og4b0cpk' /* Arrived at Pickup */,
@@ -1034,8 +983,9 @@ class _DriveractiveridepageWidgetState
                                   FFButtonWidget(
                                     onPressed: () async {
                                       logFirebaseEvent(
-                                          'DRIVERACTIVERIDESTART_TRIP_BTN_ON_TAP');
-                                      logFirebaseEvent('Button_navigate_to');
+                                          'DRIVERACTIVERIDEstartTripButton_ON_TAP');
+                                      logFirebaseEvent(
+                                          'startTripButton_navigate_to');
 
                                       context.pushNamed(
                                           DriveractiveridepageWidget.routeName);
@@ -1080,13 +1030,8 @@ class _DriveractiveridepageWidgetState
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () async {
-                                      logFirebaseEvent(
-                                          'DRIVERACTIVERIDECOMPLETE_TRIP_BTN_ON_TAP');
-                                      logFirebaseEvent('Button_navigate_to');
-
-                                      context.pushNamed(
-                                          DriverEarningsWidget.routeName);
+                                    onPressed: () {
+                                      print('completeTripButton pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       '9buzvqkx' /* Complete Trip */,

@@ -71,7 +71,7 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Row(
                 mainAxisSize: MainAxisSize.max,
@@ -1269,7 +1269,7 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           iconColor: Colors.white,
-                          color: Color(0xFF556B2F),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleLarge.override(
                                     font: GoogleFonts.interTight(

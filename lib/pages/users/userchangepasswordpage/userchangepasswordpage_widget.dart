@@ -66,7 +66,7 @@ class _UserchangepasswordpageWidgetState
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: Container(
                 child: Padding(
@@ -1063,7 +1063,7 @@ class _UserchangepasswordpageWidgetState
                           padding: EdgeInsets.all(8.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: Color(0xFF556B2F),
+                          color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleMedium.override(
                                     font: GoogleFonts.interTight(

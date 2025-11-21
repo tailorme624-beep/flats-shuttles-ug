@@ -56,7 +56,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Row(
                 mainAxisSize: MainAxisSize.max,
@@ -200,7 +200,10 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                 )
                               ],
                               gradient: LinearGradient(
-                                colors: [Color(0xFF556B2F), Color(0xFF6B8E23)],
+                                colors: [
+                                  FlutterFlowTheme.of(context).primary,
+                                  FlutterFlowTheme.of(context).primary
+                                ],
                                 stops: [0.0, 1.0],
                                 begin: AlignmentDirectional(1.0, -1.0),
                                 end: AlignmentDirectional(-1.0, 1.0),

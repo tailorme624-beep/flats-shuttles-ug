@@ -280,7 +280,7 @@ class _BookHotelPageWidgetState extends State<BookHotelPageWidget> {
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                color: Color(0xFF556B2F),
+                                color: FlutterFlowTheme.of(context).primary,
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: Padding(
@@ -1431,7 +1431,7 @@ class _BookHotelPageWidgetState extends State<BookHotelPageWidget> {
                                 padding: EdgeInsets.all(8.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF556B2F),
+                                color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(

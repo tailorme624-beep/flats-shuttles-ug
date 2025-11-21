@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,36 +59,41 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'drivereditpage'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.driverfullNameTextController ??= TextEditingController();
+    _model.driverfullNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.driverPhoneNumberTextController ??= TextEditingController();
+    _model.driverPhoneNumberFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.driverEmailTextController ??= TextEditingController();
+    _model.driverEmailFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.vehicleModalTextController ??= TextEditingController();
+    _model.vehicleModalFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.licensePlateTextController ??= TextEditingController();
+    _model.licensePlateFocusNode ??= FocusNode();
 
     _model.switchValue = true;
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.textController1?.text = FFLocalizations.of(context).getText(
+          _model.driverfullNameTextController?.text =
+              FFLocalizations.of(context).getText(
             '2sb6c5c7' /* John Anderson */,
           );
-          _model.textController2?.text = FFLocalizations.of(context).getText(
+          _model.driverPhoneNumberTextController?.text =
+              FFLocalizations.of(context).getText(
             'v9bvi4a0' /* +1 (555) 123-4567 */,
           );
-          _model.textController3?.text = FFLocalizations.of(context).getText(
+          _model.driverEmailTextController?.text =
+              FFLocalizations.of(context).getText(
             '6dpg5pvb' /* john.anderson@email.com */,
           );
-          _model.textController4?.text = FFLocalizations.of(context).getText(
+          _model.vehicleModalTextController?.text =
+              FFLocalizations.of(context).getText(
             '2vgv7ke9' /* Toyota Camry 2022 */,
           );
-          _model.textController5?.text = FFLocalizations.of(context).getText(
+          _model.licensePlateTextController?.text =
+              FFLocalizations.of(context).getText(
             '2zri0lan' /* ABC-1234 */,
           );
         }));
@@ -250,8 +256,9 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     TextFormField(
-                                      controller: _model.textController1,
-                                      focusNode: _model.textFieldFocusNode1,
+                                      controller:
+                                          _model.driverfullNameTextController,
+                                      focusNode: _model.driverfullNameFocusNode,
                                       autofocus: false,
                                       autofillHints: [AutofillHints.name],
                                       textCapitalization:
@@ -346,7 +353,8 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                           ),
                                       keyboardType: TextInputType.name,
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController1Validator
+                                      validator: _model
+                                          .driverfullNameTextControllerValidator
                                           .asValidator(context),
                                       inputFormatters: [
                                         if (!isAndroid && !isiOS)
@@ -362,8 +370,10 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                       ],
                                     ),
                                     TextFormField(
-                                      controller: _model.textController2,
-                                      focusNode: _model.textFieldFocusNode2,
+                                      controller: _model
+                                          .driverPhoneNumberTextController,
+                                      focusNode:
+                                          _model.driverPhoneNumberFocusNode,
                                       autofocus: false,
                                       autofillHints: [
                                         AutofillHints.telephoneNumber
@@ -463,12 +473,14 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                           ),
                                       keyboardType: TextInputType.phone,
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController2Validator
+                                      validator: _model
+                                          .driverPhoneNumberTextControllerValidator
                                           .asValidator(context),
                                     ),
                                     TextFormField(
-                                      controller: _model.textController3,
-                                      focusNode: _model.textFieldFocusNode3,
+                                      controller:
+                                          _model.driverEmailTextController,
+                                      focusNode: _model.driverEmailFocusNode,
                                       autofocus: false,
                                       autofillHints: [AutofillHints.email],
                                       textCapitalization:
@@ -568,7 +580,8 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                           ),
                                       keyboardType: TextInputType.emailAddress,
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController3Validator
+                                      validator: _model
+                                          .driverEmailTextControllerValidator
                                           .asValidator(context),
                                       inputFormatters: [
                                         if (!isAndroid && !isiOS)
@@ -651,8 +664,9 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     TextFormField(
-                                      controller: _model.textController4,
-                                      focusNode: _model.textFieldFocusNode4,
+                                      controller:
+                                          _model.vehicleModalTextController,
+                                      focusNode: _model.vehicleModalFocusNode,
                                       autofocus: false,
                                       textCapitalization:
                                           TextCapitalization.words,
@@ -745,7 +759,8 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                                     .fontStyle,
                                           ),
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController4Validator
+                                      validator: _model
+                                          .vehicleModalTextControllerValidator
                                           .asValidator(context),
                                       inputFormatters: [
                                         if (!isAndroid && !isiOS)
@@ -761,8 +776,9 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                       ],
                                     ),
                                     TextFormField(
-                                      controller: _model.textController5,
-                                      focusNode: _model.textFieldFocusNode5,
+                                      controller:
+                                          _model.licensePlateTextController,
+                                      focusNode: _model.licensePlateFocusNode,
                                       autofocus: false,
                                       textCapitalization:
                                           TextCapitalization.characters,
@@ -860,7 +876,8 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                                     .fontStyle,
                                           ),
                                       cursorColor: Color(0xFF556B2F),
-                                      validator: _model.textController5Validator
+                                      validator: _model
+                                          .licensePlateTextControllerValidator
                                           .asValidator(context),
                                       inputFormatters: [
                                         if (!isAndroid && !isiOS)
@@ -912,15 +929,22 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                                           ),
                                         ),
                                         FlutterFlowDropDown<String>(
-                                          controller: _model
-                                                  .dropDownValueController ??=
-                                              FormFieldController<String>(null),
-                                          options: [
+                                          controller:
+                                              _model.dropDownValueController ??=
+                                                  FormFieldController<String>(
+                                            _model.dropDownValue ??= '',
+                                          ),
+                                          options: List<String>.from(
+                                              ['driver', 'suspended', '2']),
+                                          optionLabels: [
                                             FFLocalizations.of(context).getText(
                                               'l6o8p9jm' /* Driver */,
                                             ),
                                             FFLocalizations.of(context).getText(
                                               'e0d1ov12' /* Suspended */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'onet0b07' /* Not Approved */,
                                             )
                                           ],
                                           onChanged: (val) => safeSetState(
@@ -1106,7 +1130,7 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          print('saveChangesButton pressed ...');
                         },
                         text: FFLocalizations.of(context).getText(
                           'stzsfmuq' /* Save Driver Changes */,
@@ -1149,8 +1173,12 @@ class _DrivereditpageWidgetState extends State<DrivereditpageWidget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          logFirebaseEvent(
+                              'DRIVEREDITrideHistoryButton_ON_TAP');
+                          logFirebaseEvent('rideHistoryButton_navigate_to');
+
+                          context.pushNamed(RideHistoryPageWidget.routeName);
                         },
                         text: FFLocalizations.of(context).getText(
                           'jnxxzfry' /* View Ride History */,

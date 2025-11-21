@@ -86,7 +86,7 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderRadius: 20.0,

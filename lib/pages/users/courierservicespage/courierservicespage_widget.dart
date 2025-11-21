@@ -88,7 +88,7 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: InkWell(
                 splashColor: Colors.transparent,
@@ -1738,7 +1738,7 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 iconColor: Color(0xFFF5F5DC),
-                                color: Color(0xFF556B2F),
+                                color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(

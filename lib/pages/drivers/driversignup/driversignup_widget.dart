@@ -46,23 +46,23 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'driversignup'});
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.driverfullNameTextController ??= TextEditingController();
+    _model.driverfullNameFocusNode ??= FocusNode();
 
-    _model.emailTextController ??= TextEditingController();
-    _model.emailFocusNode ??= FocusNode();
+    _model.driverEmailTextController ??= TextEditingController();
+    _model.driverEmailFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.driverPhoneNumberTextController ??= TextEditingController();
+    _model.driverPhoneNumberFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.ninTextController ??= TextEditingController();
+    _model.ninFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.vehicleModalTextController ??= TextEditingController();
+    _model.vehicleModalFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.licensePlateTextController ??= TextEditingController();
+    _model.licensePlateFocusNode ??= FocusNode();
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
@@ -316,10 +316,10 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                   ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController1,
-                                              focusNode:
-                                                  _model.textFieldFocusNode1,
+                                              controller: _model
+                                                  .driverfullNameTextController,
+                                              focusNode: _model
+                                                  .driverfullNameFocusNode,
                                               autofocus: false,
                                               textCapitalization:
                                                   TextCapitalization.words,
@@ -434,7 +434,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                       ),
                                               keyboardType: TextInputType.name,
                                               validator: _model
-                                                  .textController1Validator
+                                                  .driverfullNameTextControllerValidator
                                                   .asValidator(context),
                                               inputFormatters: [
                                                 if (!isAndroid && !isiOS)
@@ -489,9 +489,10 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                   ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.emailTextController,
-                                              focusNode: _model.emailFocusNode,
+                                              controller: _model
+                                                  .driverEmailTextController,
+                                              focusNode:
+                                                  _model.driverEmailFocusNode,
                                               autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -605,7 +606,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                               keyboardType:
                                                   TextInputType.emailAddress,
                                               validator: _model
-                                                  .emailTextControllerValidator
+                                                  .driverEmailTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ].divide(SizedBox(height: 6.0)),
@@ -645,10 +646,10 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                   ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController3,
-                                              focusNode:
-                                                  _model.textFieldFocusNode2,
+                                              controller: _model
+                                                  .driverPhoneNumberTextController,
+                                              focusNode: _model
+                                                  .driverPhoneNumberFocusNode,
                                               autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -761,7 +762,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                       ),
                                               keyboardType: TextInputType.phone,
                                               validator: _model
-                                                  .textController3Validator
+                                                  .driverPhoneNumberTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ].divide(SizedBox(height: 6.0)),
@@ -802,9 +803,8 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.textController4,
-                                              focusNode:
-                                                  _model.textFieldFocusNode3,
+                                                  _model.ninTextController,
+                                              focusNode: _model.ninFocusNode,
                                               autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -918,7 +918,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                               keyboardType:
                                                   TextInputType.number,
                                               validator: _model
-                                                  .textController4Validator
+                                                  .ninTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ].divide(SizedBox(height: 6.0)),
@@ -995,8 +995,15 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                               controller: _model
                                                       .dropDownValueController ??=
                                                   FormFieldController<String>(
-                                                      null),
-                                              options: [
+                                                _model.dropDownValue ??= '',
+                                              ),
+                                              options: List<String>.from([
+                                                'car',
+                                                'motorcycle',
+                                                'van',
+                                                'truck'
+                                              ]),
+                                              optionLabels: [
                                                 FFLocalizations.of(context)
                                                     .getText(
                                                   'l1j1iwpc' /* Car */,
@@ -1109,10 +1116,10 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                   ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController5,
+                                              controller: _model
+                                                  .vehicleModalTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode4,
+                                                  _model.vehicleModalFocusNode,
                                               autofocus: false,
                                               textCapitalization:
                                                   TextCapitalization.words,
@@ -1226,7 +1233,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController5Validator
+                                                  .vehicleModalTextControllerValidator
                                                   .asValidator(context),
                                               inputFormatters: [
                                                 if (!isAndroid && !isiOS)
@@ -1281,10 +1288,10 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                   ),
                                             ),
                                             TextFormField(
-                                              controller:
-                                                  _model.textController6,
+                                              controller: _model
+                                                  .licensePlateTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode5,
+                                                  _model.licensePlateFocusNode,
                                               autofocus: false,
                                               textCapitalization:
                                                   TextCapitalization.characters,
@@ -1398,7 +1405,7 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                                                 .fontStyle,
                                                       ),
                                               validator: _model
-                                                  .textController6Validator
+                                                  .licensePlateTextControllerValidator
                                                   .asValidator(context),
                                               inputFormatters: [
                                                 if (!isAndroid && !isiOS)
@@ -2015,8 +2022,9 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                     FFButtonWidget(
                                       onPressed: () async {
                                         logFirebaseEvent(
-                                            'DRIVERSIGNUP_COMPLETE_REGISTRATION_BTN_O');
-                                        logFirebaseEvent('Button_backend_call');
+                                            'DRIVERSIGNUP_PAGE_submitButton_ON_TAP');
+                                        logFirebaseEvent(
+                                            'submitButton_backend_call');
 
                                         await DriversRecord.collection
                                             .doc()
@@ -2035,7 +2043,8 @@ class _DriversignupWidgetState extends State<DriversignupWidget> {
                                               password: '',
                                               comfirmPassword: '',
                                             ));
-                                        logFirebaseEvent('Button_navigate_to');
+                                        logFirebaseEvent(
+                                            'submitButton_navigate_to');
 
                                         context.pushNamed(
                                             DriversigninWidget.routeName);

@@ -73,21 +73,19 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
-    GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? entryPage ?? NavBarPage() : HomeWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? NavBarPage()
-              : HomeWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : HomeWidget(),
         ),
         FFRoute(
             name: ServicesWidget.routeName,
@@ -187,11 +185,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                     initialPage: 'HOME',
                     page: HomeWidget(),
                   )),
-        FFRoute(
-          name: DriverEarningsWidget.routeName,
-          path: DriverEarningsWidget.routePath,
-          builder: (context, params) => DriverEarningsWidget(),
-        ),
         FFRoute(
           name: DriverProfileWidget.routeName,
           path: DriverProfileWidget.routePath,
@@ -397,12 +390,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => AdminflightmanagementpageWidget(),
         ),
         FFRoute(
-          name: ProcessrequestpageWidget.routeName,
-          path: ProcessrequestpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => ProcessrequestpageWidget(),
-        ),
-        FFRoute(
             name: UsersettingsandsupportpageWidget.routeName,
             path: UsersettingsandsupportpageWidget.routePath,
             requireAuth: true,
@@ -539,26 +526,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => DrivernotificationsettingspageWidget(),
         ),
         FFRoute(
-          name: MainpageWidget.routeName,
-          path: MainpageWidget.routePath,
-          builder: (context, params) => MainpageWidget(),
-        ),
-        FFRoute(
-          name: MainsettingspageWidget.routeName,
-          path: MainsettingspageWidget.routePath,
-          builder: (context, params) => MainsettingspageWidget(),
-        ),
-        FFRoute(
-          name: MainhelppageWidget.routeName,
-          path: MainhelppageWidget.routePath,
-          builder: (context, params) => MainhelppageWidget(),
-        ),
-        FFRoute(
-          name: MainprivacypolicypageWidget.routeName,
-          path: MainprivacypolicypageWidget.routePath,
-          builder: (context, params) => MainprivacypolicypageWidget(),
-        ),
-        FFRoute(
           name: AdminflightbookingpageWidget.routeName,
           path: AdminflightbookingpageWidget.routePath,
           requireAuth: true,
@@ -692,6 +659,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           path: AdminDashBoardOverviewpageWidget.routePath,
           requireAuth: true,
           builder: (context, params) => AdminDashBoardOverviewpageWidget(),
+        ),
+        FFRoute(
+          name: RideHistoryPageWidget.routeName,
+          path: RideHistoryPageWidget.routePath,
+          builder: (context, params) => RideHistoryPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

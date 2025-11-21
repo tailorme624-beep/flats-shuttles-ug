@@ -57,7 +57,7 @@ class _UserhelpcenterpageWidgetState extends State<UserhelpcenterpageWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: Container(
                 child: Padding(
@@ -118,7 +118,7 @@ class _UserhelpcenterpageWidgetState extends State<UserhelpcenterpageWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xFF556B2F),
+                          color: FlutterFlowTheme.of(context).primary,
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(
@@ -455,7 +455,7 @@ class _UserhelpcenterpageWidgetState extends State<UserhelpcenterpageWidget> {
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xFF556B2F),
+                          color: FlutterFlowTheme.of(context).primary,
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(

@@ -15,33 +15,35 @@ class DriversignupModel extends FlutterFlowModel<DriversignupWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for email widget.
-  FocusNode? emailFocusNode;
-  TextEditingController? emailTextController;
-  String? Function(BuildContext, String?)? emailTextControllerValidator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for driverfullName widget.
+  FocusNode? driverfullNameFocusNode;
+  TextEditingController? driverfullNameTextController;
+  String? Function(BuildContext, String?)?
+      driverfullNameTextControllerValidator;
+  // State field(s) for driverEmail widget.
+  FocusNode? driverEmailFocusNode;
+  TextEditingController? driverEmailTextController;
+  String? Function(BuildContext, String?)? driverEmailTextControllerValidator;
+  // State field(s) for driverPhoneNumber widget.
+  FocusNode? driverPhoneNumberFocusNode;
+  TextEditingController? driverPhoneNumberTextController;
+  String? Function(BuildContext, String?)?
+      driverPhoneNumberTextControllerValidator;
+  // State field(s) for NIN widget.
+  FocusNode? ninFocusNode;
+  TextEditingController? ninTextController;
+  String? Function(BuildContext, String?)? ninTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for vehicleModal widget.
+  FocusNode? vehicleModalFocusNode;
+  TextEditingController? vehicleModalTextController;
+  String? Function(BuildContext, String?)? vehicleModalTextControllerValidator;
+  // State field(s) for licensePlate widget.
+  FocusNode? licensePlateFocusNode;
+  TextEditingController? licensePlateTextController;
+  String? Function(BuildContext, String?)? licensePlateTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -64,23 +66,23 @@ class DriversignupModel extends FlutterFlowModel<DriversignupWidget> {
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    driverfullNameFocusNode?.dispose();
+    driverfullNameTextController?.dispose();
 
-    emailFocusNode?.dispose();
-    emailTextController?.dispose();
+    driverEmailFocusNode?.dispose();
+    driverEmailTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController3?.dispose();
+    driverPhoneNumberFocusNode?.dispose();
+    driverPhoneNumberTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController4?.dispose();
+    ninFocusNode?.dispose();
+    ninTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController5?.dispose();
+    vehicleModalFocusNode?.dispose();
+    vehicleModalTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController6?.dispose();
+    licensePlateFocusNode?.dispose();
+    licensePlateTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

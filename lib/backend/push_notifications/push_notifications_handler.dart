@@ -126,7 +126,6 @@ final parametersBuilderMap =
   'SignIn': ParameterData.none(),
   'SignUp': ParameterData.none(),
   'HOME': ParameterData.none(),
-  'DriverEarnings': ParameterData.none(),
   'DriverProfile': ParameterData.none(),
   'driversignup': (data) async => ParameterData(
         allParams: <String, dynamic>{},
@@ -171,7 +170,6 @@ final parametersBuilderMap =
       ),
   'FlightBookingPage': ParameterData.none(),
   'adminflightmanagementpage': ParameterData.none(),
-  'processrequestpage': ParameterData.none(),
   'usersettingsandsupportpage': ParameterData.none(),
   'userPrivacyandsecuritypage': ParameterData.none(),
   'userlanguagepreferencepage': ParameterData.none(),
@@ -198,10 +196,6 @@ final parametersBuilderMap =
         },
       ),
   'Drivernotificationsettingspage': ParameterData.none(),
-  'Mainpage': ParameterData.none(),
-  'mainsettingspage': ParameterData.none(),
-  'mainhelppage': ParameterData.none(),
-  'mainprivacypolicypage': ParameterData.none(),
   'adminflightbookingpage': ParameterData.none(),
   'addflightpage': ParameterData.none(),
   'admincourierbookingpage': ParameterData.none(),
@@ -225,6 +219,7 @@ final parametersBuilderMap =
   'liveRidesDashboard': ParameterData.none(),
   'bookHotelPage': ParameterData.none(),
   'AdminDashBoardOverviewpage': ParameterData.none(),
+  'rideHistoryPage': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

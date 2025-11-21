@@ -63,7 +63,7 @@ class _UserstorageanddatapageWidgetState
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -299,7 +299,8 @@ class _UserstorageanddatapageWidgetState
                                     safeSetState(
                                         () => _model.switchValue1 = newValue);
                                   },
-                                  activeColor: Color(0xFF556B2F),
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
                                   activeTrackColor: Color(0xFF8FBC8F),
                                   inactiveTrackColor: Color(0xFFD3D3D3),
                                   inactiveThumbColor: Color(0xFF556B2F),

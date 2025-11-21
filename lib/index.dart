@@ -17,8 +17,6 @@ export '/pages/users/termsandconditions/termsandconditions_widget.dart'
 export '/pages/users/sign_in/sign_in_widget.dart' show SignInWidget;
 export '/pages/users/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/pages/users/home/home_widget.dart' show HomeWidget;
-export '/pages/drivers/driver_earnings/driver_earnings_widget.dart'
-    show DriverEarningsWidget;
 export '/pages/drivers/driver_profile/driver_profile_widget.dart'
     show DriverProfileWidget;
 export '/pages/drivers/driversignup/driversignup_widget.dart'
@@ -72,8 +70,6 @@ export '/pages/users/flight_booking_page/flight_booking_page_widget.dart'
     show FlightBookingPageWidget;
 export '/pages/admin/adminflightmanagementpage/adminflightmanagementpage_widget.dart'
     show AdminflightmanagementpageWidget;
-export '/pages/admin/processrequestpage/processrequestpage_widget.dart'
-    show ProcessrequestpageWidget;
 export '/pages/users/usersettingsandsupportpage/usersettingsandsupportpage_widget.dart'
     show UsersettingsandsupportpageWidget;
 export '/pages/users/user_privacyandsecuritypage/user_privacyandsecuritypage_widget.dart'
@@ -106,13 +102,6 @@ export '/pages/drivers/driver_notification_page/driver_notification_page_widget.
     show DriverNotificationPageWidget;
 export '/pages/drivers/drivernotificationsettingspage/drivernotificationsettingspage_widget.dart'
     show DrivernotificationsettingspageWidget;
-export '/pages/main/mainpage/mainpage_widget.dart' show MainpageWidget;
-export '/pages/main/mainsettingspage/mainsettingspage_widget.dart'
-    show MainsettingspageWidget;
-export '/pages/main/mainhelppage/mainhelppage_widget.dart'
-    show MainhelppageWidget;
-export '/pages/main/mainprivacypolicypage/mainprivacypolicypage_widget.dart'
-    show MainprivacypolicypageWidget;
 export '/pages/admin/adminflightbookingpage/adminflightbookingpage_widget.dart'
     show AdminflightbookingpageWidget;
 export '/pages/admin/addflightpage/addflightpage_widget.dart'
@@ -159,3 +148,5 @@ export '/pages/users/book_hotel_page/book_hotel_page_widget.dart'
     show BookHotelPageWidget;
 export '/pages/admin/admin_dash_board_overviewpage/admin_dash_board_overviewpage_widget.dart'
     show AdminDashBoardOverviewpageWidget;
+export '/pages/drivers/ride_history_page/ride_history_page_widget.dart'
+    show RideHistoryPageWidget;

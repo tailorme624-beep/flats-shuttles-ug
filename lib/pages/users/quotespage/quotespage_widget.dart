@@ -55,43 +55,8 @@ class _QuotespageWidgetState extends State<QuotespageWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFF556B2F),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
-              leading: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  logFirebaseEvent('QUOTESContainer_5hp5juh5_ON_TAP');
-                  logFirebaseEvent('Container_navigate_back');
-                  context.safePop();
-                },
-                child: Container(
-                  width: 100.0,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: FlutterFlowIconButton(
-                    borderColor: Color(0xFF8B956D),
-                    borderRadius: 24.0,
-                    borderWidth: 2.0,
-                    buttonSize: 48.0,
-                    fillColor: Color(0xFFF5F5DC),
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Color(0xFF8B956D),
-                      size: 24.0,
-                    ),
-                    onPressed: () async {
-                      logFirebaseEvent('QUOTESarrow_back_ios_ICN_ON_TAP');
-                      logFirebaseEvent('IconButton_navigate_back');
-                      context.safePop();
-                    },
-                  ),
-                ),
-              ),
               title: Text(
                 FFLocalizations.of(context).getText(
                   'c5n52oa8' /* Daily Inspiration */,
@@ -144,63 +109,66 @@ class _QuotespageWidgetState extends State<QuotespageWidget> {
                         ),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.format_quote,
-                            color: Color(0xFFF5F5DC),
-                            size: 40.0,
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'gojuorpe' /* The only way to do great work ... */,
+                      child: SingleChildScrollView(
+                        primary: false,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.format_quote,
+                              color: Color(0xFFF5F5DC),
+                              size: 40.0,
                             ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .headlineSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'gojuorpe' /* The only way to do great work ... */,
+                              ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineSmall
+                                          .fontStyle,
+                                    ),
+                                    color: Color(0xFFF5F5DC),
+                                    fontSize: 18.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .fontStyle,
+                                    lineHeight: 1.4,
                                   ),
-                                  color: Color(0xFFF5F5DC),
-                                  fontSize: 18.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
-                                  lineHeight: 1.4,
-                                ),
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'u8kbwjfh' /* - Steve Jobs */,
                             ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'u8kbwjfh' /* - Steve Jobs */,
+                              ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.normal,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: Color(0xCCF5F5DC),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                                  color: Color(0xCCF5F5DC),
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                        ].divide(SizedBox(height: 12.0)),
+                            ),
+                          ].divide(SizedBox(height: 12.0)),
+                        ),
                       ),
                     ),
                   ),
