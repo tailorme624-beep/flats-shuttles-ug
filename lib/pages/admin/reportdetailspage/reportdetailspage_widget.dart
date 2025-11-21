@@ -52,8 +52,8 @@ class _ReportdetailspageWidgetState extends State<ReportdetailspageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'reportdetailspage'});
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.adminNotesTextController ??= TextEditingController();
+    _model.adminNotesFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -887,10 +887,19 @@ class _ReportdetailspageWidgetState extends State<ReportdetailspageWidget> {
                                               ),
                                         ),
                                         FlutterFlowDropDown<String>(
-                                          controller: _model
-                                                  .dropDownValueController ??=
-                                              FormFieldController<String>(null),
-                                          options: [
+                                          controller:
+                                              _model.dropDownValueController ??=
+                                                  FormFieldController<String>(
+                                            _model.dropDownValue ??= '',
+                                          ),
+                                          options: List<String>.from([
+                                            'new',
+                                            'investigating',
+                                            'under_review',
+                                            'resolved',
+                                            'closed'
+                                          ]),
+                                          optionLabels: [
                                             FFLocalizations.of(context).getText(
                                               'e8uhpt8q' /* New */,
                                             ),
@@ -989,9 +998,10 @@ class _ReportdetailspageWidgetState extends State<ReportdetailspageWidget> {
                                         Container(
                                           width: double.infinity,
                                           child: TextFormField(
-                                            controller: _model.textController,
+                                            controller:
+                                                _model.adminNotesTextController,
                                             focusNode:
-                                                _model.textFieldFocusNode,
+                                                _model.adminNotesFocusNode,
                                             autofocus: false,
                                             textCapitalization:
                                                 TextCapitalization.sentences,
@@ -1120,7 +1130,7 @@ class _ReportdetailspageWidgetState extends State<ReportdetailspageWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
                                             validator: _model
-                                                .textControllerValidator
+                                                .adminNotesTextControllerValidator
                                                 .asValidator(context),
                                             inputFormatters: [
                                               if (!isAndroid && !isiOS)
@@ -1150,8 +1160,8 @@ class _ReportdetailspageWidgetState extends State<ReportdetailspageWidget> {
                       FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
-                              'REPORTDETAILSSAVE_RESOLUTION_BTN_ON_TAP');
-                          logFirebaseEvent('Button_firestore_query');
+                              'REPORTDETAILSPAGE_PAGE_saveButton_ON_TAP');
+                          logFirebaseEvent('saveButton_firestore_query');
                           await queryReportsRecordOnce(
                             singleRecord: true,
                           ).then((s) => s.firstOrNull);

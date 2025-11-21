@@ -1687,7 +1687,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                 }
 
                                                 context.goNamedAuth(
-                                                    HomeWidget.routeName,
+                                                    ServicesWidget.routeName,
                                                     context.mounted);
                                               },
                                               text: FFLocalizations.of(context)
@@ -1788,7 +1788,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                 }
 
                                                 context.goNamedAuth(
-                                                    HomeWidget.routeName,
+                                                    ServicesWidget.routeName,
                                                     context.mounted);
                                               },
                                               text: FFLocalizations.of(context)
@@ -1869,7 +1869,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                       }
 
                                                       context.goNamedAuth(
-                                                          HomeWidget.routeName,
+                                                          ServicesWidget
+                                                              .routeName,
                                                           context.mounted);
                                                     },
                                                     text: FFLocalizations.of(

@@ -232,16 +232,16 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                   );
                                                 }
                                                 List<RidesRecord>
-                                                    textRidesRecordList =
+                                                    pickupLocationRidesRecordList =
                                                     snapshot.data!;
                                                 // Return an empty Container when the item does not exist.
                                                 if (snapshot.data!.isEmpty) {
                                                   return Container();
                                                 }
-                                                final textRidesRecord =
-                                                    textRidesRecordList
+                                                final pickupLocationRidesRecord =
+                                                    pickupLocationRidesRecordList
                                                             .isNotEmpty
-                                                        ? textRidesRecordList
+                                                        ? pickupLocationRidesRecordList
                                                             .first
                                                         : null;
 
@@ -389,15 +389,16 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                                 );
                                               }
                                               List<RidesRecord>
-                                                  textRidesRecordList =
+                                                  dropoffLocationRidesRecordList =
                                                   snapshot.data!;
                                               // Return an empty Container when the item does not exist.
                                               if (snapshot.data!.isEmpty) {
                                                 return Container();
                                               }
-                                              final textRidesRecord =
-                                                  textRidesRecordList.isNotEmpty
-                                                      ? textRidesRecordList
+                                              final dropoffLocationRidesRecord =
+                                                  dropoffLocationRidesRecordList
+                                                          .isNotEmpty
+                                                      ? dropoffLocationRidesRecordList
                                                           .first
                                                       : null;
 
@@ -566,15 +567,17 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                             );
                                           }
                                           List<RidesRecord>
-                                              textRidesRecordList =
+                                              estimatedFareRidesRecordList =
                                               snapshot.data!;
                                           // Return an empty Container when the item does not exist.
                                           if (snapshot.data!.isEmpty) {
                                             return Container();
                                           }
-                                          final textRidesRecord =
-                                              textRidesRecordList.isNotEmpty
-                                                  ? textRidesRecordList.first
+                                          final estimatedFareRidesRecord =
+                                              estimatedFareRidesRecordList
+                                                      .isNotEmpty
+                                                  ? estimatedFareRidesRecordList
+                                                      .first
                                                   : null;
 
                                           return Text(
@@ -689,15 +692,17 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                             );
                                           }
                                           List<RidesRecord>
-                                              textRidesRecordList =
+                                              travelDistanceRidesRecordList =
                                               snapshot.data!;
                                           // Return an empty Container when the item does not exist.
                                           if (snapshot.data!.isEmpty) {
                                             return Container();
                                           }
-                                          final textRidesRecord =
-                                              textRidesRecordList.isNotEmpty
-                                                  ? textRidesRecordList.first
+                                          final travelDistanceRidesRecord =
+                                              travelDistanceRidesRecordList
+                                                      .isNotEmpty
+                                                  ? travelDistanceRidesRecordList
+                                                      .first
                                                   : null;
 
                                           return Text(
@@ -812,15 +817,17 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                             );
                                           }
                                           List<RidesRecord>
-                                              textRidesRecordList =
+                                              travelTimeRidesRecordList =
                                               snapshot.data!;
                                           // Return an empty Container when the item does not exist.
                                           if (snapshot.data!.isEmpty) {
                                             return Container();
                                           }
-                                          final textRidesRecord =
-                                              textRidesRecordList.isNotEmpty
-                                                  ? textRidesRecordList.first
+                                          final travelTimeRidesRecord =
+                                              travelTimeRidesRecordList
+                                                      .isNotEmpty
+                                                  ? travelTimeRidesRecordList
+                                                      .first
                                                   : null;
 
                                           return Text(
@@ -976,15 +983,17 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                             );
                                           }
                                           List<RidesRecord>
-                                              textRidesRecordList =
+                                              userfullNameRidesRecordList =
                                               snapshot.data!;
                                           // Return an empty Container when the item does not exist.
                                           if (snapshot.data!.isEmpty) {
                                             return Container();
                                           }
-                                          final textRidesRecord =
-                                              textRidesRecordList.isNotEmpty
-                                                  ? textRidesRecordList.first
+                                          final userfullNameRidesRecord =
+                                              userfullNameRidesRecordList
+                                                      .isNotEmpty
+                                                  ? userfullNameRidesRecordList
+                                                      .first
                                                   : null;
 
                                           return Text(
@@ -1047,15 +1056,17 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                               );
                                             }
                                             List<UsersRecord>
-                                                textUsersRecordList =
+                                                phoneNumberUsersRecordList =
                                                 snapshot.data!;
                                             // Return an empty Container when the item does not exist.
                                             if (snapshot.data!.isEmpty) {
                                               return Container();
                                             }
-                                            final textUsersRecord =
-                                                textUsersRecordList.isNotEmpty
-                                                    ? textUsersRecordList.first
+                                            final phoneNumberUsersRecord =
+                                                phoneNumberUsersRecordList
+                                                        .isNotEmpty
+                                                    ? phoneNumberUsersRecordList
+                                                        .first
                                                     : null;
 
                                             return Text(
@@ -1137,7 +1148,8 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                           ),
                                           FFButtonWidget(
                                             onPressed: () {
-                                              print('Button pressed ...');
+                                              print(
+                                                  'passangerRatingButton pressed ...');
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
@@ -1241,15 +1253,15 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                                       ),
                                     );
                                   }
-                                  List<RidesRecord> textRidesRecordList =
+                                  List<RidesRecord> timerRidesRecordList =
                                       snapshot.data!;
                                   // Return an empty Container when the item does not exist.
                                   if (snapshot.data!.isEmpty) {
                                     return Container();
                                   }
-                                  final textRidesRecord =
-                                      textRidesRecordList.isNotEmpty
-                                          ? textRidesRecordList.first
+                                  final timerRidesRecord =
+                                      timerRidesRecordList.isNotEmpty
+                                          ? timerRidesRecordList.first
                                           : null;
 
                                   return Text(
@@ -1316,7 +1328,7 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                             Expanded(
                               child: FFButtonWidget(
                                 onPressed: () {
-                                  print('Button pressed ...');
+                                  print('rejectButton pressed ...');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'taayqhmp' /* REJECT */,
@@ -1359,8 +1371,8 @@ class _IncomingriderequestWidgetState extends State<IncomingriderequestWidget> {
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
-                                      'INCOMINGRIDEREQUEST_ACCEPT_BTN_ON_TAP');
-                                  logFirebaseEvent('Button_backend_call');
+                                      'INCOMINGRIDEREQUEST_AcceptButton_ON_TAP');
+                                  logFirebaseEvent('AcceptButton_backend_call');
 
                                   await widget.order!.clientId!
                                       .update(createUsersRecordData());
