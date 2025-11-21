@@ -31,8 +31,6 @@ class RideBookingPageModel extends FlutterFlowModel<RideBookingPageWidget> {
   // State field(s) for GoogleMap widget.
   LatLng? googleMapsCenter;
   final googleMapsController = Completer<GoogleMapController>();
-  // Stores action output result for [Custom Action - getDistanceByApi] action in GoogleMap widget.
-  double? apidistance;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;

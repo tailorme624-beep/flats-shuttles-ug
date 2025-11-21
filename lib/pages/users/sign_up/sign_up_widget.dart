@@ -1654,41 +1654,73 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                               onPressed: () async {
                                                 logFirebaseEvent(
                                                     'SIGN_UP_PAGE_CREATE_ACCOUNT_BTN_ON_TAP');
-                                                logFirebaseEvent('Button_auth');
-                                                GoRouter.of(context)
-                                                    .prepareAuthEvent();
-                                                if (_model
-                                                        .passwordTextController
-                                                        .text !=
-                                                    _model
-                                                        .confirmPasswordTextController
-                                                        .text) {
-                                                  ScaffoldMessenger.of(context)
-                                                      .showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                        'Passwords don\'t match!',
-                                                      ),
-                                                    ),
-                                                  );
-                                                  return;
-                                                }
+                                                await Future.wait([
+                                                  Future(() async {
+                                                    logFirebaseEvent(
+                                                        'Button_auth');
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent();
+                                                    if (_model
+                                                            .passwordTextController
+                                                            .text !=
+                                                        _model
+                                                            .confirmPasswordTextController
+                                                            .text) {
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Passwords don\'t match!',
+                                                          ),
+                                                        ),
+                                                      );
+                                                      return;
+                                                    }
 
-                                                final user = await authManager
-                                                    .createAccountWithEmail(
-                                                  context,
-                                                  _model
-                                                      .emailTextController.text,
-                                                  _model.passwordTextController
-                                                      .text,
-                                                );
-                                                if (user == null) {
-                                                  return;
-                                                }
+                                                    final user = await authManager
+                                                        .createAccountWithEmail(
+                                                      context,
+                                                      _model
+                                                          .fullnameTextController
+                                                          .text,
+                                                      _model
+                                                          .passwordTextController
+                                                          .text,
+                                                    );
+                                                    if (user == null) {
+                                                      return;
+                                                    }
 
-                                                context.goNamedAuth(
-                                                    ServicesWidget.routeName,
-                                                    context.mounted);
+                                                    await UsersRecord.collection
+                                                        .doc(user.uid)
+                                                        .update(
+                                                            createUsersRecordData(
+                                                          displayName: '',
+                                                          photoUrl: '',
+                                                          uid: '',
+                                                          password: '',
+                                                          email: '',
+                                                          phoneNumber: '',
+                                                          role: 'client',
+                                                        ));
+                                                  }),
+                                                  Future(() async {
+                                                    logFirebaseEvent(
+                                                        'Button_backend_call');
+
+                                                    await buttonUsersRecord!
+                                                        .reference
+                                                        .update(
+                                                            createUsersRecordData());
+                                                    logFirebaseEvent(
+                                                        'Button_navigate_to');
+
+                                                    context.pushNamedAuth(
+                                                        SignInWidget.routeName,
+                                                        context.mounted);
+                                                  }),
+                                                ]);
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
@@ -1786,9 +1818,17 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                 if (user == null) {
                                                   return;
                                                 }
+                                                logFirebaseEvent(
+                                                    'Button_backend_call');
+
+                                                await stackUsersRecord!
+                                                    .reference
+                                                    .update(
+                                                        createUsersRecordData());
 
                                                 context.goNamedAuth(
-                                                    ServicesWidget.routeName,
+                                                    RidecomfirmationWidget
+                                                        .routeName,
                                                     context.mounted);
                                               },
                                               text: FFLocalizations.of(context)
@@ -1867,9 +1907,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                       if (user == null) {
                                                         return;
                                                       }
+                                                      logFirebaseEvent(
+                                                          'Button_backend_call');
+
+                                                      await stackUsersRecord!
+                                                          .reference
+                                                          .update(
+                                                              createUsersRecordData());
 
                                                       context.goNamedAuth(
-                                                          ServicesWidget
+                                                          RidecomfirmationWidget
                                                               .routeName,
                                                           context.mounted);
                                                     },

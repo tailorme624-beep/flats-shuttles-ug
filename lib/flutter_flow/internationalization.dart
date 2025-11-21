@@ -19992,7 +19992,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'fp5trpvr': {
-      'en': '',
+      'en': ' Grant this application access to your camera',
       'aa': '',
       'af': '',
       'as': '',
@@ -20001,7 +20001,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'gac58hxk': {
-      'en': '',
+      'en': 'Grant this application access to your Gallery',
       'aa': '',
       'af': '',
       'as': '',

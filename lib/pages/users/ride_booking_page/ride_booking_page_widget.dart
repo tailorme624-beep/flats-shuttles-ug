@@ -1303,42 +1303,16 @@ class _RideBookingPageWidgetState extends State<RideBookingPageWidget> {
                                                                 .fontStyle,
                                                       ),
                                             ),
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                logFirebaseEvent(
-                                                    'RIDE_BOOKING_EstimatedFare_ON_TAP');
-                                                logFirebaseEvent(
-                                                    'EstimatedFare_update_page_state');
-                                                _model.tripdistanceKM =
-                                                    _model.apidistance;
-                                                safeSetState(() {});
-                                              },
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'haz8h1sb' /*  */,
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodySmall
-                                                    .override(
-                                                      font: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontStyle,
-                                                      ),
-                                                      color: Color(0xFF556B2F),
-                                                      fontSize: 14.0,
-                                                      letterSpacing: 0.0,
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'haz8h1sb' /*  */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodySmall
+                                                  .override(
+                                                    font: GoogleFonts.inter(
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       fontStyle:
@@ -1347,7 +1321,16 @@ class _RideBookingPageWidgetState extends State<RideBookingPageWidget> {
                                                               .bodySmall
                                                               .fontStyle,
                                                     ),
-                                              ),
+                                                    color: Color(0xFF556B2F),
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmall
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                           ],
                                         ),

@@ -20,11 +20,6 @@ class HotelsRecord extends FirestoreRecord {
   String get hotelId => _hotelId ?? '';
   bool hasHotelId() => _hotelId != null;
 
-  // "added_by_admin_id" field.
-  DocumentReference? _addedByAdminId;
-  DocumentReference? get addedByAdminId => _addedByAdminId;
-  bool hasAddedByAdminId() => _addedByAdminId != null;
-
   // "created_at" field.
   DateTime? _createdAt;
   DateTime? get createdAt => _createdAt;
@@ -97,7 +92,6 @@ class HotelsRecord extends FirestoreRecord {
 
   void _initializeFields() {
     _hotelId = snapshotData['hotel_id'] as String?;
-    _addedByAdminId = snapshotData['added_by_admin_id'] as DocumentReference?;
     _createdAt = snapshotData['created_at'] as DateTime?;
     _isActive = snapshotData['is_active'] as bool?;
     _photo = snapshotData['photo'] as String?;
@@ -150,7 +144,6 @@ class HotelsRecord extends FirestoreRecord {
 
 Map<String, dynamic> createHotelsRecordData({
   String? hotelId,
-  DocumentReference? addedByAdminId,
   DateTime? createdAt,
   bool? isActive,
   String? photo,
@@ -168,7 +161,6 @@ Map<String, dynamic> createHotelsRecordData({
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'hotel_id': hotelId,
-      'added_by_admin_id': addedByAdminId,
       'created_at': createdAt,
       'is_active': isActive,
       'photo': photo,
@@ -195,7 +187,6 @@ class HotelsRecordDocumentEquality implements Equality<HotelsRecord> {
   bool equals(HotelsRecord? e1, HotelsRecord? e2) {
     const listEquality = ListEquality();
     return e1?.hotelId == e2?.hotelId &&
-        e1?.addedByAdminId == e2?.addedByAdminId &&
         e1?.createdAt == e2?.createdAt &&
         e1?.isActive == e2?.isActive &&
         e1?.photo == e2?.photo &&
@@ -215,7 +206,6 @@ class HotelsRecordDocumentEquality implements Equality<HotelsRecord> {
   @override
   int hash(HotelsRecord? e) => const ListEquality().hash([
         e?.hotelId,
-        e?.addedByAdminId,
         e?.createdAt,
         e?.isActive,
         e?.photo,

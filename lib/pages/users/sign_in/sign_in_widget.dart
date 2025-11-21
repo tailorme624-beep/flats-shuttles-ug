@@ -676,7 +676,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                             }
 
                                             context.goNamedAuth(
-                                                ServicesWidget.routeName,
+                                                RidecomfirmationWidget
+                                                    .routeName,
                                                 context.mounted);
                                           },
                                           text: FFLocalizations.of(context)
@@ -749,7 +750,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                                   }
 
                                                   context.goNamedAuth(
-                                                      ServicesWidget.routeName,
+                                                      RidecomfirmationWidget
+                                                          .routeName,
                                                       context.mounted);
                                                 },
                                                 text:

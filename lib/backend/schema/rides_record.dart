@@ -28,11 +28,6 @@ class RidesRecord extends FirestoreRecord {
   DocumentReference? get clientId => _clientId;
   bool hasClientId() => _clientId != null;
 
-  // "driver_id" field.
-  DocumentReference? _driverId;
-  DocumentReference? get driverId => _driverId;
-  bool hasDriverId() => _driverId != null;
-
   // "status" field.
   List<String>? _status;
   List<String> get status => _status ?? const [];
@@ -98,10 +93,14 @@ class RidesRecord extends FirestoreRecord {
   String get vehicleType => _vehicleType ?? '';
   bool hasVehicleType() => _vehicleType != null;
 
+  // "driver_id" field.
+  DocumentReference? _driverId;
+  DocumentReference? get driverId => _driverId;
+  bool hasDriverId() => _driverId != null;
+
   void _initializeFields() {
     _rideId = snapshotData['ride_id'] as String?;
     _clientId = snapshotData['client_id'] as DocumentReference?;
-    _driverId = snapshotData['driver_id'] as DocumentReference?;
     _status = getDataList(snapshotData['status']);
     _createdAt = snapshotData['created_at'] as DateTime?;
     _updatedAt = snapshotData['updated_at'] as DateTime?;
@@ -115,6 +114,7 @@ class RidesRecord extends FirestoreRecord {
     _paymentMethod = getDataList(snapshotData['payment_method']);
     _paymentStatus = getDataList(snapshotData['payment_status']);
     _vehicleType = snapshotData['vehicle_type'] as String?;
+    _driverId = snapshotData['driver_id'] as DocumentReference?;
   }
 
   static CollectionReference get collection => FirebaseFirestore.instanceFor(
@@ -144,11 +144,6 @@ class RidesRecord extends FirestoreRecord {
           'ride_id': snapshot.data['ride_id'],
           'client_id': convertAlgoliaParam(
             snapshot.data['client_id'],
-            ParamType.DocumentReference,
-            false,
-          ),
-          'driver_id': convertAlgoliaParam(
-            snapshot.data['driver_id'],
             ParamType.DocumentReference,
             false,
           ),
@@ -203,6 +198,11 @@ class RidesRecord extends FirestoreRecord {
             () => snapshot.data['payment_status'].toList(),
           ),
           'vehicle_type': snapshot.data['vehicle_type'],
+          'driver_id': convertAlgoliaParam(
+            snapshot.data['driver_id'],
+            ParamType.DocumentReference,
+            false,
+          ),
         },
         RidesRecord.collection.doc(snapshot.objectID),
       );
@@ -241,7 +241,6 @@ class RidesRecord extends FirestoreRecord {
 Map<String, dynamic> createRidesRecordData({
   String? rideId,
   DocumentReference? clientId,
-  DocumentReference? driverId,
   DateTime? createdAt,
   DateTime? updatedAt,
   LatLng? pickupLocation,
@@ -252,12 +251,12 @@ Map<String, dynamic> createRidesRecordData({
   int? durationSeconds,
   int? driverEtaSeconds,
   String? vehicleType,
+  DocumentReference? driverId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'ride_id': rideId,
       'client_id': clientId,
-      'driver_id': driverId,
       'created_at': createdAt,
       'updated_at': updatedAt,
       'pickup_location': pickupLocation,
@@ -268,6 +267,7 @@ Map<String, dynamic> createRidesRecordData({
       'duration_seconds': durationSeconds,
       'driver_eta_seconds': driverEtaSeconds,
       'vehicle_type': vehicleType,
+      'driver_id': driverId,
     }.withoutNulls,
   );
 
@@ -282,7 +282,6 @@ class RidesRecordDocumentEquality implements Equality<RidesRecord> {
     const listEquality = ListEquality();
     return e1?.rideId == e2?.rideId &&
         e1?.clientId == e2?.clientId &&
-        e1?.driverId == e2?.driverId &&
         listEquality.equals(e1?.status, e2?.status) &&
         e1?.createdAt == e2?.createdAt &&
         e1?.updatedAt == e2?.updatedAt &&
@@ -295,14 +294,14 @@ class RidesRecordDocumentEquality implements Equality<RidesRecord> {
         e1?.driverEtaSeconds == e2?.driverEtaSeconds &&
         listEquality.equals(e1?.paymentMethod, e2?.paymentMethod) &&
         listEquality.equals(e1?.paymentStatus, e2?.paymentStatus) &&
-        e1?.vehicleType == e2?.vehicleType;
+        e1?.vehicleType == e2?.vehicleType &&
+        e1?.driverId == e2?.driverId;
   }
 
   @override
   int hash(RidesRecord? e) => const ListEquality().hash([
         e?.rideId,
         e?.clientId,
-        e?.driverId,
         e?.status,
         e?.createdAt,
         e?.updatedAt,
@@ -315,7 +314,8 @@ class RidesRecordDocumentEquality implements Equality<RidesRecord> {
         e?.driverEtaSeconds,
         e?.paymentMethod,
         e?.paymentStatus,
-        e?.vehicleType
+        e?.vehicleType,
+        e?.driverId
       ]);
 
   @override

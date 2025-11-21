@@ -20,11 +20,6 @@ class ToursRecord extends FirestoreRecord {
   String get tourId => _tourId ?? '';
   bool hasTourId() => _tourId != null;
 
-  // "added_by_admin_id" field.
-  DocumentReference? _addedByAdminId;
-  DocumentReference? get addedByAdminId => _addedByAdminId;
-  bool hasAddedByAdminId() => _addedByAdminId != null;
-
   // "created_at" field.
   DateTime? _createdAt;
   DateTime? get createdAt => _createdAt;
@@ -87,7 +82,6 @@ class ToursRecord extends FirestoreRecord {
 
   void _initializeFields() {
     _tourId = snapshotData['tour_id'] as String?;
-    _addedByAdminId = snapshotData['added_by_admin_id'] as DocumentReference?;
     _createdAt = snapshotData['created_at'] as DateTime?;
     _isActive = snapshotData['is_active'] as bool?;
     _photos = snapshotData['photos'] as String?;
@@ -138,7 +132,6 @@ class ToursRecord extends FirestoreRecord {
 
 Map<String, dynamic> createToursRecordData({
   String? tourId,
-  DocumentReference? addedByAdminId,
   DateTime? createdAt,
   bool? isActive,
   String? photos,
@@ -154,7 +147,6 @@ Map<String, dynamic> createToursRecordData({
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'tour_id': tourId,
-      'added_by_admin_id': addedByAdminId,
       'created_at': createdAt,
       'is_active': isActive,
       'photos': photos,
@@ -179,7 +171,6 @@ class ToursRecordDocumentEquality implements Equality<ToursRecord> {
   bool equals(ToursRecord? e1, ToursRecord? e2) {
     const listEquality = ListEquality();
     return e1?.tourId == e2?.tourId &&
-        e1?.addedByAdminId == e2?.addedByAdminId &&
         e1?.createdAt == e2?.createdAt &&
         e1?.isActive == e2?.isActive &&
         e1?.photos == e2?.photos &&
@@ -197,7 +188,6 @@ class ToursRecordDocumentEquality implements Equality<ToursRecord> {
   @override
   int hash(ToursRecord? e) => const ListEquality().hash([
         e?.tourId,
-        e?.addedByAdminId,
         e?.createdAt,
         e?.isActive,
         e?.photos,
