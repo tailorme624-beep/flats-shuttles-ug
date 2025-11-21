@@ -136,7 +136,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: AITravelassistantWidget.routeName,
           path: AITravelassistantWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AITravelassistantWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'AITravelassistant')
+              : AITravelassistantWidget(),
         ),
         FFRoute(
           name: PrivacypolicyandtermsandconditionsWidget.routeName,

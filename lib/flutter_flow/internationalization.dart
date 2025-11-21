@@ -1297,6 +1297,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
+    'dlgzye07': {
+      'en': 'Flats AI',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
   },
   // privacypolicyandtermsandconditions
   {
