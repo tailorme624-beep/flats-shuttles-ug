@@ -56,6 +56,14 @@ dynamic convertAlgoliaParam<T>(
         return isList
             ? (data as Iterable).map((s) => toRef(s))
             : safeGet(() => toRef(data));
+      case ParamType.DataStruct:
+        if (structBuilder == null) {
+          return null;
+        }
+        return isList
+            ? (data as Iterable)
+                .map((d) => structBuilder((d as Map).cast<String, dynamic>()))
+            : structBuilder((data as Map).cast<String, dynamic>());
 
       default:
         return data;

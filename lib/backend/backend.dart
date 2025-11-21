@@ -21,6 +21,7 @@ import 'schema/avaflights_record.dart';
 import 'schema/tours_record.dart';
 import 'schema/drivers_record.dart';
 import 'schema/notifications_record.dart';
+import 'schema/ai_chats_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -45,6 +46,7 @@ export 'schema/avaflights_record.dart';
 export 'schema/tours_record.dart';
 export 'schema/drivers_record.dart';
 export 'schema/notifications_record.dart';
+export 'schema/ai_chats_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -633,6 +635,43 @@ Future<List<NotificationsRecord>> queryNotificationsRecordOnce({
     queryCollectionOnce(
       NotificationsRecord.collection,
       NotificationsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AiChatsRecords (as a Stream and as a Future).
+Future<int> queryAiChatsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AiChatsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AiChatsRecord>> queryAiChatsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AiChatsRecord.collection,
+      AiChatsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AiChatsRecord>> queryAiChatsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AiChatsRecord.collection,
+      AiChatsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

@@ -983,15 +983,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ridetracking
   {
-    'wee4q6bt': {
-      'en': 'ONGOING',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '8su84ur0': {
       'en': 'FARE CALCULATION',
       'aa': '',
