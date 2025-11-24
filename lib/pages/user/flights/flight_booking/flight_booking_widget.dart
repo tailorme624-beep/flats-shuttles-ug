@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -10,8 +9,8 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'flight_booking_page_model.dart';
-export 'flight_booking_page_model.dart';
+import 'flight_booking_model.dart';
+export 'flight_booking_model.dart';
 
 /// Design the Flight Booking  page to collect all necessary data
 /// Layout: Single column, minimalist design.
@@ -33,29 +32,28 @@ export 'flight_booking_page_model.dart';
 /// Action Button: Large, primary-colored "Search Flights" button.
 /// Action: Navigates to Flight Results page, passing all inputs to query the
 /// flights collection. theme color, army green&beige
-class FlightBookingPageWidget extends StatefulWidget {
-  const FlightBookingPageWidget({super.key});
+class FlightBookingWidget extends StatefulWidget {
+  const FlightBookingWidget({super.key});
 
-  static String routeName = 'FlightBookingPage';
-  static String routePath = '/flightBookingPage';
+  static String routeName = 'FlightBooking';
+  static String routePath = '/flightBooking';
 
   @override
-  State<FlightBookingPageWidget> createState() =>
-      _FlightBookingPageWidgetState();
+  State<FlightBookingWidget> createState() => _FlightBookingWidgetState();
 }
 
-class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
-  late FlightBookingPageModel _model;
+class _FlightBookingWidgetState extends State<FlightBookingWidget> {
+  late FlightBookingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FlightBookingPageModel());
+    _model = createModel(context, () => FlightBookingModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'FlightBookingPage'});
+        parameters: {'screen_name': 'FlightBooking'});
     _model.flyingFromTextController ??= TextEditingController();
     _model.flyingFromFocusNode ??= FocusNode();
 
@@ -75,7 +73,7 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'FlightBookingPage',
+        title: 'FlightBooking',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -87,21 +85,7 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              leading: FlutterFlowIconButton(
-                borderRadius: 20.0,
-                buttonSize: 40.0,
-                icon: Icon(
-                  Icons.arrow_back_rounded,
-                  color: Color(0xFFF5F5DC),
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('FLIGHT_BOOKING_arrow_back_rounded_ICN_ON');
-                  logFirebaseEvent('IconButton_navigate_back');
-                  context.safePop();
-                },
-              ),
+              automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
                   '2fofq0b9' /* Book Flights */,
@@ -122,7 +106,7 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
                     ),
               ),
               actions: [],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SingleChildScrollView(
@@ -675,7 +659,7 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     logFirebaseEvent(
-                                                        'FLIGHT_BOOKING_Icon_n7g0pfdd_ON_TAP');
+                                                        'FLIGHT_BOOKING_PAGE_Icon_n7g0pfdd_ON_TAP');
                                                     logFirebaseEvent(
                                                         'Icon_date_time_picker');
                                                     final _datePicked1Date =
@@ -843,7 +827,7 @@ class _FlightBookingPageWidgetState extends State<FlightBookingPageWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       logFirebaseEvent(
-                                                          'FLIGHT_BOOKING_Icon_kqfn0rsi_ON_TAP');
+                                                          'FLIGHT_BOOKING_PAGE_Icon_kqfn0rsi_ON_TAP');
                                                       logFirebaseEvent(
                                                           'Icon_date_time_picker');
                                                       final _datePicked2Date =

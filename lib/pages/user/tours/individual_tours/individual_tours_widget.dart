@@ -8,8 +8,8 @@ import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'individualtourspage_model.dart';
-export 'individualtourspage_model.dart';
+import 'individual_tours_model.dart';
+export 'individual_tours_model.dart';
 
 /// Create a page Design a Tour Booking Screen.
 ///
@@ -20,29 +20,28 @@ export 'individualtourspage_model.dart';
 /// Box). The primary call-to-action should be "Check Availability & Price",
 /// emphasizing that group prices may differ. with theme colors, army green
 /// and light beige
-class IndividualtourspageWidget extends StatefulWidget {
-  const IndividualtourspageWidget({super.key});
+class IndividualToursWidget extends StatefulWidget {
+  const IndividualToursWidget({super.key});
 
-  static String routeName = 'individualtourspage';
-  static String routePath = '/individualtourspage';
+  static String routeName = 'IndividualTours';
+  static String routePath = '/individualTours';
 
   @override
-  State<IndividualtourspageWidget> createState() =>
-      _IndividualtourspageWidgetState();
+  State<IndividualToursWidget> createState() => _IndividualToursWidgetState();
 }
 
-class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
-  late IndividualtourspageModel _model;
+class _IndividualToursWidgetState extends State<IndividualToursWidget> {
+  late IndividualToursModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => IndividualtourspageModel());
+    _model = createModel(context, () => IndividualToursModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'individualtourspage'});
+        parameters: {'screen_name': 'IndividualTours'});
     _model.descriptionTextController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
 
@@ -59,7 +58,7 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'individualtourspage',
+        title: 'IndividualTours',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -78,7 +77,7 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  logFirebaseEvent('INDIVIDUALTOURSContainer_q4ygdri7_ON_TAP');
+                  logFirebaseEvent('INDIVIDUAL_TOURS_Container_q4ygdri7_ON_T');
                   logFirebaseEvent('Container_navigate_back');
                   context.safePop();
                 },
@@ -91,7 +90,8 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        logFirebaseEvent('INDIVIDUALTOURSIcon_53vrz3j5_ON_TAP');
+                        logFirebaseEvent(
+                            'INDIVIDUAL_TOURS_Icon_53vrz3j5_ON_TAP');
                         logFirebaseEvent('Icon_navigate_back');
                         context.safePop();
                       },
@@ -536,7 +536,7 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   logFirebaseEvent(
-                                                      'INDIVIDUALTOURSIcon_ue3tlv0c_ON_TAP');
+                                                      'INDIVIDUAL_TOURS_Icon_ue3tlv0c_ON_TAP');
                                                   logFirebaseEvent(
                                                       'Icon_date_time_picker');
                                                   final _datePickedDate =
@@ -1391,11 +1391,11 @@ class _IndividualtourspageWidgetState extends State<IndividualtourspageWidget> {
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
-                              'INDIVIDUALTOURSCHECK_AVAILABILITY__PRICE');
+                              'INDIVIDUAL_TOURS_CHECK_AVAILABILITY__PRI');
                           logFirebaseEvent('Button_navigate_to');
 
-                          context.pushNamed(
-                              UseravailabletourplacespageWidget.routeName);
+                          context
+                              .pushNamed(AvailableTourPlacesWidget.routeName);
                         },
                         text: FFLocalizations.of(context).getText(
                           '7g1lj9fg' /* Check Availability & Price */,

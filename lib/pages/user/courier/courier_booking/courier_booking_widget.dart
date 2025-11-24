@@ -7,8 +7,8 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'courierservicespage_model.dart';
-export 'courierservicespage_model.dart';
+import 'courier_booking_model.dart';
+export 'courier_booking_model.dart';
 
 /// Create a page Design for User Profile Screen for a multi-service travel
 /// app (Flights, Hotels, Rides, Courier).
@@ -18,29 +18,28 @@ export 'courierservicespage_model.dart';
 /// tables for clarity across all four service lines to maximize booking
 /// efficiency.
 /// with theme colors, army green and light beige
-class CourierservicespageWidget extends StatefulWidget {
-  const CourierservicespageWidget({super.key});
+class CourierBookingWidget extends StatefulWidget {
+  const CourierBookingWidget({super.key});
 
-  static String routeName = 'courierservicespage';
-  static String routePath = '/courierservicespage';
+  static String routeName = 'CourierBooking';
+  static String routePath = '/courierBooking';
 
   @override
-  State<CourierservicespageWidget> createState() =>
-      _CourierservicespageWidgetState();
+  State<CourierBookingWidget> createState() => _CourierBookingWidgetState();
 }
 
-class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
-  late CourierservicespageModel _model;
+class _CourierBookingWidgetState extends State<CourierBookingWidget> {
+  late CourierBookingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CourierservicespageModel());
+    _model = createModel(context, () => CourierBookingModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'courierservicespage'});
+        parameters: {'screen_name': 'CourierBooking'});
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -78,7 +77,7 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'courierservicespage',
+        title: 'CourierBooking',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -97,7 +96,7 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  logFirebaseEvent('COURIERSERVICESContainer_ffa9gdiz_ON_TAP');
+                  logFirebaseEvent('COURIER_BOOKING_Container_ffa9gdiz_ON_TA');
                   logFirebaseEvent('Container_navigate_back');
                   context.safePop();
                 },
@@ -110,7 +109,8 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        logFirebaseEvent('COURIERSERVICESIcon_1he7fxm0_ON_TAP');
+                        logFirebaseEvent(
+                            'COURIER_BOOKING_Icon_1he7fxm0_ON_TAP');
                         logFirebaseEvent('Icon_navigate_back');
                         context.safePop();
                       },
@@ -2365,7 +2365,7 @@ class _CourierservicespageWidgetState extends State<CourierservicespageWidget> {
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent(
-                            'COURIERSERVICESCONFIRM_SERVICE_BTN_ON_TA');
+                            'COURIER_BOOKING_CONFIRM_SERVICE_BTN_ON_T');
                         logFirebaseEvent('Button_backend_call');
 
                         await CourrierrequestsRecord.collection

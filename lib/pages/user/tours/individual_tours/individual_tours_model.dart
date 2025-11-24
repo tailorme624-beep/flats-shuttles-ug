@@ -1,11 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
-import 'individualtourspage_widget.dart' show IndividualtourspageWidget;
+import 'individual_tours_widget.dart' show IndividualToursWidget;
 import 'package:flutter/material.dart';
 
-class IndividualtourspageModel
-    extends FlutterFlowModel<IndividualtourspageWidget> {
+class IndividualToursModel extends FlutterFlowModel<IndividualToursWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for ChoiceChips widget.

@@ -71,12 +71,8 @@
     <string>Grant this application access to your bluetooth</string>
 	<key>NSCalendarsUsageDescription</key>
     <string>Grant this application access to your calendar</string>
-	<key>NSCameraUsageDescription</key>
-    <string>Grant this application access to your camera</string>
 	<key>NSContactsUsageDescription</key>
     <string>Grant this application access to your contacts</string>
-	<key>NSMicrophoneUsageDescription</key>
-    <string>Grant this application access to your microphone</string>
 	<key>PermissionGroupNotification</key>
     <string>Grant this application to send you notifications</string>
 	<key>NSPhotoLibraryUsageDescription</key>

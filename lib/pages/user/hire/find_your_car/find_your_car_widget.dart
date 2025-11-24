@@ -7,36 +7,34 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'userfindyourcarpage_model.dart';
-export 'userfindyourcarpage_model.dart';
+import 'find_your_car_model.dart';
+export 'find_your_car_model.dart';
 
 /// Design "Find Your Car" page to display available cars for hiring form the
 /// car added by the admin.
 ///
 /// with theme colors, ary green and light beige
-class UserfindyourcarpageWidget extends StatefulWidget {
-  const UserfindyourcarpageWidget({super.key});
+class FindYourCarWidget extends StatefulWidget {
+  const FindYourCarWidget({super.key});
 
-  static String routeName = 'userfindyourcarpage';
-  static String routePath = '/userfindyourcarpage';
+  static String routeName = 'FindYourCar';
+  static String routePath = '/findYourCar';
 
   @override
-  State<UserfindyourcarpageWidget> createState() =>
-      _UserfindyourcarpageWidgetState();
+  State<FindYourCarWidget> createState() => _FindYourCarWidgetState();
 }
 
-class _UserfindyourcarpageWidgetState extends State<UserfindyourcarpageWidget> {
-  late UserfindyourcarpageModel _model;
+class _FindYourCarWidgetState extends State<FindYourCarWidget> {
+  late FindYourCarModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UserfindyourcarpageModel());
+    _model = createModel(context, () => FindYourCarModel());
 
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'userfindyourcarpage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'FindYourCar'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -53,7 +51,7 @@ class _UserfindyourcarpageWidgetState extends State<UserfindyourcarpageWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'userfindyourcarpage',
+        title: 'FindYourCar',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -80,7 +78,8 @@ class _UserfindyourcarpageWidgetState extends State<UserfindyourcarpageWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      logFirebaseEvent('USERFINDYOURCARIcon_riq8jf2k_ON_TAP');
+                      logFirebaseEvent(
+                          'FIND_YOUR_CAR_PAGE_Icon_riq8jf2k_ON_TAP');
                       logFirebaseEvent('Icon_navigate_back');
                       context.safePop();
                     },

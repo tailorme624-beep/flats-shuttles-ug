@@ -8,8 +8,8 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'schooltripbookingpage_model.dart';
-export 'schooltripbookingpage_model.dart';
+import 'school_trip_booking_model.dart';
+export 'school_trip_booking_model.dart';
 
 /// Create a page Design a "School Trip/Picnic" Booking Screen.
 ///
@@ -19,30 +19,29 @@ export 'schooltripbookingpage_model.dart';
 /// Requirements (e.g., Accessibility, Dietary). Feature a "Request
 /// Quote/Check Availability" button, emphasizing group logistics and safety
 /// needs. With theme color, army green and light beige
-class SchooltripbookingpageWidget extends StatefulWidget {
-  const SchooltripbookingpageWidget({super.key});
+class SchoolTripBookingWidget extends StatefulWidget {
+  const SchoolTripBookingWidget({super.key});
 
-  static String routeName = 'schooltripbookingpage';
-  static String routePath = '/schooltripbookingpage';
+  static String routeName = 'SchoolTripBooking';
+  static String routePath = '/schoolTripBooking';
 
   @override
-  State<SchooltripbookingpageWidget> createState() =>
-      _SchooltripbookingpageWidgetState();
+  State<SchoolTripBookingWidget> createState() =>
+      _SchoolTripBookingWidgetState();
 }
 
-class _SchooltripbookingpageWidgetState
-    extends State<SchooltripbookingpageWidget> {
-  late SchooltripbookingpageModel _model;
+class _SchoolTripBookingWidgetState extends State<SchoolTripBookingWidget> {
+  late SchoolTripBookingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SchooltripbookingpageModel());
+    _model = createModel(context, () => SchoolTripBookingModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'schooltripbookingpage'});
+        parameters: {'screen_name': 'SchoolTripBooking'});
     _model.organisationNameTextController ??= TextEditingController();
     _model.organisationNameFocusNode ??= FocusNode();
 
@@ -68,7 +67,7 @@ class _SchooltripbookingpageWidgetState
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'schooltripbookingpage',
+        title: 'SchoolTripBooking',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -87,7 +86,7 @@ class _SchooltripbookingpageWidgetState
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  logFirebaseEvent('SCHOOLTRIPBOOKINGContainer_98vjkp32_ON_T');
+                  logFirebaseEvent('SCHOOL_TRIP_BOOKING_Container_98vjkp32_O');
                   logFirebaseEvent('Container_navigate_back');
                   context.safePop();
                 },
@@ -101,7 +100,7 @@ class _SchooltripbookingpageWidgetState
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         logFirebaseEvent(
-                            'SCHOOLTRIPBOOKINGIcon_yphwt8pn_ON_TAP');
+                            'SCHOOL_TRIP_BOOKING_Icon_yphwt8pn_ON_TAP');
                         logFirebaseEvent('Icon_navigate_back');
                         context.safePop();
                       },
@@ -521,7 +520,7 @@ class _SchooltripbookingpageWidgetState
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             logFirebaseEvent(
-                                                'SCHOOLTRIPBOOKINGIcon_vzuq4guq_ON_TAP');
+                                                'SCHOOL_TRIP_BOOKING_Icon_vzuq4guq_ON_TAP');
                                             logFirebaseEvent(
                                                 'Icon_date_time_picker');
                                             final _datePickedDate =
@@ -1643,12 +1642,11 @@ class _SchooltripbookingpageWidgetState
                               FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
-                                      'SCHOOLTRIPBOOKINGREQUEST_QUOTE__CHECK_AV');
+                                      'SCHOOL_TRIP_BOOKING_REQUEST_QUOTE__CHECK');
                                   logFirebaseEvent('Button_navigate_to');
 
                                   context.pushNamed(
-                                      UseravailabletourplacespageWidget
-                                          .routeName);
+                                      AvailableTourPlacesWidget.routeName);
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   '0fi2bgx8' /* Request Quote & Check Availabi... */,

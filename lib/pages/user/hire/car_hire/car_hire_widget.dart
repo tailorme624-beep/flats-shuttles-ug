@@ -1,15 +1,13 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'carhiringpage_model.dart';
-export 'carhiringpage_model.dart';
+import 'car_hire_model.dart';
+export 'car_hire_model.dart';
 
 /// Design the main Car Rental screen.
 ///
@@ -19,28 +17,27 @@ export 'carhiringpage_model.dart';
 /// Driver Age (Dropdown). The main call-to-action should be a prominent "Find
 /// Your Car" button. Focus on a fast, efficient flow to get users to the
 /// search results quickly. with theme colors army green and light beige
-class CarhiringpageWidget extends StatefulWidget {
-  const CarhiringpageWidget({super.key});
+class CarHireWidget extends StatefulWidget {
+  const CarHireWidget({super.key});
 
-  static String routeName = 'carhiringpage';
-  static String routePath = '/carhiringpage';
+  static String routeName = 'CarHire';
+  static String routePath = '/carHire';
 
   @override
-  State<CarhiringpageWidget> createState() => _CarhiringpageWidgetState();
+  State<CarHireWidget> createState() => _CarHireWidgetState();
 }
 
-class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
-  late CarhiringpageModel _model;
+class _CarHireWidgetState extends State<CarHireWidget> {
+  late CarHireModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CarhiringpageModel());
+    _model = createModel(context, () => CarHireModel());
 
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'carhiringpage'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'CarHire'});
     _model.pickupLocationTextController ??= TextEditingController();
     _model.pickupLocationFocusNode ??= FocusNode();
 
@@ -60,7 +57,7 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'carhiringpage',
+        title: 'CarHire',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -72,76 +69,29 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              title: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          logFirebaseEvent(
-                              'CARHIRINGPAGE_PAGE_Icon_0f88whnb_ON_TAP');
-                          logFirebaseEvent('Icon_navigate_back');
-                          context.safePop();
-                        },
-                        child: Icon(
-                          Icons.directions_car,
-                          color: Colors.white,
-                          size: 28.0,
-                        ),
+              automaticallyImplyLeading: true,
+              title: Text(
+                FFLocalizations.of(context).getText(
+                  '3vj78sd0' /* Car Rentals */,
+                ),
+                style: FlutterFlowTheme.of(context).titleLarge.override(
+                      font: GoogleFonts.interTight(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          'k4mlfba0' /* CarRental */,
-                        ),
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              font: GoogleFonts.interTight(
-                                fontWeight: FontWeight.bold,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .fontStyle,
-                              ),
-                              color: Colors.white,
-                              fontSize: 24.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .headlineMedium
-                                  .fontStyle,
-                            ),
-                      ),
-                    ].divide(SizedBox(width: 12.0)),
-                  ),
-                  FlutterFlowIconButton(
-                    borderRadius: 20.0,
-                    buttonSize: 40.0,
-                    fillColor: Color(0x4DFFFFFF),
-                    icon: Icon(
-                      Icons.person_outline,
-                      color: Color(0xFF556B2F),
-                      size: 24.0,
+                      color: FlutterFlowTheme.of(context).alternate,
+                      fontSize: 28.0,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleLarge.fontStyle,
                     ),
-                    onPressed: () async {
-                      logFirebaseEvent('CARHIRINGperson_outline_ICN_ON_TAP');
-                      logFirebaseEvent('IconButton_navigate_to');
-
-                      context.pushNamed(MyProfileWidget.routeName);
-                    },
-                  ),
-                ],
               ),
               actions: [],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
@@ -1249,10 +1199,11 @@ class _CarhiringpageWidgetState extends State<CarhiringpageWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () async {
-                          logFirebaseEvent('CARHIRINGFIND_YOUR_CAR_BTN_ON_TAP');
+                          logFirebaseEvent(
+                              'CAR_HIRE_PAGE_FIND_YOUR_CAR_BTN_ON_TAP');
                           logFirebaseEvent('Button_navigate_to');
 
-                          context.pushNamed(CarhiringpageWidget.routeName);
+                          context.pushNamed(CarHireWidget.routeName);
                         },
                         text: FFLocalizations.of(context).getText(
                           '64pvwq25' /* Find Your Car */,

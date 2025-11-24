@@ -1,10 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'flight_booking_page_widget.dart' show FlightBookingPageWidget;
+import 'flight_booking_widget.dart' show FlightBookingWidget;
 import 'package:flutter/material.dart';
 
-class FlightBookingPageModel extends FlutterFlowModel<FlightBookingPageWidget> {
+class FlightBookingModel extends FlutterFlowModel<FlightBookingWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for ChoiceChips widget.

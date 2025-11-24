@@ -447,7 +447,7 @@ class _UserDrawerWidgetState extends State<UserDrawerWidget> {
                   ),
                 ),
               if (valueOrDefault<bool>(
-                currentUserUid != '',
+                currentUserUid == '',
                 true,
               ))
                 InkWell(
@@ -565,104 +565,121 @@ class _UserDrawerWidgetState extends State<UserDrawerWidget> {
                 thickness: 2.0,
                 color: Color(0xFF0F0F0E),
               ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  logFirebaseEvent('USER_DRAWER_ListTile_6grub76r_ON_TAP');
-                  logFirebaseEvent('ListTile_navigate_to');
+              if (!((valueOrDefault(currentUserDocument?.role, '') ==
+                          'driver') ||
+                      (currentUserUid == ''))
+                  ? true
+                  : false)
+                AuthUserStreamWidget(
+                  builder: (context) => InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      logFirebaseEvent('USER_DRAWER_ListTile_6grub76r_ON_TAP');
+                      logFirebaseEvent('ListTile_navigate_to');
 
-                  context.pushNamed(DriverLoginWidget.routeName);
-                },
-                child: Material(
-                  color: Colors.transparent,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.drive_eta,
-                    ),
-                    title: Text(
-                      FFLocalizations.of(context).getText(
-                        'rmrs2l5r' /* Driver */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleLarge.override(
-                            font: GoogleFonts.interTight(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontStyle,
+                      context.pushNamed(DriverLoginWidget.routeName);
+                    },
+                    child: Material(
+                      color: Colors.transparent,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.drive_eta,
+                        ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'rmrs2l5r' /* Driver */,
                           ),
-                    ),
-                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                    dense: false,
-                    contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 12.0, 0.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  logFirebaseEvent('USER_DRAWER_ListTile_qg0rh7kb_ON_TAP');
-                  logFirebaseEvent('ListTile_navigate_to');
+              if ((currentUserUid == '') ||
+                      (valueOrDefault(currentUserDocument?.role, '') == 'admin')
+                  ? true
+                  : false)
+                AuthUserStreamWidget(
+                  builder: (context) => InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      logFirebaseEvent('USER_DRAWER_ListTile_qg0rh7kb_ON_TAP');
+                      logFirebaseEvent('ListTile_navigate_to');
 
-                  context.pushNamed(AdminLoginWidget.routeName);
-                },
-                child: Material(
-                  color: Colors.transparent,
-                  child: ListTile(
-                    leading: FaIcon(
-                      FontAwesomeIcons.userShield,
-                    ),
-                    title: Text(
-                      FFLocalizations.of(context).getText(
-                        'mkfpf1v0' /* Admin */,
-                      ),
-                      style: FlutterFlowTheme.of(context).titleLarge.override(
-                            font: GoogleFonts.interTight(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontStyle,
+                      context.pushNamed(AdminLoginWidget.routeName);
+                    },
+                    child: Material(
+                      color: Colors.transparent,
+                      child: ListTile(
+                        leading: FaIcon(
+                          FontAwesomeIcons.userShield,
+                        ),
+                        title: Text(
+                          FFLocalizations.of(context).getText(
+                            'mkfpf1v0' /* Admin */,
                           ),
-                    ),
-                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                    dense: false,
-                    contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
+                        ),
+                        tileColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        dense: false,
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 12.0, 0.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         ),

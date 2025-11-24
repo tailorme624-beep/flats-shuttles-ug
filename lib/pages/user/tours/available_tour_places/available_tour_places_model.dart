@@ -1,12 +1,11 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'useravailabletourplacespage_widget.dart'
-    show UseravailabletourplacespageWidget;
+import 'available_tour_places_widget.dart' show AvailableTourPlacesWidget;
 import 'package:flutter/material.dart';
 
-class UseravailabletourplacespageModel
-    extends FlutterFlowModel<UseravailabletourplacespageWidget> {
+class AvailableTourPlacesModel
+    extends FlutterFlowModel<AvailableTourPlacesWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.

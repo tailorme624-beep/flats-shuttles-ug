@@ -7,37 +7,36 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_search/text_search.dart';
-import 'useravailabletourplacespage_model.dart';
-export 'useravailabletourplacespage_model.dart';
+import 'available_tour_places_model.dart';
+export 'available_tour_places_model.dart';
 
 /// Design "Available hotels" page to display available hotels for booking
 /// hotels added by the admin.
 ///
 /// with theme colors, ary green and light beige
-class UseravailabletourplacespageWidget extends StatefulWidget {
-  const UseravailabletourplacespageWidget({super.key});
+class AvailableTourPlacesWidget extends StatefulWidget {
+  const AvailableTourPlacesWidget({super.key});
 
-  static String routeName = 'useravailabletourplacespage';
-  static String routePath = '/useravailabletourplacespage';
+  static String routeName = 'AvailableTourPlaces';
+  static String routePath = '/availableTourPlaces';
 
   @override
-  State<UseravailabletourplacespageWidget> createState() =>
-      _UseravailabletourplacespageWidgetState();
+  State<AvailableTourPlacesWidget> createState() =>
+      _AvailableTourPlacesWidgetState();
 }
 
-class _UseravailabletourplacespageWidgetState
-    extends State<UseravailabletourplacespageWidget> {
-  late UseravailabletourplacespageModel _model;
+class _AvailableTourPlacesWidgetState extends State<AvailableTourPlacesWidget> {
+  late AvailableTourPlacesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UseravailabletourplacespageModel());
+    _model = createModel(context, () => AvailableTourPlacesModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'useravailabletourplacespage'});
+        parameters: {'screen_name': 'AvailableTourPlaces'});
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
@@ -54,7 +53,7 @@ class _UseravailabletourplacespageWidgetState
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'useravailabletourplacespage',
+        title: 'AvailableTourPlaces',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -82,7 +81,7 @@ class _UseravailabletourplacespageWidgetState
                     highlightColor: Colors.transparent,
                     onTap: () async {
                       logFirebaseEvent(
-                          'USERAVAILABLETOURPLACESIcon_vuf56jz6_ON_');
+                          'AVAILABLE_TOUR_PLACES_Icon_vuf56jz6_ON_T');
                       logFirebaseEvent('Icon_navigate_back');
                       context.safePop();
                     },
@@ -137,7 +136,7 @@ class _UseravailabletourplacespageWidgetState
                           focusNode: _model.textFieldFocusNode,
                           onFieldSubmitted: (_) async {
                             logFirebaseEvent(
-                                'USERAVAILABLETOURPLACESTextField_7llo31y');
+                                'AVAILABLE_TOUR_PLACES_TextField_7llo31ye');
                             logFirebaseEvent('TextField_simple_search');
                             await queryHotelsRecordOnce()
                                 .then(
@@ -655,12 +654,12 @@ class _UseravailabletourplacespageWidgetState
                                         FFButtonWidget(
                                           onPressed: () async {
                                             logFirebaseEvent(
-                                                'USERAVAILABLETOURPLACESBOOK_NOW_BTN_ON_T');
+                                                'AVAILABLE_TOUR_PLACES_BOOK_NOW_BTN_ON_TA');
                                             logFirebaseEvent(
                                                 'Button_navigate_to');
 
                                             context.pushNamed(
-                                                IndividualtourspageWidget
+                                                IndividualToursWidget
                                                     .routeName);
                                           },
                                           text: FFLocalizations.of(context)

@@ -485,7 +485,15 @@ class _BookingWidgetState extends State<BookingWidget> {
                                                 width: 100.0,
                                                 height: 137.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5DC),
+                                                  color: valueOrDefault<Color>(
+                                                    _model.vehicleType == 'vip'
+                                                        ? Color(0xFFF5F5DC)
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .alternate,
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                  ),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           12.0),

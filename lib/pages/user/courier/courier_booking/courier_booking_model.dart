@@ -1,10 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'courierservicespage_widget.dart' show CourierservicespageWidget;
+import 'courier_booking_widget.dart' show CourierBookingWidget;
 import 'package:flutter/material.dart';
 
-class CourierservicespageModel
-    extends FlutterFlowModel<CourierservicespageWidget> {
+class CourierBookingModel extends FlutterFlowModel<CourierBookingWidget> {
   ///  Local state fields for this page.
 
   LatLng? pickupLocation;

@@ -152,25 +152,6 @@ bool _isSupportedLocale(Locale locale) {
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // Services
   {
-    'oe8ww7n5': {
-      'en': 'Our Services',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'tq0atb77': {
-      'en':
-          'Comprehensive travel and transportation solutions tailored to your needs',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'qz56u01h': {
       'en': 'VIP/Corporate Rides',
       'aa': '',
@@ -392,15 +373,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'al93yash': {
       'en': 'Get Quote',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'e5upni5s': {
-      'en': '© 2025 FLATS UG. All rights reserved.',
       'aa': '',
       'af': '',
       'as': '',
@@ -1608,15 +1580,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // SignIn
   {
-    'cm45lhgq': {
-      'en': 'FLATS SHUTTLES',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'fltkypiu': {
       'en': 'Your Journey, Your Way',
       'aa': '',
@@ -1709,15 +1672,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0ykja70b': {
       'en': 'Privacy Policy',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '7w0lbd1r': {
-      'en': '© 2025 FLATS UG. All rights reserved.',
       'aa': '',
       'af': '',
       'as': '',
@@ -3645,7 +3599,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // courierservicespage
+  // CourierBooking
   {
     'wj2h73ef': {
       'en': 'Book Courier Service',
@@ -4045,7 +3999,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // schooltripbookingpage
+  // SchoolTripBooking
   {
     '3f9g8m0l': {
       'en': 'School Trip Booking',
@@ -4346,7 +4300,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // individualtourspage
+  // IndividualTours
   {
     'bcww03p5': {
       'en': 'Book Your Tour',
@@ -4612,7 +4566,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // carhiringpage
+  // CarHire
   {
     '3pi1pqjl': {
       'en': 'Find Your Perfect Car',
@@ -4840,8 +4794,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'k4mlfba0': {
-      'en': 'CarRental',
+    '3vj78sd0': {
+      'en': 'Car Rentals',
       'aa': '',
       'af': '',
       'as': '',
@@ -7489,7 +7443,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // FlightBookingPage
+  // FlightBooking
   {
     '2fofq0b9': {
       'en': 'Book Flights',
@@ -13302,7 +13256,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userfindyourcarpage
+  // FindYourCar
   {
     '4fycio9x': {
       'en': 'Find Your Car',
@@ -13692,7 +13646,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // useravailablefightspage
+  // AvailableFlights
   {
     '94r2d5wj': {
       'en': 'Available Flights',
@@ -13914,7 +13868,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // useravailabletourplacespage
+  // AvailableTourPlaces
   {
     's84uawab': {
       'en': 'Available Tour Places',
@@ -18782,15 +18736,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'fp5trpvr': {
-      'en': ' Grant this application access to your camera',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'gac58hxk': {
       'en': 'Grant this application access to your Gallery',
       'aa': '',
@@ -18836,15 +18781,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'fjal3m56': {
-      'en': 'Grant this application access to your camera',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'j2hoh47l': {
       'en': 'Grant this application access to your contacts',
       'aa': '',
@@ -18856,15 +18792,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n8xc3i4x': {
       'en': 'Grant this application access to your location',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'kohhzbip': {
-      'en': 'Grant this application access to your microphone',
       'aa': '',
       'af': '',
       'as': '',

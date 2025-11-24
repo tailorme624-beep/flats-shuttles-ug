@@ -61,6 +61,7 @@ abstract class FlutterFlowTheme {
   late Color turquoise;
   late Color cultured;
   late Color cerise;
+  late Color textColor;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -151,7 +152,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color primary = const Color(0xFF4B5320);
   late Color secondary = const Color(0xFFF4C2C2);
   late Color tertiary = const Color(0xFFADF802);
-  late Color alternate = const Color(0xFFF5F5DC);
+  late Color alternate = const Color(0xFF40400F);
   late Color primaryText = const Color(0xFF14181B);
   late Color secondaryText = const Color(0xFF57636C);
   late Color primaryBackground = const Color(0xFFF5F5DC);
@@ -170,6 +171,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color turquoise = const Color(0x744B5320);
   late Color cultured = const Color(0xFFEFEFEF);
   late Color cerise = const Color(0xFFF4C2C2);
+  late Color textColor = const Color(0xFFF3EFEC);
 }
 
 abstract class Typography {
@@ -363,6 +365,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color turquoise = const Color(0xFF34D1BF);
   late Color cultured = const Color(0xFFEFEFEF);
   late Color cerise = const Color(0xFFD1345B);
+  late Color textColor = const Color(0xFF969493);
 }
 
 extension TextStyleHelper on TextStyle {

@@ -33,14 +33,13 @@ export '/pages/driver/others/driver_error_page/driver_error_page_widget.dart'
     show DriverErrorPageWidget;
 export '/pages/user/others/error_page/error_page_widget.dart'
     show ErrorPageWidget;
-export '/pages/user/courier/courierservicespage/courierservicespage_widget.dart'
-    show CourierservicespageWidget;
-export '/pages/user/tours/schooltripbookingpage/schooltripbookingpage_widget.dart'
-    show SchooltripbookingpageWidget;
-export '/pages/user/tours/individualtourspage/individualtourspage_widget.dart'
-    show IndividualtourspageWidget;
-export '/pages/user/hire/carhiringpage/carhiringpage_widget.dart'
-    show CarhiringpageWidget;
+export '/pages/user/courier/courier_booking/courier_booking_widget.dart'
+    show CourierBookingWidget;
+export '/pages/user/tours/school_trip_booking/school_trip_booking_widget.dart'
+    show SchoolTripBookingWidget;
+export '/pages/user/tours/individual_tours/individual_tours_widget.dart'
+    show IndividualToursWidget;
+export '/pages/user/hire/car_hire/car_hire_widget.dart' show CarHireWidget;
 export '/pages/admin/rides/liveridetracker/liveridetracker_widget.dart'
     show LiveridetrackerWidget;
 export '/pages/admin/admin_setting/admin_setting_widget.dart'
@@ -66,8 +65,8 @@ export '/pages/driver/rides/accepted_ride/accepted_ride_widget.dart'
 export '/pages/driver/driver_dashboard/driver_dashboard_widget.dart'
     show DriverDashboardWidget;
 export '/pages/user/rides/booking/booking_widget.dart' show BookingWidget;
-export '/pages/user/flights/flight_booking_page/flight_booking_page_widget.dart'
-    show FlightBookingPageWidget;
+export '/pages/user/flights/flight_booking/flight_booking_widget.dart'
+    show FlightBookingWidget;
 export '/pages/admin/flights/admin_flights/admin_flights_widget.dart'
     show AdminFlightsWidget;
 export '/pages/user/others/settings/settings_widget.dart' show SettingsWidget;
@@ -114,14 +113,14 @@ export '/pages/admin/hotels/add_hotel/add_hotel_widget.dart'
 export '/pages/admin/tours/add_tour/add_tour_widget.dart' show AddTourWidget;
 export '/pages/admin/hire/add_vehicle/add_vehicle_widget.dart'
     show AddVehicleWidget;
-export '/pages/user/hire/userfindyourcarpage/userfindyourcarpage_widget.dart'
-    show UserfindyourcarpageWidget;
-export '/pages/user/flights/useravailablefightspage/useravailablefightspage_widget.dart'
-    show UseravailablefightspageWidget;
+export '/pages/user/hire/find_your_car/find_your_car_widget.dart'
+    show FindYourCarWidget;
+export '/pages/user/flights/available_flights/available_flights_widget.dart'
+    show AvailableFlightsWidget;
 export '/pages/user/hotels/availablehotelpage/availablehotelpage_widget.dart'
     show AvailablehotelpageWidget;
-export '/pages/user/tours/useravailabletourplacespage/useravailabletourplacespage_widget.dart'
-    show UseravailabletourplacespageWidget;
+export '/pages/user/tours/available_tour_places/available_tour_places_widget.dart'
+    show AvailableTourPlacesWidget;
 export '/pages/admin/notifications/admin_requests/admin_requests_widget.dart'
     show AdminRequestsWidget;
 export '/pages/admin/flights/update_flight/update_flight_widget.dart'

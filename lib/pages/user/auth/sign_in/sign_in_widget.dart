@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'sign_in_model.dart';
 export 'sign_in_model.dart';
@@ -118,13 +119,15 @@ class _SignInWidgetState extends State<SignInWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(24.0),
-                            child: Image.asset(
-                              'assets/images/flats.png',
-                              width: 238.8,
-                              height: 98.7,
-                              fit: BoxFit.cover,
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(24.0),
+                              child: Image.asset(
+                                'assets/images/flats.png',
+                                width: 200.0,
+                                height: 70.0,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Padding(
@@ -156,31 +159,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'cm45lhgq' /* FLATS SHUTTLES */,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displayMedium
-                                              .override(
-                                                font: GoogleFonts.interTight(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displayMedium
-                                                          .fontStyle,
-                                                ),
-                                                color: Color(0xFF556B2F),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displayMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
                                         Text(
                                           FFLocalizations.of(context).getText(
                                             'fltkypiu' /* Your Journey, Your Way */,
@@ -685,9 +663,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                                               .getText(
                                             'icccs7dx' /* Continue with Google */,
                                           ),
-                                          icon: Icon(
-                                            Icons.g_mobiledata_rounded,
-                                            size: 20.0,
+                                          icon: FaIcon(
+                                            FontAwesomeIcons.google,
+                                            size: 30.0,
                                           ),
                                           options: FFButtonOptions(
                                             width: double.infinity,
@@ -761,7 +739,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                                 ),
                                                 icon: Icon(
                                                   Icons.apple_rounded,
-                                                  size: 20.0,
+                                                  size: 30.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   width: double.infinity,
@@ -1000,29 +978,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                                           .fontStyle,
                                     ),
                               ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                '7w0lbd1r' /* © 2025 FLATS UG. All rights re... */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
                             ),
                           ),
                         ],

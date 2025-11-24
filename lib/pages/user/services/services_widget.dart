@@ -66,7 +66,9 @@ class _ServicesWidgetState extends State<ServicesWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
+              backgroundColor: FlutterFlowTheme.of(context).alternate,
+              iconTheme:
+                  IconThemeData(color: FlutterFlowTheme.of(context).textColor),
               automaticallyImplyLeading: true,
               title: Container(
                 child: Text(
@@ -81,7 +83,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                           fontStyle:
                               FlutterFlowTheme.of(context).titleLarge.fontStyle,
                         ),
-                        color: FlutterFlowTheme.of(context).alternate,
+                        color: FlutterFlowTheme.of(context).textColor,
                         fontSize: 28.0,
                         letterSpacing: 0.0,
                         fontWeight:
@@ -100,60 +102,6 @@ class _ServicesWidgetState extends State<ServicesWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 24.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'oe8ww7n5' /* Our Services */,
-                      ),
-                      textAlign: TextAlign.center,
-                      style:
-                          FlutterFlowTheme.of(context).displayMedium.override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .displayMedium
-                                      .fontStyle,
-                                ),
-                                fontSize: 28.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .displayMedium
-                                    .fontStyle,
-                              ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 32.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'tq0atb77' /* Comprehensive travel and trans... */,
-                      ),
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            fontSize: 16.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                    ),
-                  ),
                   Expanded(
                     child: Padding(
                       padding:
@@ -357,8 +305,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              FlightBookingPageWidget
-                                                  .routeName);
+                                              FlightBookingWidget.routeName);
                                         },
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -498,7 +445,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              SchooltripbookingpageWidget
+                                              SchoolTripBookingWidget
                                                   .routeName);
                                         },
                                         child: Column(
@@ -639,7 +586,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              CarhiringpageWidget.routeName);
+                                              CarHireWidget.routeName);
                                         },
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -779,7 +726,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              SchooltripbookingpageWidget
+                                              SchoolTripBookingWidget
                                                   .routeName);
                                         },
                                         child: Column(
@@ -920,7 +867,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              SchooltripbookingpageWidget
+                                              SchoolTripBookingWidget
                                                   .routeName);
                                         },
                                         child: Column(
@@ -1061,7 +1008,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              SchooltripbookingpageWidget
+                                              SchoolTripBookingWidget
                                                   .routeName);
                                         },
                                         child: Column(
@@ -1202,7 +1149,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              SchooltripbookingpageWidget
+                                              SchoolTripBookingWidget
                                                   .routeName);
                                         },
                                         child: Column(
@@ -1343,7 +1290,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              SchooltripbookingpageWidget
+                                              SchoolTripBookingWidget
                                                   .routeName);
                                         },
                                         child: Column(
@@ -1606,8 +1553,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              FlightBookingPageWidget
-                                                  .routeName);
+                                              FlightBookingWidget.routeName);
                                         },
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1747,8 +1693,7 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                                               'Column_navigate_to');
 
                                           context.pushNamed(
-                                              CourierservicespageWidget
-                                                  .routeName);
+                                              CourierBookingWidget.routeName);
                                         },
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1887,27 +1832,6 @@ class _ServicesWidgetState extends State<ServicesWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
-                    ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'e5upni5s' /* © 2025 FLATS UG. All rights re... */,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w600,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
                     ),
                   ),
                 ],

@@ -13,7 +13,6 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
 
 import '/flutter_flow/admob_util.dart';
@@ -144,11 +143,9 @@ class _MyAppState extends State<MyApp> {
       ],
       theme: ThemeData(
         brightness: Brightness.light,
-        useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        useMaterial3: false,
       ),
       themeMode: _themeMode,
       routerConfig: _router,
@@ -194,17 +191,10 @@ class _NavBarPageState extends State<NavBarPage> {
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
-    final MediaQueryData queryData = MediaQuery.of(context);
-
     return Scaffold(
       resizeToAvoidBottomInset: !widget.disableResizeToAvoidBottomInset,
-      body: MediaQuery(
-          data: queryData
-              .removeViewInsets(removeBottom: true)
-              .removeViewPadding(removeBottom: true),
-          child: _currentPage ?? tabs[_currentPageName]!),
-      extendBody: true,
-      bottomNavigationBar: FloatingNavbar(
+      body: _currentPage ?? tabs[_currentPageName],
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) => safeSetState(() {
           _currentPage = null;
@@ -213,114 +203,50 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: FlutterFlowTheme.of(context).primary,
         selectedItemColor: FlutterFlowTheme.of(context).alternate,
         unselectedItemColor: FlutterFlowTheme.of(context).secondary,
-        selectedBackgroundColor: Color(0x00000000),
-        borderRadius: 8.0,
-        itemBorderRadius: 8.0,
-        margin: EdgeInsets.all(0.0),
-        padding: EdgeInsets.all(0.0),
-        width: double.infinity,
-        elevation: 0.0,
-        items: [
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.home,
-                  color: currentIndex == 0
-                      ? FlutterFlowTheme.of(context).alternate
-                      : FlutterFlowTheme.of(context).secondary,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'ndwc0g2q' /* Home */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 0
-                        ? FlutterFlowTheme.of(context).alternate
-                        : FlutterFlowTheme.of(context).secondary,
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
             ),
+            label: FFLocalizations.of(context).getText(
+              'ndwc0g2q' /* Home */,
+            ),
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.map_outlined,
-                  color: currentIndex == 1
-                      ? FlutterFlowTheme.of(context).alternate
-                      : FlutterFlowTheme.of(context).secondary,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'dg6q2sfm' /* Tracker */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 1
-                        ? FlutterFlowTheme.of(context).alternate
-                        : FlutterFlowTheme.of(context).secondary,
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.map_outlined,
             ),
+            label: FFLocalizations.of(context).getText(
+              'dg6q2sfm' /* Tracker */,
+            ),
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.chat_bubble_outline_outlined,
-                  color: currentIndex == 2
-                      ? FlutterFlowTheme.of(context).alternate
-                      : FlutterFlowTheme.of(context).secondary,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'dlgzye07' /* Flats AI */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 2
-                        ? FlutterFlowTheme.of(context).alternate
-                        : FlutterFlowTheme.of(context).secondary,
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat_bubble_outline_outlined,
             ),
+            label: FFLocalizations.of(context).getText(
+              'dlgzye07' /* Flats AI */,
+            ),
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  currentIndex == 3 ? Icons.person_outline : Icons.person,
-                  color: currentIndex == 3
-                      ? FlutterFlowTheme.of(context).alternate
-                      : FlutterFlowTheme.of(context).secondary,
-                  size: currentIndex == 3 ? 20.0 : 20.0,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'd3b5xvoo' /* Profile */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 3
-                        ? FlutterFlowTheme.of(context).alternate
-                        : FlutterFlowTheme.of(context).secondary,
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              size: 20.0,
             ),
+            activeIcon: Icon(
+              Icons.person_outline,
+              size: 20.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'd3b5xvoo' /* Profile */,
+            ),
+            tooltip: '',
           )
         ],
       ),

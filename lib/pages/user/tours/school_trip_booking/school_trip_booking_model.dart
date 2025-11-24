@@ -1,11 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
-import 'schooltripbookingpage_widget.dart' show SchooltripbookingpageWidget;
+import 'school_trip_booking_widget.dart' show SchoolTripBookingWidget;
 import 'package:flutter/material.dart';
 
-class SchooltripbookingpageModel
-    extends FlutterFlowModel<SchooltripbookingpageWidget> {
+class SchoolTripBookingModel extends FlutterFlowModel<SchoolTripBookingWidget> {
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();

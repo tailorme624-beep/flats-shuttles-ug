@@ -1,10 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
-import 'carhiringpage_widget.dart' show CarhiringpageWidget;
+import 'car_hire_widget.dart' show CarHireWidget;
 import 'package:flutter/material.dart';
 
-class CarhiringpageModel extends FlutterFlowModel<CarhiringpageWidget> {
+class CarHireModel extends FlutterFlowModel<CarHireWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for pickupLocation widget.

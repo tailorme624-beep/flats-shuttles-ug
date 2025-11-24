@@ -3,37 +3,35 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'useravailablefightspage_model.dart';
-export 'useravailablefightspage_model.dart';
+import 'available_flights_model.dart';
+export 'available_flights_model.dart';
 
 /// Design "Find Your Car" page to display available cars for hiring form the
 /// car added by the admin.
 ///
 /// with theme colors, ary green and light beige
-class UseravailablefightspageWidget extends StatefulWidget {
-  const UseravailablefightspageWidget({super.key});
+class AvailableFlightsWidget extends StatefulWidget {
+  const AvailableFlightsWidget({super.key});
 
-  static String routeName = 'useravailablefightspage';
-  static String routePath = '/useravailablefightspage';
+  static String routeName = 'AvailableFlights';
+  static String routePath = '/availableFlights';
 
   @override
-  State<UseravailablefightspageWidget> createState() =>
-      _UseravailablefightspageWidgetState();
+  State<AvailableFlightsWidget> createState() => _AvailableFlightsWidgetState();
 }
 
-class _UseravailablefightspageWidgetState
-    extends State<UseravailablefightspageWidget> {
-  late UseravailablefightspageModel _model;
+class _AvailableFlightsWidgetState extends State<AvailableFlightsWidget> {
+  late AvailableFlightsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UseravailablefightspageModel());
+    _model = createModel(context, () => AvailableFlightsModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'useravailablefightspage'});
+        parameters: {'screen_name': 'AvailableFlights'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -47,7 +45,7 @@ class _UseravailablefightspageWidgetState
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'useravailablefightspage',
+        title: 'AvailableFlights',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -59,29 +57,7 @@ class _UseravailablefightspageWidgetState
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              leading: Container(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      logFirebaseEvent(
-                          'USERAVAILABLEFIGHTSIcon_llohxcx5_ON_TAP');
-                      logFirebaseEvent('Icon_navigate_back');
-                      context.safePop();
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: Color(0xFFF5F5DC),
-                      size: 24.0,
-                    ),
-                  ),
-                ),
-              ),
+              automaticallyImplyLeading: true,
               title: Container(
                 child: Text(
                   FFLocalizations.of(context).getText(
