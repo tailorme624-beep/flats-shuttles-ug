@@ -13,6 +13,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'index.dart';
 
 import '/flutter_flow/admob_util.dart';
 
@@ -88,7 +89,7 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier, widget.entryPage);
-    userStream = flatsShuttlesUgFirebaseUserStream()
+    userStream = fLATSShuttlesFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
@@ -120,7 +121,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'FLATS SHUTTLES UG',
+      title: 'FLATS Shuttles',
       scrollBehavior: MyAppScrollBehavior(),
       localizationsDelegates: [
         FFLocalizationsDelegate(),
@@ -142,14 +143,113 @@ class _MyAppState extends State<MyApp> {
       ],
       theme: ThemeData(
         brightness: Brightness.light,
-        useMaterial3: false,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        useMaterial3: false,
       ),
       themeMode: _themeMode,
       routerConfig: _router,
+    );
+  }
+}
+
+class NavBarPage extends StatefulWidget {
+  NavBarPage({
+    Key? key,
+    this.initialPage,
+    this.page,
+    this.disableResizeToAvoidBottomInset = false,
+  }) : super(key: key);
+
+  final String? initialPage;
+  final Widget? page;
+  final bool disableResizeToAvoidBottomInset;
+
+  @override
+  _NavBarPageState createState() => _NavBarPageState();
+}
+
+/// This is the private State class that goes with NavBarPage.
+class _NavBarPageState extends State<NavBarPage> {
+  String _currentPageName = 'MyProfile';
+  late Widget? _currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentPageName = widget.initialPage ?? _currentPageName;
+    _currentPage = widget.page;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final tabs = {
+      'Home': HomeWidget(),
+      'Tracking': TrackingWidget(),
+      'AIAssistant': AIAssistantWidget(),
+      'MyProfile': MyProfileWidget(),
+    };
+    final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
+
+    return Scaffold(
+      resizeToAvoidBottomInset: !widget.disableResizeToAvoidBottomInset,
+      body: _currentPage ?? tabs[_currentPageName],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (i) => safeSetState(() {
+          _currentPage = null;
+          _currentPageName = tabs.keys.toList()[i];
+        }),
+        backgroundColor: FlutterFlowTheme.of(context).primary,
+        selectedItemColor: FlutterFlowTheme.of(context).alternate,
+        unselectedItemColor: FlutterFlowTheme.of(context).secondary,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'ndwc0g2q' /* Home */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.map_outlined,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'dg6q2sfm' /* Tracker */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat_bubble_outline_outlined,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'dlgzye07' /* Flats AI */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              size: 20.0,
+            ),
+            activeIcon: Icon(
+              Icons.person_outline,
+              size: 20.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'd3b5xvoo' /* Profile */,
+            ),
+            tooltip: '',
+          )
+        ],
+      ),
     );
   }
 }

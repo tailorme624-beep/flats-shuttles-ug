@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>FLATS SHUTTLES UG</string>
+	<string>FLATS Shuttles</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>FLATS SHUTTLES UG</string>
+	<string>FLATS Shuttles</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleLocalizations</key>
@@ -38,7 +38,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.287778657945-kr4dcdbvjeemmif21a379948pj260gei</string>
+                <string>com.googleusercontent.apps.287778657945-6aqasq0sjulqf7fgafmsc2vuv1h81lhb</string>
                 
             </array>
         </dict>
@@ -47,10 +47,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>flatsshuttlesug.com</string>
+        <string>flatsshuttles.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>flatsshuttlesug</string>
+        <string>flatsshuttles</string>
         </array>
         </dict>
     </array>
@@ -71,12 +71,8 @@
     <string>Grant this application access to your bluetooth</string>
 	<key>NSCalendarsUsageDescription</key>
     <string>Grant this application access to your calendar</string>
-	<key>NSCameraUsageDescription</key>
-    <string>Grant this application access to your camera</string>
 	<key>NSContactsUsageDescription</key>
     <string>Grant this application access to your contacts</string>
-	<key>NSMicrophoneUsageDescription</key>
-    <string>Grant this application access to your microphone</string>
 	<key>PermissionGroupNotification</key>
     <string>Grant this application to send you notifications</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -89,6 +85,22 @@
         <string>remote-notification</string>
     </array>
 
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>comgooglemaps</string>
+      <string>baidumap</string>
+      <string>iosamap</string>
+      <string>waze</string>
+      <string>yandexmaps</string>
+      <string>yandexnavi</string>
+      <string>citymapper</string>
+      <string>mapswithme</string>
+      <string>osmandmaps</string>
+      <string>dgis</string>
+      <string>qqmap</string>
+      <string>here-location</string>
+
+    </array>
 
 
 	<key>UILaunchStoryboardName</key>

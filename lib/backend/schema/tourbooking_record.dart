@@ -5,7 +5,6 @@ import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -100,9 +99,8 @@ class TourbookingRecord extends FirestoreRecord {
     _paymentMethod = getDataList(snapshotData['payment_method']);
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('tourbooking');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('tourbooking');
 
   static Stream<TourbookingRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => TourbookingRecord.fromSnapshot(s));

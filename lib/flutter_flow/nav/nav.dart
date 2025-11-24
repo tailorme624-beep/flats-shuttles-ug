@@ -8,6 +8,8 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -78,16 +80,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? entryPage ?? HomeWidget()
-          : HomePageWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? entryPage ?? NavBarPage() : HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? HomeWidget()
-              : HomePageWidget(),
+              ? entryPage ?? NavBarPage()
+              : HomeWidget(),
         ),
         FFRoute(
           name: ServicesWidget.routeName,
@@ -102,16 +103,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => NotificationWidget(),
         ),
         FFRoute(
-          name: ServicependingWidget.routeName,
-          path: ServicependingWidget.routePath,
+          name: PendingRequestWidget.routeName,
+          path: PendingRequestWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ServicependingWidget(),
+          builder: (context, params) => PendingRequestWidget(),
         ),
         FFRoute(
-          name: RidecomfirmationWidget.routeName,
-          path: RidecomfirmationWidget.routePath,
+          name: ComfirmationWidget.routeName,
+          path: ComfirmationWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RidecomfirmationWidget(
+          builder: (context, params) => ComfirmationWidget(
             get: params.getParam(
               'get',
               ParamType.DocumentReference,
@@ -121,28 +122,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: RidetrackingWidget.routeName,
-          path: RidetrackingWidget.routePath,
+            name: TrackingWidget.routeName,
+            path: TrackingWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'Tracking')
+                : NavBarPage(
+                    initialPage: 'Tracking',
+                    page: TrackingWidget(),
+                  )),
+        FFRoute(
+          name: AIAssistantWidget.routeName,
+          path: AIAssistantWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RidetrackingWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'AIAssistant')
+              : AIAssistantWidget(),
         ),
         FFRoute(
-          name: AITravelassistantWidget.routeName,
-          path: AITravelassistantWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AITravelassistantWidget(),
+          name: PrivacyPolicyWidget.routeName,
+          path: PrivacyPolicyWidget.routePath,
+          builder: (context, params) => PrivacyPolicyWidget(),
         ),
         FFRoute(
-          name: PrivacypolicyandtermsandconditionsWidget.routeName,
-          path: PrivacypolicyandtermsandconditionsWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) =>
-              PrivacypolicyandtermsandconditionsWidget(),
-        ),
-        FFRoute(
-          name: TermsandconditionsWidget.routeName,
-          path: TermsandconditionsWidget.routePath,
-          builder: (context, params) => TermsandconditionsWidget(),
+          name: TermsAndConditionsWidget.routeName,
+          path: TermsAndConditionsWidget.routePath,
+          builder: (context, params) => TermsAndConditionsWidget(),
         ),
         FFRoute(
           name: SignInWidget.routeName,
@@ -155,25 +160,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => SignUpWidget(),
         ),
         FFRoute(
-          name: HomeWidget.routeName,
-          path: HomeWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => HomeWidget(),
-        ),
-        FFRoute(
-          name: DriverEarningsWidget.routeName,
-          path: DriverEarningsWidget.routePath,
-          builder: (context, params) => DriverEarningsWidget(),
-        ),
+            name: HomeWidget.routeName,
+            path: HomeWidget.routePath,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'Home')
+                : NavBarPage(
+                    initialPage: 'Home',
+                    page: HomeWidget(),
+                  )),
         FFRoute(
           name: DriverProfileWidget.routeName,
           path: DriverProfileWidget.routePath,
           builder: (context, params) => DriverProfileWidget(),
         ),
         FFRoute(
-          name: DriversignupWidget.routeName,
-          path: DriversignupWidget.routePath,
-          builder: (context, params) => DriversignupWidget(
+          name: DriverInformationWidget.routeName,
+          path: DriverInformationWidget.routePath,
+          builder: (context, params) => DriverInformationWidget(
             photo: params.getParam(
               'photo',
               ParamType.FFUploadedFile,
@@ -181,28 +184,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: DriversigninWidget.routeName,
-          path: DriversigninWidget.routePath,
-          builder: (context, params) => DriversigninWidget(),
-        ),
-        FFRoute(
           name: DriverprivacypolicyWidget.routeName,
           path: DriverprivacypolicyWidget.routePath,
           builder: (context, params) => DriverprivacypolicyWidget(),
         ),
         FFRoute(
-          name: DrivertermsandconditionsWidget.routeName,
-          path: DrivertermsandconditionsWidget.routePath,
-          builder: (context, params) => DrivertermsandconditionsWidget(),
+          name: DriverTermsWidget.routeName,
+          path: DriverTermsWidget.routePath,
+          builder: (context, params) => DriverTermsWidget(),
         ),
         FFRoute(
-          name: IncomingriderequestWidget.routeName,
-          path: IncomingriderequestWidget.routePath,
+          name: IncomingRequestWidget.routeName,
+          path: IncomingRequestWidget.routePath,
           requireAuth: true,
           asyncParams: {
             'order': getDoc(['rides'], RidesRecord.fromSnapshot),
           },
-          builder: (context, params) => IncomingriderequestWidget(
+          builder: (context, params) => IncomingRequestWidget(
             order: params.getParam(
               'order',
               ParamType.Document,
@@ -210,62 +208,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: ActiverideWidget.routeName,
-          path: ActiverideWidget.routePath,
+          name: ActiveRideWidget.routeName,
+          path: ActiveRideWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ActiverideWidget(),
+          builder: (context, params) => ActiveRideWidget(),
         ),
         FFRoute(
-          name: QuotespageWidget.routeName,
-          path: QuotespageWidget.routePath,
+          name: QuotesWidget.routeName,
+          path: QuotesWidget.routePath,
+          builder: (context, params) => QuotesWidget(),
+        ),
+        FFRoute(
+          name: DriverErrorPageWidget.routeName,
+          path: DriverErrorPageWidget.routePath,
+          builder: (context, params) => DriverErrorPageWidget(),
+        ),
+        FFRoute(
+          name: ErrorPageWidget.routeName,
+          path: ErrorPageWidget.routePath,
+          builder: (context, params) => ErrorPageWidget(),
+        ),
+        FFRoute(
+          name: CourierBookingWidget.routeName,
+          path: CourierBookingWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => QuotespageWidget(),
+          builder: (context, params) => CourierBookingWidget(),
         ),
         FFRoute(
-          name: DrivererrorpageWidget.routeName,
-          path: DrivererrorpageWidget.routePath,
-          builder: (context, params) => DrivererrorpageWidget(),
-        ),
-        FFRoute(
-          name: ErrorpageWidget.routeName,
-          path: ErrorpageWidget.routePath,
-          builder: (context, params) => ErrorpageWidget(),
-        ),
-        FFRoute(
-          name: CourierservicespageWidget.routeName,
-          path: CourierservicespageWidget.routePath,
+          name: SchoolTripBookingWidget.routeName,
+          path: SchoolTripBookingWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => CourierservicespageWidget(),
+          builder: (context, params) => SchoolTripBookingWidget(),
         ),
         FFRoute(
-          name: HotelbookingpageWidget.routeName,
-          path: HotelbookingpageWidget.routePath,
+          name: IndividualToursWidget.routeName,
+          path: IndividualToursWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => HotelbookingpageWidget(),
+          builder: (context, params) => IndividualToursWidget(),
         ),
         FFRoute(
-          name: SchooltripbookingpageWidget.routeName,
-          path: SchooltripbookingpageWidget.routePath,
+          name: CarHireWidget.routeName,
+          path: CarHireWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => SchooltripbookingpageWidget(),
-        ),
-        FFRoute(
-          name: IndividualtourspageWidget.routeName,
-          path: IndividualtourspageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => IndividualtourspageWidget(),
-        ),
-        FFRoute(
-          name: CarhiringpageWidget.routeName,
-          path: CarhiringpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => CarhiringpageWidget(),
-        ),
-        FFRoute(
-          name: AdminDashboardWidget.routeName,
-          path: AdminDashboardWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AdminDashboardWidget(),
+          builder: (context, params) => CarHireWidget(),
         ),
         FFRoute(
           name: LiveridetrackerWidget.routeName,
@@ -273,184 +258,163 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => LiveridetrackerWidget(),
         ),
         FFRoute(
-          name: AdminsettingspageWidget.routeName,
-          path: AdminsettingspageWidget.routePath,
-          builder: (context, params) => AdminsettingspageWidget(),
+          name: AdminSettingWidget.routeName,
+          path: AdminSettingWidget.routePath,
+          builder: (context, params) => AdminSettingWidget(),
         ),
         FFRoute(
-          name: AdminprofilepageWidget.routeName,
-          path: AdminprofilepageWidget.routePath,
-          builder: (context, params) => AdminprofilepageWidget(),
+          name: AdminProfileWidget.routeName,
+          path: AdminProfileWidget.routePath,
+          builder: (context, params) => AdminProfileWidget(),
         ),
         FFRoute(
-          name: AdminnotificationpageWidget.routeName,
-          path: AdminnotificationpageWidget.routePath,
-          builder: (context, params) => AdminnotificationpageWidget(),
+          name: AdminNotificationsWidget.routeName,
+          path: AdminNotificationsWidget.routePath,
+          builder: (context, params) => AdminNotificationsWidget(),
         ),
         FFRoute(
-          name: AdminloginpageWidget.routeName,
-          path: AdminloginpageWidget.routePath,
+          name: AdminLoginWidget.routeName,
+          path: AdminLoginWidget.routePath,
+          builder: (context, params) => AdminLoginWidget(),
+        ),
+        FFRoute(
+          name: AdminReportsWidget.routeName,
+          path: AdminReportsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AdminloginpageWidget(),
+          builder: (context, params) => AdminReportsWidget(),
         ),
         FFRoute(
-          name: UserreportspageWidget.routeName,
-          path: UserreportspageWidget.routePath,
+          name: ReportDetailsWidget.routeName,
+          path: ReportDetailsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => UserreportspageWidget(),
+          builder: (context, params) => ReportDetailsWidget(),
         ),
         FFRoute(
-          name: ReportdetailspageWidget.routeName,
-          path: ReportdetailspageWidget.routePath,
+            name: MyProfileWidget.routeName,
+            path: MyProfileWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => params.isEmpty
+                ? NavBarPage(initialPage: 'MyProfile')
+                : NavBarPage(
+                    initialPage: 'MyProfile',
+                    page: MyProfileWidget(),
+                  )),
+        FFRoute(
+          name: AdminDriversWidget.routeName,
+          path: AdminDriversWidget.routePath,
+          builder: (context, params) => AdminDriversWidget(),
+        ),
+        FFRoute(
+          name: UpdateDriverProfileWidget.routeName,
+          path: UpdateDriverProfileWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ReportdetailspageWidget(),
+          builder: (context, params) => UpdateDriverProfileWidget(),
         ),
         FFRoute(
-          name: UserprofilepageWidget.routeName,
-          path: UserprofilepageWidget.routePath,
+          name: AcceptedRideWidget.routeName,
+          path: AcceptedRideWidget.routePath,
+          builder: (context, params) => AcceptedRideWidget(),
+        ),
+        FFRoute(
+          name: DriverDashboardWidget.routeName,
+          path: DriverDashboardWidget.routePath,
+          builder: (context, params) => DriverDashboardWidget(),
+        ),
+        FFRoute(
+          name: BookingWidget.routeName,
+          path: BookingWidget.routePath,
+          builder: (context, params) => BookingWidget(),
+        ),
+        FFRoute(
+          name: FlightBookingWidget.routeName,
+          path: FlightBookingWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => UserprofilepageWidget(),
+          builder: (context, params) => FlightBookingWidget(),
         ),
         FFRoute(
-          name: DrivermanagepageWidget.routeName,
-          path: DrivermanagepageWidget.routePath,
-          builder: (context, params) => DrivermanagepageWidget(),
-        ),
-        FFRoute(
-          name: DrivereditpageWidget.routeName,
-          path: DrivereditpageWidget.routePath,
+          name: AdminFlightsWidget.routeName,
+          path: AdminFlightsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => DrivereditpageWidget(),
-        ),
-        FFRoute(
-          name: DriveractiveridepageWidget.routeName,
-          path: DriveractiveridepageWidget.routePath,
-          builder: (context, params) => DriveractiveridepageWidget(),
-        ),
-        FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
-          name: RideBookingPageWidget.routeName,
-          path: RideBookingPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => RideBookingPageWidget(
-            standardVehicleType: params.getParam(
-              'standardVehicleType',
-              ParamType.String,
-            ),
-            premiumVehicleType: params.getParam(
-              'premiumVehicleType',
-              ParamType.String,
-            ),
-            vipVehicleType: params.getParam(
-              'vipVehicleType',
+          builder: (context, params) => AdminFlightsWidget(
+            airline: params.getParam(
+              'airline',
               ParamType.String,
             ),
           ),
         ),
         FFRoute(
-          name: FlightBookingPageWidget.routeName,
-          path: FlightBookingPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => FlightBookingPageWidget(),
+          name: SettingsWidget.routeName,
+          path: SettingsWidget.routePath,
+          builder: (context, params) => SettingsWidget(),
         ),
         FFRoute(
-          name: AdminflightmanagementpageWidget.routeName,
-          path: AdminflightmanagementpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AdminflightmanagementpageWidget(),
+          name: PrivacySecurityWidget.routeName,
+          path: PrivacySecurityWidget.routePath,
+          builder: (context, params) => PrivacySecurityWidget(),
         ),
         FFRoute(
-          name: ProcessrequestpageWidget.routeName,
-          path: ProcessrequestpageWidget.routePath,
+          name: LanguagePreferencesWidget.routeName,
+          path: LanguagePreferencesWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ProcessrequestpageWidget(),
+          builder: (context, params) => LanguagePreferencesWidget(),
         ),
         FFRoute(
-          name: UsersettingsandsupportpageWidget.routeName,
-          path: UsersettingsandsupportpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UsersettingsandsupportpageWidget(),
+          name: StorageAndDataWidget.routeName,
+          path: StorageAndDataWidget.routePath,
+          builder: (context, params) => StorageAndDataWidget(),
         ),
         FFRoute(
-          name: UserPrivacyandsecuritypageWidget.routeName,
-          path: UserPrivacyandsecuritypageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UserPrivacyandsecuritypageWidget(),
+          name: HelpCenterWidget.routeName,
+          path: HelpCenterWidget.routePath,
+          builder: (context, params) => HelpCenterWidget(),
         ),
         FFRoute(
-          name: UserlanguagepreferencepageWidget.routeName,
-          path: UserlanguagepreferencepageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UserlanguagepreferencepageWidget(),
+          name: ContactSupportWidget.routeName,
+          path: ContactSupportWidget.routePath,
+          builder: (context, params) => ContactSupportWidget(),
         ),
         FFRoute(
-          name: UserstorageanddatapageWidget.routeName,
-          path: UserstorageanddatapageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UserstorageanddatapageWidget(),
+          name: FAQsWidget.routeName,
+          path: FAQsWidget.routePath,
+          builder: (context, params) => FAQsWidget(),
         ),
         FFRoute(
-          name: UserhelpcenterpageWidget.routeName,
-          path: UserhelpcenterpageWidget.routePath,
+          name: RateDriverWidget.routeName,
+          path: RateDriverWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => UserhelpcenterpageWidget(),
+          builder: (context, params) => RateDriverWidget(),
         ),
         FFRoute(
-          name: UsercontactsupportpageWidget.routeName,
-          path: UsercontactsupportpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UsercontactsupportpageWidget(),
+          name: TermsOfServiceWidget.routeName,
+          path: TermsOfServiceWidget.routePath,
+          builder: (context, params) => TermsOfServiceWidget(),
         ),
         FFRoute(
-          name: UserFAQsPageWidget.routeName,
-          path: UserFAQsPageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UserFAQsPageWidget(),
+          name: PoliciesWidget.routeName,
+          path: PoliciesWidget.routePath,
+          builder: (context, params) => PoliciesWidget(),
         ),
         FFRoute(
-          name: RateourapppageWidget.routeName,
-          path: RateourapppageWidget.routePath,
+          name: ChangePasswordWidget.routeName,
+          path: ChangePasswordWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RateourapppageWidget(),
+          builder: (context, params) => ChangePasswordWidget(),
         ),
         FFRoute(
-          name: UsertermsofserviceWidget.routeName,
-          path: UsertermsofserviceWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UsertermsofserviceWidget(),
+          name: DriverLoginWidget.routeName,
+          path: DriverLoginWidget.routePath,
+          builder: (context, params) => DriverLoginWidget(),
         ),
         FFRoute(
-          name: UserdatapolicyWidget.routeName,
-          path: UserdatapolicyWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UserdatapolicyWidget(),
+          name: UpdateDriverWidget.routeName,
+          path: UpdateDriverWidget.routePath,
+          builder: (context, params) => UpdateDriverWidget(),
         ),
         FFRoute(
-          name: UserchangepasswordpageWidget.routeName,
-          path: UserchangepasswordpageWidget.routePath,
+          name: AddDriverWidget.routeName,
+          path: AddDriverWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => UserchangepasswordpageWidget(),
-        ),
-        FFRoute(
-          name: DriveradminloginpageWidget.routeName,
-          path: DriveradminloginpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => DriveradminloginpageWidget(),
-        ),
-        FFRoute(
-          name: EditdriverpageWidget.routeName,
-          path: EditdriverpageWidget.routePath,
-          builder: (context, params) => EditdriverpageWidget(),
-        ),
-        FFRoute(
-          name: AdddriverpageWidget.routeName,
-          path: AdddriverpageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => AdddriverpageWidget(
+          builder: (context, params) => AddDriverWidget(
             imageupload: params.getParam(
               'imageupload',
               ParamType.FFUploadedFile,
@@ -464,13 +428,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: DriverNotificationPageWidget.routeName,
-          path: DriverNotificationPageWidget.routePath,
-          requireAuth: true,
+          name: DriverNotificationsWidget.routeName,
+          path: DriverNotificationsWidget.routePath,
           asyncParams: {
             'comfirm': getDoc(['rides'], RidesRecord.fromSnapshot),
           },
-          builder: (context, params) => DriverNotificationPageWidget(
+          builder: (context, params) => DriverNotificationsWidget(
             comfirm: params.getParam(
               'comfirm',
               ParamType.Document,
@@ -478,86 +441,65 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: DrivernotificationsettingspageWidget.routeName,
-          path: DrivernotificationsettingspageWidget.routePath,
+          name: DriverSettingsWidget.routeName,
+          path: DriverSettingsWidget.routePath,
+          builder: (context, params) => DriverSettingsWidget(),
+        ),
+        FFRoute(
+          name: FlightBookingsAdminWidget.routeName,
+          path: FlightBookingsAdminWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => DrivernotificationsettingspageWidget(),
+          builder: (context, params) => FlightBookingsAdminWidget(),
         ),
         FFRoute(
-          name: MainpageWidget.routeName,
-          path: MainpageWidget.routePath,
-          builder: (context, params) => MainpageWidget(),
-        ),
-        FFRoute(
-          name: MainsettingspageWidget.routeName,
-          path: MainsettingspageWidget.routePath,
-          builder: (context, params) => MainsettingspageWidget(),
-        ),
-        FFRoute(
-          name: MainhelppageWidget.routeName,
-          path: MainhelppageWidget.routePath,
-          builder: (context, params) => MainhelppageWidget(),
-        ),
-        FFRoute(
-          name: MainprivacypolicypageWidget.routeName,
-          path: MainprivacypolicypageWidget.routePath,
-          builder: (context, params) => MainprivacypolicypageWidget(),
-        ),
-        FFRoute(
-          name: AdminflightbookingpageWidget.routeName,
-          path: AdminflightbookingpageWidget.routePath,
+          name: AddFlightAdminWidget.routeName,
+          path: AddFlightAdminWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AdminflightbookingpageWidget(),
+          builder: (context, params) => AddFlightAdminWidget(),
         ),
         FFRoute(
-          name: AddflightpageWidget.routeName,
-          path: AddflightpageWidget.routePath,
+          name: AdminCouriersWidget.routeName,
+          path: AdminCouriersWidget.routePath,
+          builder: (context, params) => AdminCouriersWidget(),
+        ),
+        FFRoute(
+          name: HotelBookingsAdminWidget.routeName,
+          path: HotelBookingsAdminWidget.routePath,
+          builder: (context, params) => HotelBookingsAdminWidget(),
+        ),
+        FFRoute(
+          name: TourBookingAdminWidget.routeName,
+          path: TourBookingAdminWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AddflightpageWidget(),
+          builder: (context, params) => TourBookingAdminWidget(),
         ),
         FFRoute(
-          name: AdmincourierbookingpageWidget.routeName,
-          path: AdmincourierbookingpageWidget.routePath,
-          builder: (context, params) => AdmincourierbookingpageWidget(),
+          name: AddHotelWidget.routeName,
+          path: AddHotelWidget.routePath,
+          builder: (context, params) => AddHotelWidget(),
         ),
         FFRoute(
-          name: AdminhotelbookingpageWidget.routeName,
-          path: AdminhotelbookingpageWidget.routePath,
-          builder: (context, params) => AdminhotelbookingpageWidget(),
+          name: AddTourWidget.routeName,
+          path: AddTourWidget.routePath,
+          builder: (context, params) => AddTourWidget(),
         ),
         FFRoute(
-          name: AdmintourbookingpageWidget.routeName,
-          path: AdmintourbookingpageWidget.routePath,
+          name: AddVehicleWidget.routeName,
+          path: AddVehicleWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AdmintourbookingpageWidget(),
+          builder: (context, params) => AddVehicleWidget(),
         ),
         FFRoute(
-          name: AdminaddhotelpageWidget.routeName,
-          path: AdminaddhotelpageWidget.routePath,
-          builder: (context, params) => AdminaddhotelpageWidget(),
-        ),
-        FFRoute(
-          name: AdminaddtourplacepageWidget.routeName,
-          path: AdminaddtourplacepageWidget.routePath,
-          builder: (context, params) => AdminaddtourplacepageWidget(),
-        ),
-        FFRoute(
-          name: AdminaddhirecarpageWidget.routeName,
-          path: AdminaddhirecarpageWidget.routePath,
+          name: FindYourCarWidget.routeName,
+          path: FindYourCarWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AdminaddhirecarpageWidget(),
+          builder: (context, params) => FindYourCarWidget(),
         ),
         FFRoute(
-          name: UserfindyourcarpageWidget.routeName,
-          path: UserfindyourcarpageWidget.routePath,
+          name: AvailableFlightsWidget.routeName,
+          path: AvailableFlightsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => UserfindyourcarpageWidget(),
-        ),
-        FFRoute(
-          name: UseravailablefightspageWidget.routeName,
-          path: UseravailablefightspageWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => UseravailablefightspageWidget(),
+          builder: (context, params) => AvailableFlightsWidget(),
         ),
         FFRoute(
           name: AvailablehotelpageWidget.routeName,
@@ -566,51 +508,89 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => AvailablehotelpageWidget(),
         ),
         FFRoute(
-          name: UseravailabletourplacespageWidget.routeName,
-          path: UseravailabletourplacespageWidget.routePath,
+          name: AvailableTourPlacesWidget.routeName,
+          path: AvailableTourPlacesWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => UseravailabletourplacespageWidget(),
+          builder: (context, params) => AvailableTourPlacesWidget(),
         ),
         FFRoute(
-          name: AdminservicerequestpageWidget.routeName,
-          path: AdminservicerequestpageWidget.routePath,
+          name: AdminRequestsWidget.routeName,
+          path: AdminRequestsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AdminservicerequestpageWidget(),
+          builder: (context, params) => AdminRequestsWidget(),
         ),
         FFRoute(
-          name: AdmineditflightpageWidget.routeName,
-          path: AdmineditflightpageWidget.routePath,
-          builder: (context, params) => AdmineditflightpageWidget(),
+          name: UpdateFlightWidget.routeName,
+          path: UpdateFlightWidget.routePath,
+          builder: (context, params) => UpdateFlightWidget(),
         ),
         FFRoute(
-          name: AdminmanagetourspageWidget.routeName,
-          path: AdminmanagetourspageWidget.routePath,
-          builder: (context, params) => AdminmanagetourspageWidget(),
+          name: AdminToursWidget.routeName,
+          path: AdminToursWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => AdminToursWidget(),
         ),
         FFRoute(
-          name: ManagecarspagesWidget.routeName,
-          path: ManagecarspagesWidget.routePath,
-          builder: (context, params) => ManagecarspagesWidget(),
+          name: AdminVehiclesWidget.routeName,
+          path: AdminVehiclesWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => AdminVehiclesWidget(),
         ),
         FFRoute(
-          name: EditCarspageWidget.routeName,
-          path: EditCarspageWidget.routePath,
-          builder: (context, params) => EditCarspageWidget(),
+          name: UpdateVehicleWidget.routeName,
+          path: UpdateVehicleWidget.routePath,
+          builder: (context, params) => UpdateVehicleWidget(),
         ),
         FFRoute(
-          name: EdithoteldetailspageWidget.routeName,
-          path: EdithoteldetailspageWidget.routePath,
-          builder: (context, params) => EdithoteldetailspageWidget(),
+          name: UpdateHotelWidget.routeName,
+          path: UpdateHotelWidget.routePath,
+          builder: (context, params) => UpdateHotelWidget(),
         ),
         FFRoute(
-          name: ManageHotelspageWidget.routeName,
-          path: ManageHotelspageWidget.routePath,
-          builder: (context, params) => ManageHotelspageWidget(),
+          name: AdminHotelsWidget.routeName,
+          path: AdminHotelsWidget.routePath,
+          builder: (context, params) => AdminHotelsWidget(),
         ),
         FFRoute(
-          name: EdittourplacepageWidget.routeName,
-          path: EdittourplacepageWidget.routePath,
-          builder: (context, params) => EdittourplacepageWidget(),
+          name: UpdateTourAdminWidget.routeName,
+          path: UpdateTourAdminWidget.routePath,
+          builder: (context, params) => UpdateTourAdminWidget(),
+        ),
+        FFRoute(
+          name: AdminRidesWidget.routeName,
+          path: AdminRidesWidget.routePath,
+          builder: (context, params) => AdminRidesWidget(),
+        ),
+        FFRoute(
+          name: BookHotelPageWidget.routeName,
+          path: BookHotelPageWidget.routePath,
+          builder: (context, params) => BookHotelPageWidget(),
+        ),
+        FFRoute(
+          name: AdminDashboardWidget.routeName,
+          path: AdminDashboardWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => AdminDashboardWidget(),
+        ),
+        FFRoute(
+          name: RideHistoryWidget.routeName,
+          path: RideHistoryWidget.routePath,
+          builder: (context, params) => RideHistoryWidget(),
+        ),
+        FFRoute(
+          name: CourierPricingWidget.routeName,
+          path: CourierPricingWidget.routePath,
+          builder: (context, params) => CourierPricingWidget(),
+        ),
+        FFRoute(
+          name: AdminEditDriverWidget.routeName,
+          path: AdminEditDriverWidget.routePath,
+          builder: (context, params) => AdminEditDriverWidget(),
+        ),
+        FFRoute(
+          name: CourierTrackingWidget.routeName,
+          path: CourierTrackingWidget.routePath,
+          builder: (context, params) => CourierTrackingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -730,6 +710,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -748,6 +729,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
@@ -781,7 +763,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/homePage';
+            return '/home';
           }
           return null;
         },
@@ -796,10 +778,10 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   child: Image.asset(
                     'assets/images/FLATS_Logo_.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 )
               : PushNotificationsHandler(child: page);

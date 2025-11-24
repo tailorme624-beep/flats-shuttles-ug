@@ -107,9 +107,7 @@ extension LatLngExtension on GeoPoint {
   LatLng toLatLng() => LatLng(latitude, longitude);
 }
 
-DocumentReference toRef(String ref) => FirebaseFirestore.instanceFor(
-        app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-    .doc(ref);
+DocumentReference toRef(String ref) => FirebaseFirestore.instance.doc(ref);
 
 T? safeGet<T>(T Function() func, [Function(dynamic)? reportError]) {
   try {

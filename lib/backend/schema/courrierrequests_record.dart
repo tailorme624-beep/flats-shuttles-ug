@@ -5,7 +5,6 @@ import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -27,11 +26,6 @@ class CourrierrequestsRecord extends FirestoreRecord {
   DocumentReference? _clientId;
   DocumentReference? get clientId => _clientId;
   bool hasClientId() => _clientId != null;
-
-  // "driver_id" field.
-  DocumentReference? _driverId;
-  DocumentReference? get driverId => _driverId;
-  bool hasDriverId() => _driverId != null;
 
   // "status" field.
   List<String>? _status;
@@ -118,10 +112,14 @@ class CourrierrequestsRecord extends FirestoreRecord {
   List<String> get paymentStatus => _paymentStatus ?? const [];
   bool hasPaymentStatus() => _paymentStatus != null;
 
+  // "driver_id" field.
+  DocumentReference? _driverId;
+  DocumentReference? get driverId => _driverId;
+  bool hasDriverId() => _driverId != null;
+
   void _initializeFields() {
     _requestId = snapshotData['request_id'] as String?;
     _clientId = snapshotData['client_id'] as DocumentReference?;
-    _driverId = snapshotData['driver_id'] as DocumentReference?;
     _status = getDataList(snapshotData['status']);
     _createdAt = snapshotData['created_at'] as DateTime?;
     _pickupAddress = snapshotData['pickup_address'] as String?;
@@ -139,11 +137,11 @@ class CourrierrequestsRecord extends FirestoreRecord {
     _estimatedPrice = castToType<double>(snapshotData['estimated_price']);
     _paymentMethod = getDataList(snapshotData['payment_method']);
     _paymentStatus = getDataList(snapshotData['payment_status']);
+    _driverId = snapshotData['driver_id'] as DocumentReference?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('courrierrequests');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('courrierrequests');
 
   static Stream<CourrierrequestsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => CourrierrequestsRecord.fromSnapshot(s));
@@ -170,11 +168,6 @@ class CourrierrequestsRecord extends FirestoreRecord {
           'request_id': snapshot.data['request_id'],
           'client_id': convertAlgoliaParam(
             snapshot.data['client_id'],
-            ParamType.DocumentReference,
-            false,
-          ),
-          'driver_id': convertAlgoliaParam(
-            snapshot.data['driver_id'],
             ParamType.DocumentReference,
             false,
           ),
@@ -237,6 +230,11 @@ class CourrierrequestsRecord extends FirestoreRecord {
           'payment_status': safeGet(
             () => snapshot.data['payment_status'].toList(),
           ),
+          'driver_id': convertAlgoliaParam(
+            snapshot.data['driver_id'],
+            ParamType.DocumentReference,
+            false,
+          ),
         },
         CourrierrequestsRecord.collection.doc(snapshot.objectID),
       );
@@ -275,7 +273,6 @@ class CourrierrequestsRecord extends FirestoreRecord {
 Map<String, dynamic> createCourrierrequestsRecordData({
   String? requestId,
   DocumentReference? clientId,
-  DocumentReference? driverId,
   DateTime? createdAt,
   String? pickupAddress,
   String? dropoffAddress,
@@ -288,12 +285,12 @@ Map<String, dynamic> createCourrierrequestsRecordData({
   String? recipientName,
   String? recipientPhone,
   double? estimatedPrice,
+  DocumentReference? driverId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'request_id': requestId,
       'client_id': clientId,
-      'driver_id': driverId,
       'created_at': createdAt,
       'pickup_address': pickupAddress,
       'dropoff_address': dropoffAddress,
@@ -306,6 +303,7 @@ Map<String, dynamic> createCourrierrequestsRecordData({
       'recipient_name': recipientName,
       'recipient_phone': recipientPhone,
       'estimated_price': estimatedPrice,
+      'driver_id': driverId,
     }.withoutNulls,
   );
 
@@ -321,7 +319,6 @@ class CourrierrequestsRecordDocumentEquality
     const listEquality = ListEquality();
     return e1?.requestId == e2?.requestId &&
         e1?.clientId == e2?.clientId &&
-        e1?.driverId == e2?.driverId &&
         listEquality.equals(e1?.status, e2?.status) &&
         e1?.createdAt == e2?.createdAt &&
         e1?.pickupAddress == e2?.pickupAddress &&
@@ -338,14 +335,14 @@ class CourrierrequestsRecordDocumentEquality
         listEquality.equals(e1?.deliverySpeed, e2?.deliverySpeed) &&
         e1?.estimatedPrice == e2?.estimatedPrice &&
         listEquality.equals(e1?.paymentMethod, e2?.paymentMethod) &&
-        listEquality.equals(e1?.paymentStatus, e2?.paymentStatus);
+        listEquality.equals(e1?.paymentStatus, e2?.paymentStatus) &&
+        e1?.driverId == e2?.driverId;
   }
 
   @override
   int hash(CourrierrequestsRecord? e) => const ListEquality().hash([
         e?.requestId,
         e?.clientId,
-        e?.driverId,
         e?.status,
         e?.createdAt,
         e?.pickupAddress,
@@ -362,7 +359,8 @@ class CourrierrequestsRecordDocumentEquality
         e?.deliverySpeed,
         e?.estimatedPrice,
         e?.paymentMethod,
-        e?.paymentStatus
+        e?.paymentStatus,
+        e?.driverId
       ]);
 
   @override

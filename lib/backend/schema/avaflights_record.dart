@@ -20,11 +20,6 @@ class AvaflightsRecord extends FirestoreRecord {
   String get flightId => _flightId ?? '';
   bool hasFlightId() => _flightId != null;
 
-  // "added_by_admin_id" field.
-  DocumentReference? _addedByAdminId;
-  DocumentReference? get addedByAdminId => _addedByAdminId;
-  bool hasAddedByAdminId() => _addedByAdminId != null;
-
   // "created_at" field.
   DateTime? _createdAt;
   DateTime? get createdAt => _createdAt;
@@ -102,7 +97,6 @@ class AvaflightsRecord extends FirestoreRecord {
 
   void _initializeFields() {
     _flightId = snapshotData['flight_id'] as String?;
-    _addedByAdminId = snapshotData['added_by_admin_id'] as DocumentReference?;
     _createdAt = snapshotData['created_at'] as DateTime?;
     _isActive = snapshotData['is_active'] as bool?;
     _flightNumber = snapshotData['flight_number'] as String?;
@@ -120,9 +114,8 @@ class AvaflightsRecord extends FirestoreRecord {
     _seatsAvailable = castToType<int>(snapshotData['seats_available']);
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('avaflights');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('avaflights');
 
   static Stream<AvaflightsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => AvaflightsRecord.fromSnapshot(s));
@@ -157,7 +150,6 @@ class AvaflightsRecord extends FirestoreRecord {
 
 Map<String, dynamic> createAvaflightsRecordData({
   String? flightId,
-  DocumentReference? addedByAdminId,
   DateTime? createdAt,
   bool? isActive,
   String? flightNumber,
@@ -177,7 +169,6 @@ Map<String, dynamic> createAvaflightsRecordData({
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'flight_id': flightId,
-      'added_by_admin_id': addedByAdminId,
       'created_at': createdAt,
       'is_active': isActive,
       'flight_number': flightNumber,
@@ -205,7 +196,6 @@ class AvaflightsRecordDocumentEquality implements Equality<AvaflightsRecord> {
   @override
   bool equals(AvaflightsRecord? e1, AvaflightsRecord? e2) {
     return e1?.flightId == e2?.flightId &&
-        e1?.addedByAdminId == e2?.addedByAdminId &&
         e1?.createdAt == e2?.createdAt &&
         e1?.isActive == e2?.isActive &&
         e1?.flightNumber == e2?.flightNumber &&
@@ -226,7 +216,6 @@ class AvaflightsRecordDocumentEquality implements Equality<AvaflightsRecord> {
   @override
   int hash(AvaflightsRecord? e) => const ListEquality().hash([
         e?.flightId,
-        e?.addedByAdminId,
         e?.createdAt,
         e?.isActive,
         e?.flightNumber,

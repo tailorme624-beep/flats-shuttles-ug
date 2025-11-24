@@ -5,7 +5,6 @@ import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -147,9 +146,8 @@ class HotelbookingsRecord extends FirestoreRecord {
     _paymentZipCode = snapshotData['payment_zip_code'] as String?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('hotelbookings');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('hotelbookings');
 
   static Stream<HotelbookingsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => HotelbookingsRecord.fromSnapshot(s));

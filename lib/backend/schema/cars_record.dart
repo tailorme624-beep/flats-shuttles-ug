@@ -100,11 +100,6 @@ class CarsRecord extends FirestoreRecord {
   LatLng? get currentLocation => _currentLocation;
   bool hasCurrentLocation() => _currentLocation != null;
 
-  // "added_by_admin_id" field.
-  DocumentReference? _addedByAdminId;
-  DocumentReference? get addedByAdminId => _addedByAdminId;
-  bool hasAddedByAdminId() => _addedByAdminId != null;
-
   void _initializeFields() {
     _carId = snapshotData['car_id'] as String?;
     _createdAt = snapshotData['created_at'] as DateTime?;
@@ -123,12 +118,10 @@ class CarsRecord extends FirestoreRecord {
     _rateMonthly = castToType<double>(snapshotData['rate_monthly']);
     _isAvailableForHire = snapshotData['is_available_for_hire'] as bool?;
     _currentLocation = snapshotData['current_location'] as LatLng?;
-    _addedByAdminId = snapshotData['added_by_admin_id'] as DocumentReference?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('cars');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('cars');
 
   static Stream<CarsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => CarsRecord.fromSnapshot(s));
@@ -178,7 +171,6 @@ Map<String, dynamic> createCarsRecordData({
   double? rateMonthly,
   bool? isAvailableForHire,
   LatLng? currentLocation,
-  DocumentReference? addedByAdminId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -199,7 +191,6 @@ Map<String, dynamic> createCarsRecordData({
       'rate_monthly': rateMonthly,
       'is_available_for_hire': isAvailableForHire,
       'current_location': currentLocation,
-      'added_by_admin_id': addedByAdminId,
     }.withoutNulls,
   );
 
@@ -227,8 +218,7 @@ class CarsRecordDocumentEquality implements Equality<CarsRecord> {
         e1?.rateWeekly == e2?.rateWeekly &&
         e1?.rateMonthly == e2?.rateMonthly &&
         e1?.isAvailableForHire == e2?.isAvailableForHire &&
-        e1?.currentLocation == e2?.currentLocation &&
-        e1?.addedByAdminId == e2?.addedByAdminId;
+        e1?.currentLocation == e2?.currentLocation;
   }
 
   @override
@@ -249,8 +239,7 @@ class CarsRecordDocumentEquality implements Equality<CarsRecord> {
         e?.rateWeekly,
         e?.rateMonthly,
         e?.isAvailableForHire,
-        e?.currentLocation,
-        e?.addedByAdminId
+        e?.currentLocation
       ]);
 
   @override

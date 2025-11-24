@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'serialization_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -81,10 +82,10 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: Colors.transparent,
+          color: FlutterFlowTheme.of(context).primaryBackground,
           child: Image.asset(
             'assets/images/FLATS_Logo_.png',
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
           ),
         )
       : widget.child;
@@ -111,119 +112,113 @@ class ParameterData {
 
 final parametersBuilderMap =
     <String, Future<ParameterData> Function(Map<String, dynamic>)>{
-  'services': ParameterData.none(),
-  'notification': ParameterData.none(),
-  'servicepending': ParameterData.none(),
-  'ridecomfirmation': (data) async => ParameterData(
+  'Services': ParameterData.none(),
+  'Notification': ParameterData.none(),
+  'PendingRequest': ParameterData.none(),
+  'Comfirmation': (data) async => ParameterData(
         allParams: {
           'get': getParameter<DocumentReference>(data, 'get'),
         },
       ),
-  'ridetracking': ParameterData.none(),
-  'AITravelassistant': ParameterData.none(),
-  'privacypolicyandtermsandconditions': ParameterData.none(),
-  'termsandconditions': ParameterData.none(),
+  'Tracking': ParameterData.none(),
+  'AIAssistant': ParameterData.none(),
+  'PrivacyPolicy': ParameterData.none(),
+  'TermsAndConditions': ParameterData.none(),
   'SignIn': ParameterData.none(),
   'SignUp': ParameterData.none(),
-  'HOME': ParameterData.none(),
-  'DriverEarnings': ParameterData.none(),
+  'Home': ParameterData.none(),
   'DriverProfile': ParameterData.none(),
-  'driversignup': (data) async => ParameterData(
+  'DriverInformation': (data) async => ParameterData(
         allParams: <String, dynamic>{},
       ),
-  'driversignin': ParameterData.none(),
   'driverprivacypolicy': ParameterData.none(),
-  'drivertermsandconditions': ParameterData.none(),
-  'Incomingriderequest': (data) async => ParameterData(
+  'DriverTerms': ParameterData.none(),
+  'IncomingRequest': (data) async => ParameterData(
         allParams: {
           'order': await getDocumentParameter<RidesRecord>(
               data, 'order', RidesRecord.fromSnapshot),
         },
       ),
-  'activeride': ParameterData.none(),
-  'quotespage': ParameterData.none(),
-  'drivererrorpage': ParameterData.none(),
-  'errorpage': ParameterData.none(),
-  'courierservicespage': ParameterData.none(),
-  'Hotelbookingpage': ParameterData.none(),
-  'schooltripbookingpage': ParameterData.none(),
-  'individualtourspage': ParameterData.none(),
-  'carhiringpage': ParameterData.none(),
-  'AdminDashboard': ParameterData.none(),
+  'ActiveRide': ParameterData.none(),
+  'Quotes': ParameterData.none(),
+  'DriverErrorPage': ParameterData.none(),
+  'ErrorPage': ParameterData.none(),
+  'CourierBooking': ParameterData.none(),
+  'SchoolTripBooking': ParameterData.none(),
+  'IndividualTours': ParameterData.none(),
+  'CarHire': ParameterData.none(),
   'liveridetracker': ParameterData.none(),
-  'adminsettingspage': ParameterData.none(),
-  'adminprofilepage': ParameterData.none(),
-  'adminnotificationpage': ParameterData.none(),
-  'adminloginpage': ParameterData.none(),
-  'userreportspage': ParameterData.none(),
-  'reportdetailspage': ParameterData.none(),
-  'userprofilepage': ParameterData.none(),
-  'drivermanagepage': ParameterData.none(),
-  'drivereditpage': ParameterData.none(),
-  'driveractiveridepage': ParameterData.none(),
-  'HomePage': ParameterData.none(),
-  'RideBookingPage': (data) async => ParameterData(
+  'AdminSetting': ParameterData.none(),
+  'AdminProfile': ParameterData.none(),
+  'AdminNotifications': ParameterData.none(),
+  'AdminLogin': ParameterData.none(),
+  'AdminReports': ParameterData.none(),
+  'ReportDetails': ParameterData.none(),
+  'MyProfile': ParameterData.none(),
+  'AdminDrivers': ParameterData.none(),
+  'UpdateDriverProfile': ParameterData.none(),
+  'AcceptedRide': ParameterData.none(),
+  'DriverDashboard': ParameterData.none(),
+  'Booking': ParameterData.none(),
+  'FlightBooking': ParameterData.none(),
+  'AdminFlights': (data) async => ParameterData(
         allParams: {
-          'standardVehicleType':
-              getParameter<String>(data, 'standardVehicleType'),
-          'premiumVehicleType':
-              getParameter<String>(data, 'premiumVehicleType'),
-          'vipVehicleType': getParameter<String>(data, 'vipVehicleType'),
+          'airline': getParameter<String>(data, 'airline'),
         },
       ),
-  'FlightBookingPage': ParameterData.none(),
-  'adminflightmanagementpage': ParameterData.none(),
-  'processrequestpage': ParameterData.none(),
-  'usersettingsandsupportpage': ParameterData.none(),
-  'userPrivacyandsecuritypage': ParameterData.none(),
-  'userlanguagepreferencepage': ParameterData.none(),
-  'userstorageanddatapage': ParameterData.none(),
-  'userhelpcenterpage': ParameterData.none(),
-  'usercontactsupportpage': ParameterData.none(),
-  'UserFAQsPage': ParameterData.none(),
-  'Rateourapppage': ParameterData.none(),
-  'usertermsofservice': ParameterData.none(),
-  'userdatapolicy': ParameterData.none(),
-  'userchangepasswordpage': ParameterData.none(),
-  'driveradminloginpage': ParameterData.none(),
-  'editdriverpage': ParameterData.none(),
-  'adddriverpage': (data) async => ParameterData(
+  'Settings': ParameterData.none(),
+  'PrivacySecurity': ParameterData.none(),
+  'LanguagePreferences': ParameterData.none(),
+  'StorageAndData': ParameterData.none(),
+  'HelpCenter': ParameterData.none(),
+  'ContactSupport': ParameterData.none(),
+  'FAQs': ParameterData.none(),
+  'RateDriver': ParameterData.none(),
+  'TermsOfService': ParameterData.none(),
+  'Policies': ParameterData.none(),
+  'ChangePassword': ParameterData.none(),
+  'DriverLogin': ParameterData.none(),
+  'UpdateDriver': ParameterData.none(),
+  'AddDriver': (data) async => ParameterData(
         allParams: {
           'driversigninKey':
               getParameter<DocumentReference>(data, 'driversigninKey'),
         },
       ),
-  'driverNotificationPage': (data) async => ParameterData(
+  'DriverNotifications': (data) async => ParameterData(
         allParams: {
           'comfirm': await getDocumentParameter<RidesRecord>(
               data, 'comfirm', RidesRecord.fromSnapshot),
         },
       ),
-  'Drivernotificationsettingspage': ParameterData.none(),
-  'Mainpage': ParameterData.none(),
-  'mainsettingspage': ParameterData.none(),
-  'mainhelppage': ParameterData.none(),
-  'mainprivacypolicypage': ParameterData.none(),
-  'adminflightbookingpage': ParameterData.none(),
-  'addflightpage': ParameterData.none(),
-  'admincourierbookingpage': ParameterData.none(),
-  'adminhotelbookingpage': ParameterData.none(),
-  'admintourbookingpage': ParameterData.none(),
-  'adminaddhotelpage': ParameterData.none(),
-  'adminaddtourplacepage': ParameterData.none(),
-  'Adminaddhirecarpage': ParameterData.none(),
-  'userfindyourcarpage': ParameterData.none(),
-  'useravailablefightspage': ParameterData.none(),
+  'DriverSettings': ParameterData.none(),
+  'FlightBookingsAdmin': ParameterData.none(),
+  'AddFlightAdmin': ParameterData.none(),
+  'AdminCouriers': ParameterData.none(),
+  'HotelBookingsAdmin': ParameterData.none(),
+  'TourBookingAdmin': ParameterData.none(),
+  'AddHotel': ParameterData.none(),
+  'AddTour': ParameterData.none(),
+  'AddVehicle': ParameterData.none(),
+  'FindYourCar': ParameterData.none(),
+  'AvailableFlights': ParameterData.none(),
   'availablehotelpage': ParameterData.none(),
-  'useravailabletourplacespage': ParameterData.none(),
-  'adminservicerequestpage': ParameterData.none(),
-  'admineditflightpage': ParameterData.none(),
-  'adminmanagetourspage': ParameterData.none(),
-  'managecarspages': ParameterData.none(),
-  'editCarspage': ParameterData.none(),
-  'edithoteldetailspage': ParameterData.none(),
-  'manageHotelspage': ParameterData.none(),
-  'edittourplacepage': ParameterData.none(),
+  'AvailableTourPlaces': ParameterData.none(),
+  'AdminRequests': ParameterData.none(),
+  'UpdateFlight': ParameterData.none(),
+  'AdminTours': ParameterData.none(),
+  'AdminVehicles': ParameterData.none(),
+  'UpdateVehicle': ParameterData.none(),
+  'UpdateHotel': ParameterData.none(),
+  'AdminHotels': ParameterData.none(),
+  'UpdateTourAdmin': ParameterData.none(),
+  'AdminRides': ParameterData.none(),
+  'bookHotelPage': ParameterData.none(),
+  'AdminDashboard': ParameterData.none(),
+  'RideHistory': ParameterData.none(),
+  'CourierPricing': ParameterData.none(),
+  'AdminEditDriver': ParameterData.none(),
+  'CourierTracking': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

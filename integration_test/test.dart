@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_drop_down.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_icon_button.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_theme.dart';
-import 'package:flats_shuttles_ug/index.dart';
-import 'package:flats_shuttles_ug/main.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_util.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_drop_down.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_icon_button.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_widgets.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_theme.dart';
+import 'package:f_l_a_t_s_shuttles/index.dart';
+import 'package:f_l_a_t_s_shuttles/main.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_util.dart';
 
-import 'package:flats_shuttles_ug/backend/firebase/firebase_config.dart';
-import 'package:flats_shuttles_ug/auth/firebase_auth/auth_util.dart';
+import 'package:f_l_a_t_s_shuttles/backend/firebase/firebase_config.dart';
+import 'package:f_l_a_t_s_shuttles/auth/firebase_auth/auth_util.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
@@ -31,21 +31,30 @@ void main() async {
     await authManager.signOut();
   });
 
-  group('TEST A', () {
-    testWidgets('TEST A', (WidgetTester tester) async {
-      _overrideOnError();
+  testWidgets('userSignup and LogIn test', (WidgetTester tester) async {
+    _overrideOnError();
 
-      await tester.pumpWidget(MyApp(
-        entryPage: MainpageWidget(),
-      ));
-      await GoogleFonts.pendingFonts();
+    await tester.pumpWidget(MyApp(
+      entryPage: HomeWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
 
-      await tester.pumpAndSettle(
-        const Duration(milliseconds: 200),
-        EnginePhase.sendSemanticsUpdate,
-        const Duration(milliseconds: 200),
-      );
-    });
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 1000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 3000),
+    );
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('Button_ay03')),
+      100.0,
+      scrollable: find
+          .descendant(
+            of: find.byKey(const ValueKey('signup')),
+            matching: find.byType(Scrollable),
+          )
+          .first,
+    );
+    expect(find.byKey(const ValueKey('signInButton_cugq')), findsOneWidget);
   });
 }
 

@@ -7,8 +7,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class FlatsShuttlesUgFirebaseUser extends BaseAuthUser {
-  FlatsShuttlesUgFirebaseUser(this.user);
+class FLATSShuttlesFirebaseUser extends BaseAuthUser {
+  FLATSShuttlesFirebaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -61,18 +61,17 @@ class FlatsShuttlesUgFirebaseUser extends BaseAuthUser {
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
   static BaseAuthUser fromFirebaseUser(User? user) =>
-      FlatsShuttlesUgFirebaseUser(user);
+      FLATSShuttlesFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> flatsShuttlesUgFirebaseUserStream() =>
-    FirebaseAuth.instance
+Stream<BaseAuthUser> fLATSShuttlesFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = FlatsShuttlesUgFirebaseUser(user);
+        currentUser = FLATSShuttlesFirebaseUser(user);
         if (!kIsWeb) {
           FirebaseCrashlytics.instance.setUserIdentifier(user?.uid ?? '');
         }

@@ -72,9 +72,8 @@ class NotificationsRecord extends FirestoreRecord {
     _actionPage = snapshotData['action_page'] as String?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('notifications');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('notifications');
 
   static Stream<NotificationsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => NotificationsRecord.fromSnapshot(s));
