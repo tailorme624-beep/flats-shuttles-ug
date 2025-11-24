@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:287778657945:android:1c560cf9653f9e8a9eca08",
+        "android_client_info": {
+          "package_name": "com.flatsshuttles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287778657945-56u1jg3jp05jpv1oekb6ikds5qsrhs2h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flatsshuttles",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "287778657945-p0ln1llmtlch6i8khhd4jedng9v07veu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn_K_UCJnCpOb1ZJlsY9_LaOUB9-BJnnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287778657945-p0ln1llmtlch6i8khhd4jedng9v07veu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "287778657945-6aqasq0sjulqf7fgafmsc2vuv1h81lhb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flatsshuttles"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:287778657945:android:e6527c079b98fd7b9eca08",
         "android_client_info": {
           "package_name": "com.mycompany.flatsshuttles"
@@ -40,10 +84,10 @@
               "client_type": 3
             },
             {
-              "client_id": "287778657945-kr4dcdbvjeemmif21a379948pj260gei.apps.googleusercontent.com",
+              "client_id": "287778657945-6aqasq0sjulqf7fgafmsc2vuv1h81lhb.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.mycompany.flatsshuttles"
+                "bundle_id": "com.flatsshuttles"
               }
             }
           ]

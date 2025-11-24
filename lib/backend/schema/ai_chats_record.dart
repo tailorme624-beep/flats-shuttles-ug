@@ -56,9 +56,8 @@ class AiChatsRecord extends FirestoreRecord {
         : MessagesStruct.maybeFromMap(snapshotData['messages']);
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('ai_chats');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('ai_chats');
 
   static Stream<AiChatsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => AiChatsRecord.fromSnapshot(s));

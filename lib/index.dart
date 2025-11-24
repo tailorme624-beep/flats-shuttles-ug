@@ -1,152 +1,154 @@
 // Export pages
-export '/pages/users/services/services_widget.dart' show ServicesWidget;
-export '/pages/users/notification/notification_widget.dart'
+export '/pages/user/services/services_widget.dart' show ServicesWidget;
+export '/pages/user/profile/notification/notification_widget.dart'
     show NotificationWidget;
-export '/pages/users/servicepending/servicepending_widget.dart'
-    show ServicependingWidget;
-export '/pages/users/ridecomfirmation/ridecomfirmation_widget.dart'
-    show RidecomfirmationWidget;
-export '/pages/users/ridetracking/ridetracking_widget.dart'
-    show RidetrackingWidget;
-export '/pages/users/a_i_travelassistant/a_i_travelassistant_widget.dart'
-    show AITravelassistantWidget;
-export '/pages/users/privacypolicyandtermsandconditions/privacypolicyandtermsandconditions_widget.dart'
-    show PrivacypolicyandtermsandconditionsWidget;
-export '/pages/users/termsandconditions/termsandconditions_widget.dart'
-    show TermsandconditionsWidget;
-export '/pages/users/sign_in/sign_in_widget.dart' show SignInWidget;
-export '/pages/users/sign_up/sign_up_widget.dart' show SignUpWidget;
-export '/pages/users/home/home_widget.dart' show HomeWidget;
-export '/pages/drivers/driver_profile/driver_profile_widget.dart'
+export '/pages/user/rides/pending_request/pending_request_widget.dart'
+    show PendingRequestWidget;
+export '/pages/user/rides/comfirmation/comfirmation_widget.dart'
+    show ComfirmationWidget;
+export '/pages/user/rides/tracking/tracking_widget.dart' show TrackingWidget;
+export '/pages/user/a_i_assistant/a_i_assistant_widget.dart'
+    show AIAssistantWidget;
+export '/pages/user/others/privacy_policy/privacy_policy_widget.dart'
+    show PrivacyPolicyWidget;
+export '/pages/user/others/terms_and_conditions/terms_and_conditions_widget.dart'
+    show TermsAndConditionsWidget;
+export '/pages/user/auth/sign_in/sign_in_widget.dart' show SignInWidget;
+export '/pages/user/auth/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/pages/user/home/home_widget.dart' show HomeWidget;
+export '/pages/driver/profile/driver_profile/driver_profile_widget.dart'
     show DriverProfileWidget;
-export '/pages/drivers/driversignup/driversignup_widget.dart'
-    show DriversignupWidget;
-export '/driversignin/driversignin_widget.dart' show DriversigninWidget;
-export '/pages/drivers/driverprivacypolicy/driverprivacypolicy_widget.dart'
+export '/pages/driver/profile/driver_information/driver_information_widget.dart'
+    show DriverInformationWidget;
+export '/pages/driver/others/driverprivacypolicy/driverprivacypolicy_widget.dart'
     show DriverprivacypolicyWidget;
-export '/pages/drivers/drivertermsandconditions/drivertermsandconditions_widget.dart'
-    show DrivertermsandconditionsWidget;
-export '/pages/drivers/incomingriderequest/incomingriderequest_widget.dart'
-    show IncomingriderequestWidget;
-export '/pages/drivers/activeride/activeride_widget.dart' show ActiverideWidget;
-export '/pages/users/quotespage/quotespage_widget.dart' show QuotespageWidget;
-export '/pages/drivers/drivererrorpage/drivererrorpage_widget.dart'
-    show DrivererrorpageWidget;
-export '/pages/users/errorpage/errorpage_widget.dart' show ErrorpageWidget;
-export '/pages/users/courierservicespage/courierservicespage_widget.dart'
+export '/pages/driver/others/driver_terms/driver_terms_widget.dart'
+    show DriverTermsWidget;
+export '/pages/driver/rides/incoming_request/incoming_request_widget.dart'
+    show IncomingRequestWidget;
+export '/pages/driver/rides/active_ride/active_ride_widget.dart'
+    show ActiveRideWidget;
+export '/pages/user/others/quotes/quotes_widget.dart' show QuotesWidget;
+export '/pages/driver/others/driver_error_page/driver_error_page_widget.dart'
+    show DriverErrorPageWidget;
+export '/pages/user/others/error_page/error_page_widget.dart'
+    show ErrorPageWidget;
+export '/pages/user/courier/courierservicespage/courierservicespage_widget.dart'
     show CourierservicespageWidget;
-export '/pages/users/schooltripbookingpage/schooltripbookingpage_widget.dart'
+export '/pages/user/tours/schooltripbookingpage/schooltripbookingpage_widget.dart'
     show SchooltripbookingpageWidget;
-export '/pages/users/individualtourspage/individualtourspage_widget.dart'
+export '/pages/user/tours/individualtourspage/individualtourspage_widget.dart'
     show IndividualtourspageWidget;
-export '/pages/users/carhiringpage/carhiringpage_widget.dart'
+export '/pages/user/hire/carhiringpage/carhiringpage_widget.dart'
     show CarhiringpageWidget;
-export '/pages/admin/liveridetracker/liveridetracker_widget.dart'
+export '/pages/admin/rides/liveridetracker/liveridetracker_widget.dart'
     show LiveridetrackerWidget;
-export '/pages/admin/adminsettingspage/adminsettingspage_widget.dart'
-    show AdminsettingspageWidget;
-export '/pages/admin/adminprofilepage/adminprofilepage_widget.dart'
-    show AdminprofilepageWidget;
-export '/pages/admin/adminnotificationpage/adminnotificationpage_widget.dart'
-    show AdminnotificationpageWidget;
-export '/pages/admin/adminloginpage/adminloginpage_widget.dart'
-    show AdminloginpageWidget;
-export '/pages/admin/userreportspage/userreportspage_widget.dart'
-    show UserreportspageWidget;
-export '/pages/admin/reportdetailspage/reportdetailspage_widget.dart'
-    show ReportdetailspageWidget;
-export '/pages/users/userprofilepage/userprofilepage_widget.dart'
-    show UserprofilepageWidget;
-export '/pages/admin/drivermanagepage/drivermanagepage_widget.dart'
-    show DrivermanagepageWidget;
-export '/pages/drivers/drivereditpage/drivereditpage_widget.dart'
-    show DrivereditpageWidget;
-export '/pages/drivers/driveractiveridepage/driveractiveridepage_widget.dart'
-    show DriveractiveridepageWidget;
-export '/pages/drivers/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/users/ride_booking_page/ride_booking_page_widget.dart'
-    show RideBookingPageWidget;
-export '/pages/users/flight_booking_page/flight_booking_page_widget.dart'
+export '/pages/admin/admin_setting/admin_setting_widget.dart'
+    show AdminSettingWidget;
+export '/pages/admin/admin_profile/admin_profile_widget.dart'
+    show AdminProfileWidget;
+export '/pages/admin/notifications/admin_notifications/admin_notifications_widget.dart'
+    show AdminNotificationsWidget;
+export '/pages/admin/auth/admin_login/admin_login_widget.dart'
+    show AdminLoginWidget;
+export '/pages/admin/reports/admin_reports/admin_reports_widget.dart'
+    show AdminReportsWidget;
+export '/pages/admin/reports/report_details/report_details_widget.dart'
+    show ReportDetailsWidget;
+export '/pages/user/profile/my_profile/my_profile_widget.dart'
+    show MyProfileWidget;
+export '/pages/admin/drivers/admin_drivers/admin_drivers_widget.dart'
+    show AdminDriversWidget;
+export '/pages/driver/profile/update_driver_profile/update_driver_profile_widget.dart'
+    show UpdateDriverProfileWidget;
+export '/pages/driver/rides/accepted_ride/accepted_ride_widget.dart'
+    show AcceptedRideWidget;
+export '/pages/driver/driver_dashboard/driver_dashboard_widget.dart'
+    show DriverDashboardWidget;
+export '/pages/user/rides/booking/booking_widget.dart' show BookingWidget;
+export '/pages/user/flights/flight_booking_page/flight_booking_page_widget.dart'
     show FlightBookingPageWidget;
-export '/pages/admin/adminflightmanagementpage/adminflightmanagementpage_widget.dart'
-    show AdminflightmanagementpageWidget;
-export '/pages/users/usersettingsandsupportpage/usersettingsandsupportpage_widget.dart'
-    show UsersettingsandsupportpageWidget;
-export '/pages/users/user_privacyandsecuritypage/user_privacyandsecuritypage_widget.dart'
-    show UserPrivacyandsecuritypageWidget;
-export '/pages/users/userlanguagepreferencepage/userlanguagepreferencepage_widget.dart'
-    show UserlanguagepreferencepageWidget;
-export '/pages/users/userstorageanddatapage/userstorageanddatapage_widget.dart'
-    show UserstorageanddatapageWidget;
-export '/pages/users/userhelpcenterpage/userhelpcenterpage_widget.dart'
-    show UserhelpcenterpageWidget;
-export '/pages/users/usercontactsupportpage/usercontactsupportpage_widget.dart'
-    show UsercontactsupportpageWidget;
-export '/pages/users/user_f_a_qs_page/user_f_a_qs_page_widget.dart'
-    show UserFAQsPageWidget;
-export '/pages/users/rateourapppage/rateourapppage_widget.dart'
-    show RateourapppageWidget;
-export '/pages/users/usertermsofservice/usertermsofservice_widget.dart'
-    show UsertermsofserviceWidget;
-export '/pages/users/userdatapolicy/userdatapolicy_widget.dart'
-    show UserdatapolicyWidget;
-export '/pages/users/userchangepasswordpage/userchangepasswordpage_widget.dart'
-    show UserchangepasswordpageWidget;
-export '/pages/drivers/driveradminloginpage/driveradminloginpage_widget.dart'
-    show DriveradminloginpageWidget;
-export '/pages/admin/editdriverpage/editdriverpage_widget.dart'
-    show EditdriverpageWidget;
-export '/pages/admin/adddriverpage/adddriverpage_widget.dart'
-    show AdddriverpageWidget;
-export '/pages/drivers/driver_notification_page/driver_notification_page_widget.dart'
-    show DriverNotificationPageWidget;
-export '/pages/drivers/drivernotificationsettingspage/drivernotificationsettingspage_widget.dart'
-    show DrivernotificationsettingspageWidget;
-export '/pages/admin/adminflightbookingpage/adminflightbookingpage_widget.dart'
-    show AdminflightbookingpageWidget;
-export '/pages/admin/addflightpage/addflightpage_widget.dart'
-    show AddflightpageWidget;
-export '/pages/admin/admincourierbookingpage/admincourierbookingpage_widget.dart'
-    show AdmincourierbookingpageWidget;
-export '/pages/admin/adminhotelbookingpage/adminhotelbookingpage_widget.dart'
-    show AdminhotelbookingpageWidget;
-export '/pages/admin/admintourbookingpage/admintourbookingpage_widget.dart'
-    show AdmintourbookingpageWidget;
-export '/pages/admin/adminaddhotelpage/adminaddhotelpage_widget.dart'
-    show AdminaddhotelpageWidget;
-export '/pages/admin/adminaddtourplacepage/adminaddtourplacepage_widget.dart'
-    show AdminaddtourplacepageWidget;
-export '/pages/admin/adminaddhirecarpage/adminaddhirecarpage_widget.dart'
-    show AdminaddhirecarpageWidget;
-export '/pages/users/userfindyourcarpage/userfindyourcarpage_widget.dart'
+export '/pages/admin/flights/admin_flights/admin_flights_widget.dart'
+    show AdminFlightsWidget;
+export '/pages/user/others/settings/settings_widget.dart' show SettingsWidget;
+export '/pages/user/others/privacy_security/privacy_security_widget.dart'
+    show PrivacySecurityWidget;
+export '/pages/user/profile/language_preferences/language_preferences_widget.dart'
+    show LanguagePreferencesWidget;
+export '/pages/user/others/storage_and_data/storage_and_data_widget.dart'
+    show StorageAndDataWidget;
+export '/pages/user/others/help_center/help_center_widget.dart'
+    show HelpCenterWidget;
+export '/pages/user/others/contact_support/contact_support_widget.dart'
+    show ContactSupportWidget;
+export '/pages/user/others/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
+export '/pages/user/rides/rate_driver/rate_driver_widget.dart'
+    show RateDriverWidget;
+export '/pages/user/others/terms_of_service/terms_of_service_widget.dart'
+    show TermsOfServiceWidget;
+export '/pages/user/others/policies/policies_widget.dart' show PoliciesWidget;
+export '/pages/user/profile/change_password/change_password_widget.dart'
+    show ChangePasswordWidget;
+export '/pages/driver/auth/driver_login/driver_login_widget.dart'
+    show DriverLoginWidget;
+export '/pages/admin/drivers/update_driver/update_driver_widget.dart'
+    show UpdateDriverWidget;
+export '/pages/admin/drivers/add_driver/add_driver_widget.dart'
+    show AddDriverWidget;
+export '/pages/driver/notifications/driver_notifications/driver_notifications_widget.dart'
+    show DriverNotificationsWidget;
+export '/pages/driver/others/driver_settings/driver_settings_widget.dart'
+    show DriverSettingsWidget;
+export '/pages/admin/flights/flight_bookings_admin/flight_bookings_admin_widget.dart'
+    show FlightBookingsAdminWidget;
+export '/pages/admin/flights/add_flight_admin/add_flight_admin_widget.dart'
+    show AddFlightAdminWidget;
+export '/pages/admin/courier/admin_couriers/admin_couriers_widget.dart'
+    show AdminCouriersWidget;
+export '/pages/admin/hotels/hotel_bookings_admin/hotel_bookings_admin_widget.dart'
+    show HotelBookingsAdminWidget;
+export '/pages/admin/tours/tour_booking_admin/tour_booking_admin_widget.dart'
+    show TourBookingAdminWidget;
+export '/pages/admin/hotels/add_hotel/add_hotel_widget.dart'
+    show AddHotelWidget;
+export '/pages/admin/tours/add_tour/add_tour_widget.dart' show AddTourWidget;
+export '/pages/admin/hire/add_vehicle/add_vehicle_widget.dart'
+    show AddVehicleWidget;
+export '/pages/user/hire/userfindyourcarpage/userfindyourcarpage_widget.dart'
     show UserfindyourcarpageWidget;
-export '/pages/users/useravailablefightspage/useravailablefightspage_widget.dart'
+export '/pages/user/flights/useravailablefightspage/useravailablefightspage_widget.dart'
     show UseravailablefightspageWidget;
-export '/pages/users/availablehotelpage/availablehotelpage_widget.dart'
+export '/pages/user/hotels/availablehotelpage/availablehotelpage_widget.dart'
     show AvailablehotelpageWidget;
-export '/pages/users/useravailabletourplacespage/useravailabletourplacespage_widget.dart'
+export '/pages/user/tours/useravailabletourplacespage/useravailabletourplacespage_widget.dart'
     show UseravailabletourplacespageWidget;
-export '/pages/admin/adminservicerequestpage/adminservicerequestpage_widget.dart'
-    show AdminservicerequestpageWidget;
-export '/pages/admin/admineditflightpage/admineditflightpage_widget.dart'
-    show AdmineditflightpageWidget;
-export '/pages/admin/adminmanagetourspage/adminmanagetourspage_widget.dart'
-    show AdminmanagetourspageWidget;
-export '/pages/admin/managecarspages/managecarspages_widget.dart'
-    show ManagecarspagesWidget;
-export '/pages/admin/edit_carspage/edit_carspage_widget.dart'
-    show EditCarspageWidget;
-export '/pages/admin/edithoteldetailspage/edithoteldetailspage_widget.dart'
-    show EdithoteldetailspageWidget;
-export '/pages/admin/manage_hotelspage/manage_hotelspage_widget.dart'
-    show ManageHotelspageWidget;
-export '/pages/admin/edittourplacepage/edittourplacepage_widget.dart'
-    show EdittourplacepageWidget;
-export '/pages/admin/live_rides_dashboard/live_rides_dashboard_widget.dart'
-    show LiveRidesDashboardWidget;
-export '/pages/users/book_hotel_page/book_hotel_page_widget.dart'
+export '/pages/admin/notifications/admin_requests/admin_requests_widget.dart'
+    show AdminRequestsWidget;
+export '/pages/admin/flights/update_flight/update_flight_widget.dart'
+    show UpdateFlightWidget;
+export '/pages/admin/tours/admin_tours/admin_tours_widget.dart'
+    show AdminToursWidget;
+export '/pages/admin/hire/admin_vehicles/admin_vehicles_widget.dart'
+    show AdminVehiclesWidget;
+export '/pages/admin/hire/update_vehicle/update_vehicle_widget.dart'
+    show UpdateVehicleWidget;
+export '/pages/admin/hotels/update_hotel/update_hotel_widget.dart'
+    show UpdateHotelWidget;
+export '/pages/admin/hotels/admin_hotels/admin_hotels_widget.dart'
+    show AdminHotelsWidget;
+export '/pages/admin/tours/update_tour_admin/update_tour_admin_widget.dart'
+    show UpdateTourAdminWidget;
+export '/pages/admin/rides/admin_rides/admin_rides_widget.dart'
+    show AdminRidesWidget;
+export '/pages/user/hotels/book_hotel_page/book_hotel_page_widget.dart'
     show BookHotelPageWidget;
-export '/pages/admin/admin_dash_board_overviewpage/admin_dash_board_overviewpage_widget.dart'
-    show AdminDashBoardOverviewpageWidget;
-export '/pages/drivers/ride_history_page/ride_history_page_widget.dart'
-    show RideHistoryPageWidget;
+export '/pages/admin/admin_dashboard/admin_dashboard_widget.dart'
+    show AdminDashboardWidget;
+export '/pages/driver/rides/ride_history/ride_history_widget.dart'
+    show RideHistoryWidget;
+export '/pages/user/courier/courier_pricing/courier_pricing_widget.dart'
+    show CourierPricingWidget;
+export '/pages/admin/drivers/admin_edit_driver/admin_edit_driver_widget.dart'
+    show AdminEditDriverWidget;
+export '/pages/user/courier/courier_tracking/courier_tracking_widget.dart'
+    show CourierTrackingWidget;

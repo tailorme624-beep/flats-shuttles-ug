@@ -70,9 +70,8 @@ class UsersRecord extends FirestoreRecord {
     _role = snapshotData['role'] as String?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('users');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('users');
 
   static Stream<UsersRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => UsersRecord.fromSnapshot(s));

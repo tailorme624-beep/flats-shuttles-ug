@@ -108,9 +108,8 @@ class HotelsRecord extends FirestoreRecord {
     _websiteUrl = snapshotData['website_url'] as String?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('hotels');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('hotels');
 
   static Stream<HotelsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => HotelsRecord.fromSnapshot(s));

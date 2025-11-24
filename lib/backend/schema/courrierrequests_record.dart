@@ -140,9 +140,8 @@ class CourrierrequestsRecord extends FirestoreRecord {
     _driverId = snapshotData['driver_id'] as DocumentReference?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('courrierrequests');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('courrierrequests');
 
   static Stream<CourrierrequestsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => CourrierrequestsRecord.fromSnapshot(s));

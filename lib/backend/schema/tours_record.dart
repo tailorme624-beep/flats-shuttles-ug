@@ -96,9 +96,8 @@ class ToursRecord extends FirestoreRecord {
     _specialNotes = snapshotData['special_notes'] as String?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('tours');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('tours');
 
   static Stream<ToursRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => ToursRecord.fromSnapshot(s));

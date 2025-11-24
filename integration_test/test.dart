@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_drop_down.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_icon_button.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_theme.dart';
-import 'package:flats_shuttles_ug/index.dart';
-import 'package:flats_shuttles_ug/main.dart';
-import 'package:flats_shuttles_ug/flutter_flow/flutter_flow_util.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_drop_down.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_icon_button.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_widgets.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_theme.dart';
+import 'package:f_l_a_t_s_shuttles/index.dart';
+import 'package:f_l_a_t_s_shuttles/main.dart';
+import 'package:f_l_a_t_s_shuttles/flutter_flow/flutter_flow_util.dart';
 
-import 'package:flats_shuttles_ug/backend/firebase/firebase_config.dart';
-import 'package:flats_shuttles_ug/auth/firebase_auth/auth_util.dart';
+import 'package:f_l_a_t_s_shuttles/backend/firebase/firebase_config.dart';
+import 'package:f_l_a_t_s_shuttles/auth/firebase_auth/auth_util.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
@@ -45,7 +45,7 @@ void main() async {
       const Duration(milliseconds: 3000),
     );
     await tester.scrollUntilVisible(
-      find.byKey(const ValueKey('IconButton_ceim')),
+      find.byKey(const ValueKey('Button_ay03')),
       100.0,
       scrollable: find
           .descendant(
@@ -54,7 +54,7 @@ void main() async {
           )
           .first,
     );
-    expect(find.byKey(const ValueKey('IconButton_ceim')), findsOneWidget);
+    expect(find.byKey(const ValueKey('signInButton_cugq')), findsOneWidget);
   });
 }
 

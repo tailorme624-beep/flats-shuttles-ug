@@ -143,9 +143,7 @@ T? getParameter<T>(Map<String, dynamic> data, String paramName) {
         return uploadedFileFromString(param) as T;
     }
     if (param is String) {
-      return FirebaseFirestore.instanceFor(
-              app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-          .doc(param) as T;
+      return FirebaseFirestore.instance.doc(param) as T;
     }
     return param;
   } catch (e) {
@@ -162,8 +160,7 @@ Future<T?> getDocumentParameter<T>(
   if (!data.containsKey(paramName)) {
     return Future.value(null);
   }
-  return FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
+  return FirebaseFirestore.instance
       .doc(data[paramName])
       .get()
       .then((s) => recordBuilder(s));

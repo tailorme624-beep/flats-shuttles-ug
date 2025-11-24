@@ -112,9 +112,8 @@ class FlightsRecord extends FirestoreRecord {
     _classAvailability = getDataList(snapshotData['class_availability']);
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('flights');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('flights');
 
   static Stream<FlightsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => FlightsRecord.fromSnapshot(s));

@@ -312,7 +312,7 @@ class FirebaseAuthManager extends AuthManager
       }
       return userCredential == null
           ? null
-          : FlatsShuttlesUgFirebaseUser.fromUserCredential(userCredential);
+          : FLATSShuttlesFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
       final errorMsg = switch (e.code) {
         'email-already-in-use' =>

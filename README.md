@@ -1,4 +1,4 @@
-# FLATS SHUTTLES UG
+# FLATS Shuttles
 
 A new Flutter project.
 

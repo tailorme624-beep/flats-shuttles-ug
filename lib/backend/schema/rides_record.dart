@@ -117,9 +117,8 @@ class RidesRecord extends FirestoreRecord {
     _driverId = snapshotData['driver_id'] as DocumentReference?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('rides');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('rides');
 
   static Stream<RidesRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => RidesRecord.fromSnapshot(s));

@@ -150,7 +150,7 @@ bool _isSupportedLocale(Locale locale) {
 }
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // services
+  // Services
   {
     'oe8ww7n5': {
       'en': 'Our Services',
@@ -427,7 +427,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // notification
+  // Notification
   {
     'dh09lpv2': {
       'en': 'Notifications',
@@ -642,7 +642,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // servicepending
+  // PendingRequest
   {
     'yjwr33b1': {
       'en': 'Live Route Tracking',
@@ -682,15 +682,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qhtmk9el': {
       'en': 'Driver Information',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'yqxysq22': {
-      'en': 'Marcus Rodriguez',
       'aa': '',
       'af': '',
       'as': '',
@@ -843,7 +834,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // ridecomfirmation
+  // Comfirmation
   {
     'cmxey3mh': {
       'en': 'Request Confirmed!',
@@ -890,26 +881,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'bvttpoe6': {
-      'en': 'RQ-2024-001847',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '7ol86m9y': {
       'en': 'Pickup Location',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'xcaaforb': {
-      'en': 'Downtown Plaza, 123 Main Street',
       'aa': '',
       'af': '',
       'as': '',
@@ -926,15 +899,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'bw9uuw8k': {
-      'en': 'Airport Terminal 2, Gate B',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'urms47ah': {
       'en': 'Service Type',
       'aa': '',
@@ -944,8 +908,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'l2gym4qd': {
-      'en': 'Premium Ride',
+    'dag6707g': {
+      'en': 'Final Fare',
       'aa': '',
       'af': '',
       'as': '',
@@ -999,8 +963,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // ridetracking
+  // Tracking
   {
+    'rfjyonth': {
+      'en': 'Ride Tracking',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
     '8su84ur0': {
       'en': 'FARE CALCULATION',
       'aa': '',
@@ -1172,15 +1145,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'rfjyonth': {
-      'en': 'Ride Tracking',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'dg6q2sfm': {
       'en': 'Tracker',
       'aa': '',
@@ -1191,7 +1155,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // AITravelassistant
+  // AIAssistant
   {
     'ynnb41or': {
       'en': 'AI Travel Assistant',
@@ -1289,7 +1253,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // privacypolicyandtermsandconditions
+  // PrivacyPolicy
   {
     '8x26h07s': {
       'en': 'Privacy Policy',
@@ -1442,7 +1406,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // termsandconditions
+  // TermsAndConditions
   {
     'ftovsx4t': {
       'en': 'FLATS SHUTTLES',
@@ -1963,7 +1927,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // HOME
+  // Home
   {
     'h1o11olw': {
       'en': 'Premium Rides',
@@ -2127,6 +2091,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
+    'hildfsfm': {
+      'en': 'FLATS Shuttles',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
     'hqdekukr': {
       'en': 'Home',
       'aa': '',
@@ -2184,24 +2157,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // DriverProfile
   {
-    'rulrc2di': {
-      'en': 'Marcus Thompson',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '9b5pqhql': {
-      'en': 'Driver ID: DRV-2024-8847',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'tsqlgs4p': {
       'en': '4.8',
       'aa': '',
@@ -2229,15 +2184,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'olv7mojx': {
-      'en': 'Marcus Thompson',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'xqud6qw2': {
       'en': 'Email:',
       'aa': '',
@@ -2247,26 +2193,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '9vpsb5bf': {
-      'en': 'marcus.thompson@email.com',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '3l2y7yj7': {
       'en': 'Phone:',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'xqdk28w2': {
-      'en': '+1 (555) 234-5678',
       'aa': '',
       'af': '',
       'as': '',
@@ -2445,17 +2373,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'oca9ezft': {
-      'en': 'Driver Profile',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
   },
-  // driversignup
+  // DriverInformation
   {
     'wvsmmfnv': {
       'en': 'Join Our Driver Network',
@@ -2801,126 +2720,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // driversignin
-  {
-    '34wpkzoa': {
-      'en': 'Driver Sign In',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'pmuznazf': {
-      'en': 'Welcome back! Please enter your details to continue',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'vfrwspny': {
-      'en': 'Email Address',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'odphkkod': {
-      'en': 'Enter your email',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'rfix6c2j': {
-      'en': 'Phone Number',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'r1qk48i6': {
-      'en': 'Enter your phone number',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '8672o6kc': {
-      'en': 'Password',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'bz4jcps3': {
-      'en': 'Enter your license plate',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'peiqtkvu': {
-      'en': 'enter password',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'u5elf2c9': {
-      'en': 'Sign In',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '7mjadfci': {
-      'en': 'New driver?',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '2mb35bmw': {
-      'en': 'Register here',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'swj0etxq': {
-      'en': '© 2025 FLATS UG. All rights reserved.',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-  },
   // driverprivacypolicy
   {
     'ty9w4a81': {
@@ -3099,7 +2898,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // drivertermsandconditions
+  // DriverTerms
   {
     '10m68oo5': {
       'en': 'Driver Terms & Conditions',
@@ -3287,7 +3086,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // Incomingriderequest
+  // IncomingRequest
   {
     '2v7yu4kn': {
       'en': 'FROM',
@@ -3488,7 +3287,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // activeride
+  // ActiveRide
   {
     'zx2dxbzk': {
       'en': 'Drive to Pickup Location',
@@ -3590,7 +3389,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // quotespage
+  // Quotes
   {
     'c5n52oa8': {
       'en': 'Daily Inspiration',
@@ -3730,7 +3529,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // drivererrorpage
+  // DriverErrorPage
   {
     '98qz2gfz': {
       'en': 'ERROR',
@@ -3788,7 +3587,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // errorpage
+  // ErrorPage
   {
     '3uvwk8cv': {
       'en': 'ERROR',
@@ -3857,7 +3656,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '04mj4lv4': {
+    '44zvjmy4': {
       'en': 'Pickup Location',
       'aa': '',
       'af': '',
@@ -3866,7 +3665,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'h2kdmdtd': {
+    'p3k0iwjh': {
       'en': 'Enter pickup address',
       'aa': '',
       'af': '',
@@ -3875,7 +3674,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '9im6jj4l': {
+    'r4w2fklt': {
       'en': 'Drop-off Location',
       'aa': '',
       'af': '',
@@ -3884,7 +3683,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'serndlgk': {
+    'x3noqw5n': {
       'en': 'Enter delivery address',
       'aa': '',
       'af': '',
@@ -3893,7 +3692,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'ubaq01ys': {
+    'gwnfph25': {
       'en': 'Package Details',
       'aa': '',
       'af': '',
@@ -3902,7 +3701,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '058v6tm0': {
+    'g1ofd567': {
       'en': 'Weight (kg)',
       'aa': '',
       'af': '',
@@ -3911,7 +3710,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    't5jjq5es': {
+    'fmqenpwb': {
       'en': '0.0',
       'aa': '',
       'af': '',
@@ -3920,7 +3719,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'l9ag0i7i': {
+    'p6pcmdr7': {
       'en': 'Length (cm)',
       'aa': '',
       'af': '',
@@ -3929,7 +3728,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'x6wre476': {
+    '2zbohjbw': {
       'en': '0',
       'aa': '',
       'af': '',
@@ -3938,7 +3737,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '8428s9ms': {
+    'axyocf6z': {
       'en': 'Width (cm)',
       'aa': '',
       'af': '',
@@ -3947,7 +3746,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '79xusbdw': {
+    'm4mcuvxr': {
       'en': '0',
       'aa': '',
       'af': '',
@@ -3956,7 +3755,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '4uodxiky': {
+    '2u1fplww': {
       'en': 'Height (cm)',
       'aa': '',
       'af': '',
@@ -3965,7 +3764,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'k2h3iahp': {
+    'mgdu9gsg': {
       'en': '0',
       'aa': '',
       'af': '',
@@ -3974,7 +3773,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'knswxab9': {
+    'y5dzlgt9': {
       'en': 'Select package type',
       'aa': '',
       'af': '',
@@ -3983,7 +3782,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'ifcwlf9t': {
+    '2irm4dt3': {
       'en': 'Documents',
       'aa': '',
       'af': '',
@@ -3992,7 +3791,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'l19bekoq': {
+    '3l9kg38v': {
       'en': 'Electronics',
       'aa': '',
       'af': '',
@@ -4001,7 +3800,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'j8n08spt': {
+    '5n78n78n': {
       'en': 'Clothing',
       'aa': '',
       'af': '',
@@ -4010,7 +3809,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'fyyyd4u3': {
+    'fekffinw': {
       'en': 'Food Items',
       'aa': '',
       'af': '',
@@ -4019,7 +3818,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'nuoeesi8': {
+    '7tvxtc3g': {
       'en': 'Fragile Items',
       'aa': '',
       'af': '',
@@ -4028,7 +3827,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'gxf0ya0w': {
+    'qwb731vn': {
       'en': 'Other',
       'aa': '',
       'af': '',
@@ -4037,7 +3836,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'j5vjuqka': {
+    'b9snnf3i': {
       'en': 'Recipient Contact',
       'aa': '',
       'af': '',
@@ -4046,7 +3845,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'fpkqiqz4': {
+    '1sxccmpo': {
       'en': 'Recipient Name',
       'aa': '',
       'af': '',
@@ -4055,7 +3854,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'jtnhmqxb': {
+    'pylg9z3r': {
       'en': 'Enter full name',
       'aa': '',
       'af': '',
@@ -4064,7 +3863,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'o30ip5tw': {
+    'g4y6btr6': {
       'en': 'Phone Number',
       'aa': '',
       'af': '',
@@ -4073,7 +3872,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'ngqgknhf': {
+    '13oiq3jc': {
       'en': '+1 (555) 123-4567',
       'aa': '',
       'af': '',
@@ -4082,7 +3881,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '0pty4s38': {
+    'fjpct1r3': {
       'en': 'Delivery Speed',
       'aa': '',
       'af': '',
@@ -4091,7 +3890,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '2xdoj0pv': {
+    'ue8dwpqk': {
       'en': 'Select delivery speed',
       'aa': '',
       'af': '',
@@ -4100,7 +3899,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '3jqai888': {
+    '9rcfqek7': {
       'en': 'Standard (3-5 business days)',
       'aa': '',
       'af': '',
@@ -4109,7 +3908,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'bp8d5rnz': {
+    'pif9535g': {
       'en': 'Express (1-2 business days)',
       'aa': '',
       'af': '',
@@ -4118,7 +3917,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'gpty53ms': {
+    'twdyy7vv': {
       'en': 'Same Day (within 24 hours)',
       'aa': '',
       'af': '',
@@ -4127,7 +3926,106 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'nt8ywdun': {
+    'jfdjsb7r': {
+      'en': 'Courier Summary',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '58t3beaq': {
+      'en': 'Pickup Location',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'do6pkvhf': {
+      'en': 'Hello World',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'u9h8am93': {
+      'en': 'Dropoff Address',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'kajeul2q': {
+      'en': 'Hello World',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'pw0x1h3q': {
+      'en': 'Package type',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'a4zn0uz8': {
+      'en': 'Hello World',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'yfth1ekf': {
+      'en': 'delivery Speed',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'udxjd34m': {
+      'en': 'Hello World',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '8b8kfw4d': {
+      'en': 'Estimated Fare',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '3jfc6wvc': {
+      'en': 'Hello World',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'nm9cliwp': {
       'en':
           'Pricing will be calculated based on distance, weight, and delivery speed selected.',
       'aa': '',
@@ -4137,17 +4035,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'j79gxcfp': {
+    'abjj700y': {
       'en': 'Confirm service',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'gsi2g2sr': {
-      'en': '© 2025 FLATS UG. All rights reserved.',
       'aa': '',
       'af': '',
       'as': '',
@@ -5351,7 +5240,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminsettingspage
+  // AdminSetting
   {
     '3yshneu2': {
       'en': 'System Settings',
@@ -5507,7 +5396,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminprofilepage
+  // AdminProfile
   {
     'qr788ivk': {
       'en': 'Administrator',
@@ -5654,7 +5543,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminnotificationpage
+  // AdminNotifications
   {
     '95th8iod': {
       'en': 'System Alerts',
@@ -5954,7 +5843,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     '7pwx2a8y': {
-      'en': 'Admin Notifications',
+      'en': 'Notifications',
       'aa': '',
       'af': '',
       'as': '',
@@ -5963,7 +5852,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminloginpage
+  // AdminLogin
   {
     'wej3b8ai': {
       'en': 'Admin Portal',
@@ -6057,7 +5946,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userreportspage
+  // AdminReports
   {
     '78omrhas': {
       'en': 'User Reports',
@@ -6407,7 +6296,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // reportdetailspage
+  // ReportDetails
   {
     'c5cdc8db': {
       'en': 'Driver Complaint',
@@ -6636,17 +6525,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userprofilepage
+  // MyProfile
   {
-    'pkbmas4u': {
-      'en': 'John Mitchell',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '1ehr96q5': {
       'en': 'Premium Member',
       'aa': '',
@@ -6674,15 +6554,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'xmlehnx8': {
-      'en': 'John Mitchell',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'xxvhvitd': {
       'en': 'Phone Number',
       'aa': '',
@@ -6692,26 +6563,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'u3l4kt31': {
-      'en': '+1 (555) 123-4567',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'w1rxfb3f': {
       'en': 'Email Address',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'omdsmt60': {
-      'en': 'john.mitchell@email.com',
       'aa': '',
       'af': '',
       'as': '',
@@ -6827,11 +6680,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
+    'd3b5xvoo': {
+      'en': 'Profile',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
   },
-  // drivermanagepage
+  // AdminDrivers
   {
     'mvl77l2z': {
-      'en': 'Manage Users & Drivers',
+      'en': 'Drivers',
       'aa': '',
       'af': '',
       'as': '',
@@ -6893,15 +6755,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'vowaafcp': {
-      'en': 'John Anderson',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'cmi1dxgc': {
       'en': 'Driver',
       'aa': '',
@@ -6922,15 +6775,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0m4li7p0': {
       'en': 'Active',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '1jv3n4yj': {
-      'en': 'john.anderson@email.com',
       'aa': '',
       'af': '',
       'as': '',
@@ -6965,170 +6809,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'e68a6ctp': {
-      'en': 'Sarah Mitchell',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '65ydemi2': {
-      'en': 'Client',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'xqxd8svz': {
-      'en': 'Active',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'yi51au9b': {
-      'en': 'sarah.mitchell@email.com',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '7cssqh6v': {
-      'en': 'Client users have limited management options',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '0vib36or': {
-      'en': 'Michael Rodriguez',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'wwhxj8u5': {
-      'en': 'Driver',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'd1q97sm3': {
-      'en': 'Pending',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'qcmxvq6e': {
-      'en': 'Active',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '940tgues': {
-      'en': 'michael.rodriguez@email.com',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'op61pwj0': {
-      'en': 'Verify',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'd4sclx2h': {
-      'en': 'Edit',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'nah22l5w': {
-      'en': 'Suspend',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'rd5636b6': {
-      'en': 'David Thompson',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'hwkohxie': {
-      'en': 'Driver',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'zbsgfheb': {
-      'en': 'Suspended',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'gjkex1zx': {
-      'en': 'david.thompson@email.com',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'l6fkcfdx': {
-      'en': 'Reactivate',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
   },
-  // drivereditpage
+  // UpdateDriverProfile
   {
     '0x0ai8ek': {
       'en': 'John Anderson',
@@ -7347,7 +7029,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // driveractiveridepage
+  // AcceptedRide
   {
     'nq2zn4sd': {
       'en': 'Sarah Johnson',
@@ -7530,7 +7212,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // HomePage
+  // DriverDashboard
   {
     '1fh66lfk': {
       'en': 'New Ride Request',
@@ -7632,7 +7314,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // RideBookingPage
+  // Booking
   {
     'waf0b36x': {
       'en': 'Select Vehicle Type',
@@ -7716,80 +7398,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'uh5n8yj9': {
-      'en': '',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'u4jbiv7n': {
-      'en': 'Select vehiche type',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'f9mzvfh7': {
-      'en': 'Search...',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'iyhl7c5j': {
-      'en': 'Standard ',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'qpy3im4r': {
-      'en': 'Premium ',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'xmhbr1h3': {
-      'en': 'VIP ',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '6el2lptr': {
       'en': 'Pickup & Destination',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'bsrltrob': {
-      'en': 'Enter pickup location',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'lxzbaufr': {
-      'en': 'Enter destination',
       'aa': '',
       'af': '',
       'as': '',
@@ -7862,15 +7472,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ee7hitse': {
       'en': 'Confirm & Request Ride',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'u7kxb6nx': {
-      'en': '© 2025 FLATS UG. All rights reserved.',
       'aa': '',
       'af': '',
       'as': '',
@@ -8125,7 +7726,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminflightmanagementpage
+  // AdminFlights
   {
     'o2vgfut4': {
       'en': 'Inventory',
@@ -8325,8 +7926,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '8j72c2rt': {
-      'en': 'Flight Management',
+    'h94bhxku': {
+      'en': 'Flights',
       'aa': '',
       'af': '',
       'as': '',
@@ -8335,7 +7936,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // usersettingsandsupportpage
+  // Settings
   {
     '1bu9rqzg': {
       'en': 'Settings & Support',
@@ -8545,7 +8146,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userPrivacyandsecuritypage
+  // PrivacySecurity
   {
     'kk2attgu': {
       'en': 'Privacy & Security',
@@ -8829,7 +8430,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userlanguagepreferencepage
+  // LanguagePreferences
   {
     'q3ruho9u': {
       'en': 'Language Preferences',
@@ -9066,7 +8667,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userstorageanddatapage
+  // StorageAndData
   {
     '8gb1075n': {
       'en': 'Storage & Data',
@@ -9251,7 +8852,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userhelpcenterpage
+  // HelpCenter
   {
     'p4h3xj9i': {
       'en': 'Help Center',
@@ -9408,7 +9009,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // usercontactsupportpage
+  // ContactSupport
   {
     'qe60jqly': {
       'en': 'Contact Support',
@@ -9701,7 +9302,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // UserFAQsPage
+  // FAQs
   {
     '132zdqzk': {
       'en': 'Frequently Asked Questions',
@@ -9929,7 +9530,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // Rateourapppage
+  // RateDriver
   {
     'j50qe60a': {
       'en': 'Rate Our Driver',
@@ -10005,7 +9606,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // usertermsofservice
+  // TermsOfService
   {
     'gkpt0q9y': {
       'en': 'Terms of Service',
@@ -10205,7 +9806,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userdatapolicy
+  // Policies
   {
     'e7oyty5h': {
       'en': 'Data Usage Policy',
@@ -10339,7 +9940,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // userchangepasswordpage
+  // ChangePassword
   {
     '7egx11dq': {
       'en': 'Change Password',
@@ -10496,7 +10097,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // driveradminloginpage
+  // DriverLogin
   {
     'vov248gf': {
       'en': 'Driver Login',
@@ -10607,7 +10208,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // editdriverpage
+  // UpdateDriver
   {
     'lroye2n9': {
       'en': 'Manage Drivers',
@@ -10645,33 +10246,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'h31wnhe8': {
-      'en': 'Marcus Johnson',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '699qobkq': {
-      'en': 'License: DL-2024-8901',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'btemy8qw': {
-      'en': 'Phone: +1 (555) 123-4567',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'hjm9g44i': {
       'en': 'Active',
       'aa': '',
@@ -10690,141 +10264,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'giziayap': {
-      'en': 'Sarah Williams',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '2m3vbh0c': {
-      'en': 'License: DL-2024-7823',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'ldqw45kx': {
-      'en': 'Phone: +1 (555) 987-6543',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'o033pbxm': {
-      'en': 'Pending',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '678pppgm': {
-      'en': 'Van Driver',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'ai8o4i3o': {
-      'en': 'David Rodriguez',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'ilyw69hw': {
-      'en': 'License: DL-2024-5647',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'ahs31jc1': {
-      'en': 'Phone: +1 (555) 456-7890',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'qvvsawcq': {
-      'en': 'Suspended',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'yfdqbguk': {
-      'en': 'Delivery Driver',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'sfio1f4p': {
-      'en': 'Emily Chen',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '8bhu3jdc': {
-      'en': 'License: DL-2024-9234',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '5dbkgg43': {
-      'en': 'Phone: +1 (555) 234-5678',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'h6bua2rp': {
-      'en': 'Active',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'x8go6b85': {
-      'en': 'Bus Driver',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'nettf7hf': {
       'en': 'Add New Driver',
       'aa': '',
@@ -10835,7 +10274,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adddriverpage
+  // AddDriver
   {
     'xvb2ps5x': {
       'en': 'Add Driver',
@@ -11037,7 +10476,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // driverNotificationPage
+  // DriverNotifications
   {
     'az0c6m72': {
       'en': 'Driver Notifications',
@@ -11252,7 +10691,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // Drivernotificationsettingspage
+  // DriverSettings
   {
     'klpwso5e': {
       'en': 'Notification Settings',
@@ -11471,7 +10910,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminflightbookingpage
+  // FlightBookingsAdmin
   {
     '125krxvu': {
       'en': 'Flight Bookings',
@@ -11690,7 +11129,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // addflightpage
+  // AddFlightAdmin
   {
     'punukw3h': {
       'en': 'Add Flight',
@@ -11954,7 +11393,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // admincourierbookingpage
+  // AdminCouriers
   {
     'oo1sr6ce': {
       'en': 'Courier Service Bookings',
@@ -12127,35 +11566,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '0b0lvurk': {
-      'en': 'Express Delivery',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'an8ilsov': {
-      'en': 'John Mitchell',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '2e66gvv6': {
       'en': '\$45.00',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    't6hclwng': {
-      'en': 'Dec 15, 2024',
       'aa': '',
       'af': '',
       'as': '',
@@ -12182,7 +11594,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminhotelbookingpage
+  // HotelBookingsAdmin
   {
     '90yykshv': {
       'en': 'Hotel Bookings Admin',
@@ -12319,7 +11731,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'lso1wv45': {
+    'ijf5lwjn': {
       'en': 'Pending',
       'aa': '',
       'af': '',
@@ -12446,7 +11858,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // admintourbookingpage
+  // TourBookingAdmin
   {
     'bje6xdfa': {
       'en': 'Tour Bookings Admin',
@@ -12538,7 +11950,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '4k39te9r': {
+    'ge0g2x7r': {
       'en': 'Pending',
       'aa': '',
       'af': '',
@@ -12547,7 +11959,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'frn6i4tv': {
+    'mahk4mlv': {
       'en': 'Confirmed',
       'aa': '',
       'af': '',
@@ -12556,7 +11968,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'c30dq28e': {
+    '7l78k6v1': {
       'en': 'Cancelled',
       'aa': '',
       'af': '',
@@ -12863,7 +12275,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminaddhotelpage
+  // AddHotel
   {
     'o05euarr': {
       'en': 'Add Hotel',
@@ -13190,7 +12602,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminaddtourplacepage
+  // AddTour
   {
     'bs20u4w5': {
       'en': 'Add Tour Place',
@@ -13562,7 +12974,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // Adminaddhirecarpage
+  // AddVehicle
   {
     'sjeutoup': {
       'en': 'Add Car',
@@ -14399,204 +13811,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'zezb8r2t': {
-      'en': 'DL',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'tg1li6i8': {
-      'en': 'Delta Airlines',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '179oupw5': {
-      'en': 'Flight DL 5678',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'fv91fsp7': {
-      'en': '\$349',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '177vvv08': {
-      'en': '10:15',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'q83po5c6': {
-      'en': 'JFK',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '4r11mjhm': {
-      'en': '6h 45m',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '5qjxzklz': {
-      'en': '17:00',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'jhill4iw': {
-      'en': 'LAX',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'iqor6u87': {
-      'en': '1 stop • Economy',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '8pnd3x5a': {
-      'en': 'Select',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'z17zc1el': {
-      'en': 'UA',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'vgpkfxar': {
-      'en': 'United Airlines',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'dmc4fh0e': {
-      'en': 'Flight UA 9012',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'f8f32nnf': {
-      'en': '\$279',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '86eg46kd': {
-      'en': '13:45',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'c6n2zjkq': {
-      'en': 'JFK',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'e4gdvuzl': {
-      'en': '5h 15m',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'of66bx64': {
-      'en': '19:00',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'tiwnh2po': {
-      'en': 'LAX',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'b016rtac': {
-      'en': 'Non-stop • Economy',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'r9ztg4vu': {
-      'en': 'Select',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
   },
   // availablehotelpage
   {
@@ -14802,90 +14016,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '949qvd5h': {
-      'en': 'New',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'pu2jysql': {
-      'en': 'Alpine Mountain Adventure',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'x0ry192f': {
-      'en': 'Swiss Alps • 5 Days',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'owc08bpp': {
-      'en': '\$899',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'qnzik6i7': {
-      'en': 'per person',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '6fcrj9sa': {
-      'en': '4.7 (89 reviews)',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '1o3mmkuz': {
-      'en':
-          'Discover breathtaking mountain peaks, scenic hiking trails, and charming alpine villages in the heart of Switzerland.',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'w2b5smkx': {
-      'en': 'Guided tours',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'x28t34oq': {
-      'en': 'Book Now',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
   },
-  // adminservicerequestpage
+  // AdminRequests
   {
     'xshgi9x4': {
       'en': 'Service Requests Inbox',
@@ -15338,7 +14470,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // admineditflightpage
+  // UpdateFlight
   {
     'wgs9qypz': {
       'en': 'Flight Information',
@@ -15656,17 +14788,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // adminmanagetourspage
+  // AdminTours
   {
-    'h70u5hkj': {
-      'en': 'Manage Tour Places',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     '9ud4cshu': {
       'en': 'Search tour destinations...',
       'aa': '',
@@ -15839,7 +14962,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'w05f1ejk': {
-      'en': 'Tour Places Admin',
+      'en': 'Tour Places',
       'aa': '',
       'af': '',
       'as': '',
@@ -15848,10 +14971,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // managecarspages
+  // AdminVehicles
   {
     'v0aii2ka': {
-      'en': 'Manage Cars',
+      'en': 'Manage Vehicles',
       'aa': '',
       'af': '',
       'as': '',
@@ -16148,7 +15271,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // editCarspage
+  // UpdateVehicle
   {
     'i5p9hk5b': {
       'en': 'Manage Car',
@@ -16358,7 +15481,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // edithoteldetailspage
+  // UpdateHotel
   {
     'lendvwhn': {
       'en': 'Edit Hotel',
@@ -16686,7 +15809,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // manageHotelspage
+  // AdminHotels
   {
     'vjgfe6wm': {
       'en': 'Manage Hotels',
@@ -16724,7 +15847,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'zd3hvz5p': {
+    '0bmxfz6o': {
       'en': 'Active',
       'aa': '',
       'af': '',
@@ -16995,7 +16118,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // edittourplacepage
+  // UpdateTourAdmin
   {
     'p6w9i0r3': {
       'en': 'Edit Tour Places',
@@ -17306,10 +16429,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // liveRidesDashboard
+  // AdminRides
   {
     'a4btsb71': {
-      'en': 'Live Rides Dashboard',
+      'en': 'Rides',
       'aa': '',
       'af': '',
       'as': '',
@@ -17727,26 +16850,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // AdminDashBoardOverviewpage
+  // AdminDashboard
   {
-    '982r9ckk': {
-      'en': 'Admin Dashboard',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    'wgyn1jzn': {
-      'en': 'Welcome back! Here\'s your business overview',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'xq03zj9s': {
       'en': '247',
       'aa': '',
@@ -18099,7 +17204,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
     'gt1c5bx5': {
-      'en': 'RideAdmin',
+      'en': 'Admin',
       'aa': '',
       'af': '',
       'as': '',
@@ -18117,7 +17222,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sq': '',
     },
   },
-  // rideHistoryPage
+  // RideHistory
   {
     'fqqaf6fe': {
       'en': 'Ride History',
@@ -18274,6 +17379,1390 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'calu3ail': {
       'en': 'Today, 2:30 PM',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+  },
+  // CourierPricing
+  {
+    'hnvlt32f': {
+      'en': 'Courier Services',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'lx3z4jn7': {
+      'en':
+          'Choose your delivery speed and get instant pricing for your package',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '4fqrlcuo': {
+      'en': 'Standard Delivery',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'gw6xf0iq': {
+      'en': '3-5 business days',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'o9f33gd3': {
+      'en': 'Perfect for non-urgent packages',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    's3dm0h9q': {
+      'en': '\$8.99',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'z8qobfzd': {
+      'en': 'starting from',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '84mmohz4': {
+      'en': 'Express Delivery',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '13dr5qnp': {
+      'en': '1-2 business days',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'cx65ost1': {
+      'en': 'Fast delivery for important items',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '5wgws027': {
+      'en': '\$15.99',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'zq5cbpfn': {
+      'en': 'starting from',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '23r1b9gp': {
+      'en': 'Same Day Delivery',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '7h09g6sb': {
+      'en': 'Within 24 hours',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'm61okh79': {
+      'en': 'Urgent delivery when time matters',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'bb8ip4uf': {
+      'en': '\$24.99',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'kscky9ld': {
+      'en': 'starting from',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '9uv89n2a': {
+      'en': 'Priority Rush',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '3dkc2z2q': {
+      'en': '2-4 hours',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ux6mxgzf': {
+      'en': 'Emergency delivery service',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '04wtzcv1': {
+      'en': '\$39.99',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'rppkh4fj': {
+      'en': 'starting from',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'cwzg80c4': {
+      'en': 'Additional Services',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'g6fyril1': {
+      'en': 'Package Insurance',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ejzgf065': {
+      'en': '+\$2.50',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'egnejnup': {
+      'en': 'Signature Required',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'z6xm5zup': {
+      'en': '+\$3.00',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'tk1aro8p': {
+      'en': 'Fragile Handling',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'l4qwgd8n': {
+      'en': '+\$4.99',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ir8dwmms': {
+      'en': 'Weekend Delivery',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'n0hbgsx0': {
+      'en': '+\$7.50',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '4gclcni0': {
+      'en': 'Pricing Information',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'vx27pwcy': {
+      'en': '• Prices vary based on package weight, dimensions, and distance',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'dgz90zu9': {
+      'en': '• Free packaging materials for Express and Priority services',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ew2ysz0o': {
+      'en': '• Real-time tracking included with all delivery options',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ddq1xy2w': {
+      'en': '• Volume discounts available for business customers',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'xaelgldt': {
+      'en': 'Get Custom Quote',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'z7tqumv4': {
+      'en': 'Schedule Pickup',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'glfm5j6w': {
+      'en': 'Swift Courier',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+  },
+  // AdminEditDriver
+  {
+    '4ualjrbq': {
+      'en': 'Edit Driver',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '93rfcs6z': {
+      'en': 'Tap to change photo',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'hgs3rj8t': {
+      'en': 'Personal Information',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'uwg0nmk6': {
+      'en': 'Full Name',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'r8lv4fva': {
+      'en': 'Enter driver\'s full name',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'wl8c2kn6': {
+      'en': 'Marcus Johnson',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'x7ogqxcu': {
+      'en': 'Email Address',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'jit29q3v': {
+      'en': 'Enter email address',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'vwsm0sao': {
+      'en': 'marcus.johnson@email.com',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'idznzf5z': {
+      'en': 'Phone Number',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'qtokma18': {
+      'en': 'Enter phone number',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'x5sve98w': {
+      'en': '+1 (555) 123-4567',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '03alxfsa': {
+      'en': 'License Number',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'w2aps2fd': {
+      'en': 'Enter driver\'s license number',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'p6uqcx43': {
+      'en': 'DL123456789',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'zyocfy2r': {
+      'en': 'Vehicle Information',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'o7acxoln': {
+      'en': 'Vehicle Make & Model',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '0xqzzhqy': {
+      'en': 'e.g., Toyota Camry',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'je1edlgq': {
+      'en': 'Ford Transit',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    't9xbazs7': {
+      'en': 'License Plate',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'p9o9za7y': {
+      'en': 'Enter license plate number',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '094c11i0': {
+      'en': 'ABC-1234',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'brky2j5o': {
+      'en': 'Active',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'k1vpdh7o': {
+      'en': 'Select status',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '45eilmky': {
+      'en': 'Driver Status',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'wtdanyrp': {
+      'en': 'Active',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'u7b87rgw': {
+      'en': 'Inactive',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'j06ki1c9': {
+      'en': 'Suspended',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '33dhn4ef': {
+      'en': 'Performance Metrics',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '6k0ckr72': {
+      'en': '4.8',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'r6rdn5b8': {
+      'en': 'Rating',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'tjll0wi4': {
+      'en': '1,247',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '5s462a4o': {
+      'en': 'Trips',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'rvbclhky': {
+      'en': '98%',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '11wqiulu': {
+      'en': 'On-Time',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ymmh292i': {
+      'en': 'Cancel',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'dcjrh273': {
+      'en': 'Save Changes',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+  },
+  // CourierTracking
+  {
+    '0b0vtg96': {
+      'en': 'Track Package',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '6w2yp5f4': {
+      'en': 'Tracking Number',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'venc4aay': {
+      'en': 'In Transit',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'rbodskg4': {
+      'en': 'TRK123456789',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'c906oeeq': {
+      'en': 'From',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'f1qgj2s3': {
+      'en': 'New York, NY',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'bqma1oe2': {
+      'en': 'To',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '655nhwlb': {
+      'en': 'Los Angeles, CA',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'as6ijul7': {
+      'en': 'Estimated Delivery',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'xb374p3a': {
+      'en': 'Dec 28, 2024',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'kc7svybt': {
+      'en': 'Courier',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '264grgyk': {
+      'en': 'Express Delivery',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'qz5076wh': {
+      'en': 'Package Details',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'aci4wovo': {
+      'en': 'Electronics Package',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'fkiahazz': {
+      'en': 'Weight: 2.5 kg',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'pxojlt7i': {
+      'en': 'Dimensions: 30x20x15 cm',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    's3xyxtzj': {
+      'en': 'Tracking History',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'vrjobzv2': {
+      'en': 'Package in transit',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'yk4vi8hr': {
+      'en': 'Chicago Distribution Center',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'n7pj2c0e': {
+      'en': 'Dec 26, 2024 - 2:30 PM',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'jyo8pwkx': {
+      'en': 'Departed facility',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'wrmzicjr': {
+      'en': 'New York Sorting Center',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'cofvmva7': {
+      'en': 'Dec 25, 2024 - 11:45 AM',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'wycdny2l': {
+      'en': 'Package received',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'n2def88l': {
+      'en': 'Origin Pickup Point',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'bsamnjh4': {
+      'en': 'Dec 24, 2024 - 9:15 AM',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'c23456o6': {
+      'en': 'Share Tracking',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'h9g62nul': {
+      'en': 'Contact Support',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+  },
+  // UserDrawer
+  {
+    'zrl1acyx': {
+      'en': 'Home',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'mv8mtqw3': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '4t5rdl0y': {
+      'en': 'Help Center',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'z4e7o8a8': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'dha0mesw': {
+      'en': 'Ride History',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ujow24a9': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'jdrwlkr2': {
+      'en': 'Quotes',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'afxfy0rw': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '9e9azrvp': {
+      'en': 'Our Services',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '9vblwkr8': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'djfofgid': {
+      'en': 'About Us',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '9x556e8o': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '5x6rycdo': {
+      'en': 'Share App',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'x6uhaqo2': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ai4pn3z7': {
+      'en': 'Login',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'vwi0t65r': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'trtxkvu3': {
+      'en': 'SignUp',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '5nueiofy': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'thvcumhg': {
+      'en': 'Logout',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'brqd8sg7': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'rmrs2l5r': {
+      'en': 'Driver',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '23v2o0rq': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'mkfpf1v0': {
+      'en': 'Admin',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '7xvia9vj': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+  },
+  // AdminDrawer
+  {
+    'dxm7o9dh': {
+      'en': 'Dashboard',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'sxqqss4w': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '3lio48mu': {
+      'en': 'Reports',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'nf9cfciq': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'va71iwn9': {
+      'en': 'Rides',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'muibnbkj': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'dytzzu8e': {
+      'en': 'Users',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'xszqijqq': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'yhi4yosa': {
+      'en': 'Drivers',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '0zagav7j': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '6rgp8a7k': {
+      'en': 'Hotels',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'pjte3ry7': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'lwt0m05i': {
+      'en': 'Tour Places',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'gdjrh8ww': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '73bv0vkx': {
+      'en': 'Flights',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'eweuopha': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '3v2phwu5': {
+      'en': 'Vehicles',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'bk0c687a': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'xxdcnvw0': {
+      'en': 'Courier Service',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    '77ha4par': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'qzomi6s2': {
+      'en': 'Settings',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'xo3oktxj': {
+      'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'qdcetq6o': {
+      'en': 'Logout',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'ip24s6ry': {
+      'en': '',
       'aa': '',
       'af': '',
       'as': '',

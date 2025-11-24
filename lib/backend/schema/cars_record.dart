@@ -120,9 +120,8 @@ class CarsRecord extends FirestoreRecord {
     _currentLocation = snapshotData['current_location'] as LatLng?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('cars');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('cars');
 
   static Stream<CarsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => CarsRecord.fromSnapshot(s));

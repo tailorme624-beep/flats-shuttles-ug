@@ -74,9 +74,8 @@ class ReportsRecord extends FirestoreRecord {
     _adminNotes = snapshotData['admin_notes'] as String?;
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('reports');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('reports');
 
   static Stream<ReportsRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => ReportsRecord.fromSnapshot(s));

@@ -119,9 +119,8 @@ class TripbookingRecord extends FirestoreRecord {
     _paymentStatus = getDataList(snapshotData['payment_status']);
   }
 
-  static CollectionReference get collection => FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .collection('tripbooking');
+  static CollectionReference get collection =>
+      FirebaseFirestore.instance.collection('tripbooking');
 
   static Stream<TripbookingRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => TripbookingRecord.fromSnapshot(s));

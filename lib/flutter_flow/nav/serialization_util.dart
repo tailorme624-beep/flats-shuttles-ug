@@ -163,9 +163,7 @@ DocumentReference _deserializeDocumentReference(
   for (int i = 0; i < docIds.length && i < collectionNamePath.length; i++) {
     path += '/${collectionNamePath[i]}/${docIds[i]}';
   }
-  return FirebaseFirestore.instanceFor(
-          app: Firebase.app(), databaseId: 'flatsshuttles-gr3bc7')
-      .doc(path);
+  return FirebaseFirestore.instance.doc(path);
 }
 
 enum ParamType {
