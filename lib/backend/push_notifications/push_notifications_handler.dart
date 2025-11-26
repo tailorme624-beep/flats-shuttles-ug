@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'serialization_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -82,10 +81,10 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: FlutterFlowTheme.of(context).primaryBackground,
+          color: Colors.white,
           child: Image.asset(
-            'assets/images/FLATS_Logo_.png',
-            fit: BoxFit.contain,
+            'assets/images/Fauget.png',
+            fit: BoxFit.fitWidth,
           ),
         )
       : widget.child;
@@ -158,7 +157,6 @@ final parametersBuilderMap =
   'AdminDrivers': ParameterData.none(),
   'UpdateDriverProfile': ParameterData.none(),
   'AcceptedRide': ParameterData.none(),
-  'DriverDashboard': ParameterData.none(),
   'Booking': ParameterData.none(),
   'FlightBooking': ParameterData.none(),
   'AdminFlights': (data) async => ParameterData(
@@ -219,6 +217,8 @@ final parametersBuilderMap =
   'CourierPricing': ParameterData.none(),
   'AdminEditDriver': ParameterData.none(),
   'CourierTracking': ParameterData.none(),
+  'AboutUs': ParameterData.none(),
+  'DriverDashboard': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

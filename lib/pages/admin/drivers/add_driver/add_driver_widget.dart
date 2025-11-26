@@ -137,54 +137,13 @@ class _AddDriverWidgetState extends State<AddDriverWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(24.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
-                        child: Container(
-                          width: 120.0,
-                          height: 120.0,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF9ACD32),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Color(0xFF556B2F),
-                              width: 3.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'fhnpykdy' /* Driver Information */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .headlineSmall
-                              .override(
-                                font: GoogleFonts.interTight(
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .fontStyle,
-                                ),
-                                color: Color(0xFF556B2F),
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.bold,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .headlineSmall
-                                    .fontStyle,
-                              ),
-                        ),
-                      ),
                       Form(
                         key: _model.formKey,
                         autovalidateMode: AutovalidateMode.disabled,
@@ -1243,140 +1202,92 @@ class _AddDriverWidgetState extends State<AddDriverWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(
-                              child: FFButtonWidget(
-                                onPressed: () async {
+                            FFButtonWidget(
+                              onPressed: () async {
+                                logFirebaseEvent(
+                                    'ADD_DRIVER_createDriverButton_ON_TAP');
+                                logFirebaseEvent(
+                                    'createDriverButton_cloud_function');
+                                try {
+                                  final result =
+                                      await FirebaseFunctions.instanceFor(
+                                              region: 'us-central1')
+                                          .httpsCallable('createDriverUser')
+                                          .call({
+                                    "driverEmail": currentUserEmail,
+                                    "driverPassword": loggedIn.toString(),
+                                  });
+                                  _model.cloudFunctionwx8 =
+                                      CreateDriverUserCloudFunctionCallResponse(
+                                    data: result.data,
+                                    succeeded: true,
+                                    resultAsString: result.data.toString(),
+                                    jsonBody: result.data,
+                                  );
+                                } on FirebaseFunctionsException catch (error) {
+                                  _model.cloudFunctionwx8 =
+                                      CreateDriverUserCloudFunctionCallResponse(
+                                    errorCode: error.code,
+                                    succeeded: false,
+                                  );
+                                }
+
+                                if (_model.cloudFunctionwx8!.succeeded!) {
                                   logFirebaseEvent(
-                                      'ADD_DRIVER_PAGE_cancleButton_ON_TAP');
+                                      'createDriverButton_backend_call');
+
+                                  await DriversRecord.collection
+                                      .doc()
+                                      .set(createDriversRecordData());
+                                } else {
                                   logFirebaseEvent(
-                                      'cancleButton_navigate_back');
-                                  context.safePop();
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'nwaov56u' /* Cancel */,
-                                ),
-                                options: FFButtonOptions(
-                                  height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFFF5F5DC),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        font: GoogleFonts.interTight(
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0xFF556B2F),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .fontStyle,
-                                      ),
-                                  elevation: 0.0,
-                                  borderSide: BorderSide(
-                                    color: Color(0xFF556B2F),
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
+                                      'createDriverButton_navigate_to');
+
+                                  context
+                                      .pushNamed(DriverLoginWidget.routeName);
+                                }
+
+                                safeSetState(() {});
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'hf95fzlj' /* Create Driver */,
                               ),
-                            ),
-                            Expanded(
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  logFirebaseEvent(
-                                      'ADD_DRIVER_createDriverButton_ON_TAP');
-                                  logFirebaseEvent(
-                                      'createDriverButton_cloud_function');
-                                  try {
-                                    final result =
-                                        await FirebaseFunctions.instanceFor(
-                                                region: 'us-central1')
-                                            .httpsCallable('createDriverUser')
-                                            .call({
-                                      "driverEmail": currentUserEmail,
-                                      "driverPassword": loggedIn.toString(),
-                                    });
-                                    _model.cloudFunctionwx8 =
-                                        CreateDriverUserCloudFunctionCallResponse(
-                                      data: result.data,
-                                      succeeded: true,
-                                      resultAsString: result.data.toString(),
-                                      jsonBody: result.data,
-                                    );
-                                  } on FirebaseFunctionsException catch (error) {
-                                    _model.cloudFunctionwx8 =
-                                        CreateDriverUserCloudFunctionCallResponse(
-                                      errorCode: error.code,
-                                      succeeded: false,
-                                    );
-                                  }
-
-                                  if (_model.cloudFunctionwx8!.succeeded!) {
-                                    logFirebaseEvent(
-                                        'createDriverButton_backend_call');
-
-                                    await DriversRecord.collection
-                                        .doc()
-                                        .set(createDriversRecordData());
-                                  } else {
-                                    logFirebaseEvent(
-                                        'createDriverButton_navigate_to');
-
-                                    context
-                                        .pushNamed(DriverLoginWidget.routeName);
-                                  }
-
-                                  safeSetState(() {});
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'hf95fzlj' /* Create Driver */,
-                                ),
-                                icon: Icon(
-                                  Icons.person_add_rounded,
-                                  size: 20.0,
-                                ),
-                                options: FFButtonOptions(
-                                  height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconColor: Color(0xFFF5F5DC),
-                                  color: Color(0xFF556B2F),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
-                                        font: GoogleFonts.interTight(
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .fontStyle,
-                                        ),
-                                        color: Color(0xFFF5F5DC),
-                                        letterSpacing: 0.0,
+                              icon: Icon(
+                                Icons.person_add_rounded,
+                                size: 20.0,
+                              ),
+                              options: FFButtonOptions(
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconColor: Color(0xFFF5F5DC),
+                                color: Color(0xFF556B2F),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      font: GoogleFonts.interTight(
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .fontStyle,
                                       ),
-                                  elevation: 2.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
+                                      color: Color(0xFFF5F5DC),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
+                                    ),
+                                elevation: 2.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
                                 ),
+                                borderRadius: BorderRadius.circular(25.0),
                               ),
                             ),
                           ].divide(SizedBox(width: 16.0)),

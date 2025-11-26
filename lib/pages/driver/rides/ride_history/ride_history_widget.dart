@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -56,20 +55,10 @@ class _RideHistoryWidgetState extends State<RideHistoryWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              leading: FlutterFlowIconButton(
-                borderRadius: 20.0,
-                buttonSize: 40.0,
-                icon: Icon(
-                  Icons.arrow_back_rounded,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 24.0,
-                ),
-                onPressed: () {
-                  print('IconButton pressed ...');
-                },
-              ),
+              backgroundColor: FlutterFlowTheme.of(context).alternate,
+              iconTheme:
+                  IconThemeData(color: FlutterFlowTheme.of(context).textColor),
+              automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
                   'fqqaf6fe' /* Ride History */,
@@ -80,30 +69,16 @@ class _RideHistoryWidgetState extends State<RideHistoryWidget> {
                         fontStyle:
                             FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
+                      color: FlutterFlowTheme.of(context).textColor,
+                      fontSize: 28.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
                       fontStyle:
                           FlutterFlowTheme.of(context).titleLarge.fontStyle,
                     ),
               ),
-              actions: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  child: FlutterFlowIconButton(
-                    borderRadius: 20.0,
-                    buttonSize: 40.0,
-                    icon: Icon(
-                      Icons.filter_list_rounded,
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      size: 24.0,
-                    ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
-                    },
-                  ),
-                ),
-              ],
-              centerTitle: false,
+              actions: [],
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(

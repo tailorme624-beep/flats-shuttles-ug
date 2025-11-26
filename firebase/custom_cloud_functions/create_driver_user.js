@@ -43,7 +43,7 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
       email: email,
       display_name: fullName,
       phone_number: phoneNumber,
-      role: "drivers", // *** CRITICAL FOR ROLE ENFORCEMENT ***
+      role: "driver", // *** CRITICAL FOR ROLE ENFORCEMENT ***
       is_verified: false, // Must be verified by Admin later
       availability_status: "offline", // Default status
       license_number: licenseNumber,

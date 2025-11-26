@@ -13,8 +13,10 @@ class AdminLoginModel extends FlutterFlowModel<AdminLoginWidget> {
   String? Function(BuildContext, String?)?
       adminLoginEmailTextControllerValidator;
   // State field(s) for adminLoginPassword widget.
+  final adminLoginPasswordKey = GlobalKey();
   FocusNode? adminLoginPasswordFocusNode;
   TextEditingController? adminLoginPasswordTextController;
+  String? adminLoginPasswordSelectedOption;
   late bool adminLoginPasswordVisibility;
   String? Function(BuildContext, String?)?
       adminLoginPasswordTextControllerValidator;
@@ -30,6 +32,5 @@ class AdminLoginModel extends FlutterFlowModel<AdminLoginWidget> {
     adminLoginEmailTextController?.dispose();
 
     adminLoginPasswordFocusNode?.dispose();
-    adminLoginPasswordTextController?.dispose();
   }
 }

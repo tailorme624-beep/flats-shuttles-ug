@@ -13,6 +13,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'index.dart';
 
 import '/flutter_flow/admob_util.dart';
@@ -23,8 +24,6 @@ void main() async {
   usePathUrlStrategy();
 
   await initFirebase();
-
-  await FlutterFlowTheme.initialize();
 
   adMobUpdateRequestConfiguration();
 
@@ -38,16 +37,12 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key, this.entryPage});
-
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_MyAppState>()!;
-
-  final Widget? entryPage;
 }
 
 class MyAppScrollBehavior extends MaterialScrollBehavior {
@@ -61,7 +56,7 @@ class MyAppScrollBehavior extends MaterialScrollBehavior {
 class _MyAppState extends State<MyApp> {
   Locale? _locale = FFLocalizations.getStoredLocale();
 
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -88,14 +83,14 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
-    _router = createRouter(_appStateNotifier, widget.entryPage);
+    _router = createRouter(_appStateNotifier);
     userStream = fLATSShuttlesFirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(milliseconds: 5),
+      Duration(milliseconds: 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -114,7 +109,6 @@ class _MyAppState extends State<MyApp> {
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
@@ -143,9 +137,6 @@ class _MyAppState extends State<MyApp> {
       ],
       theme: ThemeData(
         brightness: Brightness.light,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
       ),
       themeMode: _themeMode,
       routerConfig: _router,
@@ -194,59 +185,56 @@ class _NavBarPageState extends State<NavBarPage> {
     return Scaffold(
       resizeToAvoidBottomInset: !widget.disableResizeToAvoidBottomInset,
       body: _currentPage ?? tabs[_currentPageName],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (i) => safeSetState(() {
+      bottomNavigationBar: GNav(
+        selectedIndex: currentIndex,
+        onTabChange: (i) => safeSetState(() {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: FlutterFlowTheme.of(context).primary,
-        selectedItemColor: FlutterFlowTheme.of(context).alternate,
-        unselectedItemColor: FlutterFlowTheme.of(context).secondary,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            label: FFLocalizations.of(context).getText(
+        color: FlutterFlowTheme.of(context).tertiary,
+        activeColor: FlutterFlowTheme.of(context).primary,
+        tabBackgroundColor: FlutterFlowTheme.of(context).alternate,
+        tabActiveBorder: Border.all(
+          color: FlutterFlowTheme.of(context).tertiary,
+          width: 1.0,
+        ),
+        tabBorder: Border.all(
+          color: FlutterFlowTheme.of(context).tertiary,
+          width: 1.0,
+        ),
+        tabBorderRadius: 20.0,
+        tabMargin: EdgeInsets.all(5.0),
+        padding: EdgeInsets.all(10.0),
+        gap: 5.0,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        duration: Duration(milliseconds: 10),
+        haptic: false,
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: FFLocalizations.of(context).getText(
               'ndwc0g2q' /* Home */,
             ),
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.map_outlined,
-            ),
-            label: FFLocalizations.of(context).getText(
+          GButton(
+            icon: Icons.map_outlined,
+            text: FFLocalizations.of(context).getText(
               'dg6q2sfm' /* Tracker */,
             ),
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.chat_bubble_outline_outlined,
-            ),
-            label: FFLocalizations.of(context).getText(
+          GButton(
+            icon: Icons.chat_bubble_outline_outlined,
+            text: FFLocalizations.of(context).getText(
               'dlgzye07' /* Flats AI */,
             ),
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              size: 20.0,
-            ),
-            activeIcon: Icon(
-              Icons.person_outline,
-              size: 20.0,
-            ),
-            label: FFLocalizations.of(context).getText(
+          GButton(
+            icon: currentIndex == 3 ? Icons.person_outline : Icons.person,
+            text: FFLocalizations.of(context).getText(
               'd3b5xvoo' /* Profile */,
             ),
-            tooltip: '',
+            iconSize: 20.0,
           )
         ],
       ),
