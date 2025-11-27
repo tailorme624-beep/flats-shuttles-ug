@@ -400,18 +400,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: AddDriverWidget.routeName,
           path: AddDriverWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AddDriverWidget(
-            imageupload: params.getParam(
-              'imageupload',
-              ParamType.FFUploadedFile,
-            ),
-            driversigninKey: params.getParam(
-              'driversigninKey',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users'],
-            ),
-          ),
+          builder: (context, params) => AddDriverWidget(),
         ),
         FFRoute(
           name: DriverNotificationsWidget.routeName,

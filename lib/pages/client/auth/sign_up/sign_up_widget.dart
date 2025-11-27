@@ -1276,7 +1276,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           onPressed: () async {
                             logFirebaseEvent('SIGN_UP_PAGE_HOME_BTN_ON_TAP');
                             logFirebaseEvent('Button_navigate_to');
-
+                            if (Navigator.of(context).canPop()) {
+                              context.pop();
+                            }
                             context.pushNamed(HomeWidget.routeName);
                           },
                           text: FFLocalizations.of(context).getText(

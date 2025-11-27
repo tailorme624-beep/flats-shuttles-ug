@@ -58,6 +58,8 @@ class _DriverDashboardWidgetState extends State<DriverDashboardWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: Color(0xFF556B2F),
+              iconTheme: IconThemeData(
+                  color: FlutterFlowTheme.of(context).primaryBackground),
               automaticallyImplyLeading: true,
               title: Row(
                 mainAxisSize: MainAxisSize.max,

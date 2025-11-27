@@ -66,21 +66,9 @@ class _DriverNotificationsWidgetState extends State<DriverNotificationsWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: Color(0xFF556B2F),
-              automaticallyImplyLeading: false,
-              leading: FlutterFlowIconButton(
-                borderRadius: 20.0,
-                buttonSize: 40.0,
-                icon: Icon(
-                  Icons.arrow_back_rounded,
-                  color: Color(0xFFF5F5DC),
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('DRIVER_NOTIFICATIONS_arrow_back_rounded_');
-                  logFirebaseEvent('IconButton_navigate_back');
-                  context.safePop();
-                },
-              ),
+              iconTheme: IconThemeData(
+                  color: FlutterFlowTheme.of(context).primaryBackground),
+              automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
                   'az0c6m72' /* Driver Notifications */,
@@ -109,8 +97,12 @@ class _DriverNotificationsWidgetState extends State<DriverNotificationsWidget> {
                       color: Color(0xFFF5F5DC),
                       size: 24.0,
                     ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
+                    onPressed: () async {
+                      logFirebaseEvent(
+                          'DRIVER_NOTIFICATIONS_settings_rounded_IC');
+                      logFirebaseEvent('IconButton_navigate_to');
+
+                      context.pushNamed(DriverSettingsWidget.routeName);
                     },
                   ),
                 ),

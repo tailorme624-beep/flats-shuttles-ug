@@ -11,7 +11,7 @@ class CreateDriverUserCloudFunctionCallResponse {
   bool? succeeded;
   dynamic jsonBody;
   String? resultAsString;
-  String? data;
+  bool? data;
 }
 
 class CalculateTotalFareCloudFunctionCallResponse {

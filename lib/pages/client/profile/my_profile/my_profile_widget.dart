@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -49,16 +50,24 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       logFirebaseEvent('MY_PROFILE_PAGE_MyProfile_ON_INIT_STATE');
-      logFirebaseEvent('MyProfile_wait__delay');
-      await Future.delayed(
-        Duration(
-          milliseconds: 10,
+      logFirebaseEvent('MyProfile_firestore_query');
+      _model.user = await queryUsersRecordOnce(
+        queryBuilder: (usersRecord) => usersRecord.where(
+          'uid',
+          isEqualTo: currentUserUid,
         ),
-      );
-      if (valueOrDefault(currentUserDocument?.role, '') == 'admin') {
+        singleRecord: true,
+      ).then((s) => s.firstOrNull);
+      if (_model.user?.role == 'admin') {
         logFirebaseEvent('MyProfile_navigate_to');
 
         context.goNamed(AdminDashboardWidget.routeName);
+      } else {
+        if (_model.user?.role == 'driver') {
+          logFirebaseEvent('MyProfile_navigate_to');
+
+          context.pushNamed(DriverDashboardWidget.routeName);
+        }
       }
     });
 

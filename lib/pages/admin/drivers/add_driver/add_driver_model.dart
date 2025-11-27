@@ -28,11 +28,6 @@ class AddDriverModel extends FlutterFlowModel<AddDriverWidget> {
   FocusNode? vehicleNumebrFocusNode;
   TextEditingController? vehicleNumebrTextController;
   String? Function(BuildContext, String?)? vehicleNumebrTextControllerValidator;
-  // State field(s) for createDriverUsername widget.
-  FocusNode? createDriverUsernameFocusNode;
-  TextEditingController? createDriverUsernameTextController;
-  String? Function(BuildContext, String?)?
-      createDriverUsernameTextControllerValidator;
   // State field(s) for createDriverPassword widget.
   FocusNode? createDriverPasswordFocusNode;
   TextEditingController? createDriverPasswordTextController;
@@ -46,7 +41,7 @@ class AddDriverModel extends FlutterFlowModel<AddDriverWidget> {
   String? Function(BuildContext, String?)?
       comfirmDriverPasswordTextControllerValidator;
   // Stores action output result for [Cloud Function - createDriverUser] action in createDriverButton widget.
-  CreateDriverUserCloudFunctionCallResponse? cloudFunctionwx8;
+  CreateDriverUserCloudFunctionCallResponse? addDriverResult;
 
   @override
   void initState(BuildContext context) {
@@ -70,9 +65,6 @@ class AddDriverModel extends FlutterFlowModel<AddDriverWidget> {
 
     vehicleNumebrFocusNode?.dispose();
     vehicleNumebrTextController?.dispose();
-
-    createDriverUsernameFocusNode?.dispose();
-    createDriverUsernameTextController?.dispose();
 
     createDriverPasswordFocusNode?.dispose();
     createDriverPasswordTextController?.dispose();

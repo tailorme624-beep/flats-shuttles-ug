@@ -177,12 +177,7 @@ final parametersBuilderMap =
   'ChangePassword': ParameterData.none(),
   'DriverLogin': ParameterData.none(),
   'UpdateDriver': ParameterData.none(),
-  'AddDriver': (data) async => ParameterData(
-        allParams: {
-          'driversigninKey':
-              getParameter<DocumentReference>(data, 'driversigninKey'),
-        },
-      ),
+  'AddDriver': ParameterData.none(),
   'DriverNotifications': (data) async => ParameterData(
         allParams: {
           'comfirm': await getDocumentParameter<RidesRecord>(

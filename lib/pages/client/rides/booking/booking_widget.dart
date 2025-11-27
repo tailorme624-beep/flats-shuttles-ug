@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/permissions_util.dart';
 import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -83,6 +84,8 @@ class _BookingWidgetState extends State<BookingWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
+              iconTheme: IconThemeData(
+                  color: FlutterFlowTheme.of(context).primaryBackground),
               automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
@@ -766,6 +769,10 @@ class _BookingWidgetState extends State<BookingWidget> {
                                             logFirebaseEvent(
                                                 'BOOKING_PAGE_pickuplocation_ON_TAP');
                                             logFirebaseEvent(
+                                                'pickuplocation_request_permissions');
+                                            await requestPermission(
+                                                locationPermission);
+                                            logFirebaseEvent(
                                                 'pickuplocation_launch_map');
                                             await launchMap(
                                               mapType: $ml.MapType.google,
@@ -774,6 +781,16 @@ class _BookingWidgetState extends State<BookingWidget> {
                                               title:
                                                   'Please, choose your location',
                                             );
+
+                                            logFirebaseEvent(
+                                                'pickuplocation_backend_call');
+
+                                            await RidesRecord.collection
+                                                .doc()
+                                                .set(createRidesRecordData(
+                                                  pickupLocation:
+                                                      _model.pickupLocation,
+                                                ));
                                           },
                                           text: valueOrDefault<String>(
                                             _model.pickupLocation?.toString(),
@@ -833,12 +850,9 @@ class _BookingWidgetState extends State<BookingWidget> {
                                             logFirebaseEvent(
                                                 'BOOKING_PAGE_drop-off-location_ON_TAP');
                                             logFirebaseEvent(
-                                                'drop-off-location_launch_map');
-                                            await launchMap(
-                                              address: '',
-                                              title:
-                                                  'Please, choose where you are going',
-                                            );
+                                                'drop-off-location_request_permissions');
+                                            await requestPermission(
+                                                locationPermission);
                                           },
                                           text: valueOrDefault<String>(
                                             _model.dropoffLocation?.toString(),

@@ -15,14 +15,41 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
     );
   }
 
-  const { email, password, fullName, licenseNumber, vehicleReg, phoneNumber } =
-    data;
+  const callerUid = context.auth.uid;
+  const callerDoc = await admin
+    .firestore()
+    .collection("users")
+    .doc(callerUid)
+    .get();
+
+  if (!callerDoc.exists || callerDoc.data().role !== "admin") {
+    throw new functions.https.HttpsError(
+      "permission-denied",
+      "Only Admins can add new Drivers",
+    );
+  }
+
+  const {
+    email,
+    password,
+    confirmPassword,
+    fullName,
+    licenseNumber,
+    vehicleReg,
+    phoneNumber,
+  } = data;
 
   // 2. **Input Validation:** Check required fields
   if (!email || !password || !fullName || !licenseNumber || !phoneNumber) {
     throw new functions.https.HttpsError(
       "invalid-argument",
       "Missing required driver information.",
+    );
+  }
+  if (password != confirmPassword) {
+    throw new functions.https.HttpsError(
+      "invalid-argument",
+      "Password Mismatch",
     );
   }
 
@@ -42,12 +69,25 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
       uid: newUid,
       email: email,
       display_name: fullName,
+      photo_url:
+        "gs://flatsshuttles-gr3bc7.firebasestorage.app/images/user.png",
       phone_number: phoneNumber,
       role: "driver", // *** CRITICAL FOR ROLE ENFORCEMENT ***
+      created_time: admin.firestore.FieldValue.serverTimestamp(),
+      // Add other essential fields here if needed
+    });
+    await admin.firestore().collection("drivers").doc(newUid).set({
+      uid: newUid,
       is_verified: false, // Must be verified by Admin later
       availability_status: "offline", // Default status
       license_number: licenseNumber,
       vehicle_registration: vehicleReg,
+      vehicle_photo: "",
+      license_photo: "",
+      date_of_birth: "",
+      nin: "",
+      address: "",
+      experience: 1, // expence in years default: 1
       created_time: admin.firestore.FieldValue.serverTimestamp(),
       // Add other essential fields here if needed
     });
@@ -56,7 +96,7 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
     return { uid: newUid };
   } catch (error) {
     // Log error for debugging
-    console.error("Error creating new driver user:", error);
+    console.error("Error creating new driver:", error);
 
     // Handle specific Firebase Auth errors
     if (error.code === "auth/email-already-in-use") {
