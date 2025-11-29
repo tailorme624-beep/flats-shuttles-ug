@@ -192,14 +192,10 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPageName = tabs.keys.toList()[i];
         }),
         backgroundColor: FlutterFlowTheme.of(context).primary,
-        color: FlutterFlowTheme.of(context).tertiary,
+        color: FlutterFlowTheme.of(context).cerise,
         activeColor: FlutterFlowTheme.of(context).primary,
         tabBackgroundColor: FlutterFlowTheme.of(context).alternate,
         tabActiveBorder: Border.all(
-          color: FlutterFlowTheme.of(context).tertiary,
-          width: 1.0,
-        ),
-        tabBorder: Border.all(
           color: FlutterFlowTheme.of(context).tertiary,
           width: 1.0,
         ),
@@ -207,9 +203,9 @@ class _NavBarPageState extends State<NavBarPage> {
         tabMargin: EdgeInsets.all(5.0),
         padding: EdgeInsets.all(10.0),
         gap: 5.0,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         duration: Duration(milliseconds: 10),
-        haptic: false,
+        haptic: true,
         tabs: [
           GButton(
             icon: Icons.home,

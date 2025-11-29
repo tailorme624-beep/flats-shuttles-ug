@@ -1414,7 +1414,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // SignIn
   {
-    'fltkypiu': {
+    'd81dykco': {
       'en': 'Your Journey, Your Way',
       'aa': '',
       'af': '',
@@ -1423,7 +1423,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'uvo1pihu': {
+    'lcfxsb5d': {
       'en': 'Email Address',
       'aa': '',
       'af': '',
@@ -1432,7 +1432,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'lko540n0': {
+    'cs2ncrx2': {
       'en': 'Email Address',
       'aa': '',
       'af': '',
@@ -1441,7 +1441,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    's0r4efs4': {
+    'yymttsj6': {
       'en': 'Password',
       'aa': '',
       'af': '',
@@ -1450,7 +1450,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '3s5jtf5y': {
+    'gx2g1cu0': {
       'en': 'Password',
       'aa': '',
       'af': '',
@@ -1459,7 +1459,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'x29j2xm9': {
+    '5xoqgtcn': {
       'en': 'Sign In',
       'aa': '',
       'af': '',
@@ -1468,7 +1468,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'eo8urq7z': {
+    'g2m4bqph': {
       'en': 'or',
       'aa': '',
       'af': '',
@@ -1477,7 +1477,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'icccs7dx': {
+    'gpcx11u7': {
       'en': 'Continue with Google',
       'aa': '',
       'af': '',
@@ -1486,7 +1486,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'csri9trw': {
+    'woy48ugl': {
       'en': 'Continue with Apple',
       'aa': '',
       'af': '',
@@ -1495,7 +1495,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'tuzhu5tg': {
+    'dk55mjg0': {
       'en': 'New User?',
       'aa': '',
       'af': '',
@@ -1504,7 +1504,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'gqbex3wp': {
+    '1hogwn1s': {
       'en': 'Create Account',
       'aa': '',
       'af': '',
@@ -1513,7 +1513,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'y6moqquh': {
+    'ei2ge8nh': {
       'en': 'Terms & Conditions   |   ',
       'aa': '',
       'af': '',
@@ -1522,7 +1522,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '0ykja70b': {
+    '5yciouty': {
       'en': 'Privacy Policy',
       'aa': '',
       'af': '',
@@ -1531,7 +1531,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    '0e3n1pn0': {
+    'luwqcet0': {
       'en': 'Home',
       'aa': '',
       'af': '',
@@ -17702,24 +17702,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
       'sq': '',
     },
-    'd0xxosbx': {
-      'en': '\$2,847',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
-    '7vzpi8qu': {
-      'en': 'This Week\'s Earnings',
-      'aa': '',
-      'af': '',
-      'as': '',
-      'es': '',
-      'fr': '',
-      'sq': '',
-    },
     'u91wdmfx': {
       'en': '127',
       'aa': '',
@@ -19120,6 +19102,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1svl82q2': {
       'en': '',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+  },
+  // GoogleandAppleAuth
+  {
+    '7er2adjb': {
+      'en': 'or',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'i87tdt62': {
+      'en': 'Continue with Google',
+      'aa': '',
+      'af': '',
+      'as': '',
+      'es': '',
+      'fr': '',
+      'sq': '',
+    },
+    'jhnol5jr': {
+      'en': 'Continue with Apple',
       'aa': '',
       'af': '',
       'as': '',

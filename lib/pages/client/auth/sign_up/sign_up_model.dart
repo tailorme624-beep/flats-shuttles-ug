@@ -1,3 +1,4 @@
+import '/components/googleand_apple_auth/googleand_apple_auth_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'sign_up_widget.dart' show SignUpWidget;
@@ -34,11 +35,15 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
       confirmPasswordTextControllerValidator;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
+  // Model for GoogleandAppleAuth component.
+  late GoogleandAppleAuthModel googleandAppleAuthModel;
 
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
     confirmPasswordVisibility = false;
+    googleandAppleAuthModel =
+        createModel(context, () => GoogleandAppleAuthModel());
   }
 
   @override
@@ -57,5 +62,7 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
     confirmPasswordFocusNode?.dispose();
     confirmPasswordTextController?.dispose();
+
+    googleandAppleAuthModel.dispose();
   }
 }

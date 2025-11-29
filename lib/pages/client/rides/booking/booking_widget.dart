@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import '/flutter_flow/permissions_util.dart';
-import '/index.dart';
 import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -136,10 +135,10 @@ class _BookingWidgetState extends State<BookingWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: EdgeInsets.all(5.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
@@ -1202,116 +1201,50 @@ class _BookingWidgetState extends State<BookingWidget> {
                       alignment: AlignmentDirectional(0.0, 1.0),
                       child: Padding(
                         padding: EdgeInsets.all(20.0),
-                        child: StreamBuilder<List<RidesRecord>>(
-                          stream: queryRidesRecord(
-                            singleRecord: true,
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            List<RidesRecord> buttonRidesRecordList =
-                                snapshot.data!;
-                            // Return an empty Container when the item does not exist.
-                            if (snapshot.data!.isEmpty) {
-                              return Container();
-                            }
-                            final buttonRidesRecord =
-                                buttonRidesRecordList.isNotEmpty
-                                    ? buttonRidesRecordList.first
-                                    : null;
-
-                            return FFButtonWidget(
-                              onPressed: () async {
-                                logFirebaseEvent(
-                                    'BOOKING_CONFIRM__REQUEST_RIDE_BTN_ON_TAP');
-                                await Future.wait([
-                                  Future(() async {
-                                    logFirebaseEvent('Button_backend_call');
-
-                                    await RidesRecord.collection
-                                        .doc()
-                                        .set(createRidesRecordData(
-                                          clientId: buttonRidesRecord?.clientId,
-                                          createdAt:
-                                              buttonRidesRecord?.createdAt,
-                                          updatedAt:
-                                              buttonRidesRecord?.updatedAt,
-                                          pickupLocation: _model.pickupLocation,
-                                          dropoffAddress: _model.dropoffLocation
-                                              ?.toString(),
-                                          estimatedFare:
-                                              _model.selectedVehiclebaseFare,
-                                          finalFare: _model.totalFare,
-                                          distanceKm: _model.tripdistanceKM,
-                                          durationSeconds: buttonRidesRecord
-                                              ?.durationSeconds,
-                                          driverEtaSeconds: buttonRidesRecord
-                                              ?.driverEtaSeconds,
-                                          vehicleType: _model.vehicleType,
-                                        ));
-                                  }),
-                                  Future(() async {
-                                    logFirebaseEvent('Button_navigate_to');
-
-                                    context.pushNamed(
-                                        ComfirmationWidget.routeName);
-                                  }),
-                                ]);
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'ee7hitse' /* Confirm & Request Ride */,
-                              ),
-                              icon: Icon(
-                                Icons.local_taxi,
-                                size: 24.0,
-                              ),
-                              options: FFButtonOptions(
-                                width: double.infinity,
-                                height: 56.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    32.0, 0.0, 32.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconColor: Color(0xFFF5F5DC),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      font: GoogleFonts.interTight(
-                                        fontWeight: FontWeight.bold,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .fontStyle,
-                                      ),
-                                      color: Color(0xFFF5F5DC),
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .fontStyle,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Color(0xFF556B2F),
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(16.0),
-                              ),
-                            );
+                        child: FFButtonWidget(
+                          onPressed: () {
+                            print('Button pressed ...');
                           },
+                          text: FFLocalizations.of(context).getText(
+                            'ee7hitse' /* Confirm & Request Ride */,
+                          ),
+                          icon: Icon(
+                            Icons.local_taxi,
+                            size: 24.0,
+                          ),
+                          options: FFButtonOptions(
+                            width: double.infinity,
+                            height: 56.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                32.0, 0.0, 32.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconColor: Color(0xFFF5F5DC),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  font: GoogleFonts.interTight(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontStyle,
+                                  ),
+                                  color: Color(0xFFF5F5DC),
+                                  fontSize: 18.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .fontStyle,
+                                ),
+                            elevation: 3.0,
+                            borderSide: BorderSide(
+                              color: Color(0xFF556B2F),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
                         ),
                       ),
                     ),

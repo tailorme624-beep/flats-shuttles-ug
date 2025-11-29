@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/googleand_apple_auth/googleand_apple_auth_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -792,7 +793,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       FlutterFlowTheme.of(context).alternate,
                                 ),
                                 child: Checkbox(
-                                  value: _model.checkboxValue ??= true,
+                                  value: _model.checkboxValue ??= false,
                                   onChanged: (newValue) async {
                                     safeSetState(
                                         () => _model.checkboxValue = newValue!);
@@ -916,6 +917,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 color: Colors.transparent,
                               ),
                               borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          Expanded(
+                            child: wrapWithModel(
+                              model: _model.googleandAppleAuthModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: GoogleandAppleAuthWidget(),
                             ),
                           ),
                         ].divide(SizedBox(height: 10.0)),
