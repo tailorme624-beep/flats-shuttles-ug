@@ -1,45 +1,45 @@
 // Export pages
-export '/pages/user/services/services_widget.dart' show ServicesWidget;
-export '/pages/user/profile/notification/notification_widget.dart'
+export '/pages/client/services/services_widget.dart' show ServicesWidget;
+export '/pages/client/profile/notification/notification_widget.dart'
     show NotificationWidget;
-export '/pages/user/rides/pending_request/pending_request_widget.dart'
+export '/pages/client/rides/pending_request/pending_request_widget.dart'
     show PendingRequestWidget;
-export '/pages/user/rides/comfirmation/comfirmation_widget.dart'
+export '/pages/client/rides/comfirmation/comfirmation_widget.dart'
     show ComfirmationWidget;
-export '/pages/user/rides/tracking/tracking_widget.dart' show TrackingWidget;
-export '/pages/user/a_i_assistant/a_i_assistant_widget.dart'
+export '/pages/client/rides/tracking/tracking_widget.dart' show TrackingWidget;
+export '/pages/client/a_i_assistant/a_i_assistant_widget.dart'
     show AIAssistantWidget;
-export '/pages/user/others/privacy_policy/privacy_policy_widget.dart'
+export '/pages/client/others/privacy_policy/privacy_policy_widget.dart'
     show PrivacyPolicyWidget;
-export '/pages/user/others/terms_and_conditions/terms_and_conditions_widget.dart'
+export '/pages/client/others/terms_and_conditions/terms_and_conditions_widget.dart'
     show TermsAndConditionsWidget;
-export '/pages/user/auth/sign_in/sign_in_widget.dart' show SignInWidget;
-export '/pages/user/auth/sign_up/sign_up_widget.dart' show SignUpWidget;
-export '/pages/user/home/home_widget.dart' show HomeWidget;
+export '/pages/client/auth/sign_in/sign_in_widget.dart' show SignInWidget;
+export '/pages/client/auth/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/pages/client/home/home_widget.dart' show HomeWidget;
 export '/pages/driver/profile/driver_profile/driver_profile_widget.dart'
     show DriverProfileWidget;
 export '/pages/driver/profile/driver_information/driver_information_widget.dart'
     show DriverInformationWidget;
-export '/pages/driver/others/driverprivacypolicy/driverprivacypolicy_widget.dart'
-    show DriverprivacypolicyWidget;
+export '/pages/driver/others/driver_privacy_policy/driver_privacy_policy_widget.dart'
+    show DriverPrivacyPolicyWidget;
 export '/pages/driver/others/driver_terms/driver_terms_widget.dart'
     show DriverTermsWidget;
 export '/pages/driver/rides/incoming_request/incoming_request_widget.dart'
     show IncomingRequestWidget;
-export '/pages/driver/rides/active_ride/active_ride_widget.dart'
-    show ActiveRideWidget;
-export '/pages/user/others/quotes/quotes_widget.dart' show QuotesWidget;
+export '/pages/driver/rides/driver_active_ride/driver_active_ride_widget.dart'
+    show DriverActiveRideWidget;
+export '/pages/client/others/quotes/quotes_widget.dart' show QuotesWidget;
 export '/pages/driver/others/driver_error_page/driver_error_page_widget.dart'
     show DriverErrorPageWidget;
-export '/pages/user/others/error_page/error_page_widget.dart'
+export '/pages/client/others/error_page/error_page_widget.dart'
     show ErrorPageWidget;
-export '/pages/user/courier/courier_booking/courier_booking_widget.dart'
+export '/pages/client/courier/courier_booking/courier_booking_widget.dart'
     show CourierBookingWidget;
-export '/pages/user/tours/school_trip_booking/school_trip_booking_widget.dart'
+export '/pages/client/tours/school_trip_booking/school_trip_booking_widget.dart'
     show SchoolTripBookingWidget;
-export '/pages/user/tours/individual_tours/individual_tours_widget.dart'
+export '/pages/client/tours/individual_tours/individual_tours_widget.dart'
     show IndividualToursWidget;
-export '/pages/user/hire/car_hire/car_hire_widget.dart' show CarHireWidget;
+export '/pages/client/hire/car_hire/car_hire_widget.dart' show CarHireWidget;
 export '/pages/admin/rides/liveridetracker/liveridetracker_widget.dart'
     show LiveridetrackerWidget;
 export '/pages/admin/admin_setting/admin_setting_widget.dart'
@@ -54,7 +54,7 @@ export '/pages/admin/reports/admin_reports/admin_reports_widget.dart'
     show AdminReportsWidget;
 export '/pages/admin/reports/report_details/report_details_widget.dart'
     show ReportDetailsWidget;
-export '/pages/user/profile/my_profile/my_profile_widget.dart'
+export '/pages/client/profile/my_profile/my_profile_widget.dart'
     show MyProfileWidget;
 export '/pages/admin/drivers/admin_drivers/admin_drivers_widget.dart'
     show AdminDriversWidget;
@@ -62,31 +62,29 @@ export '/pages/driver/profile/update_driver_profile/update_driver_profile_widget
     show UpdateDriverProfileWidget;
 export '/pages/driver/rides/accepted_ride/accepted_ride_widget.dart'
     show AcceptedRideWidget;
-export '/pages/driver/driver_dashboard/driver_dashboard_widget.dart'
-    show DriverDashboardWidget;
-export '/pages/user/rides/booking/booking_widget.dart' show BookingWidget;
-export '/pages/user/flights/flight_booking/flight_booking_widget.dart'
+export '/pages/client/rides/booking/booking_widget.dart' show BookingWidget;
+export '/pages/client/flights/flight_booking/flight_booking_widget.dart'
     show FlightBookingWidget;
 export '/pages/admin/flights/admin_flights/admin_flights_widget.dart'
     show AdminFlightsWidget;
-export '/pages/user/others/settings/settings_widget.dart' show SettingsWidget;
-export '/pages/user/others/privacy_security/privacy_security_widget.dart'
+export '/pages/client/others/settings/settings_widget.dart' show SettingsWidget;
+export '/pages/client/others/privacy_security/privacy_security_widget.dart'
     show PrivacySecurityWidget;
-export '/pages/user/profile/language_preferences/language_preferences_widget.dart'
+export '/pages/client/profile/language_preferences/language_preferences_widget.dart'
     show LanguagePreferencesWidget;
-export '/pages/user/others/storage_and_data/storage_and_data_widget.dart'
+export '/pages/client/others/storage_and_data/storage_and_data_widget.dart'
     show StorageAndDataWidget;
-export '/pages/user/others/help_center/help_center_widget.dart'
+export '/pages/client/others/help_center/help_center_widget.dart'
     show HelpCenterWidget;
-export '/pages/user/others/contact_support/contact_support_widget.dart'
+export '/pages/client/others/contact_support/contact_support_widget.dart'
     show ContactSupportWidget;
-export '/pages/user/others/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
-export '/pages/user/rides/rate_driver/rate_driver_widget.dart'
+export '/pages/client/others/f_a_qs/f_a_qs_widget.dart' show FAQsWidget;
+export '/pages/client/rides/rate_driver/rate_driver_widget.dart'
     show RateDriverWidget;
-export '/pages/user/others/terms_of_service/terms_of_service_widget.dart'
+export '/pages/client/others/terms_of_service/terms_of_service_widget.dart'
     show TermsOfServiceWidget;
-export '/pages/user/others/policies/policies_widget.dart' show PoliciesWidget;
-export '/pages/user/profile/change_password/change_password_widget.dart'
+export '/pages/client/others/policies/policies_widget.dart' show PoliciesWidget;
+export '/pages/client/profile/change_password/change_password_widget.dart'
     show ChangePasswordWidget;
 export '/pages/driver/auth/driver_login/driver_login_widget.dart'
     show DriverLoginWidget;
@@ -113,13 +111,13 @@ export '/pages/admin/hotels/add_hotel/add_hotel_widget.dart'
 export '/pages/admin/tours/add_tour/add_tour_widget.dart' show AddTourWidget;
 export '/pages/admin/hire/add_vehicle/add_vehicle_widget.dart'
     show AddVehicleWidget;
-export '/pages/user/hire/find_your_car/find_your_car_widget.dart'
+export '/pages/client/hire/find_your_car/find_your_car_widget.dart'
     show FindYourCarWidget;
-export '/pages/user/flights/available_flights/available_flights_widget.dart'
+export '/pages/client/flights/available_flights/available_flights_widget.dart'
     show AvailableFlightsWidget;
-export '/pages/user/hotels/availablehotelpage/availablehotelpage_widget.dart'
+export '/pages/client/hotels/availablehotelpage/availablehotelpage_widget.dart'
     show AvailablehotelpageWidget;
-export '/pages/user/tours/available_tour_places/available_tour_places_widget.dart'
+export '/pages/client/tours/available_tour_places/available_tour_places_widget.dart'
     show AvailableTourPlacesWidget;
 export '/pages/admin/notifications/admin_requests/admin_requests_widget.dart'
     show AdminRequestsWidget;
@@ -139,15 +137,23 @@ export '/pages/admin/tours/update_tour_admin/update_tour_admin_widget.dart'
     show UpdateTourAdminWidget;
 export '/pages/admin/rides/admin_rides/admin_rides_widget.dart'
     show AdminRidesWidget;
-export '/pages/user/hotels/book_hotel_page/book_hotel_page_widget.dart'
+export '/pages/client/hotels/book_hotel_page/book_hotel_page_widget.dart'
     show BookHotelPageWidget;
 export '/pages/admin/admin_dashboard/admin_dashboard_widget.dart'
     show AdminDashboardWidget;
-export '/pages/driver/rides/ride_history/ride_history_widget.dart'
-    show RideHistoryWidget;
-export '/pages/user/courier/courier_pricing/courier_pricing_widget.dart'
+export '/pages/driver/rides/driver_ride_history/driver_ride_history_widget.dart'
+    show DriverRideHistoryWidget;
+export '/pages/client/courier/courier_pricing/courier_pricing_widget.dart'
     show CourierPricingWidget;
 export '/pages/admin/drivers/admin_edit_driver/admin_edit_driver_widget.dart'
     show AdminEditDriverWidget;
-export '/pages/user/courier/courier_tracking/courier_tracking_widget.dart'
+export '/pages/client/courier/courier_tracking/courier_tracking_widget.dart'
     show CourierTrackingWidget;
+export '/pages/others/about_us/about_us_widget.dart' show AboutUsWidget;
+export '/pages/driver/driver_dashboard/driver_dashboard_widget.dart'
+    show DriverDashboardWidget;
+export '/pages/admin/users/users/users_widget.dart' show UsersWidget;
+export '/pages/driver/others/driver_reports/driver_reports_widget.dart'
+    show DriverReportsWidget;
+export '/pages/client/rides/ride_hostory/ride_hostory_widget.dart'
+    show RideHostoryWidget;

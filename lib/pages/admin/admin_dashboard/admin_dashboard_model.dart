@@ -1,5 +1,5 @@
+import '/components/admin_drawer/admin_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/drawers/admin_drawer/admin_drawer_widget.dart';
 import 'admin_dashboard_widget.dart' show AdminDashboardWidget;
 import 'package:flutter/material.dart';
 

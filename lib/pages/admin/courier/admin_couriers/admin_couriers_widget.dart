@@ -1,10 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/admin_drawer/admin_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/drawers/admin_drawer/admin_drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'admin_couriers_model.dart';
@@ -257,7 +257,7 @@ class _AdminCouriersWidgetState extends State<AdminCouriersWidget> {
                         children: [
                           Container(
                             width: 100.0,
-                            height: 80.0,
+                            height: 91.37,
                             decoration: BoxDecoration(
                               color: Color(0xFFF5F5DC),
                               borderRadius: BorderRadius.circular(12.0),
@@ -266,58 +266,43 @@ class _AdminCouriersWidgetState extends State<AdminCouriersWidget> {
                                 width: 1.0,
                               ),
                             ),
-                            child: Padding(
-                              padding: EdgeInsets.all(16.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'co4uju59' /* 42 */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          font: GoogleFonts.interTight(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmall
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF556B2F),
-                                          letterSpacing: 0.0,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  FFLocalizations.of(context).getText(
+                                    'co4uju59' /* 42 */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        font: GoogleFonts.interTight(
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
                                                   .headlineSmall
                                                   .fontStyle,
                                         ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'xlwhdjz3' /* Pending */,
+                                        color: Color(0xFF556B2F),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .fontStyle,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontStyle,
-                                            ),
-                                            color: Color(0xFF8B4513),
-                                            fontSize: 12.0,
-                                            letterSpacing: 0.0,
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'xlwhdjz3' /* Pending */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -327,15 +312,26 @@ class _AdminCouriersWidgetState extends State<AdminCouriersWidget> {
                                                     .bodySmall
                                                     .fontStyle,
                                           ),
-                                    ),
+                                          color: Color(0xFF8B4513),
+                                          fontSize: 12.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontStyle,
+                                        ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                           Container(
                             width: 100.0,
-                            height: 80.0,
+                            height: 95.08,
                             decoration: BoxDecoration(
                               color: Color(0xFFF5F5DC),
                               borderRadius: BorderRadius.circular(12.0),
@@ -413,7 +409,7 @@ class _AdminCouriersWidgetState extends State<AdminCouriersWidget> {
                           ),
                           Container(
                             width: 100.0,
-                            height: 80.0,
+                            height: 94.23,
                             decoration: BoxDecoration(
                               color: Color(0xFFF5F5DC),
                               borderRadius: BorderRadius.circular(12.0),

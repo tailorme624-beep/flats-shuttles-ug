@@ -1,19 +1,21 @@
-import '/flutter_flow/flutter_flow_google_map.dart';
+import '/components/driver_drawer/driver_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
 import 'driver_dashboard_widget.dart' show DriverDashboardWidget;
 import 'package:flutter/material.dart';
 
 class DriverDashboardModel extends FlutterFlowModel<DriverDashboardWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for GoogleMap widget.
-  LatLng? googleMapsCenter;
-  final googleMapsController = Completer<GoogleMapController>();
+  // Model for DriverDrawer component.
+  late DriverDrawerModel driverDrawerModel;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    driverDrawerModel = createModel(context, () => DriverDrawerModel());
+  }
 
   @override
-  void dispose() {}
+  void dispose() {
+    driverDrawerModel.dispose();
+  }
 }

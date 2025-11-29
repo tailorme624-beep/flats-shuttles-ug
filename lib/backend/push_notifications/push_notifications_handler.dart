@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'serialization_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -82,10 +81,10 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   @override
   Widget build(BuildContext context) => _loading
       ? Container(
-          color: FlutterFlowTheme.of(context).primaryBackground,
+          color: Colors.white,
           child: Image.asset(
-            'assets/images/FLATS_Logo_.png',
-            fit: BoxFit.contain,
+            'assets/images/Fauget.png',
+            fit: BoxFit.fitWidth,
           ),
         )
       : widget.child;
@@ -126,12 +125,16 @@ final parametersBuilderMap =
   'TermsAndConditions': ParameterData.none(),
   'SignIn': ParameterData.none(),
   'SignUp': ParameterData.none(),
-  'Home': ParameterData.none(),
+  'Home': (data) async => ParameterData(
+        allParams: {
+          'isFirstTine': getParameter<bool>(data, 'isFirstTine'),
+        },
+      ),
   'DriverProfile': ParameterData.none(),
   'DriverInformation': (data) async => ParameterData(
         allParams: <String, dynamic>{},
       ),
-  'driverprivacypolicy': ParameterData.none(),
+  'DriverPrivacyPolicy': ParameterData.none(),
   'DriverTerms': ParameterData.none(),
   'IncomingRequest': (data) async => ParameterData(
         allParams: {
@@ -139,7 +142,7 @@ final parametersBuilderMap =
               data, 'order', RidesRecord.fromSnapshot),
         },
       ),
-  'ActiveRide': ParameterData.none(),
+  'DriverActiveRide': ParameterData.none(),
   'Quotes': ParameterData.none(),
   'DriverErrorPage': ParameterData.none(),
   'ErrorPage': ParameterData.none(),
@@ -158,7 +161,6 @@ final parametersBuilderMap =
   'AdminDrivers': ParameterData.none(),
   'UpdateDriverProfile': ParameterData.none(),
   'AcceptedRide': ParameterData.none(),
-  'DriverDashboard': ParameterData.none(),
   'Booking': ParameterData.none(),
   'FlightBooking': ParameterData.none(),
   'AdminFlights': (data) async => ParameterData(
@@ -179,12 +181,7 @@ final parametersBuilderMap =
   'ChangePassword': ParameterData.none(),
   'DriverLogin': ParameterData.none(),
   'UpdateDriver': ParameterData.none(),
-  'AddDriver': (data) async => ParameterData(
-        allParams: {
-          'driversigninKey':
-              getParameter<DocumentReference>(data, 'driversigninKey'),
-        },
-      ),
+  'AddDriver': ParameterData.none(),
   'DriverNotifications': (data) async => ParameterData(
         allParams: {
           'comfirm': await getDocumentParameter<RidesRecord>(
@@ -215,10 +212,15 @@ final parametersBuilderMap =
   'AdminRides': ParameterData.none(),
   'bookHotelPage': ParameterData.none(),
   'AdminDashboard': ParameterData.none(),
-  'RideHistory': ParameterData.none(),
+  'DriverRideHistory': ParameterData.none(),
   'CourierPricing': ParameterData.none(),
   'AdminEditDriver': ParameterData.none(),
   'CourierTracking': ParameterData.none(),
+  'AboutUs': ParameterData.none(),
+  'DriverDashboard': ParameterData.none(),
+  'Users': ParameterData.none(),
+  'DriverReports': ParameterData.none(),
+  'RideHostory': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

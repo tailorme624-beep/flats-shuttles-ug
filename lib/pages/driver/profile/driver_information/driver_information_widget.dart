@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -103,21 +102,9 @@ class _DriverInformationWidgetState extends State<DriverInformationWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: Color(0xFF556B2F),
-              automaticallyImplyLeading: false,
-              leading: FlutterFlowIconButton(
-                borderRadius: 20.0,
-                buttonSize: 40.0,
-                icon: Icon(
-                  Icons.arrow_back_rounded,
-                  color: Color(0xFFF5F5DC),
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  logFirebaseEvent('DRIVER_INFORMATION_arrow_back_rounded_IC');
-                  logFirebaseEvent('IconButton_navigate_back');
-                  context.safePop();
-                },
-              ),
+              iconTheme:
+                  IconThemeData(color: FlutterFlowTheme.of(context).alternate),
+              automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
                   'i26hou3f' /* Driver Registration */,
@@ -137,7 +124,7 @@ class _DriverInformationWidgetState extends State<DriverInformationWidget> {
                     ),
               ),
               actions: [],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(
@@ -153,51 +140,6 @@ class _DriverInformationWidgetState extends State<DriverInformationWidget> {
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 80.0,
-                            height: 80.0,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [Color(0xFF556B2F), Color(0xFF6B8E23)],
-                                stops: [0.0, 1.0],
-                                begin: AlignmentDirectional(1.0, -1.0),
-                                end: AlignmentDirectional(-1.0, 1.0),
-                              ),
-                              shape: BoxShape.circle,
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.asset(
-                                'assets/images/Black_White_Simple_Initials_Logo_(Facebook_Post).png',
-                                width: 200.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'wvsmmfnv' /* Join Our Driver Network */,
-                            ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .displaySmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .displaySmall
-                                        .fontStyle,
-                                  ),
-                                  color: Color(0xFF556B2F),
-                                  fontSize: 28.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .fontStyle,
-                                ),
-                          ),
                           Text(
                             FFLocalizations.of(context).getText(
                               'cqfmwnr1' /* Complete your registration to ... */,
@@ -2150,28 +2092,6 @@ class _DriverInformationWidgetState extends State<DriverInformationWidget> {
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'xpp84vu4' /* © 2025 FLATS UG. All rights re... */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w600,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
                         ),
                       ),
                     ]

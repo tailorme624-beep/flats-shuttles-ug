@@ -1,7 +1,8 @@
 import '/backend/backend.dart';
+import '/components/admin_drawer/admin_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/drawers/admin_drawer/admin_drawer_widget.dart';
+import '/pages/admin/components/admin_driver_card/admin_driver_card_widget.dart';
 import '/index.dart';
 import 'admin_drivers_widget.dart' show AdminDriversWidget;
 import 'package:flutter/material.dart';
@@ -17,11 +18,15 @@ class AdminDriversModel extends FlutterFlowModel<AdminDriversWidget> {
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
+  // Models for AdminDriverCard dynamic component.
+  late FlutterFlowDynamicModels<AdminDriverCardModel> adminDriverCardModels;
   // Model for AdminDrawer component.
   late AdminDrawerModel adminDrawerModel;
 
   @override
   void initState(BuildContext context) {
+    adminDriverCardModels =
+        FlutterFlowDynamicModels(() => AdminDriverCardModel());
     adminDrawerModel = createModel(context, () => AdminDrawerModel());
   }
 
@@ -30,6 +35,7 @@ class AdminDriversModel extends FlutterFlowModel<AdminDriversWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
+    adminDriverCardModels.dispose();
     adminDrawerModel.dispose();
   }
 }

@@ -9,7 +9,6 @@ import '/auth/base_auth_user_provider.dart';
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -74,32 +73,28 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
-    GoRouter(
+GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? entryPage ?? NavBarPage() : HomeWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? NavBarPage()
-              : HomeWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : HomeWidget(),
         ),
         FFRoute(
           name: ServicesWidget.routeName,
           path: ServicesWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => ServicesWidget(),
         ),
         FFRoute(
           name: NotificationWidget.routeName,
           path: NotificationWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => NotificationWidget(),
         ),
         FFRoute(
@@ -134,7 +129,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: AIAssistantWidget.routeName,
           path: AIAssistantWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'AIAssistant')
               : AIAssistantWidget(),
@@ -166,16 +160,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                 ? NavBarPage(initialPage: 'Home')
                 : NavBarPage(
                     initialPage: 'Home',
-                    page: HomeWidget(),
+                    page: HomeWidget(
+                      isFirstTine: params.getParam(
+                        'isFirstTine',
+                        ParamType.bool,
+                      ),
+                    ),
                   )),
         FFRoute(
           name: DriverProfileWidget.routeName,
           path: DriverProfileWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => DriverProfileWidget(),
         ),
         FFRoute(
           name: DriverInformationWidget.routeName,
           path: DriverInformationWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => DriverInformationWidget(
             photo: params.getParam(
               'photo',
@@ -184,9 +185,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: DriverprivacypolicyWidget.routeName,
-          path: DriverprivacypolicyWidget.routePath,
-          builder: (context, params) => DriverprivacypolicyWidget(),
+          name: DriverPrivacyPolicyWidget.routeName,
+          path: DriverPrivacyPolicyWidget.routePath,
+          builder: (context, params) => DriverPrivacyPolicyWidget(),
         ),
         FFRoute(
           name: DriverTermsWidget.routeName,
@@ -208,10 +209,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: ActiveRideWidget.routeName,
-          path: ActiveRideWidget.routePath,
+          name: DriverActiveRideWidget.routeName,
+          path: DriverActiveRideWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ActiveRideWidget(),
+          builder: (context, params) => DriverActiveRideWidget(),
         ),
         FFRoute(
           name: QuotesWidget.routeName,
@@ -231,25 +232,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: CourierBookingWidget.routeName,
           path: CourierBookingWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => CourierBookingWidget(),
         ),
         FFRoute(
           name: SchoolTripBookingWidget.routeName,
           path: SchoolTripBookingWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => SchoolTripBookingWidget(),
         ),
         FFRoute(
           name: IndividualToursWidget.routeName,
           path: IndividualToursWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => IndividualToursWidget(),
         ),
         FFRoute(
           name: CarHireWidget.routeName,
           path: CarHireWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => CarHireWidget(),
         ),
         FFRoute(
@@ -313,12 +310,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: AcceptedRideWidget.routeName,
           path: AcceptedRideWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => AcceptedRideWidget(),
-        ),
-        FFRoute(
-          name: DriverDashboardWidget.routeName,
-          path: DriverDashboardWidget.routePath,
-          builder: (context, params) => DriverDashboardWidget(),
         ),
         FFRoute(
           name: BookingWidget.routeName,
@@ -328,7 +321,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: FlightBookingWidget.routeName,
           path: FlightBookingWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => FlightBookingWidget(),
         ),
         FFRoute(
@@ -355,7 +347,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: LanguagePreferencesWidget.routeName,
           path: LanguagePreferencesWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => LanguagePreferencesWidget(),
         ),
         FFRoute(
@@ -414,18 +405,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: AddDriverWidget.routeName,
           path: AddDriverWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => AddDriverWidget(
-            imageupload: params.getParam(
-              'imageupload',
-              ParamType.FFUploadedFile,
-            ),
-            driversigninKey: params.getParam(
-              'driversigninKey',
-              ParamType.DocumentReference,
-              isList: false,
-              collectionNamePath: ['users'],
-            ),
-          ),
+          builder: (context, params) => AddDriverWidget(),
         ),
         FFRoute(
           name: DriverNotificationsWidget.routeName,
@@ -492,13 +472,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: FindYourCarWidget.routeName,
           path: FindYourCarWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => FindYourCarWidget(),
         ),
         FFRoute(
           name: AvailableFlightsWidget.routeName,
           path: AvailableFlightsWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => AvailableFlightsWidget(),
         ),
         FFRoute(
@@ -510,7 +488,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: AvailableTourPlacesWidget.routeName,
           path: AvailableTourPlacesWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => AvailableTourPlacesWidget(),
         ),
         FFRoute(
@@ -573,9 +550,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => AdminDashboardWidget(),
         ),
         FFRoute(
-          name: RideHistoryWidget.routeName,
-          path: RideHistoryWidget.routePath,
-          builder: (context, params) => RideHistoryWidget(),
+          name: DriverRideHistoryWidget.routeName,
+          path: DriverRideHistoryWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => DriverRideHistoryWidget(),
         ),
         FFRoute(
           name: CourierPricingWidget.routeName,
@@ -591,6 +569,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: CourierTrackingWidget.routeName,
           path: CourierTrackingWidget.routePath,
           builder: (context, params) => CourierTrackingWidget(),
+        ),
+        FFRoute(
+          name: AboutUsWidget.routeName,
+          path: AboutUsWidget.routePath,
+          builder: (context, params) => AboutUsWidget(),
+        ),
+        FFRoute(
+          name: DriverDashboardWidget.routeName,
+          path: DriverDashboardWidget.routePath,
+          builder: (context, params) => DriverDashboardWidget(),
+        ),
+        FFRoute(
+          name: UsersWidget.routeName,
+          path: UsersWidget.routePath,
+          builder: (context, params) => UsersWidget(),
+        ),
+        FFRoute(
+          name: DriverReportsWidget.routeName,
+          path: DriverReportsWidget.routePath,
+          builder: (context, params) => DriverReportsWidget(),
+        ),
+        FFRoute(
+          name: RideHostoryWidget.routeName,
+          path: RideHostoryWidget.routePath,
+          builder: (context, params) => RideHostoryWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -778,10 +781,10 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: Colors.white,
                   child: Image.asset(
-                    'assets/images/FLATS_Logo_.png',
-                    fit: BoxFit.contain,
+                    'assets/images/Fauget.png',
+                    fit: BoxFit.fitWidth,
                   ),
                 )
               : PushNotificationsHandler(child: page);
