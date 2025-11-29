@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -78,29 +77,6 @@ class _ComfirmationWidgetState extends State<ComfirmationWidget> {
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: true,
-              leading: Container(
-                width: 100.0,
-                height: 100.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primary,
-                ),
-                child: FlutterFlowIconButton(
-                  borderRadius: 20.0,
-                  buttonSize: 40.0,
-                  fillColor: Color(0xFFF5F5DC),
-                  icon: Icon(
-                    Icons.arrow_back_rounded,
-                    color: Color(0xFF556B2F),
-                    size: 24.0,
-                  ),
-                  onPressed: () async {
-                    logFirebaseEvent(
-                        'COMFIRMATION_arrow_back_rounded_ICN_ON_T');
-                    logFirebaseEvent('IconButton_navigate_back');
-                    context.safePop();
-                  },
-                ),
-              ),
               actions: [],
               centerTitle: true,
               elevation: 0.0,

@@ -160,7 +160,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ? NavBarPage(initialPage: 'Home')
                 : NavBarPage(
                     initialPage: 'Home',
-                    page: HomeWidget(),
+                    page: HomeWidget(
+                      isFirstTine: params.getParam(
+                        'isFirstTine',
+                        ParamType.bool,
+                      ),
+                    ),
                   )),
         FFRoute(
           name: DriverProfileWidget.routeName,
@@ -180,9 +185,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: DriverprivacypolicyWidget.routeName,
-          path: DriverprivacypolicyWidget.routePath,
-          builder: (context, params) => DriverprivacypolicyWidget(),
+          name: DriverPrivacyPolicyWidget.routeName,
+          path: DriverPrivacyPolicyWidget.routePath,
+          builder: (context, params) => DriverPrivacyPolicyWidget(),
         ),
         FFRoute(
           name: DriverTermsWidget.routeName,
@@ -204,10 +209,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ActiveRideWidget.routeName,
-          path: ActiveRideWidget.routePath,
+          name: DriverActiveRideWidget.routeName,
+          path: DriverActiveRideWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => ActiveRideWidget(),
+          builder: (context, params) => DriverActiveRideWidget(),
         ),
         FFRoute(
           name: QuotesWidget.routeName,
@@ -545,10 +550,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AdminDashboardWidget(),
         ),
         FFRoute(
-          name: RideHistoryWidget.routeName,
-          path: RideHistoryWidget.routePath,
+          name: DriverRideHistoryWidget.routeName,
+          path: DriverRideHistoryWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RideHistoryWidget(),
+          builder: (context, params) => DriverRideHistoryWidget(),
         ),
         FFRoute(
           name: CourierPricingWidget.routeName,
@@ -574,6 +579,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DriverDashboardWidget.routeName,
           path: DriverDashboardWidget.routePath,
           builder: (context, params) => DriverDashboardWidget(),
+        ),
+        FFRoute(
+          name: UsersWidget.routeName,
+          path: UsersWidget.routePath,
+          builder: (context, params) => UsersWidget(),
+        ),
+        FFRoute(
+          name: DriverReportsWidget.routeName,
+          path: DriverReportsWidget.routePath,
+          builder: (context, params) => DriverReportsWidget(),
+        ),
+        FFRoute(
+          name: RideHostoryWidget.routeName,
+          path: RideHostoryWidget.routePath,
+          builder: (context, params) => RideHostoryWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

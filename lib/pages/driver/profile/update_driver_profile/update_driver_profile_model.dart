@@ -1,6 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import '/index.dart';
 import 'update_driver_profile_widget.dart' show UpdateDriverProfileWidget;
 import 'package:flutter/material.dart';
 
@@ -32,11 +30,6 @@ class UpdateDriverProfileModel
   FocusNode? licensePlateFocusNode;
   TextEditingController? licensePlateTextController;
   String? Function(BuildContext, String?)? licensePlateTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  // State field(s) for Switch widget.
-  bool? switchValue;
 
   @override
   void initState(BuildContext context) {}

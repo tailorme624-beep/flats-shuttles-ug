@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -69,9 +70,30 @@ class _DriverProfileWidgetState extends State<DriverProfileWidget> {
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
               backgroundColor: Color(0xFF556B2F),
-              automaticallyImplyLeading: false,
+              iconTheme:
+                  IconThemeData(color: FlutterFlowTheme.of(context).alternate),
+              automaticallyImplyLeading: true,
+              title: Text(
+                FFLocalizations.of(context).getText(
+                  'dwlshgeb' /* Driver Profile */,
+                ),
+                style: FlutterFlowTheme.of(context).titleLarge.override(
+                      font: GoogleFonts.interTight(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                      ),
+                      color: FlutterFlowTheme.of(context).alternate,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                    ),
+              ),
               actions: [],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
@@ -125,19 +147,54 @@ class _DriverProfileWidgetState extends State<DriverProfileWidget> {
                                         width: 4.0,
                                       ),
                                     ),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          getCORSProxyUrl(
-                                            currentUserPhoto,
+                                    child: StreamBuilder<UsersRecord>(
+                                      stream: UsersRecord.getDocument(
+                                          currentUserReference!),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+
+                                        final imageUsersRecord = snapshot.data!;
+
+                                        return ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            getCORSProxyUrl(
+                                              valueOrDefault<String>(
+                                                imageUsersRecord.photoUrl,
+                                                'https://firebasestorage.googleapis.com/v0/b/flatsshuttles-gr3bc7.firebasestorage.app/o/images%2Fuser.png?alt=media&token=3b3b09e4-84ef-47a5-a432-cc82acca275c',
+                                              ),
+                                            ),
+                                            width: 200.0,
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
+                                            errorBuilder:
+                                                (context, error, stackTrace) =>
+                                                    Image.asset(
+                                              'assets/images/error_image.png',
+                                              width: 200.0,
+                                              height: 200.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
-                                          width: 200.0,
-                                          height: 200.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
+                                        );
+                                      },
                                     ),
                                   ),
                                   Align(
@@ -1308,8 +1365,14 @@ class _DriverProfileWidgetState extends State<DriverProfileWidget> {
                         children: [
                           Expanded(
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('saveChangesButton pressed ...');
+                              onPressed: () async {
+                                logFirebaseEvent(
+                                    'DRIVER_PROFILE_saveChangesButton_ON_TAP');
+                                logFirebaseEvent(
+                                    'saveChangesButton_navigate_to');
+
+                                context.pushNamed(
+                                    UpdateDriverProfileWidget.routeName);
                               },
                               text: FFLocalizations.of(context).getText(
                                 'id284cyh' /* Edit Profile */,
@@ -1347,27 +1410,6 @@ class _DriverProfileWidgetState extends State<DriverProfileWidget> {
                             ),
                           ),
                         ].divide(SizedBox(width: 15.0)),
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '62j8edmn' /* © 2025 FLATS UG. All rights re... */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.inter(
-                                fontWeight: FontWeight.w600,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w600,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
                       ),
                     ),
                   ]

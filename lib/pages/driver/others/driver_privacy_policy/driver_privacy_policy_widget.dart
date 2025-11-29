@@ -1,37 +1,36 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'driverprivacypolicy_model.dart';
-export 'driverprivacypolicy_model.dart';
+import 'driver_privacy_policy_model.dart';
+export 'driver_privacy_policy_model.dart';
 
 /// Create an eyecatching driver privacy policy page, with theme colors army
 /// green and light beige
-class DriverprivacypolicyWidget extends StatefulWidget {
-  const DriverprivacypolicyWidget({super.key});
+class DriverPrivacyPolicyWidget extends StatefulWidget {
+  const DriverPrivacyPolicyWidget({super.key});
 
-  static String routeName = 'driverprivacypolicy';
-  static String routePath = '/driverprivacypolicy';
+  static String routeName = 'DriverPrivacyPolicy';
+  static String routePath = '/driverPrivacyPolicy';
 
   @override
-  State<DriverprivacypolicyWidget> createState() =>
-      _DriverprivacypolicyWidgetState();
+  State<DriverPrivacyPolicyWidget> createState() =>
+      _DriverPrivacyPolicyWidgetState();
 }
 
-class _DriverprivacypolicyWidgetState extends State<DriverprivacypolicyWidget> {
-  late DriverprivacypolicyModel _model;
+class _DriverPrivacyPolicyWidgetState extends State<DriverPrivacyPolicyWidget> {
+  late DriverPrivacyPolicyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DriverprivacypolicyModel());
+    _model = createModel(context, () => DriverPrivacyPolicyModel());
 
     logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'driverprivacypolicy'});
+        parameters: {'screen_name': 'DriverPrivacyPolicy'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -45,7 +44,7 @@ class _DriverprivacypolicyWidgetState extends State<DriverprivacypolicyWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'driverprivacypolicy',
+        title: 'DriverPrivacyPolicy',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -56,24 +55,10 @@ class _DriverprivacypolicyWidgetState extends State<DriverprivacypolicyWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
             appBar: AppBar(
-              backgroundColor: Color(0xFFF5F5DC),
-              automaticallyImplyLeading: false,
-              leading: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: FlutterFlowIconButton(
-                  borderRadius: 12.0,
-                  buttonSize: 44.0,
-                  fillColor: Color(0xFF556B2F),
-                  icon: Icon(
-                    Icons.arrow_back_rounded,
-                    color: Color(0xFFF5F5DC),
-                    size: 24.0,
-                  ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
-                ),
-              ),
+              backgroundColor: FlutterFlowTheme.of(context).primary,
+              iconTheme:
+                  IconThemeData(color: FlutterFlowTheme.of(context).alternate),
+              automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
                   'w6h0iabz' /* Privacy Policy */,
@@ -84,31 +69,14 @@ class _DriverprivacypolicyWidgetState extends State<DriverprivacypolicyWidget> {
                         fontStyle:
                             FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
-                      color: Color(0xFF556B2F),
+                      color: FlutterFlowTheme.of(context).alternate,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
                       fontStyle:
                           FlutterFlowTheme.of(context).titleLarge.fontStyle,
                     ),
               ),
-              actions: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  child: FlutterFlowIconButton(
-                    borderRadius: 12.0,
-                    buttonSize: 44.0,
-                    fillColor: Color(0xFF556B2F),
-                    icon: Icon(
-                      Icons.share_rounded,
-                      color: Color(0xFFF5F5DC),
-                      size: 24.0,
-                    ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
-                    },
-                  ),
-                ),
-              ],
+              actions: [],
               centerTitle: true,
               elevation: 0.0,
             ),

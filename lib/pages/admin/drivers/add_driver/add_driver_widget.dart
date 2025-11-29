@@ -1180,7 +1180,7 @@ class _AddDriverWidgetState extends State<AddDriverWidget> {
                                     );
                                   }
 
-                                  if (_model.addDriverResult!.succeeded!) {
+                                  if (_model.addDriverResult!.jsonBody!) {
                                     logFirebaseEvent(
                                         'createDriverButton_navigate_to');
 

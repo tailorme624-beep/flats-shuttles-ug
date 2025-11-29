@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'booking_widget.dart' show BookingWidget;
 import 'package:flutter/material.dart';
 

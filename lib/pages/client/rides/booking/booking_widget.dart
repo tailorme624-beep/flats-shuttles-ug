@@ -2,7 +2,9 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import '/flutter_flow/permissions_util.dart';
+import '/index.dart';
 import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -191,7 +193,7 @@ class _BookingWidgetState extends State<BookingWidget> {
                                               ),
                                               child: Container(
                                                 width: double.infinity,
-                                                height: 152.3,
+                                                height: 159.07,
                                                 decoration: BoxDecoration(
                                                   color: valueOrDefault<Color>(
                                                     _model.vehicleType ==
@@ -770,8 +772,12 @@ class _BookingWidgetState extends State<BookingWidget> {
                                                 'BOOKING_PAGE_pickuplocation_ON_TAP');
                                             logFirebaseEvent(
                                                 'pickuplocation_request_permissions');
-                                            await requestPermission(
-                                                locationPermission);
+                                            unawaited(
+                                              () async {
+                                                await requestPermission(
+                                                    locationPermission);
+                                              }(),
+                                            );
                                             logFirebaseEvent(
                                                 'pickuplocation_launch_map');
                                             await launchMap(
@@ -1001,8 +1007,14 @@ class _BookingWidgetState extends State<BookingWidget> {
                                             ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          'haz8h1sb' /*  */,
+                                        valueOrDefault<String>(
+                                          formatNumber(
+                                            _model.tripdistanceKM,
+                                            formatType: FormatType.decimal,
+                                            decimalType:
+                                                DecimalType.periodDecimal,
+                                          ),
+                                          '0.0',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
@@ -1076,8 +1088,10 @@ class _BookingWidgetState extends State<BookingWidget> {
                                           safeSetState(() {});
                                         },
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'nw9v6ml4' /*  */,
+                                          valueOrDefault<String>(
+                                            _model.durationSecs?.start
+                                                .toString(),
+                                            '0.0',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
@@ -1142,8 +1156,15 @@ class _BookingWidgetState extends State<BookingWidget> {
                                         alignment:
                                             AlignmentDirectional(0.0, -1.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'bsczkgts' /*  */,
+                                          valueOrDefault<String>(
+                                            formatNumber(
+                                              _model.totalFare,
+                                              formatType: FormatType.decimal,
+                                              decimalType:
+                                                  DecimalType.periodDecimal,
+                                              currency: 'UGX',
+                                            ),
+                                            '14,5000.0',
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -1212,8 +1233,42 @@ class _BookingWidgetState extends State<BookingWidget> {
                                     : null;
 
                             return FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                logFirebaseEvent(
+                                    'BOOKING_CONFIRM__REQUEST_RIDE_BTN_ON_TAP');
+                                await Future.wait([
+                                  Future(() async {
+                                    logFirebaseEvent('Button_backend_call');
+
+                                    await RidesRecord.collection
+                                        .doc()
+                                        .set(createRidesRecordData(
+                                          clientId: buttonRidesRecord?.clientId,
+                                          createdAt:
+                                              buttonRidesRecord?.createdAt,
+                                          updatedAt:
+                                              buttonRidesRecord?.updatedAt,
+                                          pickupLocation: _model.pickupLocation,
+                                          dropoffAddress: _model.dropoffLocation
+                                              ?.toString(),
+                                          estimatedFare:
+                                              _model.selectedVehiclebaseFare,
+                                          finalFare: _model.totalFare,
+                                          distanceKm: _model.tripdistanceKM,
+                                          durationSeconds: buttonRidesRecord
+                                              ?.durationSeconds,
+                                          driverEtaSeconds: buttonRidesRecord
+                                              ?.driverEtaSeconds,
+                                          vehicleType: _model.vehicleType,
+                                        ));
+                                  }),
+                                  Future(() async {
+                                    logFirebaseEvent('Button_navigate_to');
+
+                                    context.pushNamed(
+                                        ComfirmationWidget.routeName);
+                                  }),
+                                ]);
                               },
                               text: FFLocalizations.of(context).getText(
                                 'ee7hitse' /* Confirm & Request Ride */,

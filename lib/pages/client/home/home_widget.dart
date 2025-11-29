@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -13,7 +14,13 @@ export 'home_model.dart';
 /// users with a search service bar, navigation bar with linking actions to
 /// all other pages available, with theme colors, army green and beige
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({super.key});
+  const HomeWidget({
+    super.key,
+    bool? isFirstTine,
+  }) : this.isFirstTine = isFirstTine ?? true;
+
+  /// First time loading
+  final bool isFirstTine;
 
   static String routeName = 'Home';
   static String routePath = '/home';
@@ -33,6 +40,30 @@ class _HomeWidgetState extends State<HomeWidget> {
     _model = createModel(context, () => HomeModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'Home'});
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('HOME_PAGE_Home_ON_INIT_STATE');
+      logFirebaseEvent('Home_wait__delay');
+      await Future.delayed(
+        Duration(
+          milliseconds: 5,
+        ),
+      );
+      if (widget.isFirstTine) {
+        logFirebaseEvent('Home_navigate_to');
+
+        context.goNamed(
+          HomeWidget.routeName,
+          queryParameters: {
+            'isFirstTine': serializeParam(
+              false,
+              ParamType.bool,
+            ),
+          }.withoutNulls,
+        );
+      }
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 

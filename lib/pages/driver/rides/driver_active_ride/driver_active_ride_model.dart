@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'active_ride_widget.dart' show ActiveRideWidget;
+import 'driver_active_ride_widget.dart' show DriverActiveRideWidget;
 import 'package:flutter/material.dart';
 
-class ActiveRideModel extends FlutterFlowModel<ActiveRideWidget> {
+class DriverActiveRideModel extends FlutterFlowModel<DriverActiveRideWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for GoogleMap widget.

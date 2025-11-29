@@ -100,7 +100,7 @@ class _TrackingWidgetState extends State<TrackingWidget> {
                             .fontStyle,
                       ),
                       color: Color(0xFFF5F5DC),
-                      fontSize: 2.0,
+                      fontSize: 25.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
                       fontStyle:
@@ -146,26 +146,27 @@ class _TrackingWidgetState extends State<TrackingWidget> {
                                   borderRadius: BorderRadius.circular(14.0),
                                 ),
                               ),
-                              FlutterFlowGoogleMap(
-                                controller: _model.googleMapsController,
-                                onCameraIdle: (latLng) =>
-                                    _model.googleMapsCenter = latLng,
-                                initialLocation: _model.googleMapsCenter ??=
-                                    LatLng(13.106061, -59.613158),
-                                markerColor: GoogleMarkerColor.violet,
-                                mapType: MapType.normal,
-                                style: GoogleMapStyle.standard,
-                                initialZoom: 14.0,
-                                allowInteraction: true,
-                                allowZoom: true,
-                                showZoomControls: true,
-                                showLocation: true,
-                                showCompass: false,
-                                showMapToolbar: false,
-                                showTraffic: false,
-                                centerMapOnMarkerTap: true,
-                                mapTakesGesturePreference: false,
-                              ),
+                              if (_model.googleMapsCenter != null)
+                                FlutterFlowGoogleMap(
+                                  controller: _model.googleMapsController,
+                                  onCameraIdle: (latLng) =>
+                                      _model.googleMapsCenter = latLng,
+                                  initialLocation: _model.googleMapsCenter ??=
+                                      LatLng(13.106061, -59.613158),
+                                  markerColor: GoogleMarkerColor.violet,
+                                  mapType: MapType.normal,
+                                  style: GoogleMapStyle.standard,
+                                  initialZoom: 14.0,
+                                  allowInteraction: true,
+                                  allowZoom: true,
+                                  showZoomControls: true,
+                                  showLocation: true,
+                                  showCompass: false,
+                                  showMapToolbar: false,
+                                  showTraffic: false,
+                                  centerMapOnMarkerTap: true,
+                                  mapTakesGesturePreference: false,
+                                ),
                             ],
                           ),
                         ),
@@ -177,7 +178,12 @@ class _TrackingWidgetState extends State<TrackingWidget> {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: Color(0xFFF5F5DC),
-                              borderRadius: BorderRadius.circular(20.0),
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10.0),
+                                bottomRight: Radius.circular(10.0),
+                                topLeft: Radius.circular(10.0),
+                                topRight: Radius.circular(10.0),
+                              ),
                               border: Border.all(
                                 color: Color(0xFF2D4A2B),
                                 width: 2.0,
@@ -196,8 +202,12 @@ class _TrackingWidgetState extends State<TrackingWidget> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                           color: Color(0xFF2D4A2B),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(0.0),
+                                            bottomRight: Radius.circular(0.0),
+                                            topLeft: Radius.circular(0.0),
+                                            topRight: Radius.circular(0.0),
+                                          ),
                                         ),
                                         child: Padding(
                                           padding: EdgeInsets.all(16.0),

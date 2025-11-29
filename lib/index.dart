@@ -20,14 +20,14 @@ export '/pages/driver/profile/driver_profile/driver_profile_widget.dart'
     show DriverProfileWidget;
 export '/pages/driver/profile/driver_information/driver_information_widget.dart'
     show DriverInformationWidget;
-export '/pages/driver/others/driverprivacypolicy/driverprivacypolicy_widget.dart'
-    show DriverprivacypolicyWidget;
+export '/pages/driver/others/driver_privacy_policy/driver_privacy_policy_widget.dart'
+    show DriverPrivacyPolicyWidget;
 export '/pages/driver/others/driver_terms/driver_terms_widget.dart'
     show DriverTermsWidget;
 export '/pages/driver/rides/incoming_request/incoming_request_widget.dart'
     show IncomingRequestWidget;
-export '/pages/driver/rides/active_ride/active_ride_widget.dart'
-    show ActiveRideWidget;
+export '/pages/driver/rides/driver_active_ride/driver_active_ride_widget.dart'
+    show DriverActiveRideWidget;
 export '/pages/client/others/quotes/quotes_widget.dart' show QuotesWidget;
 export '/pages/driver/others/driver_error_page/driver_error_page_widget.dart'
     show DriverErrorPageWidget;
@@ -141,8 +141,8 @@ export '/pages/client/hotels/book_hotel_page/book_hotel_page_widget.dart'
     show BookHotelPageWidget;
 export '/pages/admin/admin_dashboard/admin_dashboard_widget.dart'
     show AdminDashboardWidget;
-export '/pages/driver/rides/ride_history/ride_history_widget.dart'
-    show RideHistoryWidget;
+export '/pages/driver/rides/driver_ride_history/driver_ride_history_widget.dart'
+    show DriverRideHistoryWidget;
 export '/pages/client/courier/courier_pricing/courier_pricing_widget.dart'
     show CourierPricingWidget;
 export '/pages/admin/drivers/admin_edit_driver/admin_edit_driver_widget.dart'
@@ -152,3 +152,8 @@ export '/pages/client/courier/courier_tracking/courier_tracking_widget.dart'
 export '/pages/others/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/pages/driver/driver_dashboard/driver_dashboard_widget.dart'
     show DriverDashboardWidget;
+export '/pages/admin/users/users/users_widget.dart' show UsersWidget;
+export '/pages/driver/others/driver_reports/driver_reports_widget.dart'
+    show DriverReportsWidget;
+export '/pages/client/rides/ride_hostory/ride_hostory_widget.dart'
+    show RideHostoryWidget;

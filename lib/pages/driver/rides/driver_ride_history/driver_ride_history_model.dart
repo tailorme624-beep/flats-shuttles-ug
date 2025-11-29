@@ -1,11 +1,15 @@
 import '/components/driver_drawer/driver_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'driver_dashboard_widget.dart' show DriverDashboardWidget;
+import '/flutter_flow/form_field_controller.dart';
+import 'driver_ride_history_widget.dart' show DriverRideHistoryWidget;
 import 'package:flutter/material.dart';
 
-class DriverDashboardModel extends FlutterFlowModel<DriverDashboardWidget> {
+class DriverRideHistoryModel extends FlutterFlowModel<DriverRideHistoryWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // Model for DriverDrawer component.
   late DriverDrawerModel driverDrawerModel;
 

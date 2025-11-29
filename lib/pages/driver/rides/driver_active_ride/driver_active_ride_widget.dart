@@ -5,8 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'active_ride_model.dart';
-export 'active_ride_model.dart';
+import 'driver_active_ride_model.dart';
+export 'driver_active_ride_model.dart';
 
 /// Create an eyecatching Active Ride Screen
 /// •	Purpose: To guide the driver through the stages of an accepted ride.
@@ -22,27 +22,28 @@ export 'active_ride_model.dart';
 /// Arrived," "Start Ride," or "Complete Ride."
 /// o	A secondary button to "Navigate with Google Maps."
 /// with theme colors army green and light beige
-class ActiveRideWidget extends StatefulWidget {
-  const ActiveRideWidget({super.key});
+class DriverActiveRideWidget extends StatefulWidget {
+  const DriverActiveRideWidget({super.key});
 
-  static String routeName = 'ActiveRide';
-  static String routePath = '/activeRide';
+  static String routeName = 'DriverActiveRide';
+  static String routePath = '/driverActiveRide';
 
   @override
-  State<ActiveRideWidget> createState() => _ActiveRideWidgetState();
+  State<DriverActiveRideWidget> createState() => _DriverActiveRideWidgetState();
 }
 
-class _ActiveRideWidgetState extends State<ActiveRideWidget> {
-  late ActiveRideModel _model;
+class _DriverActiveRideWidgetState extends State<DriverActiveRideWidget> {
+  late DriverActiveRideModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ActiveRideModel());
+    _model = createModel(context, () => DriverActiveRideModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'ActiveRide'});
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'DriverActiveRide'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -56,7 +57,7 @@ class _ActiveRideWidgetState extends State<ActiveRideWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'ActiveRide',
+        title: 'DriverActiveRide',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -756,7 +757,7 @@ class _ActiveRideWidgetState extends State<ActiveRideWidget> {
                             ),
                             onPressed: () async {
                               logFirebaseEvent(
-                                  'ACTIVE_RIDE_arrow_back_rounded_ICN_ON_TA');
+                                  'DRIVER_ACTIVE_RIDE_arrow_back_rounded_IC');
                               logFirebaseEvent('IconButton_navigate_back');
                               context.safePop();
                             },

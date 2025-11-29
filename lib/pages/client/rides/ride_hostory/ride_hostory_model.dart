@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'driverprivacypolicy_widget.dart' show DriverprivacypolicyWidget;
+import 'ride_hostory_widget.dart' show RideHostoryWidget;
 import 'package:flutter/material.dart';
 
-class DriverprivacypolicyModel
-    extends FlutterFlowModel<DriverprivacypolicyWidget> {
+class RideHostoryModel extends FlutterFlowModel<RideHostoryWidget> {
   @override
   void initState(BuildContext context) {}
 

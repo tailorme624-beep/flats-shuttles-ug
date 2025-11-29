@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'admin_login_model.dart';
 export 'admin_login_model.dart';
@@ -44,6 +45,22 @@ class _AdminLoginWidgetState extends State<AdminLoginWidget> {
     _model = createModel(context, () => AdminLoginModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'AdminLogin'});
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('ADMIN_LOGIN_AdminLogin_ON_INIT_STATE');
+      logFirebaseEvent('AdminLogin_wait__delay');
+      await Future.delayed(
+        Duration(
+          milliseconds: 10,
+        ),
+      );
+      if (currentUserUid != '') {
+        logFirebaseEvent('AdminLogin_navigate_to');
+
+        context.goNamed(AdminDashboardWidget.routeName);
+      }
+    });
+
     _model.adminLoginEmailTextController ??= TextEditingController();
     _model.adminLoginEmailFocusNode ??= FocusNode();
 

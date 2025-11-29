@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'driver_login_model.dart';
@@ -177,20 +176,6 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
                                   controller:
                                       _model.driverUserNameTextController,
                                   focusNode: _model.driverUserNameFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.driverUserNameTextController',
-                                    Duration(milliseconds: 2000),
-                                    () async {
-                                      logFirebaseEvent(
-                                          'DRIVER_LOGIN_driverUserName_ON_TEXTFIELD');
-                                      logFirebaseEvent(
-                                          'driverUserName_set_form_field');
-                                      safeSetState(() {
-                                        _model.driverUserNameTextController
-                                            ?.text = '';
-                                      });
-                                    },
-                                  ),
                                   autofocus: false,
                                   textInputAction: TextInputAction.next,
                                   obscureText: false,
@@ -322,20 +307,6 @@ class _DriverLoginWidgetState extends State<DriverLoginWidget> {
                                   controller:
                                       _model.driverPasswordTextController,
                                   focusNode: _model.driverPasswordFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.driverPasswordTextController',
-                                    Duration(milliseconds: 2000),
-                                    () async {
-                                      logFirebaseEvent(
-                                          'DRIVER_LOGIN_driverPassword_ON_TEXTFIELD');
-                                      logFirebaseEvent(
-                                          'driverPassword_set_form_field');
-                                      safeSetState(() {
-                                        _model.driverPasswordTextController
-                                            ?.text = '';
-                                      });
-                                    },
-                                  ),
                                   autofocus: false,
                                   textInputAction: TextInputAction.done,
                                   obscureText: !_model.driverPasswordVisibility,

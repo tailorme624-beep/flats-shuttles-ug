@@ -4,9 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -127,18 +125,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                             child: TextFormField(
                               controller: _model.emailTextController,
                               focusNode: _model.emailFocusNode,
-                              onChanged: (_) => EasyDebounce.debounce(
-                                '_model.emailTextController',
-                                Duration(milliseconds: 2000),
-                                () async {
-                                  logFirebaseEvent(
-                                      'SIGN_IN_PAGE_email_ON_TEXTFIELD_CHANGE');
-                                  logFirebaseEvent('email_set_form_field');
-                                  safeSetState(() {
-                                    _model.emailTextController?.text = '';
-                                  });
-                                },
-                              ),
                               autofocus: true,
                               enabled: true,
                               textInputAction: TextInputAction.next,
@@ -202,6 +188,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 fillColor: Colors.white,
                                 contentPadding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
+                                prefixIcon: Icon(
+                                  Icons.alternate_email,
+                                ),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -234,25 +223,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                           TextFormField(
                             controller: _model.passwordTextController,
                             focusNode: _model.passwordFocusNode,
-                            onChanged: (_) => EasyDebounce.debounce(
-                              '_model.passwordTextController',
-                              Duration(milliseconds: 2000),
-                              () async {
-                                logFirebaseEvent(
-                                    'SIGN_IN_password_ON_TEXTFIELD_CHANGE');
-                                logFirebaseEvent('password_set_form_field');
-                                safeSetState(() {
-                                  _model.passwordTextController?.text = '';
-                                  _model.passwordMask.updateMask(
-                                    newValue: TextEditingValue(
-                                      text: _model.passwordTextController!.text,
-                                    ),
-                                  );
-                                });
-                              },
-                            ),
                             autofocus: false,
-                            autofillHints: [AutofillHints.password],
+                            enabled: true,
                             textInputAction: TextInputAction.done,
                             obscureText: !_model.passwordVisibility,
                             decoration: InputDecoration(
@@ -314,6 +286,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                               fillColor: Colors.white,
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 16.0, 16.0, 16.0),
+                              prefixIcon: Icon(
+                                Icons.lock_person,
+                              ),
                               suffixIcon: InkWell(
                                 onTap: () => safeSetState(
                                   () => _model.passwordVisibility =
@@ -350,8 +325,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       .bodyMedium
                                       .fontStyle,
                                 ),
-                            maxLength: 12,
-                            maxLengthEnforcement: MaxLengthEnforcement.none,
                             cursorColor: Color(0xFF556B2F),
                             validator: _model.passwordTextControllerValidator
                                 .asValidator(context),
@@ -526,7 +499,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),
                                   hoverColor:
-                                      FlutterFlowTheme.of(context).tertiary,
+                                      FlutterFlowTheme.of(context).secondary,
+                                  hoverBorderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).accent1,
+                                    width: 1.0,
+                                  ),
                                   hoverTextColor: Color(0xFFE0DBDB),
                                 ),
                               ),
@@ -591,7 +568,12 @@ class _SignInWidgetState extends State<SignInWidget> {
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                         hoverColor: FlutterFlowTheme.of(context)
-                                            .tertiary,
+                                            .secondary,
+                                        hoverBorderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent1,
+                                          width: 1.0,
+                                        ),
                                         hoverTextColor: Color(0xFFDACFCF),
                                       ),
                                     ),
@@ -675,85 +657,88 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ].divide(SizedBox(height: 24.0)),
                       ),
                     ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            logFirebaseEvent(
-                                'SIGN_IN_PAGE_Text_34gpis8j_ON_TAP');
-                            logFirebaseEvent('Text_navigate_to');
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              logFirebaseEvent(
+                                  'SIGN_IN_PAGE_Text_34gpis8j_ON_TAP');
+                              logFirebaseEvent('Text_navigate_to');
 
-                            context.pushNamed(
-                              TermsAndConditionsWidget.routeName,
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
-                          },
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'y6moqquh' /* Terms & Conditions   | */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
+                              context.pushNamed(
+                                TermsAndConditionsWidget.routeName,
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
+                            },
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'y6moqquh' /* Terms & Conditions   |    */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          logFirebaseEvent('SIGN_IN_PAGE_Text_n7dlftc7_ON_TAP');
-                          logFirebaseEvent('Text_navigate_to');
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              logFirebaseEvent(
+                                  'SIGN_IN_PAGE_Text_n7dlftc7_ON_TAP');
+                              logFirebaseEvent('Text_navigate_to');
 
-                          context.pushNamed(
-                            PrivacyPolicyWidget.routeName,
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.bottomToTop,
-                              ),
+                              context.pushNamed(
+                                PrivacyPolicyWidget.routeName,
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType:
+                                        PageTransitionType.bottomToTop,
+                                  ),
+                                },
+                              );
                             },
-                          );
-                        },
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            '0ykja70b' /* Privacy Policy */,
-                          ),
-                          textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                '0ykja70b' /* Privacy Policy */,
+                              ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
@@ -766,12 +751,17 @@ class _SignInWidgetState extends State<SignInWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
+                    ),
+                    Divider(
+                      thickness: 2.0,
+                      color: FlutterFlowTheme.of(context).primary,
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      padding: EdgeInsets.all(20.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent('SIGN_IN_PAGE_HOME_BTN_ON_TAP');
@@ -779,7 +769,15 @@ class _SignInWidgetState extends State<SignInWidget> {
                           if (Navigator.of(context).canPop()) {
                             context.pop();
                           }
-                          context.pushNamed(HomeWidget.routeName);
+                          context.pushNamed(
+                            HomeWidget.routeName,
+                            queryParameters: {
+                              'isFirstTine': serializeParam(
+                                false,
+                                ParamType.bool,
+                              ),
+                            }.withoutNulls,
+                          );
                         },
                         text: FFLocalizations.of(context).getText(
                           '0e3n1pn0' /* Home */,

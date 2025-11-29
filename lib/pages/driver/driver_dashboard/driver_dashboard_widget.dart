@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/backend/backend.dart';
+import '/components/driver_drawer/driver_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'driver_dashboard_model.dart';
@@ -56,87 +56,40 @@ class _DriverDashboardWidgetState extends State<DriverDashboardWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: Color(0xFFF5F5DC),
+            drawer: Drawer(
+              elevation: 16.0,
+              child: wrapWithModel(
+                model: _model.driverDrawerModel,
+                updateCallback: () => safeSetState(() {}),
+                child: DriverDrawerWidget(),
+              ),
+            ),
             appBar: AppBar(
               backgroundColor: Color(0xFF556B2F),
               iconTheme: IconThemeData(
                   color: FlutterFlowTheme.of(context).primaryBackground),
               automaticallyImplyLeading: true,
-              title: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      'fh10hw72' /* Driver Dashboard */,
+              title: Text(
+                FFLocalizations.of(context).getText(
+                  'ayuaamfe' /* Driver Dashboard */,
+                ),
+                style: FlutterFlowTheme.of(context).titleLarge.override(
+                      font: GoogleFonts.interTight(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                      ),
+                      color: FlutterFlowTheme.of(context).alternate,
+                      letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleLarge.fontStyle,
                     ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          font: GoogleFonts.interTight(
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .headlineMedium
-                                .fontStyle,
-                          ),
-                          color: Color(0xFFF5F5DC),
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .headlineMedium
-                              .fontStyle,
-                        ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderRadius: 20.0,
-                          buttonSize: 30.0,
-                          fillColor: Color(0xFFF5F5DC),
-                          hoverColor: FlutterFlowTheme.of(context).secondary,
-                          icon: Icon(
-                            Icons.notifications,
-                            color: Color(0xFF556B2F),
-                            size: 15.0,
-                          ),
-                          onPressed: () async {
-                            logFirebaseEvent(
-                                'DRIVER_DASHBOARD_notifications_ICN_ON_TA');
-                            logFirebaseEvent('IconButton_navigate_to');
-
-                            context
-                                .pushNamed(DriverNotificationsWidget.routeName);
-                          },
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderRadius: 20.0,
-                          buttonSize: 30.0,
-                          fillColor: Color(0xFFF5F5DC),
-                          hoverColor: FlutterFlowTheme.of(context).secondary,
-                          icon: Icon(
-                            Icons.settings,
-                            color: Color(0xFF556B2F),
-                            size: 15.0,
-                          ),
-                          onPressed: () async {
-                            logFirebaseEvent(
-                                'DRIVER_DASHBOARD_settings_ICN_ON_TAP');
-                            logFirebaseEvent('IconButton_navigate_to');
-
-                            context.pushNamed(DriverSettingsWidget.routeName);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
               ),
               actions: [],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
@@ -250,19 +203,46 @@ class _DriverDashboardWidgetState extends State<DriverDashboardWidget> {
                                       color: Color(0xFFF5F5DC),
                                       shape: BoxShape.circle,
                                     ),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          getCORSProxyUrl(
-                                            currentUserPhoto,
+                                    child: StreamBuilder<UsersRecord>(
+                                      stream: UsersRecord.getDocument(
+                                          currentUserReference!),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+
+                                        final imageUsersRecord = snapshot.data!;
+
+                                        return ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            getCORSProxyUrl(
+                                              valueOrDefault<String>(
+                                                imageUsersRecord.photoUrl,
+                                                'https://firebasestorage.googleapis.com/v0/b/flatsshuttles-gr3bc7.firebasestorage.app/o/images%2Fuser.png?alt=media&token=3b3b09e4-84ef-47a5-a432-cc82acca275c',
+                                              ),
+                                            ),
+                                            width: 200.0,
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
                                           ),
-                                          width: 200.0,
-                                          height: 200.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
+                                        );
+                                      },
                                     ),
                                   ),
                                 ],
@@ -409,14 +389,13 @@ class _DriverDashboardWidgetState extends State<DriverDashboardWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                      padding: EdgeInsets.all(10.0),
                       child: GridView(
                         padding: EdgeInsets.zero,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 16.0,
-                          mainAxisSpacing: 16.0,
+                          crossAxisSpacing: 5.0,
+                          mainAxisSpacing: 5.0,
                           childAspectRatio: 0.7,
                         ),
                         primary: false,

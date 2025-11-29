@@ -70,7 +70,7 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
       email: email,
       display_name: fullName,
       photo_url:
-        "gs://flatsshuttles-gr3bc7.firebasestorage.app/images/user.png",
+        "https://firebasestorage.googleapis.com/v0/b/flatsshuttles-gr3bc7.firebasestorage.app/o/images%2Fuser.png?alt=media&token=3b3b09e4-84ef-47a5-a432-cc82acca275c",
       phone_number: phoneNumber,
       role: "driver", // *** CRITICAL FOR ROLE ENFORCEMENT ***
       created_time: admin.firestore.FieldValue.serverTimestamp(),
@@ -93,7 +93,7 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
     });
 
     // 5. **Return the UID:** Used by FlutterFlow to navigate/confirm.
-    return { uid: newUid };
+    return true;
   } catch (error) {
     // Log error for debugging
     console.error("Error creating new driver:", error);
@@ -111,4 +111,6 @@ exports.createDriverUser = functions.https.onCall(async (data, context) => {
       error.message || "Failed to create user account.",
     );
   }
+
+  return false;
 });

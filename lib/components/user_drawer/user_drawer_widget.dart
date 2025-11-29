@@ -48,13 +48,34 @@ class _UserDrawerWidgetState extends State<UserDrawerWidget> {
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset(
-            'assets/images/FLATS_Logo_.png',
-            width: 200.0,
-            height: 200.0,
-            fit: BoxFit.cover,
+        Align(
+          alignment: AlignmentDirectional(0.0, 0.0),
+          child: Padding(
+            padding: EdgeInsets.all(30.0),
+            child: AuthUserStreamWidget(
+              builder: (context) => ClipRRect(
+                borderRadius: BorderRadius.circular(100.0),
+                child: Image.network(
+                  getCORSProxyUrl(
+                    valueOrDefault<String>(
+                      currentUserPhoto,
+                      'https://firebasestorage.googleapis.com/v0/b/flatsshuttles-gr3bc7.firebasestorage.app/o/images%2Fuser.png?alt=media&token=3b3b09e4-84ef-47a5-a432-cc82acca275c',
+                    ),
+                  ),
+                  width: 150.0,
+                  height: 150.0,
+                  fit: BoxFit.cover,
+                  alignment: Alignment(0.0, 0.0),
+                  errorBuilder: (context, error, stackTrace) => Image.asset(
+                    'assets/images/error_image.png',
+                    width: 150.0,
+                    height: 150.0,
+                    fit: BoxFit.cover,
+                    alignment: Alignment(0.0, 0.0),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
         Padding(
@@ -112,18 +133,37 @@ class _UserDrawerWidgetState extends State<UserDrawerWidget> {
                 ),
               ),
               if (currentUserUid != '')
-                Material(
-                  color: Colors.transparent,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.history_sharp,
-                    ),
-                    title: Text(
-                      FFLocalizations.of(context).getText(
-                        'dha0mesw' /* Ride History */,
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    logFirebaseEvent('USER_DRAWER_ListTile_5309k926_ON_TAP');
+                    logFirebaseEvent('ListTile_navigate_to');
+
+                    context.pushNamed(RideHostoryWidget.routeName);
+                  },
+                  child: Material(
+                    color: Colors.transparent,
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.history_sharp,
                       ),
-                      style: FlutterFlowTheme.of(context).titleLarge.override(
-                            font: GoogleFonts.interTight(
+                      title: Text(
+                        FFLocalizations.of(context).getText(
+                          'dha0mesw' /* Ride History */,
+                        ),
+                        style: FlutterFlowTheme.of(context).titleLarge.override(
+                              font: GoogleFonts.interTight(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .fontStyle,
+                              ),
+                              letterSpacing: 0.0,
                               fontWeight: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .fontWeight,
@@ -131,21 +171,15 @@ class _UserDrawerWidgetState extends State<UserDrawerWidget> {
                                   .titleLarge
                                   .fontStyle,
                             ),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .fontStyle,
-                          ),
-                    ),
-                    tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-                    dense: false,
-                    contentPadding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      tileColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      dense: false,
+                      contentPadding:
+                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                     ),
                   ),
                 ),
@@ -528,7 +562,18 @@ class _UserDrawerWidgetState extends State<UserDrawerWidget> {
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
 
-                    context.goNamedAuth(HomeWidget.routeName, context.mounted);
+                    logFirebaseEvent('ListTile_navigate_to');
+
+                    context.pushNamedAuth(
+                      HomeWidget.routeName,
+                      context.mounted,
+                      queryParameters: {
+                        'isFirstTine': serializeParam(
+                          false,
+                          ParamType.bool,
+                        ),
+                      }.withoutNulls,
+                    );
                   },
                   child: Material(
                     color: Colors.transparent,

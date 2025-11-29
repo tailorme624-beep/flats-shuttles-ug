@@ -10,10 +10,6 @@ import 'package:flutter/material.dart';
 class AdminDriversModel extends FlutterFlowModel<AdminDriversWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Firestore Query - Query a collection] action in AdminDrivers widget.
-  int? count;
-  // Stores action output result for [Firestore Query - Query a collection] action in AdminDrivers widget.
-  List<UsersRecord>? allDrivers;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;

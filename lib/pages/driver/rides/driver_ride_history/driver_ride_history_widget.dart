@@ -1,36 +1,39 @@
+import '/components/driver_drawer/driver_drawer_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'ride_history_model.dart';
-export 'ride_history_model.dart';
+import 'driver_ride_history_model.dart';
+export 'driver_ride_history_model.dart';
 
 /// Create a page design for driver ride history showing driver's previous and
 /// recent rides
 ///
-class RideHistoryWidget extends StatefulWidget {
-  const RideHistoryWidget({super.key});
+class DriverRideHistoryWidget extends StatefulWidget {
+  const DriverRideHistoryWidget({super.key});
 
-  static String routeName = 'RideHistory';
-  static String routePath = '/rideHistory';
+  static String routeName = 'DriverRideHistory';
+  static String routePath = '/driverRideHistory';
 
   @override
-  State<RideHistoryWidget> createState() => _RideHistoryWidgetState();
+  State<DriverRideHistoryWidget> createState() =>
+      _DriverRideHistoryWidgetState();
 }
 
-class _RideHistoryWidgetState extends State<RideHistoryWidget> {
-  late RideHistoryModel _model;
+class _DriverRideHistoryWidgetState extends State<DriverRideHistoryWidget> {
+  late DriverRideHistoryModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RideHistoryModel());
+    _model = createModel(context, () => DriverRideHistoryModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'RideHistory'});
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'DriverRideHistory'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -44,7 +47,7 @@ class _RideHistoryWidgetState extends State<RideHistoryWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'RideHistory',
+        title: 'DriverRideHistory',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -54,10 +57,18 @@ class _RideHistoryWidgetState extends State<RideHistoryWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            drawer: Drawer(
+              elevation: 16.0,
+              child: wrapWithModel(
+                model: _model.driverDrawerModel,
+                updateCallback: () => safeSetState(() {}),
+                child: DriverDrawerWidget(),
+              ),
+            ),
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).alternate,
+              backgroundColor: FlutterFlowTheme.of(context).primary,
               iconTheme:
-                  IconThemeData(color: FlutterFlowTheme.of(context).textColor),
+                  IconThemeData(color: FlutterFlowTheme.of(context).alternate),
               automaticallyImplyLeading: true,
               title: Text(
                 FFLocalizations.of(context).getText(
@@ -70,7 +81,7 @@ class _RideHistoryWidgetState extends State<RideHistoryWidget> {
                             FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
                       color: FlutterFlowTheme.of(context).textColor,
-                      fontSize: 28.0,
+                      fontSize: 20.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
                       fontStyle:

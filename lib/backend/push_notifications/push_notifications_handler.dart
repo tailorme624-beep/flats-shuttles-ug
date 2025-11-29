@@ -125,12 +125,16 @@ final parametersBuilderMap =
   'TermsAndConditions': ParameterData.none(),
   'SignIn': ParameterData.none(),
   'SignUp': ParameterData.none(),
-  'Home': ParameterData.none(),
+  'Home': (data) async => ParameterData(
+        allParams: {
+          'isFirstTine': getParameter<bool>(data, 'isFirstTine'),
+        },
+      ),
   'DriverProfile': ParameterData.none(),
   'DriverInformation': (data) async => ParameterData(
         allParams: <String, dynamic>{},
       ),
-  'driverprivacypolicy': ParameterData.none(),
+  'DriverPrivacyPolicy': ParameterData.none(),
   'DriverTerms': ParameterData.none(),
   'IncomingRequest': (data) async => ParameterData(
         allParams: {
@@ -138,7 +142,7 @@ final parametersBuilderMap =
               data, 'order', RidesRecord.fromSnapshot),
         },
       ),
-  'ActiveRide': ParameterData.none(),
+  'DriverActiveRide': ParameterData.none(),
   'Quotes': ParameterData.none(),
   'DriverErrorPage': ParameterData.none(),
   'ErrorPage': ParameterData.none(),
@@ -208,12 +212,15 @@ final parametersBuilderMap =
   'AdminRides': ParameterData.none(),
   'bookHotelPage': ParameterData.none(),
   'AdminDashboard': ParameterData.none(),
-  'RideHistory': ParameterData.none(),
+  'DriverRideHistory': ParameterData.none(),
   'CourierPricing': ParameterData.none(),
   'AdminEditDriver': ParameterData.none(),
   'CourierTracking': ParameterData.none(),
   'AboutUs': ParameterData.none(),
   'DriverDashboard': ParameterData.none(),
+  'Users': ParameterData.none(),
+  'DriverReports': ParameterData.none(),
+  'RideHostory': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {
